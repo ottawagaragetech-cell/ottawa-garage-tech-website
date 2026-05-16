@@ -1,0 +1,13 @@
+{
+  "rewrites": [
+    { "source": "/contact", "destination": "/contact.html" }
+  ],
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.ottawagaragetech.ca" }],
+      "destination": "https://ottawagaragetech.ca/:path*",
+      "permanent": true
+    }
+  ]
+}

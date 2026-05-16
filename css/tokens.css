@@ -1,0 +1,80 @@
+/**
+ * Ottawa Garage Tech — design tokens
+ * Palette: forest green + warm brass on warm stone (NOT GDS blue/orange, NOT OGDR navy/orange)
+ *
+ * Radius scale:
+ *   --ogt-radius-sm: 4px   (inputs, chips)
+ *   --ogt-radius-md: 8px   (buttons, cards)
+ *   --ogt-radius-lg: 16px  (hero panels, form cards)
+ *
+ * Shadow scale:
+ *   --ogt-shadow-sm: subtle lift
+ *   --ogt-shadow-md: cards
+ *   --ogt-shadow-lg: sticky header / modals
+ */
+:root {
+  /* Brand colors */
+  --ogt-primary: #1b5e4b;
+  --ogt-primary-dark: #134a3b;
+  --ogt-primary-light: #2a7a64;
+  --ogt-accent: #b8953a;
+  --ogt-accent-dark: #96782e;
+  --ogt-accent-soft: #f5edd8;
+
+  /* Neutrals (warm stone) */
+  --ogt-bg: #f7f5f1;
+  --ogt-bg-elevated: #ffffff;
+  --ogt-surface-muted: #ebe8e2;
+  --ogt-text: #1c2420;
+  --ogt-text-muted: #4a5650;
+  --ogt-text-inverse: #f7f5f1;
+  --ogt-border: #d4cfc4;
+
+  /* Semantic */
+  --ogt-success: #2d6a4f;
+  --ogt-danger: #9b2c2c;
+  --ogt-focus-ring: #1b5e4b;
+
+  /* Typography */
+  --ogt-font-display: "Outfit", system-ui, sans-serif;
+  --ogt-font-body: "Lora", Georgia, serif;
+
+  /* Type scale */
+  --ogt-text-xs: 0.8125rem;
+  --ogt-text-sm: 0.9375rem;
+  --ogt-text-base: 1.0625rem;
+  --ogt-text-lg: 1.25rem;
+  --ogt-text-xl: 1.5rem;
+  --ogt-text-2xl: 2rem;
+  --ogt-text-3xl: clamp(2rem, 5vw, 2.75rem);
+  --ogt-text-hero: clamp(2.25rem, 6vw, 3.25rem);
+
+  /* Spacing */
+  --ogt-space-xs: 0.5rem;
+  --ogt-space-sm: 0.75rem;
+  --ogt-space-md: 1rem;
+  --ogt-space-lg: 1.5rem;
+  --ogt-space-xl: 2rem;
+  --ogt-space-2xl: 3rem;
+  --ogt-space-3xl: 4.5rem;
+  --ogt-container: min(1120px, 92vw);
+
+  /* Radius */
+  --ogt-radius-sm: 4px;
+  --ogt-radius-md: 8px;
+  --ogt-radius-lg: 16px;
+
+  /* Shadows */
+  --ogt-shadow-sm: 0 1px 3px rgba(28, 36, 32, 0.08);
+  --ogt-shadow-md: 0 4px 16px rgba(28, 36, 32, 0.1);
+  --ogt-shadow-lg: 0 8px 32px rgba(28, 36, 32, 0.12);
+
+  /* Motion */
+  --ogt-transition: 0.2s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --ogt-transition: 0.01ms;
+  }
+}
