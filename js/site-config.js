@@ -14,7 +14,7 @@ window.OGT = {
 
   images: {
     hero: "https://img1.wsimg.com/isteam/ip/1b277bec-adfe-487a-a8c7-5e77b97e6d1d/blob-fddabbe.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:900,cg:true",
-    spring: "https://img1.wsimg.com/isteam/ip/1b277bec-adfe-487a-a8c7-5e77b97e6d1d/20250110_075357-COLLAGE.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:800,cg:true",
+    spring: "/assets/services/spring-broken-torsion.png",
     opener: "https://img1.wsimg.com/isteam/ip/1b277bec-adfe-487a-a8c7-5e77b97e6d1d/20260227_140936.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:600,cg:true",
     install: "https://img1.wsimg.com/isteam/ip/1b277bec-adfe-487a-a8c7-5e77b97e6d1d/blob-2c95119.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:800,cg:true",
     emergency: "https://img1.wsimg.com/isteam/ip/1b277bec-adfe-487a-a8c7-5e77b97e6d1d/20251015_061012%20(1).jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:800,cg:true",
@@ -23,7 +23,7 @@ window.OGT = {
     weather: "https://img1.wsimg.com/isteam/ip/1b277bec-adfe-487a-a8c7-5e77b97e6d1d/20260206_063252.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:800,cg:true",
     hardware: "https://img1.wsimg.com/isteam/ip/1b277bec-adfe-487a-a8c7-5e77b97e6d1d/20260224_153212.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:800,cg:true",
     modern: "https://img1.wsimg.com/isteam/ip/1b277bec-adfe-487a-a8c7-5e77b97e6d1d/20251106_094900.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:800,cg:true",
-    springDetail: "https://img1.wsimg.com/isteam/ip/1b277bec-adfe-487a-a8c7-5e77b97e6d1d/blob-f2936a4.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:800,cg:true",
+    springDetail: "/assets/services/spring-replacement-parts.png",
     track: "https://img1.wsimg.com/isteam/ip/1b277bec-adfe-487a-a8c7-5e77b97e6d1d/20250124_095313.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:800,cg:true",
     seal: "https://img1.wsimg.com/isteam/ip/1b277bec-adfe-487a-a8c7-5e77b97e6d1d/20251020_211230.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:800,cg:true"
   },
@@ -43,8 +43,8 @@ window.OGT = {
     { srcKey: "install", alt: "New garage door installation in Ottawa", cap: "Door installation", cat: "install", wide: true },
     { srcKey: "modern", alt: "Insulated garage door up to R-18 — Kanata area", cap: "Insulated new door", cat: "install" },
     { srcKey: "hero", alt: "Garage door installation Ottawa", cap: "Residential install", cat: "install" },
-    { srcKey: "spring", alt: "Garage door spring replacement Ottawa", cap: "Spring replacement", cat: "springs" },
-    { srcKey: "springDetail", alt: "Torsion spring and hardware close-up", cap: "Torsion springs", cat: "springs" },
+    { srcKey: "spring", alt: "Broken torsion spring on a garage door — spring replacement Ottawa", cap: "Broken spring", cat: "springs" },
+    { srcKey: "springDetail", alt: "New torsion springs and hardware for replacement", cap: "Springs & parts", cat: "springs" },
     { srcKey: "opener", alt: "Belt-drive garage door opener installation", cap: "Opener install", cat: "openers" },
     { srcKey: "emergency", alt: "Off-track garage door emergency repair", cap: "Emergency repair", cat: "repair" },
     { srcKey: "track", alt: "Garage door track alignment Ottawa", cap: "Track & rollers", cat: "repair" },

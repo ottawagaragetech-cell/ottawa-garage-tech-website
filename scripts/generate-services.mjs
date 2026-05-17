@@ -27,9 +27,17 @@ export const OGT_IMAGES = {
   ],
 };
 
+const springAssets = {
+  broken: "/assets/services/spring-broken-torsion.png",
+  parts: "/assets/services/spring-replacement-parts.png",
+};
+
 const images = {
   emergency: { src: photo("20251015_061012%20(1).jpg"), alt: "Off-track garage door emergency repair Ottawa" },
-  spring: { src: photo("20250110_075357-COLLAGE.jpg"), alt: "Garage door torsion spring replacement Ottawa" },
+  spring: {
+    src: springAssets.broken,
+    alt: "Broken garage door torsion spring with a visible gap above the door",
+  },
   install: { src: photo("blob-2c95119.png"), alt: "New garage door installed in Ottawa" },
   opener: { src: photo("20260227_140936.jpg", 600), alt: "Belt-drive garage door opener installation Ottawa" },
   cable: { src: photo("20250115_105310.jpg"), alt: "Garage door lift cable repair Ottawa" },
@@ -115,7 +123,12 @@ const services = {
       "Balance the door and test several full cycles",
     ],
     bullets: ["Torsion spring systems", "Extension spring systems", "High-cycle spring upgrades", "Balance and tension testing"],
-    inline: { src: photo("blob-f2936a4.png", 600), alt: "Garage door spring and hardware close-up", caption: "Springs must match door weight — incorrect sizing shortens opener life." },
+    inline: {
+      src: springAssets.parts,
+      alt: "New torsion springs, rollers, and hardware ready for garage door spring replacement",
+      caption:
+        "Correctly sized torsion springs and hardware — we match spring weight to your door before installation.",
+    },
     faqs: [
       { q: "Should I replace one or both springs?", a: "Usually both. If one broke, the other is often near end of life. Balanced springs last longer." },
       { q: "Can I open the door with a broken spring?", a: "We do not recommend it — the door is unbalanced and the opener can be damaged." },
@@ -289,6 +302,12 @@ function esc(s) {
   return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/"/g, "&quot;");
 }
 
+function absUrl(src) {
+  if (src.startsWith("http")) return src;
+  if (src.startsWith("/")) return domain + src;
+  return src;
+}
+
 function relatedLinks(slug) {
   return (related[slug] || [])
     .map((s) => `<a href="/services/${s}">${esc(serviceTitles[s])}</a>`)
@@ -318,11 +337,11 @@ function servicePage(slug, data) {
   <meta property="og:title" content="${esc(data.title)}">
   <meta property="og:description" content="${esc(data.desc)}">
   <meta property="og:url" content="${canonical}">
-  <meta property="og:image" content="${img.src}">
+  <meta property="og:image" content="${absUrl(img.src)}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${esc(data.title)}">
   <meta name="twitter:description" content="${esc(data.desc)}">
-  <meta name="twitter:image" content="${img.src}">
+  <meta name="twitter:image" content="${absUrl(img.src)}">
   <link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/css/style.css">
   <script type="application/ld+json">
@@ -333,7 +352,7 @@ function servicePage(slug, data) {
     "description": ${JSON.stringify(data.desc)},
     "provider": {"@type": "LocalBusiness", "name": "Ottawa Garage Tech", "telephone": "+16139006005", "url": "${domain}/"},
     "areaServed": ["Ottawa","Kanata","Barrhaven","Orleans","Nepean"],
-    "image": ${JSON.stringify(img.src)},
+    "image": ${JSON.stringify(absUrl(img.src))},
     "offers": {"@type": "Offer", "priceCurrency": "CAD", "description": ${JSON.stringify(data.priceNote)}}
   }
   </script>
