@@ -1,24 +1,21 @@
 /** Blog post source data — used by scripts/generate-blog.mjs */
 
-const BASE = "https://img1.wsimg.com/isteam/ip/1b277bec-adfe-487a-a8c7-5e77b97e6d1d";
-
-export function photo(file, w = 900) {
-  if (file.startsWith("http")) return file;
-  if (file.includes("blob-") || file.endsWith(".png")) {
-    return `${BASE}/${file}/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:${w},cg:true`;
-  }
-  return `${BASE}/${file}/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:${w},cg:true`;
+/** Stock photos (Unsplash) — not from site gallery or uploaded project photos */
+function stock(id) {
+  return (
+    "https://images.unsplash.com/" +
+    id +
+    "?w=900&q=80&auto=format&fit=crop"
+  );
 }
 
-/** Blog-only images — not used in site gallery (see site-config.js gallery[]) */
 export const BLOG_IMAGES = {
-  pricing: photo("20250121_200049.jpg"),
-  springRepair: photo("IMG-20260206-WA0001(8).jpg"),
-  insulatedHome: photo("20251005_173951.jpg"),
-  troubleshooting: photo("IMG-20260206-WA0000(1).jpg"),
-  replacement: photo("20251025_142148.jpg"),
-  winterPrep:
-    "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?w=900&q=80&auto=format&fit=crop",
+  pricing: stock("photo-1560518883-ce09059eeffa"),
+  springRepair: stock("photo-1562259949-e8e7689d1230"),
+  insulatedHome: stock("photo-1600585154340-be6161a56a0c"),
+  troubleshooting: stock("photo-1604719312566-8912f63b8c02"),
+  replacement: stock("photo-1600607687920-4e2a09ad6fb9"),
+  winterPrep: stock("photo-1491002057096-43156e49445e"),
 };
 
 export const blogPosts = [
@@ -32,7 +29,7 @@ export const blogPosts = [
     category: "Pricing",
     readMin: 7,
     imageKey: "pricing",
-    imageAlt: "Garage door repair pricing and quote — Ottawa home",
+    imageAlt: "House keys and home — garage door repair cost guide",
     relatedServices: ["spring-replacement", "emergency-repair", "maintenance"],
     relatedSlugs: ["broken-garage-door-spring-ottawa", "repair-vs-replace-garage-door"],
     body: `
@@ -88,7 +85,7 @@ export const blogPosts = [
     category: "Springs",
     readMin: 6,
     imageKey: "springRepair",
-    imageAlt: "Broken garage door spring repair — Ottawa technician",
+    imageAlt: "Residential garage door on a home — broken spring guide",
     relatedServices: ["spring-replacement", "emergency-repair", "maintenance"],
     relatedSlugs: ["garage-door-repair-cost-ottawa", "garage-door-wont-close"],
     body: `
@@ -131,7 +128,7 @@ export const blogPosts = [
     category: "Installation",
     readMin: 8,
     imageKey: "insulatedHome",
-    imageAlt: "Insulated garage door on an Ottawa-area home",
+    imageAlt: "Modern home exterior — insulated garage door options",
     relatedServices: ["garage-door-installation", "weather-sealing", "maintenance"],
     relatedSlugs: ["garage-door-winter-prep-ottawa", "repair-vs-replace-garage-door"],
     body: `
@@ -180,7 +177,7 @@ export const blogPosts = [
     category: "Troubleshooting",
     readMin: 7,
     imageKey: "troubleshooting",
-    imageAlt: "Garage door opener and safety sensor troubleshooting",
+    imageAlt: "Garage door on a house — troubleshooting when it will not close",
     relatedServices: ["opener-service", "emergency-repair", "cable-repair"],
     relatedSlugs: ["broken-garage-door-spring-ottawa", "garage-door-repair-cost-ottawa"],
     body: `
@@ -224,7 +221,7 @@ export const blogPosts = [
     category: "Buying guide",
     readMin: 7,
     imageKey: "replacement",
-    imageAlt: "Garage door repair versus replacement — Ottawa residential",
+    imageAlt: "Home interior and renovation — repair vs replace your garage door",
     relatedServices: ["garage-door-installation", "spring-replacement", "maintenance"],
     relatedSlugs: ["insulated-garage-doors-r18-ottawa", "garage-door-repair-cost-ottawa"],
     body: `
@@ -271,7 +268,7 @@ export const blogPosts = [
     category: "Maintenance",
     readMin: 6,
     imageKey: "winterPrep",
-    imageAlt: "Ottawa home and driveway in winter — garage door prep",
+    imageAlt: "Snowy home in winter — preparing your garage door for cold weather",
     relatedServices: ["weather-sealing", "maintenance", "spring-replacement"],
     relatedSlugs: ["insulated-garage-doors-r18-ottawa", "broken-garage-door-spring-ottawa"],
     body: `
