@@ -14,15 +14,23 @@ function photo(file, w = 800) {
   return `${BASE}/${file}/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:${w},cg:true`;
 }
 
+const installAssets = {
+  hero: "/assets/services/install-woodgrain-double.png",
+  barrhaven: "/assets/services/install-barrhaven.png",
+  ottawa: "/assets/services/install-ottawa-grey.png",
+  kanata: "/assets/services/install-kanata.png",
+  orleans: "/assets/services/install-orleans-double.png",
+};
+
 /** Exported for site-config / index */
 export const OGT_IMAGES = {
   hero: photo("blob-fddabbe.png", 900),
   gallery: [
     { src: photo("20260224_153212.jpg", 600), alt: "Garage door hardware, cables, and bottom seal — Ottawa", cap: "Hardware & sealing" },
-    { src: photo("20251106_094900.jpg", 600), alt: "Insulated garage door up to R-18 installed in Ottawa", cap: "Insulated door · Kanata area" },
+    { src: installAssets.kanata, alt: "New garage door installed in Kanata", cap: "Kanata install" },
     { src: photo("20250110_075357-COLLAGE.jpg", 600), alt: "Garage door spring repair before and after", cap: "Spring repair" },
     { src: photo("20260227_140936.jpg", 600), alt: "Belt-drive opener installation", cap: "Opener install" },
-    { src: photo("blob-2c95119.png", 600), alt: "Garage door installation Ottawa", cap: "Door installation" },
+    { src: installAssets.hero, alt: "Wood-grain double garage door installation Ottawa", cap: "Door installation" },
     { src: photo("20251015_061012%20(1).jpg", 600), alt: "Off-track garage door repair", cap: "Emergency repair" },
   ],
 };
@@ -38,7 +46,10 @@ const images = {
     src: springAssets.broken,
     alt: "Broken garage door torsion spring with a visible gap above the door",
   },
-  install: { src: photo("blob-2c95119.png"), alt: "New garage door installed in Ottawa" },
+  install: {
+    src: installAssets.hero,
+    alt: "Wood-grain double garage door installed on a brick Ottawa home",
+  },
   opener: { src: photo("20260227_140936.jpg", 600), alt: "Belt-drive garage door opener installation Ottawa" },
   cable: { src: photo("20250115_105310.jpg"), alt: "Garage door lift cable repair Ottawa" },
   maintenance: { src: photo("20250222_164415.jpg"), alt: "Garage door maintenance and tune-up Ottawa" },
@@ -160,7 +171,11 @@ const services = {
       "Install, seal, balance, and program opener",
     ],
     bullets: ["Single and double residential doors", "Insulated steel panels up to R-18 and classic panels", "Window and colour options", "Opener upgrade available"],
-    inline: { src: photo("20251106_094900.jpg", 600), alt: "Modern insulated garage door up to R-18 installed in Ottawa area", caption: "Recent install — insulated door up to R-18 with clean trim and sealing." },
+    inline: {
+      src: installAssets.barrhaven,
+      alt: "New cream garage door with windows installed in Barrhaven",
+      caption: "Recent Barrhaven install — contemporary door with clean trim and sealing.",
+    },
     faqs: [
       { q: "How long does installation take?", a: "Most single-car replacements are completed in one day once your door arrives." },
       { q: "Do you supply the door?", a: "Yes — we source doors sized for your opening and Ottawa climate, including insulated steel panels up to R-18." },
