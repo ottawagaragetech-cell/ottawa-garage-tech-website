@@ -8,8 +8,8 @@ window.OGT = {
   domain: "https://ottawagaragetech.ca",
   hours: "Mon – Sun · 9:00 AM – 9:00 PM",
   facebook: "https://www.facebook.com/REPLACE_FB_PAGE_ID",
-  /** Quote & contact forms → FormSubmit (not Formspree) */
-  formAction: "https://formsubmit.co/ottawagaragetech@gmail.com",
+  /** Quote & contact forms → same-origin API (see /api/contact) */
+  formAction: "/api/contact",
   serviceArea: "Ottawa, ON and surrounding communities",
 
   images: {

@@ -6,7 +6,7 @@
   if (!form) return;
 
   if (window.OGT_setupForm) {
-    OGT_setupForm(form, { next: cfg.domain + "/contact?sent=1" });
+    OGT_setupForm(form, { thanksId: "ogt-form-thanks" });
   } else {
     form.setAttribute(
       "action",

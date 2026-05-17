@@ -3,7 +3,7 @@
   if (!form || !window.OGT) return;
 
   if (window.OGT_setupForm) {
-    OGT_setupForm(form, { next: OGT.domain + "/?sent=1" });
+    OGT_setupForm(form, { thanksId: "ogt-home-form-thanks" });
   } else {
     form.setAttribute(
       "action",

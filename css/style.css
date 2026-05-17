@@ -745,6 +745,23 @@ a:hover { color: var(--ogt-primary-dark); }
 
 .ogt-form-success.is-visible { display: block; }
 
+.ogt-form-error {
+  display: none;
+  margin: 0 0 var(--ogt-space-md);
+  padding: var(--ogt-space-md);
+  border-radius: var(--ogt-radius-md);
+  background: #fdecea;
+  border: 1px solid #f5c2c0;
+  color: #8a1f17;
+  font-size: var(--ogt-text-sm);
+  line-height: 1.5;
+}
+
+.ogt-form-error.is-visible,
+.ogt-form-error:not([hidden]) {
+  display: block;
+}
+
 /* Nav dropdown */
 .ogt-nav-dropdown-wrap { position: relative; }
 

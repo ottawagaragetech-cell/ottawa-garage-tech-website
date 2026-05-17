@@ -1,65 +1,126 @@
 /**
- * Shared POST setup for contact / quote forms → ottawagaragetech@gmail.com
+ * Contact / quote forms → POST /api/contact (same origin, no FormSubmit redirect)
  */
 (function () {
   var cfg = window.OGT;
   if (!cfg) return;
 
-  function ensureHidden(form, name, value) {
-    var el = form.querySelector('input[name="' + name + '"]');
-    if (!el) {
-      el = document.createElement("input");
-      el.type = "hidden";
-      el.name = name;
-      form.appendChild(el);
+  function findThanks(form, options) {
+    if (options && options.thanksId) {
+      return document.getElementById(options.thanksId);
     }
-    el.value = value;
+    var card = form.closest(".ogt-form-card");
+    if (card) {
+      var el = card.querySelector(".ogt-form-success");
+      if (el) return el;
+    }
+    return document.getElementById("ogt-form-thanks") || document.getElementById("ogt-home-form-thanks");
   }
 
-  function isValidEndpoint(url) {
-    if (!url || typeof url !== "string") return false;
-    if (/REPLACE/i.test(url)) return false;
-    if (/formspree\.io\/f\/REPLACE/i.test(url)) return false;
-    return true;
+  function findOrCreateError(form) {
+    var card = form.closest(".ogt-form-card");
+    var el = card ? card.querySelector(".ogt-form-error") : null;
+    if (!el) {
+      el = document.createElement("div");
+      el.className = "ogt-form-error";
+      el.setAttribute("role", "alert");
+      el.hidden = true;
+      var thanks = card ? card.querySelector(".ogt-form-success") : null;
+      if (thanks && thanks.parentNode) {
+        thanks.parentNode.insertBefore(el, thanks.nextSibling);
+      } else {
+        form.parentNode.insertBefore(el, form);
+      }
+    }
+    return el;
   }
 
-  function formEndpoint() {
-    if (isValidEndpoint(cfg.formAction)) return cfg.formAction;
-    if (isValidEndpoint(cfg.formspree)) return cfg.formspree;
-    return "https://formsubmit.co/" + encodeURIComponent(cfg.email || "ottawagaragetech@gmail.com");
+  function showError(el, message) {
+    if (!el) return;
+    el.textContent = message;
+    el.hidden = false;
+    el.classList.add("is-visible");
+  }
+
+  function hideError(el) {
+    if (!el) return;
+    el.hidden = true;
+    el.classList.remove("is-visible");
   }
 
   window.OGT_setupForm = function (form, options) {
-    if (!form) return;
+    if (!form || form.dataset.ogtBound === "1") return;
+    form.dataset.ogtBound = "1";
     options = options || {};
 
-    form.setAttribute("action", formEndpoint());
+    form.setAttribute("action", "/api/contact");
     form.setAttribute("method", "POST");
+    var thanksEl = findThanks(form, options);
+    var errorEl = findOrCreateError(form);
+    var submitBtn = form.querySelector('[type="submit"]');
+    var defaultLabel = submitBtn ? submitBtn.textContent : "Send message";
 
-    ensureHidden(form, "_template", "table");
-    ensureHidden(form, "_captcha", "false");
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      hideError(errorEl);
 
-    if (options.next) {
-      ensureHidden(form, "_next", options.next);
-    }
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
 
-    if (!form.querySelector('input[name="_replyto"]')) {
-      var reply = document.createElement("input");
-      reply.type = "hidden";
-      reply.name = "_replyto";
-      form.appendChild(reply);
-      form.addEventListener("submit", function () {
-        var emailEl = form.querySelector('input[name="email"]');
-        reply.value = emailEl ? emailEl.value : "";
-      });
-    }
+      var payload = {
+        name: (form.querySelector('[name="name"]') || {}).value || "",
+        email: (form.querySelector('[name="email"]') || {}).value || "",
+        phone: (form.querySelector('[name="phone"]') || {}).value || "",
+        service: (form.querySelector('[name="service"]') || {}).value || "",
+        message: (form.querySelector('[name="message"]') || {}).value || "",
+        _subject:
+          (form.querySelector('[name="_subject"]') || {}).value ||
+          "Ottawa Garage Tech website lead",
+      };
 
-    if (!form.querySelector('input[name="_autoresponse"]')) {
-      ensureHidden(
-        form,
-        "_autoresponse",
-        "Thank you for contacting Ottawa Garage Tech. We received your message and will reply shortly. For urgent garage door issues, call or text (613) 900-6005."
-      );
-    }
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Sending…";
+      }
+
+      fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(payload),
+      })
+        .then(function (res) {
+          return res.json().then(function (json) {
+            return { ok: res.ok, json: json };
+          });
+        })
+        .then(function (result) {
+          if (result.ok && result.json.success) {
+            form.reset();
+            hideError(errorEl);
+            if (thanksEl) thanksEl.classList.add("is-visible");
+            if (options.onSuccess) options.onSuccess();
+            return;
+          }
+          showError(
+            errorEl,
+            (result.json && result.json.message) ||
+              "Something went wrong. Please call (613) 900-6005 or email ottawagaragetech@gmail.com."
+          );
+        })
+        .catch(function () {
+          showError(
+            errorEl,
+            "Connection problem. Please call or text (613) 900-6005, or email ottawagaragetech@gmail.com."
+          );
+        })
+        .finally(function () {
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = defaultLabel;
+          }
+        });
+    });
   };
 })();
