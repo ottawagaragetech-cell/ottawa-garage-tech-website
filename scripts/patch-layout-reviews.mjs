@@ -42,9 +42,7 @@ const repl = `  function renderReviewCard(r) {
   var reviewsSummary = document.getElementById("ogt-reviews-summary");
   if (reviewsSummary && cfg.reviews && cfg.reviews.length) {
     reviewsSummary.innerHTML =
-      '<p class="ogt-reviews-score"><span class="ogt-reviews-score-num">5.0</span><span class="ogt-reviews-score-stars" aria-hidden="true">\\u2605\\u2605\\u2605\\u2605\\u2605</span></p><p class="ogt-reviews-score-meta">Based on ' +
-      cfg.reviews.length +
-      " customer reviews across Ottawa</p>";
+      '<p class="ogt-reviews-score"><span class="ogt-reviews-score-num">5.0</span><span class="ogt-reviews-score-stars" aria-hidden="true">\\u2605\\u2605\\u2605\\u2605\\u2605</span></p>';
   }
 
 `.replace(/<\/motion>/g, "</div>");
