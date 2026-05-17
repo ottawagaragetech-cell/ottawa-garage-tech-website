@@ -367,10 +367,13 @@ a:hover { color: var(--ogt-primary-dark); }
   color: var(--ogt-primary);
 }
 
-.ogt-hero-eyebrow--ca .ogt-maple-leaf {
-  width: 2.25rem;
+.ogt-hero-eyebrow--ca .ogt-ca-flag {
+  width: 2.75rem;
   height: auto;
+  aspect-ratio: 2 / 1;
   flex-shrink: 0;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
 }
 
 .ogt-hero-eyebrow--ca span {
@@ -384,8 +387,8 @@ a:hover { color: var(--ogt-primary-dark); }
     gap: 0.85rem;
   }
 
-  .ogt-hero-eyebrow--ca .ogt-maple-leaf {
-    width: 2.75rem;
+  .ogt-hero-eyebrow--ca .ogt-ca-flag {
+    width: 3.25rem;
   }
 }
 

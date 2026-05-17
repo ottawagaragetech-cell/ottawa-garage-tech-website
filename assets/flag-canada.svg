@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 1" role="img" aria-label="Flag of Canada">
+  <rect width="0.5" height="1" fill="#d52b1e"/>
+  <rect x="0.5" width="1" height="1" fill="#ffffff"/>
+  <rect x="1.5" width="0.5" height="1" fill="#d52b1e"/>
+  <g transform="translate(1 0.5) scale(0.00082) translate(-510 -500)">
+    <path fill="#d52b1e" d="M510,0 L447,224 L334,104 L406,294 L176,61 L273,318 L22,225 L186,391 L0,365 L153,531 L0,635 L158,588 L61,856 L242,666 L191,988 L379,786 L510,1000 L641,786 L829,988 L778,666 L959,856 L862,588 L1020,635 L867,531 L1020,365 L834,391 L998,225 L747,318 L844,61 L614,294 L686,104 L573,224 Z"/>
+  </g>
+</svg>
