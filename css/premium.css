@@ -239,8 +239,18 @@ html.ogt-premium .ogt-hero-stats li {
 }
 
 html.ogt-premium .ogt-hero-stats li:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--ogt-shadow-md);
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: var(--ogt-shadow-lg);
+  border-color: rgba(196, 160, 82, 0.55);
+}
+
+html.ogt-premium .ogt-badge {
+  transition: transform var(--ogt-transition), box-shadow var(--ogt-transition), background var(--ogt-transition);
+}
+
+html.ogt-premium .ogt-badge:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
 }
 
 html.ogt-premium .ogt-hero-collage img {
