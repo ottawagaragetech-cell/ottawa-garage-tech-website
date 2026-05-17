@@ -1,4 +1,4 @@
-(function () {
+﻿(function () {
   var cfg = window.OGT;
   if (!cfg) return;
 
@@ -32,6 +32,119 @@
   function navLink(item) {
     var current = page === item.id ? ' aria-current="page"' : "";
     return '<a href="' + item.href + '"' + current + ">" + esc(item.label) + "</a>";
+  }
+
+  function footerLinks(items) {
+    return (
+      '<ul class="ogt-footer-links">' +
+      items
+        .map(function (item) {
+          var attrs = item.external
+            ? ' target="_blank" rel="noopener noreferrer"'
+            : "";
+          return (
+            '<li><a href="' +
+            esc(item.href) +
+            '"' +
+            attrs +
+            ">" +
+            esc(item.label) +
+            "</a></li>"
+          );
+        })
+        .join("") +
+      "</ul>"
+    );
+  }
+
+  function buildFooter() {
+    var serviceItems = [{ label: "All services", href: "/services" }].concat(
+      (cfg.services || []).map(function (s) {
+        return { label: s.title, href: "/services/" + s.slug };
+      })
+    );
+
+    var areaItems = (cfg.areas || []).slice(0, 8).map(function (a) {
+      return { label: a.name, href: "/areas/" + a.slug };
+    });
+    areaItems.push({ label: "All service areas", href: "/areas" });
+
+    var companyItems = [
+      { label: "About", href: "/about" },
+      { label: "Service areas", href: "/areas" },
+      { label: "Reviews", href: "/#reviews" },
+      { label: "FAQ", href: "/faq" },
+      { label: "Gallery", href: "/gallery" },
+      { label: "Blog", href: "/blog" },
+      { label: "Contact", href: "/contact" },
+      { label: "Privacy", href: "/privacy" },
+      { label: "Terms", href: "/terms" }
+    ];
+
+    return (
+      '<footer class="ogt-footer">' +
+      '<div class="ogt-footer-inner">' +
+      '<div class="ogt-footer-brand">' +
+      '<a class="ogt-footer-logo" href="' +
+      esc(cfg.domain) +
+      '/">' +
+      '<img src="/assets/logo.svg" width="40" height="40" alt="">' +
+      "<span>" +
+      esc(cfg.name) +
+      "</span></a>" +
+      '<p class="ogt-footer-desc">Garage door repair, installation, and openers for Ottawa and nearby communities.</p>' +
+      '<a class="ogt-btn ogt-btn-call ogt-footer-call" href="tel:' +
+      cfg.phoneTel +
+      '">Call ' +
+      esc(cfg.phone) +
+      "</a>" +
+      '<p class="ogt-footer-meta"><strong>Hours</strong> ' +
+      esc(cfg.hours) +
+      "</p>" +
+      '<p class="ogt-footer-meta"><strong>Service area</strong> ' +
+      esc(cfg.serviceArea) +
+      "</p></div>" +
+      '<div class="ogt-footer-col"><h3>Services</h3>' +
+      footerLinks(serviceItems) +
+      "</div>" +
+      '<div class="ogt-footer-col"><h3>Areas we serve</h3>' +
+      footerLinks(areaItems) +
+      "</div>" +
+      '<div class="ogt-footer-col"><h3>Company</h3>' +
+      footerLinks(companyItems) +
+      "</div>" +
+      '<div class="ogt-footer-col ogt-footer-col--contact"><h3>Get in touch</h3>' +
+      '<ul class="ogt-footer-contact">' +
+      "<li><span>Phone</span><a href=\"tel:" +
+      cfg.phoneTel +
+      '">' +
+      esc(cfg.phone) +
+      "</a></li>" +
+      "<li><span>Email</span><a href=\"mailto:" +
+      esc(cfg.email) +
+      '">' +
+      esc(cfg.email) +
+      "</a></li>" +
+      '<li><span>Web</span><a href="' +
+      esc(cfg.domain) +
+      '/">' +
+      esc(cfg.domain.replace(/^https?:\/\//, "")) +
+      "</a></li>" +
+      (cfg.facebook && cfg.facebook.indexOf("REPLACE") === -1
+        ? '<li><span>Social</span><a href="' +
+          esc(cfg.facebook) +
+          '" target="_blank" rel="noopener noreferrer">Facebook</a></li>'
+        : "") +
+      "</ul>" +
+      quoteButton("ogt-btn ogt-btn-secondary ogt-footer-quote", "Free quote", "/contact") +
+      "</div></div>" +
+      '<div class="ogt-footer-bar">' +
+      '<p class="ogt-footer-copy">&copy; <span id="ogt-year"></span> ' +
+      esc(cfg.name) +
+      ". All rights reserved.</p>" +
+      '<p class="ogt-footer-serving">Proudly serving Ottawa, Kanata, Barrhaven, Orleans, and surrounding communities.</p>' +
+      "</div></footer>"
+    );
   }
 
   function serviceLinks() {
@@ -194,47 +307,11 @@
     quoteButton("ogt-btn ogt-btn-secondary ogt-nav-quote", "Free quote", "/contact") +
     "</nav></header>";
 
-  var footerHtml =
-    '<footer class="ogt-footer"><div class="ogt-footer-inner">' +
-    "<div><h3>" +
-    esc(cfg.name) +
-    "</h3><p>Garage door repair, installation, and openers for Ottawa and nearby communities.</p></div>" +
-    '<div><h3>Services</h3><p><a href="/services">All services</a></p>' +
-    cfg.services
-      .slice(0, 4)
-      .map(function (s) {
-        return '<p><a href="/services/' + s.slug + '">' + esc(s.title) + "</a></p>";
-      })
-      .join("") +
-    "</div>" +
-    '<div><h3>Contact</h3>' +
-    '<p><a href="tel:' +
-    cfg.phoneTel +
-    '">' +
-    esc(cfg.phone) +
-    "</a></p>" +
-    '<p><a href="mailto:' +
-    esc(cfg.email) +
-    '">' +
-    esc(cfg.email) +
-    "</a></p>" +
-    '<p><a href="' +
-    esc(cfg.facebook) +
-    '" target="_blank" rel="noopener noreferrer">Facebook</a></p>' +
-    "<p>" +
-    esc(cfg.hours) +
-    "</p></div></div>" +
-    '<div class="ogt-footer-legal">' +
-    '<p><a href="/about">About</a> · <a href="/areas">Areas</a> · <a href="/#reviews">Reviews</a> · <a href="/faq">FAQ</a> · <a href="/gallery">Gallery</a> · <a href="/blog">Blog</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/contact">Contact</a></p>' +
-    "</div>" +
-    '<p class="ogt-footer-bottom">&copy; <span id="ogt-year"></span> ' +
-    esc(cfg.name) +
-    ". All rights reserved.</p></footer>";
 
   var headerEl = document.getElementById("ogt-site-header");
   var footerEl = document.getElementById("ogt-site-footer");
   if (headerEl) headerEl.innerHTML = headerHtml;
-  if (footerEl) footerEl.innerHTML = footerHtml;
+  if (footerEl) footerEl.innerHTML = buildFooter();
 
   var year = document.getElementById("ogt-year");
   if (year) year.textContent = new Date().getFullYear();
@@ -345,9 +422,9 @@
       esc(r.text) +
       '</p><p class="ogt-review-meta"><strong>' +
       esc(r.name) +
-      "</strong> · " +
+      "</strong> Â· " +
       esc(r.area) +
-      " · " +
+      " Â· " +
       esc(r.date) +
       "</p></article>"
     );

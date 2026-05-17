@@ -454,13 +454,15 @@ html.ogt-premium .ogt-cta-band .ogt-btn-accent:hover {
 }
 
 /* —— Footer links —— */
-html.ogt-premium .ogt-footer a {
+html.ogt-premium .ogt-footer-links a,
+html.ogt-premium .ogt-footer-contact a {
   position: relative;
   text-decoration: none;
   transition: color var(--ogt-transition), opacity var(--ogt-transition);
 }
 
-html.ogt-premium .ogt-footer a::after {
+html.ogt-premium .ogt-footer-links a::after,
+html.ogt-premium .ogt-footer-contact a::after {
   content: "";
   position: absolute;
   left: 0;
@@ -473,12 +475,14 @@ html.ogt-premium .ogt-footer a::after {
   transition: transform var(--ogt-transition);
 }
 
-html.ogt-premium .ogt-footer a:hover::after {
+html.ogt-premium .ogt-footer-links a:hover::after,
+html.ogt-premium .ogt-footer-contact a:hover::after {
   transform: scaleX(1);
   transform-origin: left;
 }
 
-html.ogt-premium .ogt-footer a:hover {
+html.ogt-premium .ogt-footer-links a:hover,
+html.ogt-premium .ogt-footer-contact a:hover {
   color: var(--ogt-accent-light);
   opacity: 1;
 }
