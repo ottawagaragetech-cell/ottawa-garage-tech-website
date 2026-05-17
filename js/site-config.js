@@ -72,6 +72,7 @@ window.OGT = {
   ],
 
   trustBadges: [
+    { title: "5.0★ reviews", text: "Five-star rated by Ottawa area customers" },
     { title: "Licensed & insured", text: "Fully licensed technicians and liability coverage" },
     { title: "Upfront quotes", text: "Clear scope and pricing before major work" },
     { title: "Same-day service", text: "When scheduling allows — call or text first" },
