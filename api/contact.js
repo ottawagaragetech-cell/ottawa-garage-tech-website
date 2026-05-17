@@ -80,7 +80,7 @@ async function sendViaResend(data) {
   return null;
 }
 
-async function sendViaFormSubmit(data) {
+function formBody(data) {
   const body = new URLSearchParams();
   body.set("name", data.name || "");
   body.set("email", data.email || "");
@@ -90,23 +90,49 @@ async function sendViaFormSubmit(data) {
   body.set("_subject", data._subject || "Ottawa Garage Tech website lead");
   body.set("_template", "table");
   body.set("_captcha", "false");
+  return body;
+}
 
+async function sendViaFormSubmitAjax(data) {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), 12000);
-
   try {
     const res = await fetch(
       "https://formsubmit.co/ajax/" + encodeURIComponent(TO_EMAIL),
       {
         method: "POST",
-        headers: { Accept: "application/json", "Content-Type": "application/x-www-form-urlencoded" },
-        body: body.toString(),
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: formBody(data).toString(),
         signal: controller.signal,
       }
     );
     clearTimeout(timer);
     const json = await res.json().catch(() => ({}));
-    if (res.ok && json.success !== "false") return { ok: true, provider: "formsubmit" };
+    if (res.ok && json.success !== "false") return { ok: true, provider: "formsubmit-ajax" };
+  } catch (e) {
+    clearTimeout(timer);
+  }
+  return null;
+}
+
+async function sendViaFormSubmitClassic(data) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 12000);
+  try {
+    const res = await fetch("https://formsubmit.co/" + encodeURIComponent(TO_EMAIL), {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: formBody(data).toString(),
+      redirect: "manual",
+      signal: controller.signal,
+    });
+    clearTimeout(timer);
+    if (res.status === 200 || res.status === 302 || res.status === 303) {
+      return { ok: true, provider: "formsubmit" };
+    }
   } catch (e) {
     clearTimeout(timer);
   }
@@ -152,7 +178,7 @@ export default async function handler(req, res) {
     _subject: data._subject || "Ottawa Garage Tech website lead",
   };
 
-  const providers = [sendViaWeb3Forms, sendViaResend, sendViaFormSubmit];
+  const providers = [sendViaWeb3Forms, sendViaResend, sendViaFormSubmitAjax, sendViaFormSubmitClassic];
   for (const send of providers) {
     const result = await send(payload);
     if (result && result.ok) {
