@@ -185,8 +185,12 @@
     '<img src="/assets/logo.svg" width="44" height="44" alt="' +
     esc(cfg.name) +
     ' logo">' +
-    '<span class="ogt-logo-text">' + esc(cfg.name) + "</span></a>" +
+    '<span class="ogt-logo-stack">' +
+    '<span class="ogt-logo-text">' +
+    esc(cfg.name) +
+    "</span>" +
     canadaBadge("ogt-ca-badge ogt-ca-badge--header") +
+    "</span></a>" +
     '<nav class="ogt-nav-desktop" aria-label="Main">' +
     desktopNav() +
     "</nav>" +
