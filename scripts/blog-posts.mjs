@@ -10,13 +10,15 @@ export function photo(file, w = 900) {
   return `${BASE}/${file}/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:${w},cg:true`;
 }
 
+/** Blog-only images — not used in site gallery (see site-config.js gallery[]) */
 export const BLOG_IMAGES = {
-  spring: photo("20250110_075357-COLLAGE.jpg"),
-  install: photo("blob-2c95119.png"),
-  opener: photo("20260227_140936.jpg"),
-  emergency: photo("20251015_061012%20(1).jpg"),
-  weather: photo("20260206_063252.jpg"),
-  maintenance: photo("20250222_164415.jpg"),
+  pricing: photo("20250121_200049.jpg"),
+  springRepair: photo("IMG-20260206-WA0001(8).jpg"),
+  insulatedHome: photo("20251005_173951.jpg"),
+  troubleshooting: photo("IMG-20260206-WA0000(1).jpg"),
+  replacement: photo("20251025_142148.jpg"),
+  winterPrep:
+    "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?w=900&q=80&auto=format&fit=crop",
 };
 
 export const blogPosts = [
@@ -29,8 +31,8 @@ export const blogPosts = [
     date: "2026-03-10",
     category: "Pricing",
     readMin: 7,
-    imageKey: "spring",
-    imageAlt: "Garage door spring repair cost Ottawa",
+    imageKey: "pricing",
+    imageAlt: "Garage door repair pricing and quote — Ottawa home",
     relatedServices: ["spring-replacement", "emergency-repair", "maintenance"],
     relatedSlugs: ["broken-garage-door-spring-ottawa", "repair-vs-replace-garage-door"],
     body: `
@@ -85,8 +87,8 @@ export const blogPosts = [
     date: "2026-02-18",
     category: "Springs",
     readMin: 6,
-    imageKey: "spring",
-    imageAlt: "Broken garage door torsion spring repair Ottawa",
+    imageKey: "springRepair",
+    imageAlt: "Broken garage door spring repair — Ottawa technician",
     relatedServices: ["spring-replacement", "emergency-repair", "maintenance"],
     relatedSlugs: ["garage-door-repair-cost-ottawa", "garage-door-wont-close"],
     body: `
@@ -128,8 +130,8 @@ export const blogPosts = [
     date: "2026-01-22",
     category: "Installation",
     readMin: 8,
-    imageKey: "install",
-    imageAlt: "Insulated garage door up to R-18 installed in Ottawa",
+    imageKey: "insulatedHome",
+    imageAlt: "Insulated garage door on an Ottawa-area home",
     relatedServices: ["garage-door-installation", "weather-sealing", "maintenance"],
     relatedSlugs: ["garage-door-winter-prep-ottawa", "repair-vs-replace-garage-door"],
     body: `
@@ -177,8 +179,8 @@ export const blogPosts = [
     date: "2026-02-05",
     category: "Troubleshooting",
     readMin: 7,
-    imageKey: "opener",
-    imageAlt: "Garage door opener safety sensor alignment Ottawa",
+    imageKey: "troubleshooting",
+    imageAlt: "Garage door opener and safety sensor troubleshooting",
     relatedServices: ["opener-service", "emergency-repair", "cable-repair"],
     relatedSlugs: ["broken-garage-door-spring-ottawa", "garage-door-repair-cost-ottawa"],
     body: `
@@ -221,8 +223,8 @@ export const blogPosts = [
     date: "2025-12-12",
     category: "Buying guide",
     readMin: 7,
-    imageKey: "install",
-    imageAlt: "New garage door replacement versus repair Ottawa",
+    imageKey: "replacement",
+    imageAlt: "Garage door repair versus replacement — Ottawa residential",
     relatedServices: ["garage-door-installation", "spring-replacement", "maintenance"],
     relatedSlugs: ["insulated-garage-doors-r18-ottawa", "garage-door-repair-cost-ottawa"],
     body: `
@@ -268,8 +270,8 @@ export const blogPosts = [
     date: "2025-11-08",
     category: "Maintenance",
     readMin: 6,
-    imageKey: "weather",
-    imageAlt: "Garage door weather sealing before Ottawa winter",
+    imageKey: "winterPrep",
+    imageAlt: "Ottawa home and driveway in winter — garage door prep",
     relatedServices: ["weather-sealing", "maintenance", "spring-replacement"],
     relatedSlugs: ["insulated-garage-doors-r18-ottawa", "broken-garage-door-spring-ottawa"],
     body: `

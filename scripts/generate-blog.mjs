@@ -65,7 +65,7 @@ function relatedServicesHtml(post) {
 
 function articlePage(post) {
   const canonical = domain + "/blog/" + post.slug;
-  const img = BLOG_IMAGES[post.imageKey] || BLOG_IMAGES.spring;
+  const img = BLOG_IMAGES[post.imageKey] || BLOG_IMAGES.pricing;
   const isoDate = post.date + "T09:00:00-05:00";
 
   return `<!DOCTYPE html>
@@ -184,7 +184,7 @@ function formatDate(iso) {
 }
 
 function card(post) {
-  const img = BLOG_IMAGES[post.imageKey] || BLOG_IMAGES.spring;
+  const img = BLOG_IMAGES[post.imageKey] || BLOG_IMAGES.pricing;
   return (
     '<article class="ogt-blog-card">' +
     '<a class="ogt-blog-card-img" href="/blog/' +
@@ -282,7 +282,7 @@ function indexPage() {
         <a class="ogt-btn ogt-btn-primary" href="/contact">Get a quote</a>
       </div>
       <div class="ogt-page-hero-media">
-        <img src="${BLOG_IMAGES.spring}" width="800" height="500" alt="Garage door service tips Ottawa" loading="eager">
+        <img src="${BLOG_IMAGES.insulatedHome}" width="800" height="500" alt="Garage door tips for Ottawa homeowners" loading="eager">
       </div>
     </div>
 
