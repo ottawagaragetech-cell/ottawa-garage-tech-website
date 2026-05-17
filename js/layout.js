@@ -21,13 +21,15 @@
     return "mailto:" + cfg.email + "?subject=" + subject + "&body=" + body;
   }
 
-  function quoteEmailButton(className) {
+  function quoteEmailButton(className, label) {
     return (
       '<a class="' +
       (className || "ogt-btn ogt-btn-secondary") +
       '" href="' +
       quoteMailtoHref() +
-      '">Free quote by email</a>'
+      '">' +
+      esc(label || "Free quote by email") +
+      "</a>"
     );
   }
 
@@ -82,7 +84,7 @@
     '">Call ' +
     esc(cfg.phone) +
     "</a>" +
-    quoteEmailButton("ogt-btn ogt-btn-secondary ogt-header-quote") +
+    quoteEmailButton("ogt-btn ogt-btn-secondary ogt-header-quote", "Free quote") +
     "</div>" +
     '<button class="ogt-menu-btn" type="button" aria-expanded="false" aria-controls="ogt-nav-mobile" aria-label="Open menu">' +
     "<span></span><span></span><span></span></button></div>" +

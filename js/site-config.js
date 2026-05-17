@@ -91,7 +91,7 @@ window.OGT = {
   nav: [
     { id: "home", label: "Home", href: "/" },
     { id: "services", label: "Services", href: "/services" },
-    { id: "areas", label: "Service areas", href: "/areas" },
+    { id: "areas", label: "Areas", href: "/areas" },
     { id: "about", label: "About", href: "/about" },
     { id: "faq", label: "FAQ", href: "/faq" },
     { id: "gallery", label: "Gallery", href: "/gallery" },

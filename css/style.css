@@ -79,6 +79,10 @@ a:hover { color: var(--ogt-primary-dark); }
   display: flex;
   align-items: center;
   gap: var(--ogt-space-sm);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+  max-width: 17rem;
   text-decoration: none;
   color: var(--ogt-text);
 }
@@ -108,7 +112,10 @@ a:hover { color: var(--ogt-primary-dark); }
 .ogt-nav-desktop {
   display: none;
   align-items: center;
-  gap: var(--ogt-space-lg);
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--ogt-space-md);
+  min-width: 0;
   font-family: var(--ogt-font-display);
   font-size: var(--ogt-text-sm);
   font-weight: 600;
@@ -202,11 +209,35 @@ a:hover { color: var(--ogt-primary-dark); }
   text-align: center;
 }
 
-@media (min-width: 768px) {
+/* Full desktop header needs room for logo + nav + CTAs (avoids "Home" over logo) */
+@media (min-width: 1180px) {
   .ogt-menu-btn { display: none; }
+  .ogt-header-inner {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    column-gap: var(--ogt-space-lg);
+  }
   .ogt-nav-desktop { display: flex; }
   .ogt-header-ctas { display: inline-flex; }
   .ogt-nav-mobile { display: none !important; }
+}
+
+@media (min-width: 1180px) and (max-width: 1320px) {
+  .ogt-logo-sub { display: none; }
+  .ogt-logo-text { font-size: 0.9rem; }
+  .ogt-nav-desktop {
+    gap: 0.5rem 0.65rem;
+    font-size: 0.8125rem;
+  }
+  .ogt-nav-dropdown-btn {
+    padding: 8px 10px;
+    font-size: 0.8125rem;
+  }
+  .ogt-header-quote {
+    font-size: 0.75rem;
+    padding: 0.5em 0.65em;
+  }
 }
 
 /* Buttons — 8px radius, not GDS pills */
