@@ -98,27 +98,28 @@ a:hover { color: var(--ogt-primary-dark); }
   font-size: var(--ogt-text-sm);
   line-height: 1.2;
   letter-spacing: -0.02em;
+  white-space: nowrap;
 }
 
 .ogt-logo-sub {
-  display: block;
-  font-size: var(--ogt-text-xs);
-  font-weight: 500;
-  color: var(--ogt-accent-dark);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  display: none;
 }
 
 .ogt-nav-desktop {
   display: none;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: var(--ogt-space-md);
+  flex-wrap: nowrap;
+  gap: var(--ogt-space-sm);
   min-width: 0;
   font-family: var(--ogt-font-display);
   font-size: var(--ogt-text-sm);
   font-weight: 600;
+}
+
+.ogt-nav-desktop a,
+.ogt-nav-dropdown-btn {
+  white-space: nowrap;
 }
 
 .ogt-nav-desktop a {
@@ -213,30 +214,49 @@ a:hover { color: var(--ogt-primary-dark); }
 @media (min-width: 1180px) {
   .ogt-menu-btn { display: none; }
   .ogt-header-inner {
-    display: grid;
-    grid-template-columns: auto minmax(0, 1fr) auto;
+    display: flex;
+    flex-wrap: nowrap;
     align-items: center;
-    column-gap: var(--ogt-space-lg);
+    justify-content: space-between;
+    gap: var(--ogt-space-md);
   }
-  .ogt-nav-desktop { display: flex; }
-  .ogt-header-ctas { display: inline-flex; }
+  .ogt-logo {
+    max-width: none;
+  }
+  .ogt-nav-desktop {
+    display: flex;
+    flex: 1 1 auto;
+    justify-content: center;
+    min-width: 0;
+  }
+  .ogt-header-ctas {
+    display: inline-flex;
+    flex-shrink: 0;
+  }
   .ogt-nav-mobile { display: none !important; }
 }
 
-@media (min-width: 1180px) and (max-width: 1320px) {
-  .ogt-logo-sub { display: none; }
-  .ogt-logo-text { font-size: 0.9rem; }
+@media (min-width: 1180px) and (max-width: 1440px) {
+  .ogt-logo-text { font-size: 0.875rem; }
+  .ogt-logo img {
+    width: 40px;
+    height: 40px;
+  }
   .ogt-nav-desktop {
-    gap: 0.5rem 0.65rem;
-    font-size: 0.8125rem;
+    gap: 0.4rem 0.5rem;
+    font-size: 0.78rem;
   }
   .ogt-nav-dropdown-btn {
-    padding: 8px 10px;
-    font-size: 0.8125rem;
+    padding: 6px 8px;
+    font-size: 0.78rem;
+  }
+  .ogt-btn-call {
+    font-size: 0.78rem;
+    padding: 0.5em 0.75em;
   }
   .ogt-header-quote {
-    font-size: 0.75rem;
-    padding: 0.5em 0.65em;
+    font-size: 0.72rem;
+    padding: 0.45em 0.6em;
   }
 }
 

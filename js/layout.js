@@ -72,18 +72,16 @@
     '<img src="/assets/logo.svg" width="44" height="44" alt="' +
     esc(cfg.name) +
     ' logo">' +
-    '<span class="ogt-logo-text">' +
-    esc(cfg.name) +
-    '<span class="ogt-logo-sub">Garage doors · Ottawa</span></span></a>' +
+    '<span class="ogt-logo-text">' + esc(cfg.name) + "</span></a>" +
     '<nav class="ogt-nav-desktop" aria-label="Main">' +
     desktopNav() +
     "</nav>" +
     '<div class="ogt-header-ctas">' +
     '<a class="ogt-btn ogt-btn-call" href="tel:' +
     cfg.phoneTel +
-    '">Call ' +
+    '" aria-label="Call ' +
     esc(cfg.phone) +
-    "</a>" +
+    '">Call</a>' +
     quoteEmailButton("ogt-btn ogt-btn-secondary ogt-header-quote", "Free quote") +
     "</div>" +
     '<button class="ogt-menu-btn" type="button" aria-expanded="false" aria-controls="ogt-nav-mobile" aria-label="Open menu">' +
