@@ -34,7 +34,7 @@ function buildHtml(data) {
 }
 
 async function sendViaWeb3Forms(data) {
-  const key = process.env.WEB3FORMS_ACCESS_KEY;
+  const key = (process.env.WEB3FORMS_ACCESS_KEY || "").trim();
   if (!key) return null;
 
   const res = await fetch("https://api.web3forms.com/submit", {

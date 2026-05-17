@@ -5,7 +5,7 @@
   var cfg = window.OGT;
   if (!cfg) return;
 
-  var web3formsKey = cfg.web3formsAccessKey || "";
+  var web3formsKey = (cfg.web3formsAccessKey || "").trim();
   var configLoaded = !web3formsKey ? loadFormConfig() : Promise.resolve();
 
   function loadFormConfig() {
@@ -15,7 +15,7 @@
       })
       .then(function (json) {
         if (json && json.web3formsAccessKey) {
-          web3formsKey = json.web3formsAccessKey;
+          web3formsKey = String(json.web3formsAccessKey).trim();
         }
       })
       .catch(function () {});
