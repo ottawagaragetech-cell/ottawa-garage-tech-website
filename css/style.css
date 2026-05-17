@@ -1729,25 +1729,19 @@ body.ogt-lightbox-open {
   .ogt-hero--visual { grid-template-columns: 1fr 1.05fr; gap: var(--ogt-space-3xl); }
 }
 .ogt-hero-stats {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--ogt-space-md);
-  margin: var(--ogt-space-xl) 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: var(--ogt-space-lg) 0 0;
   padding: 0;
   list-style: none;
 }
 
-@media (min-width: 640px) {
-  .ogt-hero-stats {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
 .ogt-hero-stats li {
-  flex: unset;
-  padding: var(--ogt-space-sm) var(--ogt-space-md);
+  flex: 0 0 auto;
+  padding: 0.35rem 0.65rem;
   background: var(--ogt-accent-soft);
-  border-radius: var(--ogt-radius-md);
+  border-radius: var(--ogt-radius-sm);
   border: 1px solid var(--ogt-border);
   cursor: default;
   transition:
@@ -1758,10 +1752,10 @@ body.ogt-lightbox-open {
 }
 
 .ogt-hero-stats li:hover {
-  transform: translateY(-4px);
+  transform: translateY(-2px);
   border-color: var(--ogt-accent);
   background: var(--ogt-bg-elevated);
-  box-shadow: var(--ogt-shadow-md);
+  box-shadow: var(--ogt-shadow-sm);
 }
 
 .ogt-hero-stats li:focus-within {
@@ -1771,8 +1765,11 @@ body.ogt-lightbox-open {
 .ogt-hero-stats strong {
   display: block;
   font-family: var(--ogt-font-display);
-  font-size: var(--ogt-text-lg);
+  font-size: var(--ogt-text-xs);
+  font-weight: 700;
+  line-height: 1.25;
   color: var(--ogt-primary-dark);
+  white-space: nowrap;
 }
 .ogt-hero-stats span { font-size: var(--ogt-text-xs); color: var(--ogt-text-muted); }
 .ogt-hero-stats a { color: var(--ogt-primary); text-decoration: none; font-weight: 600; }

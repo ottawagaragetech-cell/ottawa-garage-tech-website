@@ -231,16 +231,16 @@ html.ogt-premium .ogt-hero-eyebrow {
 
 html.ogt-premium .ogt-hero-stats li {
   background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.9);
   box-shadow: var(--ogt-shadow-sm);
-  border-radius: var(--ogt-radius-lg);
+  border-radius: var(--ogt-radius-sm);
   transition: transform var(--ogt-transition), box-shadow var(--ogt-transition);
 }
 
 html.ogt-premium .ogt-hero-stats li:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: var(--ogt-shadow-lg);
+  transform: translateY(-2px);
+  box-shadow: var(--ogt-shadow-md);
   border-color: rgba(196, 160, 82, 0.55);
 }
 
