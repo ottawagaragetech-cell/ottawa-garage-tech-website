@@ -178,7 +178,8 @@ export default async function handler(req, res) {
     _subject: data._subject || "Ottawa Garage Tech website lead",
   };
 
-  const providers = [sendViaWeb3Forms, sendViaResend, sendViaFormSubmitAjax, sendViaFormSubmitClassic];
+  // Web3Forms blocks datacenter/server requests (Cloudflare); browser submits directly instead.
+  const providers = [sendViaResend, sendViaFormSubmitAjax, sendViaFormSubmitClassic];
   for (const send of providers) {
     const result = await send(payload);
     if (result && result.ok) {

@@ -174,10 +174,10 @@
 
       configLoaded
         .then(function () {
-          return sendViaWeb3Forms(payload).then(function (result) {
-            if (result.ok) return result;
-            return sendViaApi(payload);
-          });
+          if (web3formsKey) {
+            return sendViaWeb3Forms(payload);
+          }
+          return sendViaApi(payload);
         })
         .then(function (result) {
           if (result.ok) {
