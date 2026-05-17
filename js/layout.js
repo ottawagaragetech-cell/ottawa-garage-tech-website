@@ -13,20 +13,12 @@
       .replace(/"/g, "&quot;");
   }
 
-  function quoteMailtoHref() {
-    var subject = encodeURIComponent(cfg.quoteEmailSubject || "Free quote request — Ottawa Garage Tech");
-    var body = encodeURIComponent(
-      "Hi,\n\nI would like a free quote for garage door service.\n\nName:\nPhone:\nArea/neighbourhood:\nDetails:\n"
-    );
-    return "mailto:" + cfg.email + "?subject=" + subject + "&body=" + body;
-  }
-
   function quoteButton(className, label, href) {
     return (
       '<a class="' +
       (className || "ogt-btn ogt-btn-secondary") +
       '" href="' +
-      esc(href || "/contact") +
+      (href || "/contact") +
       '">' +
       esc(label || "Free quote") +
       "</a>"
@@ -34,7 +26,7 @@
   }
 
   function quoteEmailButton(className, label) {
-    return quoteButton(className, label || "Free quote by email", quoteMailtoHref());
+    return quoteButton(className, label || "Free quote by email", "/contact");
   }
 
   function navLink(item) {
@@ -399,34 +391,32 @@
     window.addEventListener("scroll", onScroll, { passive: true });
   }
 
-  function hasQuoteEmailAction(container) {
-    return !!container.querySelector('a[href^="mailto:"]');
+  function hasQuoteFormLink(container) {
+    return !!container.querySelector('a[href="/contact"], a[href^="/contact?"], a[href="#ogt-quote-form"]');
   }
 
   function appendQuoteEmail(container, className) {
-    if (!container || hasQuoteEmailAction(container)) return;
+    if (!container || hasQuoteFormLink(container)) return;
     container.insertAdjacentHTML("beforeend", quoteEmailButton(className));
   }
 
+  function fixQuoteMailtoLinks(container) {
+    if (!container) return;
+    container.querySelectorAll('a[href^="mailto:"]').forEach(function (link) {
+      if (/quote|email/i.test(link.textContent)) {
+        link.href = container.closest("[data-ogt-page='contact']") ? "#ogt-quote-form" : "/contact";
+      }
+    });
+  }
+
   document.querySelectorAll(".ogt-contact-quick").forEach(function (el) {
-    if (hasQuoteEmailAction(el)) return;
-    var contactQuote = el.querySelector('a[href^="/contact"]');
-    if (contactQuote && /quote|contact/i.test(contactQuote.textContent)) {
-      contactQuote.href = quoteMailtoHref();
-      contactQuote.textContent = "Free quote by email";
-      return;
-    }
+    fixQuoteMailtoLinks(el);
     appendQuoteEmail(el);
   });
 
   document.querySelectorAll(".ogt-hero-actions").forEach(function (el) {
-    var quoteLink = el.querySelector('a[href="/contact"]');
-    if (quoteLink && !hasQuoteEmailAction(el)) {
-      quoteLink.href = quoteMailtoHref();
-      quoteLink.textContent = "Free quote by email";
-    } else {
-      appendQuoteEmail(el);
-    }
+    fixQuoteMailtoLinks(el);
+    appendQuoteEmail(el);
   });
 
   document.querySelectorAll(".ogt-cta-band").forEach(function (band) {
