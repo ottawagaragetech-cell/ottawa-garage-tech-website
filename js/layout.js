@@ -50,6 +50,90 @@
       .join("");
   }
 
+  function isAreasSection() {
+    if (page === "areas") return true;
+    return /\/areas\/[^/]+/.test(window.location.pathname);
+  }
+
+  function areaRegionOrder() {
+    return ["west", "south", "east", "central", "outer"];
+  }
+
+  function areaRegionLabel(id) {
+    if (cfg.areaRegions && cfg.areaRegions[id]) return cfg.areaRegions[id];
+    return id;
+  }
+
+  function buildAreasDropdown() {
+    var cols = "";
+    areaRegionOrder().forEach(function (regionId) {
+      var items = (cfg.areas || []).filter(function (a) {
+        return (a.region || "central") === regionId;
+      });
+      if (!items.length) return;
+      cols +=
+        '<div class="ogt-nav-dropdown-col"><p class="ogt-nav-dropdown-group">' +
+        esc(areaRegionLabel(regionId)) +
+        "</p>" +
+        items
+          .map(function (a) {
+            return (
+              '<a href="/areas/' +
+              esc(a.slug) +
+              '" role="menuitem">' +
+              esc(a.name) +
+              "</a>"
+            );
+          })
+          .join("") +
+        "</div>";
+    });
+    return (
+      '<div class="ogt-nav-dropdown ogt-nav-dropdown--areas" role="menu">' +
+      '<a href="/areas" role="menuitem" class="ogt-nav-dropdown-all">All service areas</a>' +
+      '<div class="ogt-nav-dropdown-columns">' +
+      cols +
+      "</div></div>"
+    );
+  }
+
+  function mobileAreaLinks() {
+    if (!cfg.areas) return "";
+    var html = '<a href="/areas">All service areas</a>';
+    areaRegionOrder().forEach(function (regionId) {
+      var items = cfg.areas.filter(function (a) {
+        return (a.region || "central") === regionId;
+      });
+      if (!items.length) return;
+      html +=
+        '<p class="ogt-nav-mobile-label ogt-nav-mobile-label--sub">' +
+        esc(areaRegionLabel(regionId)) +
+        "</p>";
+      items.forEach(function (a) {
+        html += '<a href="/areas/' + esc(a.slug) + '">' + esc(a.name) + "</a>";
+      });
+    });
+    return html;
+  }
+
+  function renderAreasGrouped() {
+    return areaRegionOrder()
+      .map(function (regionId) {
+        var items = cfg.areas.filter(function (a) {
+          return (a.region || "central") === regionId;
+        });
+        if (!items.length) return "";
+        return (
+          '<div class="ogt-areas-region"><h3 class="ogt-areas-region-title">' +
+          esc(areaRegionLabel(regionId)) +
+          '</h3><div class="ogt-areas-grid">' +
+          items.map(areaChip).join("") +
+          "</div></div>"
+        );
+      })
+      .join("");
+  }
+
   function desktopNav() {
     var html = "";
     cfg.nav.forEach(function (item) {
@@ -61,6 +145,17 @@
           '<a href="/services" role="menuitem">All services</a>' +
           serviceLinks() +
           "</div></div>";
+        return;
+      }
+      if (item.id === "areas") {
+        var areasCurrent = isAreasSection() ? ' aria-current="page"' : "";
+        html +=
+          '<div class="ogt-nav-dropdown-wrap ogt-nav-dropdown-wrap--areas">' +
+          '<button type="button" class="ogt-nav-dropdown-btn"' +
+          areasCurrent +
+          ' aria-expanded="false" aria-haspopup="true">Areas</button>' +
+          buildAreasDropdown() +
+          "</div>";
         return;
       }
       html += navLink(item);
@@ -91,9 +186,16 @@
     '<button class="ogt-menu-btn" type="button" aria-expanded="false" aria-controls="ogt-nav-mobile" aria-label="Open menu">' +
     "<span></span><span></span><span></span></button></div>" +
     '<nav id="ogt-nav-mobile" class="ogt-nav-mobile" aria-label="Mobile">' +
-    cfg.nav.map(navLink).join("") +
+    cfg.nav
+      .filter(function (item) {
+        return item.id !== "areas";
+      })
+      .map(navLink)
+      .join("") +
     '<p class="ogt-nav-mobile-label">Services</p>' +
     serviceLinks() +
+    '<p class="ogt-nav-mobile-label">Service areas</p>' +
+    mobileAreaLinks() +
     '<a class="ogt-btn ogt-btn-call" href="tel:' +
     cfg.phoneTel +
     '">Call now</a>' +
@@ -225,7 +327,9 @@
 
   var areasGrid = document.getElementById("ogt-areas-grid");
   if (areasGrid && cfg.areas) {
-    areasGrid.innerHTML = cfg.areas.map(areaChip).join("");
+    areasGrid.innerHTML = areasGrid.classList.contains("ogt-areas-grouped")
+      ? renderAreasGrouped()
+      : cfg.areas.map(areaChip).join("");
   }
 
   var homeAreas = document.getElementById("ogt-home-areas");

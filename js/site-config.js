@@ -182,125 +182,164 @@ window.OGT = {
   areas: [
     {
       "name": "Ottawa",
-      "slug": "ottawa"
+      "slug": "ottawa",
+      "region": "central"
     },
     {
       "name": "Kanata",
-      "slug": "kanata"
+      "slug": "kanata",
+      "region": "west"
     },
     {
       "name": "Stittsville",
-      "slug": "stittsville"
+      "slug": "stittsville",
+      "region": "west"
     },
     {
       "name": "Barrhaven",
-      "slug": "barrhaven"
+      "slug": "barrhaven",
+      "region": "south"
     },
     {
       "name": "Nepean",
-      "slug": "nepean"
+      "slug": "nepean",
+      "region": "south"
     },
     {
       "name": "Orleans",
-      "slug": "orleans"
+      "slug": "orleans",
+      "region": "east"
     },
     {
       "name": "Gloucester",
-      "slug": "gloucester"
+      "slug": "gloucester",
+      "region": "east"
     },
     {
       "name": "Manotick",
-      "slug": "manotick"
+      "slug": "manotick",
+      "region": "south"
     },
     {
       "name": "Richmond",
-      "slug": "richmond"
+      "slug": "richmond",
+      "region": "west"
     },
     {
       "name": "Carp",
-      "slug": "carp"
+      "slug": "carp",
+      "region": "west"
     },
     {
       "name": "Rockland",
-      "slug": "rockland"
+      "slug": "rockland",
+      "region": "east"
     },
     {
       "name": "Kemptville",
-      "slug": "kemptville"
+      "slug": "kemptville",
+      "region": "outer"
     },
     {
       "name": "Carleton Place",
-      "slug": "carleton-place"
+      "slug": "carleton-place",
+      "region": "outer"
     },
     {
       "name": "Alta Vista",
-      "slug": "alta-vista"
+      "slug": "alta-vista",
+      "region": "central"
     },
     {
       "name": "Westboro",
-      "slug": "westboro"
+      "slug": "westboro",
+      "region": "west"
     },
     {
       "name": "Vanier",
-      "slug": "vanier"
+      "slug": "vanier",
+      "region": "central"
     },
     {
       "name": "Hunt Club",
-      "slug": "hunt-club"
+      "slug": "hunt-club",
+      "region": "central"
     },
     {
       "name": "Riverside South",
-      "slug": "riverside-south"
+      "slug": "riverside-south",
+      "region": "south"
     },
     {
       "name": "Findlay Creek",
-      "slug": "findlay-creek"
+      "slug": "findlay-creek",
+      "region": "south"
     },
     {
       "name": "Greely",
-      "slug": "greely"
+      "slug": "greely",
+      "region": "south"
     },
     {
       "name": "Metcalfe",
-      "slug": "metcalfe"
+      "slug": "metcalfe",
+      "region": "south"
     },
     {
       "name": "Osgoode",
-      "slug": "osgoode"
+      "slug": "osgoode",
+      "region": "south"
     },
     {
       "name": "Dunrobin",
-      "slug": "dunrobin"
+      "slug": "dunrobin",
+      "region": "west"
     },
     {
       "name": "Constance Bay",
-      "slug": "constance-bay"
+      "slug": "constance-bay",
+      "region": "outer"
     },
     {
       "name": "Cumberland",
-      "slug": "cumberland"
+      "slug": "cumberland",
+      "region": "east"
     },
     {
       "name": "Blackburn Hamlet",
-      "slug": "blackburn-hamlet"
+      "slug": "blackburn-hamlet",
+      "region": "east"
     },
     {
       "name": "Beacon Hill",
-      "slug": "beacon-hill"
+      "slug": "beacon-hill",
+      "region": "east"
     },
     {
       "name": "Glebe",
-      "slug": "glebe"
+      "slug": "glebe",
+      "region": "central"
     },
     {
       "name": "Sandy Hill",
-      "slug": "sandy-hill"
+      "slug": "sandy-hill",
+      "region": "central"
     },
     {
       "name": "Rockcliffe Park",
-      "slug": "rockcliffe-park"
+      "slug": "rockcliffe-park",
+      "region": "central"
     }
   ],
+
+  /** Region labels for nav and area index */
+  areaRegions: {
+    "west": "West end",
+    "south": "South end",
+    "east": "East end",
+    "central": "Central Ottawa",
+    "outer": "Outer communities"
+  },
 
   /** Approximate centre points for the service-area map (lat, lng) */
   areaGeo: {

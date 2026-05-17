@@ -196,7 +196,7 @@ function areaPage(area, index) {
         ${intro.map((p) => `<p class="ogt-section-intro">${esc(p)}</p>`).join("")}
         <div class="ogt-contact-quick">
           <a class="ogt-btn ogt-btn-primary" href="tel:+16139006005">Call (613) 900-6005</a>
-          <a class="ogt-btn ogt-btn-secondary" href="mailto:ottawagaragetech@gmail.com?subject=Free%20quote%20request%20%E2%80%94%20Ottawa%20Garage%20Tech">Free quote by email</a>
+          <a class="ogt-btn ogt-btn-secondary" href="/contact?area=${area.slug}">Request a quote</a>
         </div>
       </div>
       <figure class="ogt-service-hero-img">
@@ -262,12 +262,24 @@ AREAS.forEach((area, i) => {
 const cfgPath = path.join(root, "js", "site-config.js");
 let cfg = fs.readFileSync(cfgPath, "utf8");
 const areasJson = JSON.stringify(
-  AREAS.map((a) => ({ name: a.name, slug: a.slug })),
+  AREAS.map((a) => ({ name: a.name, slug: a.slug, region: a.region })),
   null,
   2
 ).replace(/\n/g, "\n  ");
 
-cfg = cfg.replace(/areas:\s*\[[\s\S]*?\],\s*\n\s*faqs:/, `areas: ${areasJson},\n\n  faqs:`);
+const regionLabelsJson = JSON.stringify(
+  {
+    west: "West end",
+    south: "South end",
+    east: "East end",
+    central: "Central Ottawa",
+    outer: "Outer communities",
+  },
+  null,
+  2
+).replace(/\n/g, "\n  ");
+
+cfg = cfg.replace(/areas:\s*\[[\s\S]*?\],\s*\n\s*\/\*\* Approximate/, `areas: ${areasJson},\n\n  /** Region labels for nav and area index */\n  areaRegions: ${regionLabelsJson},\n\n  /** Approximate`);
 fs.writeFileSync(cfgPath, cfg);
 
 const sitemapPath = path.join(root, "sitemap.xml");
