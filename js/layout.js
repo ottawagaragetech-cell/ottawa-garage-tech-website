@@ -159,13 +159,33 @@
     });
   }
 
-  document.querySelectorAll(".ogt-nav-dropdown-btn").forEach(function (btn) {
-    var wrap = btn.closest(".ogt-nav-dropdown-wrap");
-    if (!wrap) return;
+  document.querySelectorAll(".ogt-nav-dropdown-wrap").forEach(function (wrap) {
+    var btn = wrap.querySelector(".ogt-nav-dropdown-btn");
+    if (!btn) return;
+
+    function setOpen(open) {
+      btn.setAttribute("aria-expanded", String(open));
+      wrap.classList.toggle("is-open", open);
+    }
+
     btn.addEventListener("click", function () {
-      var open = btn.getAttribute("aria-expanded") === "true";
-      btn.setAttribute("aria-expanded", String(!open));
-      wrap.classList.toggle("is-open", !open);
+      setOpen(btn.getAttribute("aria-expanded") !== "true");
+    });
+
+    wrap.addEventListener("mouseenter", function () {
+      setOpen(true);
+    });
+
+    wrap.addEventListener("mouseleave", function () {
+      setOpen(false);
+    });
+
+    wrap.addEventListener("focusin", function () {
+      setOpen(true);
+    });
+
+    wrap.addEventListener("focusout", function (e) {
+      if (!wrap.contains(e.relatedTarget)) setOpen(false);
     });
   });
 
