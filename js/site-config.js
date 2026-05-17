@@ -10,7 +10,7 @@ window.OGT = {
   facebook: "https://www.facebook.com/REPLACE_FB_PAGE_ID",
   /** Quote & contact forms → Web3Forms (set key on Vercel or here) */
   formAction: "/api/contact",
-  web3formsAccessKey: "",
+  web3formsAccessKey: "2fc6b3ec-e3e3-4d43-a612-743c96999c96",
   serviceArea: "Ottawa, ON and surrounding communities",
 
   images: {
