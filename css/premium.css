@@ -229,6 +229,21 @@ html.ogt-premium .ogt-hero-eyebrow {
   letter-spacing: 0.16em;
 }
 
+html.ogt-premium .ogt-hero-eyebrow--ca {
+  color: var(--ogt-primary-dark);
+  letter-spacing: 0.07em;
+}
+
+@media (min-width: 768px) {
+  html.ogt-premium .ogt-hero-eyebrow--ca {
+    font-size: 1.25rem;
+  }
+
+  html.ogt-premium .ogt-hero-eyebrow--ca .ogt-maple-leaf {
+    width: 3rem;
+  }
+}
+
 html.ogt-premium .ogt-hero-stats li {
   background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(8px);

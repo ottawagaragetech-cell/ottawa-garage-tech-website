@@ -29,28 +29,6 @@
     return quoteButton(className, label || "Free quote by email", "/contact");
   }
 
-  function canadaFlagImg(className, width, height) {
-    return (
-      '<img class="' +
-      (className || "ogt-ca-flag") +
-      '" src="/assets/flag-ca.svg" width="' +
-      (width || 24) +
-      '" height="' +
-      (height || 12) +
-      '" alt="" aria-hidden="true">'
-    );
-  }
-
-  function canadaBadge(className) {
-    return (
-      '<span class="' +
-      (className || "ogt-ca-badge") +
-      '" aria-label="Canadian owned business">' +
-      canadaFlagImg("ogt-ca-flag") +
-      "<span>Canadian owned</span></span>"
-    );
-  }
-
   function navLink(item) {
     var current = page === item.id ? ' aria-current="page"' : "";
     return '<a href="' + item.href + '"' + current + ">" + esc(item.label) + "</a>";
@@ -185,12 +163,7 @@
     '<img src="/assets/logo.svg" width="44" height="44" alt="' +
     esc(cfg.name) +
     ' logo">' +
-    '<span class="ogt-logo-stack">' +
-    '<span class="ogt-logo-text">' +
-    esc(cfg.name) +
-    "</span>" +
-    canadaBadge("ogt-ca-badge ogt-ca-badge--header") +
-    "</span></a>" +
+    '<span class="ogt-logo-text">' + esc(cfg.name) + "</span></a>" +
     '<nav class="ogt-nav-desktop" aria-label="Main">' +
     desktopNav() +
     "</nav>" +
