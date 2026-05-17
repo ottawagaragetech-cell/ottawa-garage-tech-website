@@ -8,8 +8,9 @@ window.OGT = {
   domain: "https://ottawagaragetech.ca",
   hours: "Mon – Sun · 9:00 AM – 9:00 PM",
   facebook: "https://www.facebook.com/REPLACE_FB_PAGE_ID",
-  /** Quote & contact forms → same-origin API (see /api/contact) */
+  /** Quote & contact forms → Web3Forms (set key on Vercel or here) */
   formAction: "/api/contact",
+  web3formsAccessKey: "",
   serviceArea: "Ottawa, ON and surrounding communities",
 
   images: {

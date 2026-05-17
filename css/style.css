@@ -762,6 +762,12 @@ a:hover { color: var(--ogt-primary-dark); }
   display: block;
 }
 
+.ogt-form-error p { margin: 0 0 var(--ogt-space-sm); }
+
+.ogt-form-mailto-fallback {
+  margin-top: var(--ogt-space-sm);
+}
+
 /* Nav dropdown */
 .ogt-nav-dropdown-wrap { position: relative; }
 

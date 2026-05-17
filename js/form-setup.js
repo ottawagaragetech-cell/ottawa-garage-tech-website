@@ -1,9 +1,25 @@
 /**
- * Contact / quote forms → POST /api/contact (same origin, no FormSubmit redirect)
+ * Contact / quote forms → Web3Forms (browser) or POST /api/contact (fallback)
  */
 (function () {
   var cfg = window.OGT;
   if (!cfg) return;
+
+  var web3formsKey = cfg.web3formsAccessKey || "";
+  var configLoaded = !web3formsKey ? loadFormConfig() : Promise.resolve();
+
+  function loadFormConfig() {
+    return fetch("/api/form-config", { headers: { Accept: "application/json" } })
+      .then(function (res) {
+        return res.ok ? res.json() : {};
+      })
+      .then(function (json) {
+        if (json && json.web3formsAccessKey) {
+          web3formsKey = json.web3formsAccessKey;
+        }
+      })
+      .catch(function () {});
+  }
 
   function findThanks(form, options) {
     if (options && options.thanksId) {
@@ -35,9 +51,24 @@
     return el;
   }
 
-  function showError(el, message) {
+  function showError(el, message, payload) {
     if (!el) return;
-    el.textContent = message;
+    el.innerHTML = "";
+    var p = document.createElement("p");
+    p.textContent = message;
+    el.appendChild(p);
+
+    if (payload && cfg.email) {
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "ogt-btn ogt-btn-secondary ogt-form-mailto-fallback";
+      btn.textContent = "Send via your email app instead";
+      btn.addEventListener("click", function () {
+        openMailto(payload);
+      });
+      el.appendChild(btn);
+    }
+
     el.hidden = false;
     el.classList.add("is-visible");
   }
@@ -46,6 +77,59 @@
     if (!el) return;
     el.hidden = true;
     el.classList.remove("is-visible");
+    el.innerHTML = "";
+  }
+
+  function openMailto(payload) {
+    var subject = encodeURIComponent(payload._subject || "Ottawa Garage Tech website lead");
+    var body = encodeURIComponent(
+      "Name: " +
+        (payload.name || "") +
+        "\nEmail: " +
+        (payload.email || "") +
+        "\nPhone: " +
+        (payload.phone || "—") +
+        "\nService: " +
+        (payload.service || "—") +
+        "\n\n" +
+        (payload.message || "")
+    );
+    window.location.href =
+      "mailto:" + encodeURIComponent(cfg.email) + "?subject=" + subject + "&body=" + body;
+  }
+
+  function sendViaWeb3Forms(payload) {
+    if (!web3formsKey) return Promise.resolve({ ok: false });
+    return fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify({
+        access_key: web3formsKey,
+        subject: payload._subject || "Ottawa Garage Tech website lead",
+        from_name: payload.name,
+        name: payload.name,
+        email: payload.email,
+        phone: payload.phone || "",
+        service: payload.service || "",
+        message: payload.message,
+      }),
+    }).then(function (res) {
+      return res.json().then(function (json) {
+        return { ok: res.ok && json.success, json: json };
+      });
+    });
+  }
+
+  function sendViaApi(payload) {
+    return fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify(payload),
+    }).then(function (res) {
+      return res.json().then(function (json) {
+        return { ok: res.ok && json.success, json: json };
+      });
+    });
   }
 
   window.OGT_setupForm = function (form, options) {
@@ -69,6 +153,9 @@
         return;
       }
 
+      var gotcha = form.querySelector('[name="_gotcha"]');
+      if (gotcha && gotcha.value) return;
+
       var payload = {
         name: (form.querySelector('[name="name"]') || {}).value || "",
         email: (form.querySelector('[name="email"]') || {}).value || "",
@@ -85,18 +172,15 @@
         submitBtn.textContent = "Sending…";
       }
 
-      fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify(payload),
-      })
-        .then(function (res) {
-          return res.json().then(function (json) {
-            return { ok: res.ok, json: json };
+      configLoaded
+        .then(function () {
+          return sendViaWeb3Forms(payload).then(function (result) {
+            if (result.ok) return result;
+            return sendViaApi(payload);
           });
         })
         .then(function (result) {
-          if (result.ok && result.json.success) {
+          if (result.ok) {
             form.reset();
             hideError(errorEl);
             if (thanksEl) thanksEl.classList.add("is-visible");
@@ -106,13 +190,15 @@
           showError(
             errorEl,
             (result.json && result.json.message) ||
-              "Something went wrong. Please call (613) 900-6005 or email ottawagaragetech@gmail.com."
+              "We could not send your message right now. Please call or text (613) 900-6005, or use the button below to email us directly.",
+            payload
           );
         })
         .catch(function () {
           showError(
             errorEl,
-            "Connection problem. Please call or text (613) 900-6005, or email ottawagaragetech@gmail.com."
+            "Connection problem. Please call or text (613) 900-6005, or use the button below to email us directly.",
+            payload
           );
         })
         .finally(function () {
