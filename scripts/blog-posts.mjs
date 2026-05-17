@@ -1,21 +1,23 @@
 /** Blog post source data — used by scripts/generate-blog.mjs */
 
-/** Stock photos (Unsplash) — not from site gallery or uploaded project photos */
-function stock(id) {
+/** Stock photos (Pexels) — not from site gallery or uploaded project photos */
+function pexels(id) {
   return (
-    "https://images.unsplash.com/" +
+    "https://images.pexels.com/photos/" +
     id +
-    "?w=900&q=80&auto=format&fit=crop"
+    "/pexels-photo-" +
+    id +
+    ".jpeg?auto=compress&cs=tinysrgb&w=900&h=560&fit=crop"
   );
 }
 
 export const BLOG_IMAGES = {
-  pricing: stock("photo-1560518883-ce09059eeffa"),
-  springRepair: stock("photo-1562259949-e8e7689d1230"),
-  insulatedHome: stock("photo-1600585154340-be6161a56a0c"),
-  troubleshooting: stock("photo-1604719312566-8912f63b8c02"),
-  replacement: stock("photo-1600607687920-4e2a09ad6fb9"),
-  winterPrep: stock("photo-1491002057096-43156e49445e"),
+  pricing: pexels(259588),
+  springRepair: pexels(106399),
+  insulatedHome: pexels(280222),
+  troubleshooting: pexels(209296),
+  replacement: pexels(2447031),
+  winterPrep: pexels(1118448),
 };
 
 export const blogPosts = [
