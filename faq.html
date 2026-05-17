@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-ogt-page="faq">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ | Ottawa Garage Tech</title>
+  <meta name="description" content="Garage door repair FAQ for Ottawa — pricing, emergencies, springs, openers, winter sealing, and how to book Ottawa Garage Tech.">
+  <link rel="canonical" href="https://ottawagaragetech.ca/faq">
+  <link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/style.css">
+  <script type="application/ld+json" id="ogt-faq-schema"></script>
+</head>
+<body>
+  <div id="ogt-site-header"></div>
+  <main id="main">
+    <div class="ogt-page-hero">
+      <h1>Frequently asked questions</h1>
+      <p class="ogt-section-intro">Answers about pricing, emergencies, springs, openers, winter care, and booking — for Ottawa and nearby communities.</p>
+    </div>
+    <section class="ogt-section">
+      
+      <div class="ogt-section-inner ogt-faq-list" id="ogt-faq-list"></div>
+    </section>
+  </main>
+  <div id="ogt-site-footer"></div>
+  <script src="/js/site-config.js"></script>
+  <script src="/js/layout.js"></script>
+  <script>
+    (function () {
+      var el = document.getElementById("ogt-faq-schema");
+      if (!el || !window.OGT || !OGT.faqs) return;
+      el.textContent = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: OGT.faqs.map(function (f) {
+          return {
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a }
+          };
+        })
+      });
+    })();
+  </script>
+</body>
+</html>

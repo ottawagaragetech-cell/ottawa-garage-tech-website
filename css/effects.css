@@ -1,0 +1,624 @@
+/**
+ * Ottawa Garage Tech — hover & motion effects
+ */
+
+/* —— Scroll reveal (JS adds .is-inview) —— */
+html.ogt-premium .ogt-reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.65s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html.ogt-premium .ogt-reveal.is-inview {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+html.ogt-premium .ogt-reveal--fade {
+  transform: none;
+}
+
+html.ogt-premium .ogt-reveal--left {
+  transform: translateX(-24px);
+}
+
+html.ogt-premium .ogt-reveal--left.is-inview {
+  transform: translateX(0);
+}
+
+html.ogt-premium .ogt-reveal--right {
+  transform: translateX(24px);
+}
+
+html.ogt-premium .ogt-reveal--right.is-inview {
+  transform: translateX(0);
+}
+
+html.ogt-premium .ogt-reveal--scale {
+  transform: scale(0.96);
+}
+
+html.ogt-premium .ogt-reveal--scale.is-inview {
+  transform: scale(1);
+}
+
+/* Stagger delays */
+html.ogt-premium .ogt-reveal[data-delay="1"] { transition-delay: 0.08s; }
+html.ogt-premium .ogt-reveal[data-delay="2"] { transition-delay: 0.16s; }
+html.ogt-premium .ogt-reveal[data-delay="3"] { transition-delay: 0.24s; }
+html.ogt-premium .ogt-reveal[data-delay="4"] { transition-delay: 0.32s; }
+html.ogt-premium .ogt-reveal[data-delay="5"] { transition-delay: 0.4s; }
+html.ogt-premium .ogt-reveal[data-delay="6"] { transition-delay: 0.48s; }
+
+/* —— Logo —— */
+html.ogt-premium .ogt-logo img {
+  transition: transform var(--ogt-transition);
+}
+
+html.ogt-premium .ogt-logo:hover img {
+  transform: scale(1.06);
+}
+
+/* —— Nav dropdown —— */
+@keyframes ogt-dropdown-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+html.ogt-premium .ogt-nav-dropdown-wrap.is-open .ogt-nav-dropdown {
+  animation: ogt-dropdown-in 0.24s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+html.ogt-premium .ogt-nav-dropdown a {
+  transition: background var(--ogt-transition), padding-left var(--ogt-transition);
+}
+
+html.ogt-premium .ogt-nav-dropdown a:hover {
+  padding-left: 1.35rem;
+}
+
+/* —— Button shine —— */
+html.ogt-premium .ogt-btn-primary,
+html.ogt-premium .ogt-btn-accent,
+html.ogt-premium .ogt-btn-call {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+html.ogt-premium .ogt-btn-primary::before,
+html.ogt-premium .ogt-btn-accent::before,
+html.ogt-premium .ogt-btn-call::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 80%;
+  height: 100%;
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.35) 50%,
+    transparent 100%
+  );
+  transform: skewX(-18deg);
+  transition: left 0.55s ease;
+  z-index: 0;
+  pointer-events: none;
+}
+
+html.ogt-premium .ogt-btn-primary:hover::before,
+html.ogt-premium .ogt-btn-accent:hover::before,
+html.ogt-premium .ogt-btn-call:hover::before {
+  left: 140%;
+}
+
+html.ogt-premium .ogt-btn-primary:active,
+html.ogt-premium .ogt-btn-accent:active,
+html.ogt-premium .ogt-btn-secondary:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* —— Showcase tiles —— */
+html.ogt-premium .ogt-showcase-tile {
+  transition:
+    transform var(--ogt-transition),
+    box-shadow var(--ogt-transition);
+  cursor: default;
+}
+
+html.ogt-premium .ogt-showcase-tile img {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html.ogt-premium .ogt-showcase-tile figcaption {
+  transition: padding-bottom var(--ogt-transition), background var(--ogt-transition);
+}
+
+html.ogt-premium .ogt-showcase-tile:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--ogt-shadow-xl);
+}
+
+html.ogt-premium .ogt-showcase-tile:hover img {
+  transform: scale(1.08);
+}
+
+html.ogt-premium .ogt-showcase-tile:hover figcaption {
+  padding-bottom: calc(var(--ogt-space-sm) + 4px);
+  background: linear-gradient(transparent, rgba(10, 46, 38, 0.98));
+}
+
+/* —— Gallery tiles —— */
+html.ogt-premium .ogt-gallery-tile {
+  transition:
+    transform var(--ogt-transition),
+    box-shadow var(--ogt-transition);
+}
+
+html.ogt-premium .ogt-gallery-tile::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 92, 73, 0);
+  transition: background var(--ogt-transition);
+  z-index: 1;
+  pointer-events: none;
+}
+
+html.ogt-premium .ogt-gallery-tile img {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html.ogt-premium .ogt-gallery-tile-cap {
+  transition: transform var(--ogt-transition), opacity var(--ogt-transition);
+  z-index: 2;
+}
+
+html.ogt-premium .ogt-gallery-tile:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--ogt-shadow-xl);
+}
+
+html.ogt-premium .ogt-gallery-tile:hover::after {
+  background: rgba(20, 92, 73, 0.25);
+}
+
+html.ogt-premium .ogt-gallery-tile:hover img {
+  transform: scale(1.1);
+}
+
+html.ogt-premium .ogt-gallery-item {
+  transition:
+    transform var(--ogt-transition),
+    box-shadow var(--ogt-transition),
+    border-color var(--ogt-transition);
+}
+
+html.ogt-premium .ogt-gallery-item:hover {
+  transform: translateY(-4px);
+}
+
+html.ogt-premium .ogt-gallery-filter {
+  transition:
+    background var(--ogt-transition),
+    border-color var(--ogt-transition),
+    color var(--ogt-transition),
+    box-shadow var(--ogt-transition);
+}
+
+html.ogt-premium .ogt-gallery-tile:hover .ogt-gallery-tile-cap {
+  transform: translateY(-4px);
+}
+
+/* —— Service cards —— */
+html.ogt-premium .ogt-service-card-img-wrap img {
+  transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html.ogt-premium .ogt-service-card-img-wrap::after {
+  transition: opacity var(--ogt-transition);
+}
+
+html.ogt-premium .ogt-service-card--visual:hover .ogt-service-card-img-wrap img {
+  transform: scale(1.1);
+}
+
+html.ogt-premium .ogt-service-card--visual:hover .ogt-service-card-img-wrap::after {
+  opacity: 0.92;
+}
+
+html.ogt-premium .ogt-service-card-img-badge {
+  transition: transform var(--ogt-transition);
+}
+
+html.ogt-premium .ogt-service-card--visual:hover .ogt-service-card-img-badge {
+  transform: translateY(-4px);
+}
+
+html.ogt-premium .ogt-service-card-body {
+  transition: background var(--ogt-transition);
+}
+
+html.ogt-premium .ogt-service-card--visual:hover .ogt-service-card-body {
+  background: linear-gradient(180deg, #fff 0%, var(--ogt-accent-soft) 100%);
+}
+
+html.ogt-premium .ogt-service-card--visual .ogt-service-card-body::after {
+  content: "View service →";
+  display: block;
+  margin-top: var(--ogt-space-md);
+  font-family: var(--ogt-font-display);
+  font-size: var(--ogt-text-xs);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ogt-primary);
+  opacity: 0;
+  transform: translateX(-8px);
+  transition:
+    opacity var(--ogt-transition),
+    transform var(--ogt-transition);
+}
+
+html.ogt-premium .ogt-service-card--visual:hover .ogt-service-card-body::after {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Plain service cards (no image) */
+html.ogt-premium .ogt-service-card:not(.ogt-service-card--visual) {
+  transition:
+    transform var(--ogt-transition),
+    box-shadow var(--ogt-transition),
+    border-color var(--ogt-transition);
+}
+
+html.ogt-premium .ogt-service-card:not(.ogt-service-card--visual):hover {
+  transform: translateY(-4px);
+}
+
+/* —— Reviews —— */
+html.ogt-premium .ogt-review-card {
+  transition:
+    transform var(--ogt-transition),
+    box-shadow var(--ogt-transition),
+    border-color var(--ogt-transition);
+}
+
+html.ogt-premium .ogt-review-card:hover {
+  border-color: rgba(196, 160, 82, 0.45);
+}
+
+html.ogt-premium .ogt-review-card::before {
+  transition: opacity var(--ogt-transition), transform var(--ogt-transition);
+}
+
+html.ogt-premium .ogt-review-card:hover::before {
+  opacity: 0.55;
+  transform: scale(1.05);
+}
+
+html.ogt-premium .ogt-review-stars {
+  transition: letter-spacing var(--ogt-transition);
+}
+
+html.ogt-premium .ogt-review-card:hover .ogt-review-stars {
+  letter-spacing: 4px;
+}
+
+/* —— Area chips —— */
+html.ogt-premium a.ogt-area-chip {
+  transition:
+    transform var(--ogt-transition),
+    box-shadow var(--ogt-transition),
+    background var(--ogt-transition),
+    color var(--ogt-transition),
+    border-color var(--ogt-transition);
+}
+
+html.ogt-premium a.ogt-area-chip:hover {
+  background: var(--ogt-primary);
+  color: var(--ogt-text-inverse);
+  border-color: var(--ogt-primary);
+}
+
+/* —— FAQ —— */
+html.ogt-premium .ogt-faq-item {
+  transition:
+    box-shadow var(--ogt-transition),
+    border-color var(--ogt-transition),
+    transform var(--ogt-transition);
+}
+
+html.ogt-premium .ogt-faq-item:hover {
+  transform: translateX(4px);
+}
+
+html.ogt-premium .ogt-faq-item[open] {
+  border-color: rgba(196, 160, 82, 0.5);
+  box-shadow: var(--ogt-shadow-md);
+}
+
+html.ogt-premium .ogt-faq-item summary {
+  transition: color var(--ogt-transition), background var(--ogt-transition);
+}
+
+html.ogt-premium .ogt-faq-item summary:hover {
+  color: var(--ogt-primary);
+}
+
+/* —— Forms —— */
+html.ogt-premium .ogt-form input,
+html.ogt-premium .ogt-form textarea,
+html.ogt-premium .ogt-form select {
+  transition:
+    border-color var(--ogt-transition),
+    box-shadow var(--ogt-transition),
+    transform var(--ogt-transition);
+}
+
+html.ogt-premium .ogt-form input:hover,
+html.ogt-premium .ogt-form textarea:hover,
+html.ogt-premium .ogt-form select:hover {
+  border-color: rgba(20, 92, 73, 0.35);
+}
+
+html.ogt-premium .ogt-form input:focus,
+html.ogt-premium .ogt-form textarea:focus,
+html.ogt-premium .ogt-form select:focus {
+  border-color: var(--ogt-primary);
+  box-shadow: 0 0 0 4px rgba(20, 92, 73, 0.12);
+  transform: translateY(-1px);
+  outline: none;
+}
+
+html.ogt-premium .ogt-form-card {
+  transition: box-shadow var(--ogt-transition), transform var(--ogt-transition);
+}
+
+html.ogt-premium .ogt-form-card:focus-within {
+  box-shadow: var(--ogt-shadow-xl);
+}
+
+/* —— Contact visual —— */
+html.ogt-premium .ogt-contact-visual-side {
+  overflow: hidden;
+}
+
+html.ogt-premium .ogt-contact-visual-img {
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html.ogt-premium .ogt-contact-visual-side:hover .ogt-contact-visual-img {
+  transform: scale(1.06);
+}
+
+/* —— Hero collage —— */
+html.ogt-premium .ogt-hero-collage img {
+  transition:
+    transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow var(--ogt-transition);
+}
+
+html.ogt-premium .ogt-hero-collage-wrap:hover .ogt-hero-collage-main {
+  transform: scale(1.02) translateY(-4px);
+  box-shadow: var(--ogt-shadow-xl);
+}
+
+html.ogt-premium .ogt-hero-collage-wrap:hover .ogt-hero-collage-accent {
+  transform: translateY(-6px);
+}
+
+html.ogt-premium .ogt-hero-collage-wrap:hover .ogt-hero-collage-small {
+  transform: translateY(4px);
+}
+
+/* —— Service / page hero images —— */
+html.ogt-premium .ogt-service-hero-img,
+html.ogt-premium .ogt-page-hero-media,
+html.ogt-premium .ogt-inline-figure {
+  overflow: hidden;
+  border-radius: var(--ogt-radius-xl);
+}
+
+html.ogt-premium .ogt-service-hero-img img,
+html.ogt-premium .ogt-page-hero-media img,
+html.ogt-premium .ogt-inline-figure img {
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html.ogt-premium .ogt-service-hero-img:hover img,
+html.ogt-premium .ogt-page-hero-media:hover img,
+html.ogt-premium .ogt-inline-figure:hover img {
+  transform: scale(1.04);
+}
+
+/* —— CTA band —— */
+html.ogt-premium .ogt-cta-band .ogt-btn-accent {
+  transition:
+    transform var(--ogt-transition),
+    box-shadow var(--ogt-transition);
+}
+
+html.ogt-premium .ogt-cta-band .ogt-btn-accent:hover {
+  transform: translateY(-3px) scale(1.03);
+}
+
+/* —— Footer links —— */
+html.ogt-premium .ogt-footer a {
+  position: relative;
+  text-decoration: none;
+  transition: color var(--ogt-transition), opacity var(--ogt-transition);
+}
+
+html.ogt-premium .ogt-footer a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1px;
+  background: var(--ogt-accent);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform var(--ogt-transition);
+}
+
+html.ogt-premium .ogt-footer a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+html.ogt-premium .ogt-footer a:hover {
+  color: var(--ogt-accent-light);
+  opacity: 1;
+}
+
+/* —— Related links / aside —— */
+html.ogt-premium .ogt-related-links a {
+  transition:
+    color var(--ogt-transition),
+    transform var(--ogt-transition),
+    padding-left var(--ogt-transition);
+  display: inline-block;
+}
+
+html.ogt-premium .ogt-related-links a:hover {
+  transform: translateX(6px);
+  color: var(--ogt-primary-dark);
+}
+
+html.ogt-premium .ogt-aside-card {
+  transition: box-shadow var(--ogt-transition), transform var(--ogt-transition);
+}
+
+html.ogt-premium .ogt-aside-card:hover {
+  box-shadow: var(--ogt-shadow-md);
+  transform: translateY(-2px);
+}
+
+/* —— Section labels —— */
+html.ogt-premium .ogt-section-label {
+  transition:
+    transform var(--ogt-transition),
+    box-shadow var(--ogt-transition);
+}
+
+html.ogt-premium .ogt-section-header:hover .ogt-section-label {
+  transform: translateY(-2px);
+  box-shadow: var(--ogt-shadow-sm);
+}
+
+/* —— Homepage SEO (text-focused) —— */
+html.ogt-premium .ogt-section--seo {
+  border-top: 1px solid var(--ogt-border);
+}
+
+html.ogt-premium .ogt-seo-prose {
+  max-width: 52rem;
+}
+
+html.ogt-premium .ogt-seo-prose h2 {
+  font-size: var(--ogt-text-2xl);
+  margin-bottom: var(--ogt-space-md);
+}
+
+html.ogt-premium .ogt-seo-prose h3 {
+  font-family: var(--ogt-font-display);
+  font-size: var(--ogt-text-lg);
+  font-weight: 600;
+  color: var(--ogt-primary-dark);
+  margin: var(--ogt-space-xl) 0 var(--ogt-space-sm);
+}
+
+html.ogt-premium .ogt-seo-prose p {
+  color: var(--ogt-text-muted);
+  margin: 0 0 var(--ogt-space-md);
+  line-height: 1.75;
+}
+
+html.ogt-premium .ogt-service-card--text {
+  padding: var(--ogt-space-lg) var(--ogt-space-xl);
+  background: var(--ogt-bg-elevated);
+  border: 1px solid var(--ogt-border);
+  border-radius: var(--ogt-radius-lg);
+  border-left: 4px solid var(--ogt-primary);
+  transition:
+    transform var(--ogt-transition),
+    box-shadow var(--ogt-transition),
+    border-color var(--ogt-transition);
+}
+
+html.ogt-premium .ogt-service-card--text:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--ogt-shadow-md);
+  border-left-color: var(--ogt-accent);
+}
+
+html.ogt-premium .ogt-service-card--text h3 {
+  color: var(--ogt-primary-dark);
+  margin-bottom: var(--ogt-space-xs);
+}
+
+html.ogt-premium .ogt-service-card-link {
+  display: inline-block;
+  margin-top: var(--ogt-space-md);
+  font-family: var(--ogt-font-display);
+  font-size: var(--ogt-text-xs);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ogt-primary);
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: opacity var(--ogt-transition), transform var(--ogt-transition);
+}
+
+html.ogt-premium .ogt-service-card--text:hover .ogt-service-card-link {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+html.ogt-premium .ogt-home-contact-wrap--simple {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 900px) {
+  html.ogt-premium .ogt-home-contact-wrap--simple {
+    grid-template-columns: 0.9fr 1.1fr;
+    align-items: start;
+  }
+}
+
+html.ogt-premium .ogt-home-faq {
+  max-width: 52rem;
+}
+
+/* —— Reduced motion —— */
+@media (prefers-reduced-motion: reduce) {
+  html.ogt-premium .ogt-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  html.ogt-premium .ogt-btn-primary::before,
+  html.ogt-premium .ogt-btn-accent::before,
+  html.ogt-premium .ogt-btn-call::before {
+    display: none;
+  }
+
+  html.ogt-premium * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

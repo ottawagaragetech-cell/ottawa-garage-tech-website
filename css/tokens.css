@@ -1,53 +1,45 @@
 /**
- * Ottawa Garage Tech — design tokens
- * Palette: forest green + warm brass on warm stone (NOT GDS blue/orange, NOT OGDR navy/orange)
- *
- * Radius scale:
- *   --ogt-radius-sm: 4px   (inputs, chips)
- *   --ogt-radius-md: 8px   (buttons, cards)
- *   --ogt-radius-lg: 16px  (hero panels, form cards)
- *
- * Shadow scale:
- *   --ogt-shadow-sm: subtle lift
- *   --ogt-shadow-md: cards
- *   --ogt-shadow-lg: sticky header / modals
+ * Ottawa Garage Tech — premium design tokens
  */
 :root {
-  /* Brand colors */
-  --ogt-primary: #1b5e4b;
-  --ogt-primary-dark: #134a3b;
-  --ogt-primary-light: #2a7a64;
-  --ogt-accent: #b8953a;
-  --ogt-accent-dark: #96782e;
-  --ogt-accent-soft: #f5edd8;
+  /* Brand */
+  --ogt-primary: #145c49;
+  --ogt-primary-dark: #0c3d31;
+  --ogt-primary-light: #1f7560;
+  --ogt-primary-glow: rgba(20, 92, 73, 0.35);
+  --ogt-accent: #c4a052;
+  --ogt-accent-light: #e8d4a8;
+  --ogt-accent-dark: #9a7b38;
+  --ogt-accent-soft: #faf6ec;
 
-  /* Neutrals (warm stone) */
-  --ogt-bg: #f7f5f1;
+  /* Surfaces */
+  --ogt-bg: #f3f0ea;
   --ogt-bg-elevated: #ffffff;
-  --ogt-surface-muted: #ebe8e2;
-  --ogt-text: #1c2420;
-  --ogt-text-muted: #4a5650;
-  --ogt-text-inverse: #f7f5f1;
-  --ogt-border: #d4cfc4;
+  --ogt-bg-dark: #0a2e26;
+  --ogt-surface-muted: #e8e4dc;
+  --ogt-text: #141a18;
+  --ogt-text-muted: #5c6762;
+  --ogt-text-inverse: #faf8f4;
+  --ogt-border: rgba(20, 26, 24, 0.1);
+  --ogt-border-strong: rgba(20, 26, 24, 0.16);
 
   /* Semantic */
   --ogt-success: #2d6a4f;
   --ogt-danger: #9b2c2c;
-  --ogt-focus-ring: #1b5e4b;
+  --ogt-focus-ring: #c4a052;
 
   /* Typography */
-  --ogt-font-display: "Outfit", system-ui, sans-serif;
+  --ogt-font-display: "DM Sans", system-ui, sans-serif;
   --ogt-font-body: "Lora", Georgia, serif;
 
-  /* Type scale */
   --ogt-text-xs: 0.8125rem;
   --ogt-text-sm: 0.9375rem;
   --ogt-text-base: 1.0625rem;
   --ogt-text-lg: 1.25rem;
   --ogt-text-xl: 1.5rem;
-  --ogt-text-2xl: 2rem;
-  --ogt-text-3xl: clamp(2rem, 5vw, 2.75rem);
-  --ogt-text-hero: clamp(2.25rem, 6vw, 3.25rem);
+  --ogt-text-2xl: clamp(1.75rem, 3vw, 2.25rem);
+  --ogt-text-3xl: clamp(2rem, 4vw, 2.75rem);
+  --ogt-text-hero: clamp(2.5rem, 5.5vw, 3.75rem);
 
   /* Spacing */
   --ogt-space-xs: 0.5rem;
@@ -56,25 +48,37 @@
   --ogt-space-lg: 1.5rem;
   --ogt-space-xl: 2rem;
   --ogt-space-2xl: 3rem;
-  --ogt-space-3xl: 4.5rem;
-  --ogt-container: min(1120px, 92vw);
+  --ogt-space-3xl: 5rem;
+  --ogt-space-4xl: 6.5rem;
+  --ogt-container: min(1180px, 90vw);
 
   /* Radius */
-  --ogt-radius-sm: 4px;
-  --ogt-radius-md: 8px;
-  --ogt-radius-lg: 16px;
+  --ogt-radius-sm: 6px;
+  --ogt-radius-md: 10px;
+  --ogt-radius-lg: 18px;
+  --ogt-radius-xl: 24px;
+  --ogt-radius-2xl: 32px;
 
   /* Shadows */
-  --ogt-shadow-sm: 0 1px 3px rgba(28, 36, 32, 0.08);
-  --ogt-shadow-md: 0 4px 16px rgba(28, 36, 32, 0.1);
-  --ogt-shadow-lg: 0 8px 32px rgba(28, 36, 32, 0.12);
+  --ogt-shadow-sm: 0 2px 8px rgba(12, 40, 32, 0.06);
+  --ogt-shadow-md: 0 8px 28px rgba(12, 40, 32, 0.1);
+  --ogt-shadow-lg: 0 20px 50px rgba(12, 40, 32, 0.14);
+  --ogt-shadow-xl: 0 28px 60px rgba(12, 40, 32, 0.18);
+  --ogt-shadow-glow: 0 12px 40px var(--ogt-primary-glow);
 
-  /* Motion */
-  --ogt-transition: 0.2s ease;
+  /* Gradients */
+  --ogt-gradient-primary: linear-gradient(135deg, #0c3d31 0%, #1a6b56 50%, #145c49 100%);
+  --ogt-gradient-gold: linear-gradient(135deg, #9a7b38 0%, #d4b76a 50%, #c4a052 100%);
+  --ogt-gradient-hero: linear-gradient(160deg, #f8f6f1 0%, #ebe6dc 45%, #f3f0ea 100%);
+  --ogt-gradient-dark: linear-gradient(165deg, #0a2e26 0%, #145c49 100%);
+
+  --ogt-transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --ogt-transition-slow: 0.45s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @media (prefers-reduced-motion: reduce) {
   :root {
     --ogt-transition: 0.01ms;
+    --ogt-transition-slow: 0.01ms;
   }
 }

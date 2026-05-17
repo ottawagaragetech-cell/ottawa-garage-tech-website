@@ -65,10 +65,15 @@ Form fields: name*, email*, phone, service, message*; hidden `_subject`: `Ottawa
 
 Do **not** use GDS endpoint `https://formspree.io/f/xreyppqz`.
 
-## Pages (MVP)
+## Pages
 
-- `index.html` — home, services, trust strip, LocalBusiness schema
-- `contact.html` — call/text CTAs + form + info card
+- **Home** — hero, linked services grid, trust strip
+- **Services** — overview + 7 detail pages (`/services/[slug]`)
+- **Contact** — call/text, Formspree form with service dropdown
+- **About**, **FAQ**, **Areas**, **Gallery** (placeholders OK for photos)
+- **Privacy**, **Terms**
+
+Shared header/footer via `js/site-config.js` + `js/layout.js`.
 
 ## Folder structure
 

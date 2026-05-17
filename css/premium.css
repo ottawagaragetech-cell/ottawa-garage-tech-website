@@ -1,0 +1,553 @@
+/**
+ * Ottawa Garage Tech — premium layer
+ */
+
+/* —— Base atmosphere —— */
+html.ogt-premium {
+  scroll-behavior: smooth;
+}
+
+html.ogt-premium body {
+  background: var(--ogt-bg);
+  background-image:
+    radial-gradient(ellipse 80% 50% at 100% -10%, rgba(196, 160, 82, 0.12), transparent 55%),
+    radial-gradient(ellipse 60% 40% at 0% 100%, rgba(20, 92, 73, 0.08), transparent 50%);
+}
+
+/* —— Header —— */
+html.ogt-premium .ogt-header {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(16px) saturate(1.2);
+  -webkit-backdrop-filter: blur(16px) saturate(1.2);
+  border-bottom: 1px solid var(--ogt-border);
+  transition: box-shadow var(--ogt-transition), background var(--ogt-transition);
+}
+
+html.ogt-premium .ogt-header.is-scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: var(--ogt-shadow-md);
+}
+
+html.ogt-premium .ogt-logo img {
+  width: 48px;
+  height: 48px;
+  filter: drop-shadow(0 2px 6px rgba(12, 40, 32, 0.12));
+}
+
+html.ogt-premium .ogt-logo-text {
+  font-size: 1.05rem;
+  letter-spacing: -0.03em;
+}
+
+html.ogt-premium .ogt-nav-desktop a {
+  position: relative;
+  padding: 0.25em 0;
+}
+
+html.ogt-premium .ogt-nav-desktop a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: var(--ogt-gradient-gold);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform var(--ogt-transition);
+  border-radius: 1px;
+}
+
+html.ogt-premium .ogt-nav-desktop a:hover::after,
+html.ogt-premium .ogt-nav-desktop a[aria-current="page"]::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+html.ogt-premium .ogt-btn-call {
+  background: var(--ogt-gradient-gold);
+  border: none;
+  color: var(--ogt-primary-dark);
+  font-weight: 700;
+  box-shadow: 0 4px 16px rgba(154, 123, 56, 0.35);
+}
+
+html.ogt-premium .ogt-btn-call:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(154, 123, 56, 0.45);
+  color: var(--ogt-primary-dark);
+}
+
+/* —— Buttons —— */
+html.ogt-premium .ogt-btn {
+  border-radius: var(--ogt-radius-md);
+  letter-spacing: 0.02em;
+  transition:
+    transform var(--ogt-transition),
+    box-shadow var(--ogt-transition),
+    background var(--ogt-transition),
+    border-color var(--ogt-transition),
+    color var(--ogt-transition);
+}
+
+html.ogt-premium .ogt-btn-primary {
+  background: var(--ogt-gradient-primary);
+  border: none;
+  box-shadow: var(--ogt-shadow-glow);
+}
+
+html.ogt-premium .ogt-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px var(--ogt-primary-glow);
+  color: var(--ogt-text-inverse);
+}
+
+html.ogt-premium .ogt-btn-secondary {
+  border-width: 1.5px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(8px);
+}
+
+html.ogt-premium .ogt-btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--ogt-shadow-md);
+}
+
+html.ogt-premium .ogt-btn-accent {
+  background: var(--ogt-gradient-gold);
+  border: none;
+  color: var(--ogt-primary-dark);
+  font-weight: 700;
+  box-shadow: 0 6px 20px rgba(196, 160, 82, 0.4);
+}
+
+html.ogt-premium .ogt-btn-accent:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(196, 160, 82, 0.5);
+  color: var(--ogt-primary-dark);
+}
+
+/* —— Section headings —— */
+html.ogt-premium .ogt-section-header {
+  margin-bottom: var(--ogt-space-2xl);
+  max-width: 40rem;
+}
+
+html.ogt-premium .ogt-section-label {
+  display: inline-block;
+  margin: 0 0 var(--ogt-space-sm);
+  padding: 0.35em 0.85em;
+  font-family: var(--ogt-font-display);
+  font-size: var(--ogt-text-xs);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ogt-accent-dark);
+  background: var(--ogt-accent-soft);
+  border-radius: 100px;
+  border: 1px solid rgba(196, 160, 82, 0.35);
+}
+
+html.ogt-premium .ogt-section h2 {
+  font-size: var(--ogt-text-2xl);
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+}
+
+html.ogt-premium .ogt-section-intro {
+  font-size: var(--ogt-text-lg);
+  line-height: 1.6;
+}
+
+html.ogt-premium .ogt-section-header .ogt-section-intro {
+  margin-bottom: 0;
+}
+
+/* —— Hero —— */
+html.ogt-premium .ogt-hero--visual {
+  position: relative;
+  max-width: none;
+  padding: var(--ogt-space-3xl) 5vw var(--ogt-space-2xl);
+  margin: 0;
+  background: var(--ogt-gradient-hero);
+  overflow: hidden;
+}
+
+html.ogt-premium .ogt-hero--visual::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 85% 20%, rgba(196, 160, 82, 0.15), transparent 40%),
+    radial-gradient(circle at 10% 80%, rgba(20, 92, 73, 0.1), transparent 45%);
+  pointer-events: none;
+}
+
+html.ogt-premium .ogt-hero--visual .ogt-hero-content,
+html.ogt-premium .ogt-hero--visual .ogt-hero-collage-wrap {
+  position: relative;
+  z-index: 1;
+}
+
+@media (min-width: 900px) {
+  html.ogt-premium .ogt-hero--visual {
+    display: grid;
+    grid-template-columns: 1fr 1.05fr;
+    gap: var(--ogt-space-3xl);
+    align-items: center;
+    max-width: var(--ogt-container);
+    margin-left: auto;
+    margin-right: auto;
+    padding: var(--ogt-space-4xl) 5vw;
+  }
+}
+
+html.ogt-premium .ogt-hero h1 {
+  font-size: var(--ogt-text-hero);
+  letter-spacing: -0.04em;
+  line-height: 1.08;
+  background: linear-gradient(135deg, var(--ogt-primary-dark) 0%, var(--ogt-primary) 60%, var(--ogt-primary-light) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+html.ogt-premium .ogt-hero-eyebrow {
+  color: var(--ogt-accent-dark);
+  letter-spacing: 0.16em;
+}
+
+html.ogt-premium .ogt-hero-stats li {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: var(--ogt-shadow-sm);
+  border-radius: var(--ogt-radius-lg);
+  transition: transform var(--ogt-transition), box-shadow var(--ogt-transition);
+}
+
+html.ogt-premium .ogt-hero-stats li:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--ogt-shadow-md);
+}
+
+html.ogt-premium .ogt-hero-collage img {
+  border-width: 4px;
+  box-shadow: var(--ogt-shadow-xl);
+}
+
+html.ogt-premium .ogt-hero-collage-badge {
+  background: var(--ogt-gradient-gold);
+  color: var(--ogt-primary-dark);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 0.65em 1.25em;
+  border-radius: 100px;
+  box-shadow: var(--ogt-shadow-lg);
+}
+
+/* —— Trust badges —— */
+html.ogt-premium .ogt-badges-section {
+  background: var(--ogt-gradient-dark);
+  padding: var(--ogt-space-2xl) 5vw;
+  position: relative;
+  overflow: hidden;
+}
+
+html.ogt-premium .ogt-badges-section::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 60%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(196, 160, 82, 0.12), transparent 65%);
+  pointer-events: none;
+}
+
+html.ogt-premium .ogt-badge {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-left: 3px solid var(--ogt-accent);
+  border-radius: var(--ogt-radius-lg);
+  backdrop-filter: blur(8px);
+  transition: transform var(--ogt-transition), background var(--ogt-transition);
+}
+
+html.ogt-premium .ogt-badge:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+html.ogt-premium .ogt-badge strong {
+  font-size: var(--ogt-text-base);
+  color: var(--ogt-accent-light);
+}
+
+/* —— Showcase grid —— */
+html.ogt-premium .ogt-section--showcase {
+  padding: var(--ogt-space-4xl) 5vw;
+  background: var(--ogt-bg-elevated);
+}
+
+html.ogt-premium .ogt-showcase-tile {
+  border-radius: var(--ogt-radius-xl);
+  box-shadow: var(--ogt-shadow-md);
+}
+
+html.ogt-premium .ogt-showcase-tile figcaption {
+  font-size: var(--ogt-text-sm);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* —— Service cards —— */
+html.ogt-premium .ogt-service-card--visual {
+  border: 1px solid var(--ogt-border);
+  border-radius: var(--ogt-radius-xl);
+  box-shadow: var(--ogt-shadow-sm);
+  overflow: hidden;
+  transition:
+    transform var(--ogt-transition),
+    box-shadow var(--ogt-transition),
+    border-color var(--ogt-transition);
+}
+
+html.ogt-premium .ogt-service-card--visual:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--ogt-shadow-xl);
+  border-color: rgba(196, 160, 82, 0.4);
+}
+
+html.ogt-premium .ogt-service-card-img-wrap {
+  position: relative;
+  aspect-ratio: 16/11;
+}
+
+html.ogt-premium .ogt-service-card-img-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10, 46, 38, 0.85) 0%, transparent 55%);
+  pointer-events: none;
+}
+
+html.ogt-premium .ogt-service-card-img-badge {
+  position: absolute;
+  left: var(--ogt-space-md);
+  bottom: var(--ogt-space-md);
+  z-index: 2;
+  font-family: var(--ogt-font-display);
+  font-size: var(--ogt-text-sm);
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+html.ogt-premium .ogt-service-card-body {
+  padding: var(--ogt-space-lg) var(--ogt-space-lg) var(--ogt-space-xl);
+}
+
+html.ogt-premium .ogt-service-card-body h3 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+html.ogt-premium .ogt-service-card-price {
+  padding: 0.25em 0.65em;
+  background: var(--ogt-accent-soft);
+  border-radius: 100px;
+  font-size: var(--ogt-text-xs);
+}
+
+/* —— Visual split —— */
+html.ogt-premium .ogt-visual-split-section {
+  background: var(--ogt-gradient-dark);
+}
+
+html.ogt-premium .ogt-visual-split-text .ogt-btn-primary {
+  align-self: flex-start;
+  margin-top: var(--ogt-space-md);
+}
+
+/* —— Reviews —— */
+html.ogt-premium .ogt-review-card {
+  border-radius: var(--ogt-radius-xl);
+  border: 1px solid var(--ogt-border);
+  box-shadow: var(--ogt-shadow-sm);
+  padding: var(--ogt-space-xl);
+  position: relative;
+  transition: transform var(--ogt-transition), box-shadow var(--ogt-transition);
+}
+
+html.ogt-premium .ogt-review-card::before {
+  content: "\201C";
+  position: absolute;
+  top: var(--ogt-space-md);
+  left: var(--ogt-space-lg);
+  font-family: var(--ogt-font-body);
+  font-size: 3.5rem;
+  line-height: 1;
+  color: var(--ogt-accent);
+  opacity: 0.35;
+}
+
+html.ogt-premium .ogt-review-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--ogt-shadow-lg);
+}
+
+html.ogt-premium .ogt-review-text {
+  font-size: var(--ogt-text-base);
+  line-height: 1.7;
+  padding-top: var(--ogt-space-lg);
+}
+
+html.ogt-premium .ogt-review-stars {
+  font-size: 1.1rem;
+}
+
+/* —— Gallery preview —— */
+html.ogt-premium .ogt-gallery-tile {
+  border-radius: var(--ogt-radius-xl);
+  box-shadow: var(--ogt-shadow-md);
+}
+
+html.ogt-premium .ogt-gallery-tile-cap {
+  font-size: var(--ogt-text-sm);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* —— Contact —— */
+html.ogt-premium .ogt-form-card,
+html.ogt-premium .ogt-home-form-card {
+  border-radius: var(--ogt-radius-xl);
+  border: 1px solid var(--ogt-border);
+  box-shadow: var(--ogt-shadow-lg);
+  background: var(--ogt-bg-elevated);
+}
+
+html.ogt-premium .ogt-contact-visual-side {
+  border-radius: var(--ogt-radius-xl);
+  box-shadow: var(--ogt-shadow-xl);
+}
+
+html.ogt-premium .ogt-section--contact-visual {
+  padding: var(--ogt-space-4xl) 5vw;
+}
+
+/* —— CTA —— */
+html.ogt-premium .ogt-cta-band {
+  padding: var(--ogt-space-4xl) 5vw;
+  position: relative;
+  overflow: hidden;
+}
+
+html.ogt-premium .ogt-cta-band--photo {
+  background-image:
+    linear-gradient(115deg, rgba(10, 46, 38, 0.92) 0%, rgba(20, 92, 73, 0.88) 100%),
+    var(--ogt-cta-bg, none);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+html.ogt-premium .ogt-cta-band h2 {
+  font-size: var(--ogt-text-3xl);
+  letter-spacing: -0.03em;
+}
+
+html.ogt-premium .ogt-cta-band .ogt-btn-accent {
+  font-size: var(--ogt-text-lg);
+  padding: 1em 2em;
+  border-radius: 100px;
+}
+
+/* —— Footer —— */
+html.ogt-premium .ogt-footer {
+  background: var(--ogt-bg-dark);
+  padding: var(--ogt-space-4xl) 5vw var(--ogt-space-2xl);
+  position: relative;
+}
+
+html.ogt-premium .ogt-footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--ogt-gradient-gold);
+}
+
+html.ogt-premium .ogt-footer h3 {
+  font-size: var(--ogt-text-lg);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ogt-accent-light);
+}
+
+/* —— Inner pages —— */
+html.ogt-premium .ogt-page-hero--visual {
+  background: var(--ogt-gradient-hero);
+  max-width: none;
+  padding: var(--ogt-space-3xl) 5vw;
+  border-bottom: 1px solid var(--ogt-border);
+}
+
+html.ogt-premium .ogt-page-hero--visual .ogt-page-hero-media img {
+  border-radius: var(--ogt-radius-xl);
+  box-shadow: var(--ogt-shadow-xl);
+}
+
+html.ogt-premium .ogt-page-hero h1 {
+  font-size: var(--ogt-text-3xl);
+  letter-spacing: -0.03em;
+}
+
+html.ogt-premium .ogt-service-hero-img img {
+  border-radius: var(--ogt-radius-xl);
+  box-shadow: var(--ogt-shadow-xl);
+}
+
+html.ogt-premium .ogt-faq-item {
+  border-radius: var(--ogt-radius-lg);
+  transition: box-shadow var(--ogt-transition);
+}
+
+html.ogt-premium .ogt-faq-item:hover {
+  box-shadow: var(--ogt-shadow-sm);
+}
+
+html.ogt-premium .ogt-area-chip {
+  border-radius: 100px;
+  font-weight: 600;
+  transition: transform var(--ogt-transition), box-shadow var(--ogt-transition), border-color var(--ogt-transition);
+}
+
+html.ogt-premium a.ogt-area-chip:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--ogt-shadow-md);
+}
+
+html.ogt-premium .ogt-reviews-summary-wrap {
+  border-radius: var(--ogt-radius-xl);
+  box-shadow: var(--ogt-shadow-md);
+  max-width: none;
+}
+
+html.ogt-premium .ogt-section {
+  padding: var(--ogt-space-4xl) 5vw;
+}
+
+html.ogt-premium .ogt-section--alt {
+  background: linear-gradient(180deg, #fff 0%, var(--ogt-bg) 100%);
+  border: none;
+}

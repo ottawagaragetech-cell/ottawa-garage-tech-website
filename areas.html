@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en-CA" data-ogt-page="areas">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Service Areas | Ottawa Garage Tech</title>
+  <meta name="description" content="Garage door repair in Ottawa, Kanata, Barrhaven, Orleans, Nepean, and 25+ communities. Local pages with service details.">
+  <link rel="canonical" href="https://ottawagaragetech.ca/areas">
+  <link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+</head>
+<body>
+  <div id="ogt-site-header"></div>
+  <main id="main">
+    <div class="ogt-page-hero">
+      <h1>Service areas</h1>
+      <p class="ogt-section-intro">We serve Ottawa and surrounding neighbourhoods. Use the map or list below to find your area — or call if you do not see yours listed.</p>
+      <div class="ogt-contact-quick">
+        <a class="ogt-btn ogt-btn-primary" href="tel:+16139006005">Call (613) 900-6005</a>
+      </div>
+    </div>
+
+    <section class="ogt-section ogt-section--showcase ogt-section--compact">
+      <div class="ogt-section-inner">
+        <h2 class="ogt-visually-hidden">Service photos</h2>
+        <div class="ogt-showcase-grid ogt-showcase-grid--compact" id="ogt-photo-showcase"></div>
+      </div>
+    </section>
+
+    <section class="ogt-section">
+      <div class="ogt-section-inner">
+        <header class="ogt-section-header">
+          <p class="ogt-section-label">Coverage map</p>
+          <h2>Where we provide garage door service</h2>
+          <p class="ogt-section-intro">Mobile technicians across the National Capital Region — click a pin or neighbourhood for local service details.</p>
+        </header>
+        <div class="ogt-areas-map-layout">
+          <div class="ogt-areas-map-panel">
+            <div id="ogt-service-map" class="ogt-service-map" role="application" aria-label="Map of Ottawa Garage Tech service areas" tabindex="0"></div>
+            <p class="ogt-map-hint"><span class="ogt-map-hint-icon" aria-hidden="true">&#9679;</span> Pins show neighbourhoods we serve. Select one to open local information.</p>
+          </div>
+          <aside class="ogt-areas-map-sidebar" aria-label="Service area list">
+            <p class="ogt-areas-map-sidebar-label">All service areas</p>
+            <div class="ogt-areas-grid ogt-areas-grid--map" id="ogt-areas-grid"></div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div id="ogt-site-footer"></div>
+  <script src="/js/site-config.js"></script>
+  <script src="/js/layout.js"></script>
+  <script src="/js/visual.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="/js/areas-map.js"></script>
+</body>
+</html>

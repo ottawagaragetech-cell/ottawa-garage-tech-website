@@ -1,183 +1,238 @@
 <!DOCTYPE html>
-<html lang="en-CA">
+<html lang="en-CA" data-ogt-page="home">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ottawa Garage Tech | Garage Door Service in Ottawa</title>
-  <meta name="description" content="Ottawa Garage Tech provides garage door repair, installation, and opener service across Ottawa and surrounding areas. Call or text for same-day help.">
+  <title>Garage Door Repair Ottawa | Springs, Openers &amp; Installation | Ottawa Garage Tech</title>
+  <meta name="description" content="Ottawa Garage Tech — garage door repair, spring replacement, opener service, and new door installation across Ottawa, Kanata, Barrhaven, and Orleans. Same-day help. Call (613) 900-6005.">
+  <meta name="keywords" content="garage door repair Ottawa, garage door spring replacement, garage door opener repair, garage door installation Ottawa">
   <link rel="canonical" href="https://ottawagaragetech.ca/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Ottawa Garage Tech | Garage Door Service in Ottawa">
-  <meta property="og:description" content="Repair, installation, and opener service for Ottawa homes and businesses.">
+  <meta property="og:title" content="Garage Door Repair Ottawa | Ottawa Garage Tech">
+  <meta property="og:description" content="Local garage door repair and installation in Ottawa. Springs, openers, emergency service, and new doors. Call (613) 900-6005.">
   <meta property="og:url" content="https://ottawagaragetech.ca/">
   <meta property="og:image" content="https://ottawagaragetech.ca/assets/og-preview.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Ottawa Garage Tech">
-  <meta name="twitter:description" content="Garage door repair and installation in Ottawa.">
-  <meta name="twitter:image" content="https://ottawagaragetech.ca/assets/og-preview.png">
-  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Ottawa Garage Tech",
-    "description": "Garage door repair, installation, and opener service in Ottawa, Ontario.",
+    "image": "https://ottawagaragetech.ca/assets/og-preview.png",
     "url": "https://ottawagaragetech.ca/",
     "telephone": "+16139006005",
     "email": "ottawagaragetech@gmail.com",
-    "areaServed": {
-      "@type": "City",
-      "name": "Ottawa",
-      "address": { "@type": "PostalAddress", "addressRegion": "ON", "addressCountry": "CA" }
-    },
+    "priceRange": "$$",
+    "description": "Garage door repair, spring replacement, opener service, and installation in Ottawa and surrounding communities.",
+    "areaServed": ["Ottawa", "Kanata", "Barrhaven", "Orleans", "Nepean", "Stittsville", "Gloucester", "Manotick", "Rockland"],
     "openingHoursSpecification": [{
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
       "opens": "09:00",
       "closes": "21:00"
     }],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "reviewCount": "12"
+    },
     "sameAs": ["https://www.facebook.com/REPLACE_FB_PAGE_ID"]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How much does garage door repair cost in Ottawa?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Spring replacement is often $220–$380, cable repairs $175–$275, and tune-ups from $150. Emergency visits start around $199 before parts. We quote clearly before major work."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer same-day garage door repair in Ottawa?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, when scheduling allows. Call or text (613) 900-6005 for urgent issues such as broken springs, off-track doors, or a door that will not close."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which Ottawa areas do you serve?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We serve Ottawa and nearby communities including Kanata, Barrhaven, Orleans, Nepean, Stittsville, Gloucester, Manotick, and Rockland. See our service areas page for the full list."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json" id="ogt-home-reviews-schema"></script>
 </head>
 <body>
-  <a class="ogt-skip" href="#main">Skip to content</a>
-
-  <header class="ogt-header">
-    <div class="ogt-header-inner">
-      <a class="ogt-logo" href="/">
-        <img src="assets/logo.svg" width="44" height="44" alt="Ottawa Garage Tech logo">
-        <span class="ogt-logo-text">
-          Ottawa Garage Tech
-          <span class="ogt-logo-sub">Garage doors · Ottawa</span>
-        </span>
-      </a>
-      <nav class="ogt-nav-desktop" aria-label="Main">
-        <a href="/" aria-current="page">Home</a>
-        <a href="/contact">Contact</a>
-      </nav>
-      <a class="ogt-btn ogt-btn-call ogt-header-cta" href="tel:+16139006005">Call (613) 900-6005</a>
-      <button class="ogt-menu-btn" type="button" aria-expanded="false" aria-controls="ogt-nav-mobile" aria-label="Open menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-    <nav id="ogt-nav-mobile" class="ogt-nav-mobile" aria-label="Mobile">
-      <a href="/">Home</a>
-      <a href="/contact">Contact</a>
-      <a class="ogt-btn ogt-btn-call" href="tel:+16139006005">Call now</a>
-    </nav>
-  </header>
+  <div id="ogt-site-header"></div>
 
   <main id="main">
-    <section class="ogt-hero">
-      <div>
+    <section class="ogt-hero ogt-hero--visual">
+      <div class="ogt-hero-content">
         <p class="ogt-hero-eyebrow">Ottawa &amp; surrounding communities</p>
-        <h1>Garage door help, without the runaround</h1>
-        <p class="ogt-hero-tagline">Friendly, local technicians for repair, new doors, and openers — on your schedule.</p>
+        <h1>Garage door repair &amp; installation in Ottawa</h1>
+        <p class="ogt-hero-tagline">Friendly, local technicians for broken springs, opener problems, new doors, and emergency repairs — with upfront quotes before major work.</p>
         <div class="ogt-hero-actions">
-          <a class="ogt-btn ogt-btn-primary" href="tel:+16139006005">Call or text</a>
-          <a class="ogt-btn ogt-btn-secondary" href="/contact">Request a quote</a>
+          <a class="ogt-btn ogt-btn-primary" href="tel:+16139006005">Call or text (613) 900-6005</a>
+          <a class="ogt-btn ogt-btn-secondary" href="mailto:ottawagaragetech@gmail.com?subject=Free%20quote%20request%20%E2%80%94%20Ottawa%20Garage%20Tech">Free quote by email</a>
         </div>
-      </div>
-      <aside class="ogt-hero-panel" aria-label="Quick facts">
-        <h2>Why homeowners call us</h2>
-        <ul>
-          <li>Clear quotes before work starts</li>
-          <li>Evening &amp; weekend appointments</li>
-          <li>Parts stocked for common repairs</li>
-          <li>Respect for your home and driveway</li>
+        <ul class="ogt-hero-stats" aria-label="Highlights">
+          <li><strong>7 days</strong><span>9 AM – 9 PM</span></li>
+          <li><strong>Same-day</strong><span>when available</span></li>
+          <li><strong>5.0★</strong><span><a href="#reviews">12+ reviews</a></span></li>
         </ul>
-      </aside>
+      </div>
+      <div class="ogt-hero-collage-wrap">
+        <div class="ogt-hero-collage" id="ogt-hero-collage" aria-hidden="true"></div>
+        <span class="ogt-hero-collage-badge">Local · Insured · Upfront quotes</span>
+      </div>
     </section>
 
-    <section class="ogt-section ogt-section--alt" aria-labelledby="services-heading">
+    <section class="ogt-badges-section" aria-label="Why choose us">
       <div class="ogt-section-inner">
-        <h2 id="services-heading">What we do</h2>
-        <p class="ogt-section-intro">From stuck doors to full replacements, we handle residential and light commercial jobs across the Ottawa region.</p>
-        <div class="ogt-services-grid">
-          <article class="ogt-service-card">
-            <h3>Emergency repair</h3>
-            <p>Broken springs, snapped cables, doors off track, and urgent safety issues.</p>
-          </article>
-          <article class="ogt-service-card">
-            <h3>Spring replacement</h3>
-            <p>Torsion and extension springs sized and installed correctly the first time.</p>
-          </article>
-          <article class="ogt-service-card">
-            <h3>New door installation</h3>
-            <p>Insulated and standard doors fitted for Ottawa weather and your curb appeal.</p>
-          </article>
-          <article class="ogt-service-card">
-            <h3>Opener service</h3>
-            <p>Repair, replacement, and smart-opener setup for major brands.</p>
-          </article>
-          <article class="ogt-service-card">
-            <h3>Maintenance tune-ups</h3>
-            <p>Lubrication, balance checks, and hardware inspection to prevent surprises.</p>
-          </article>
-          <article class="ogt-service-card">
-            <h3>Weather sealing</h3>
-            <p>Bottom seals, trim, and hardware adjustments to cut drafts and pests.</p>
-          </article>
+        <div class="ogt-badges-grid" id="ogt-trust-badges"></div>
+      </div>
+    </section>
+
+    <section class="ogt-section" aria-labelledby="services-heading">
+      <div class="ogt-section-inner">
+        <header class="ogt-section-header">
+          <p class="ogt-section-label">Services</p>
+          <h2 id="services-heading">Garage door services in Ottawa</h2>
+          <p class="ogt-section-intro">From emergency repairs to new insulated doors up to R-18, we handle residential and light commercial garage doors across the city and suburbs. <a href="/services">View all services</a> or <a href="/gallery">see project photos</a>.</p>
+        </header>
+        <div class="ogt-services-grid" id="ogt-home-services" data-card-style="text"></div>
+      </div>
+    </section>
+
+    <section class="ogt-section ogt-section--alt" id="reviews" aria-labelledby="reviews-heading">
+      <div class="ogt-section-inner">
+        <header class="ogt-section-header">
+          <p class="ogt-section-label">Reviews</p>
+          <h2 id="reviews-heading">Garage door repair reviews in Ottawa</h2>
+          <p class="ogt-section-intro">Rated 5.0 by Ottawa-area homeowners for spring replacement, opener repair, new door installation, and emergency service.</p>
+        </header>
+        <div class="ogt-reviews-summary-wrap" id="ogt-reviews-summary"></div>
+        <div class="ogt-reviews-grid" id="ogt-reviews-grid" data-limit="6"></div>
+      </div>
+    </section>
+
+    <section class="ogt-section ogt-section--seo" aria-labelledby="seo-local-heading">
+      <div class="ogt-section-inner ogt-seo-prose">
+        <h2 id="seo-local-heading">Local garage door repair you can count on</h2>
+        <p>Ottawa Garage Tech is a mobile garage door company serving homeowners in <strong>Ottawa</strong>, <a href="/areas/kanata">Kanata</a>, <a href="/areas/barrhaven">Barrhaven</a>, <a href="/areas/orleans">Orleans</a>, <a href="/areas/nepean">Nepean</a>, and communities nearby. Whether your door will not close, a <a href="/services/spring-replacement">torsion spring has snapped</a>, or your <a href="/services/opener-service">opener hums but does not move</a>, we diagnose the full system and explain your options in plain language.</p>
+        <p>Our technicians carry common springs, cables, rollers, and opener parts so many jobs are completed in a single visit. For <a href="/services/garage-door-installation">new garage door installation</a>, we measure on site, help you choose a door with insulation up to R-18 suited to Ottawa winters, and install, seal, and balance the system. We also offer <a href="/services/maintenance">annual tune-ups</a> and <a href="/services/weather-sealing">weather sealing</a> before cold weather sets in.</p>
+        <h3>When to call for emergency garage door repair</h3>
+        <p>Call or text <a href="tel:+16139006005">(613) 900-6005</a> if your door is off track, hanging unevenly, or will not secure your home. These are safety issues — avoid forcing the door or running the opener repeatedly. We prioritize urgent calls seven days a week from 9 AM to 9 PM.</p>
+        <h3>Transparent pricing</h3>
+        <p>Most spring replacements fall in the <strong>$220–$380</strong> range depending on door size. We quote before major repair or installation work so you know what to expect. See our <a href="/faq">FAQ</a> and <a href="/blog">garage door tips blog</a> for more on costs, springs, and winter care.</p>
+      </div>
+    </section>
+
+    <section class="ogt-section ogt-section--alt" aria-labelledby="areas-heading">
+      <div class="ogt-section-inner">
+        <header class="ogt-section-header">
+          <p class="ogt-section-label">Coverage</p>
+          <h2 id="areas-heading">Service areas across Ottawa</h2>
+          <p class="ogt-section-intro">Mobile garage door service in Ottawa and surrounding neighbourhoods. Select your area for local details, or <a href="/areas">browse all service areas</a>.</p>
+        </header>
+        <div class="ogt-areas-map-layout">
+          <div class="ogt-areas-map-panel">
+            <div id="ogt-service-map" class="ogt-service-map" role="application" aria-label="Map of Ottawa Garage Tech service areas" tabindex="0"></div>
+            <p class="ogt-map-hint"><span class="ogt-map-hint-icon" aria-hidden="true">&#9679;</span> Click a pin or neighbourhood below to view local garage door service details.</p>
+          </div>
+          <aside class="ogt-areas-map-sidebar" aria-label="Service area list">
+            <p class="ogt-areas-map-sidebar-label">Neighbourhoods we serve</p>
+            <div class="ogt-areas-grid ogt-areas-grid--map" id="ogt-home-areas"></div>
+          </aside>
         </div>
       </div>
     </section>
 
-    <section class="ogt-section" aria-labelledby="trust-heading">
+    <section class="ogt-section" aria-labelledby="faq-home-heading">
       <div class="ogt-section-inner">
-        <h2 id="trust-heading">Built for Ottawa homes</h2>
-        <p class="ogt-section-intro">A straightforward service experience — no pressure, no mystery fees.</p>
-        <div class="ogt-trust">
-          <div class="ogt-trust-item">
-            <strong>Local team</strong>
-            <span>Technicians who know Ottawa neighbourhoods and winter wear.</span>
-          </div>
-          <div class="ogt-trust-item">
-            <strong>Upfront scope</strong>
-            <span>We explain options and pricing before major work begins.</span>
-          </div>
-          <div class="ogt-trust-item">
-            <strong>Flexible hours</strong>
-            <span>Mon–Sun, 9 AM – 9 PM — book around your day.</span>
-          </div>
-          <div class="ogt-trust-item">
-            <strong>Clean job sites</strong>
-            <span>We protect your garage floor and haul away old hardware when asked.</span>
-          </div>
+        <header class="ogt-section-header">
+          <p class="ogt-section-label">FAQ</p>
+          <h2 id="faq-home-heading">Common questions</h2>
+          <p class="ogt-section-intro">Quick answers about garage door repair in Ottawa. <a href="/faq">See full FAQ</a>.</p>
+        </header>
+        <div class="ogt-faq-list ogt-home-faq">
+          <details class="ogt-faq-item">
+            <summary>How much does garage door repair cost in Ottawa?</summary>
+            <p>Costs depend on the repair. Spring work is often $220–$380; cable repairs $175–$275; tune-ups from $150. Emergency visits start around $199 before parts. We explain pricing before work starts.</p>
+          </details>
+          <details class="ogt-faq-item">
+            <summary>Do you offer same-day garage door service?</summary>
+            <p>Yes, when scheduling allows. For urgent issues — a door that will not close, off-track panels, or a broken spring — call or text (613) 900-6005 for the fastest response.</p>
+          </details>
+          <details class="ogt-faq-item">
+            <summary>Should both garage door springs be replaced?</summary>
+            <p>Usually yes. If one torsion or extension spring has failed, the other is often near end of life. Replacing both restores balance and helps prevent a second breakdown soon after.</p>
+          </details>
+          <details class="ogt-faq-item">
+            <summary>Which areas do you serve?</summary>
+            <p>We cover Ottawa, Kanata, Barrhaven, Orleans, Nepean, Stittsville, Gloucester, Manotick, Rockland, and more. Visit our <a href="/areas">service areas</a> page for the full list.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="ogt-section ogt-section--alt" aria-labelledby="contact-home-heading">
+      <div class="ogt-section-inner ogt-home-contact-wrap ogt-home-contact-wrap--simple">
+        <div>
+          <h2 id="contact-home-heading">Request garage door service</h2>
+          <p class="ogt-section-intro">For urgent problems, <strong>call or text <a href="tel:+16139006005">(613) 900-6005</a></strong> is fastest. Use the form for quotes and non-urgent requests.</p>
+        </div>
+        <div class="ogt-form-card ogt-home-form-card">
+          <div id="ogt-home-form-thanks" class="ogt-form-success" role="status">Thank you — we received your message and will reply shortly.</div>
+          <form class="ogt-form" id="ogt-home-form" method="POST" action="https://formsubmit.co/ottawagaragetech@gmail.com">
+            <input type="hidden" name="_subject" value="Ottawa Garage Tech — homepage lead">
+            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
+            <label for="home-name">Name <span class="ogt-required">*</span></label>
+            <input type="text" id="home-name" name="name" required autocomplete="name">
+            <label for="home-email">Email <span class="ogt-required">*</span></label>
+            <input type="email" id="home-email" name="email" required autocomplete="email">
+            <label for="home-phone">Phone</label>
+            <input type="tel" id="home-phone" name="phone" autocomplete="tel">
+            <label for="home-service">Service</label>
+            <select id="home-service" name="service">
+              <option value="">Select (optional)</option>
+            </select>
+            <label for="home-message">Message <span class="ogt-required">*</span></label>
+            <textarea id="home-message" name="message" required placeholder="Describe the issue — e.g. broken spring, opener not working, new door quote"></textarea>
+            <button type="submit" class="ogt-btn ogt-btn-primary">Send message</button>
+          </form>
         </div>
       </div>
     </section>
 
     <section class="ogt-cta-band" aria-label="Contact call to action">
-      <h2>Need help today?</h2>
-      <p>Call or text for the fastest response. Use our contact form for quotes and non-urgent questions.</p>
+      <h2>Need garage door help today?</h2>
+      <p>Call or text for the fastest response — especially if your door will not close.</p>
       <a class="ogt-btn ogt-btn-accent" href="tel:+16139006005">(613) 900-6005</a>
     </section>
   </main>
 
-  <footer class="ogt-footer">
-    <div class="ogt-footer-inner">
-      <div>
-        <h3>Ottawa Garage Tech</h3>
-        <p>Garage door repair, installation, and openers for Ottawa and nearby communities.</p>
-      </div>
-      <div>
-        <h3>Contact</h3>
-        <p><a href="tel:+16139006005">(613) 900-6005</a></p>
-        <p><a href="mailto:ottawagaragetech@gmail.com">ottawagaragetech@gmail.com</a></p>
-        <p><a href="https://www.facebook.com/REPLACE_FB_PAGE_ID" target="_blank" rel="noopener noreferrer">Facebook</a></p>
-      </div>
-      <div>
-        <h3>Hours &amp; area</h3>
-        <p>Mon – Sun · 9:00 AM – 9:00 PM</p>
-        <p>Serving Ottawa, ON and surrounding suburbs.</p>
-      </div>
-    </div>
-    <p class="ogt-footer-bottom">&copy; <span id="ogt-year"></span> Ottawa Garage Tech. All rights reserved.</p>
-  </footer>
-
-  <script>document.getElementById("ogt-year").textContent = new Date().getFullYear();</script>
-  <script src="js/nav.js" defer></script>
+  <div id="ogt-site-footer"></div>
+  <script src="/js/site-config.js"></script>
+  <script src="/js/layout.js"></script>
+  <script src="/js/visual.js"></script>
+  <script src="/js/form-setup.js"></script>
+  <script src="/js/home.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="/js/areas-map.js"></script>
 </body>
 </html>

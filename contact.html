@@ -1,63 +1,32 @@
 <!DOCTYPE html>
-<html lang="en-CA">
+<html lang="en-CA" data-ogt-page="contact">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Ottawa Garage Tech | Call, Text, or Send a Message</title>
   <meta name="description" content="Contact Ottawa Garage Tech for garage door quotes and service in Ottawa. Call or text for urgent repairs; use the form for non-urgent requests.">
   <link rel="canonical" href="https://ottawagaragetech.ca/contact">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Contact Ottawa Garage Tech">
-  <meta property="og:description" content="Call, text, or send a message for garage door service in Ottawa.">
-  <meta property="og:url" content="https://ottawagaragetech.ca/contact">
-  <meta property="og:image" content="https://ottawagaragetech.ca/assets/og-preview.png">
-  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-  <a class="ogt-skip" href="#main">Skip to content</a>
-
-  <header class="ogt-header">
-    <div class="ogt-header-inner">
-      <a class="ogt-logo" href="/">
-        <img src="assets/logo.svg" width="44" height="44" alt="Ottawa Garage Tech logo">
-        <span class="ogt-logo-text">
-          Ottawa Garage Tech
-          <span class="ogt-logo-sub">Garage doors · Ottawa</span>
-        </span>
-      </a>
-      <nav class="ogt-nav-desktop" aria-label="Main">
-        <a href="/">Home</a>
-        <a href="/contact" aria-current="page">Contact</a>
-      </nav>
-      <a class="ogt-btn ogt-btn-call ogt-header-cta" href="tel:+16139006005">Call (613) 900-6005</a>
-      <button class="ogt-menu-btn" type="button" aria-expanded="false" aria-controls="ogt-nav-mobile" aria-label="Open menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-    <nav id="ogt-nav-mobile" class="ogt-nav-mobile" aria-label="Mobile">
-      <a href="/">Home</a>
-      <a href="/contact">Contact</a>
-      <a class="ogt-btn ogt-btn-call" href="tel:+16139006005">Call now</a>
-    </nav>
-  </header>
-
+  <div id="ogt-site-header"></div>
   <main id="main">
     <div class="ogt-page-hero">
       <h1>Get in touch</h1>
       <p class="ogt-section-intro">For urgent or same-day garage door issues, <strong>call or text is fastest</strong>. Use the form below for quotes, scheduling questions, or non-urgent requests.</p>
       <div class="ogt-contact-quick">
         <a class="ogt-btn ogt-btn-primary" href="tel:+16139006005">Call (613) 900-6005</a>
-        <a class="ogt-btn ogt-btn-secondary" href="sms:+16139006005">Text us</a>
+        <a class="ogt-btn ogt-btn-secondary" href="mailto:ottawagaragetech@gmail.com?subject=Free%20quote%20request%20%E2%80%94%20Ottawa%20Garage%20Tech">Free quote by email</a>
+        <a class="ogt-btn ogt-btn-secondary ogt-btn-ghost" href="sms:+16139006005">Text us</a>
       </div>
     </div>
-
     <div class="ogt-contact-grid">
       <div class="ogt-form-card">
         <h2>Send a message</h2>
-        <p class="ogt-form-note">We aim to reply to form submissions within 2 hours during business hours (Mon–Sun, 9 AM – 9 PM).</p>
-        <div id="ogt-form-thanks" class="ogt-form-success" role="status">Thank you — your message was sent. We will get back to you shortly.</div>
-        <form class="ogt-form" action="https://formspree.io/f/REPLACE_ME" method="POST">
+        <p class="ogt-form-note">We aim to reply within 2 hours during business hours (Mon-Sun, 9 AM - 9 PM).</p>
+        <div id="ogt-form-thanks" class="ogt-form-success" role="status">Thank you - your message was sent. We will get back to you shortly.</div>
+        <form class="ogt-form" method="POST" action="https://formsubmit.co/ottawagaragetech@gmail.com">
           <input type="hidden" name="_subject" value="Ottawa Garage Tech website lead">
           <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
           <label for="contact-name">Name <span class="ogt-required">*</span></label>
@@ -67,58 +36,32 @@
           <label for="contact-phone">Phone</label>
           <input type="tel" id="contact-phone" name="phone" placeholder="(613) 555-1234" autocomplete="tel">
           <label for="contact-service">Service needed</label>
-          <input type="text" id="contact-service" name="service" placeholder="e.g. Spring repair, new door, opener install">
+          <select id="contact-service" name="service"><option value="">Select a service (optional)</option></select>
           <label for="contact-message">Message <span class="ogt-required">*</span></label>
-          <textarea id="contact-message" name="message" placeholder="Describe your issue or request…" required></textarea>
+          <textarea id="contact-message" name="message" placeholder="Describe your issue or request..." required></textarea>
           <button type="submit" class="ogt-btn ogt-btn-primary">Send message</button>
         </form>
       </div>
-
       <aside class="ogt-info-card">
         <h2>Ottawa Garage Tech</h2>
-        <p>Ottawa, ON — serving Ottawa and surrounding communities.</p>
+        <p>Ottawa, ON - serving Ottawa and surrounding communities.</p>
         <dl>
           <dt>Call or text</dt>
           <dd><a href="tel:+16139006005">(613) 900-6005</a></dd>
           <dt>Email</dt>
           <dd><a href="mailto:ottawagaragetech@gmail.com">ottawagaragetech@gmail.com</a></dd>
           <dt>Hours</dt>
-          <dd>Mon – Sun · 9:00 AM – 9:00 PM</dd>
+          <dd>Mon - Sun, 9:00 AM - 9:00 PM</dd>
           <dt>Follow us</dt>
           <dd><a href="https://www.facebook.com/REPLACE_FB_PAGE_ID" target="_blank" rel="noopener noreferrer">Facebook</a></dd>
         </dl>
       </aside>
     </div>
   </main>
-
-  <footer class="ogt-footer">
-    <div class="ogt-footer-inner">
-      <div>
-        <h3>Ottawa Garage Tech</h3>
-        <p>Garage door repair, installation, and openers for Ottawa and nearby communities.</p>
-      </div>
-      <div>
-        <h3>Contact</h3>
-        <p><a href="tel:+16139006005">(613) 900-6005</a></p>
-        <p><a href="mailto:ottawagaragetech@gmail.com">ottawagaragetech@gmail.com</a></p>
-        <p><a href="https://www.facebook.com/REPLACE_FB_PAGE_ID" target="_blank" rel="noopener noreferrer">Facebook</a></p>
-      </div>
-      <div>
-        <h3>Hours &amp; area</h3>
-        <p>Mon – Sun · 9:00 AM – 9:00 PM</p>
-        <p>Serving Ottawa, ON and surrounding suburbs.</p>
-      </div>
-    </div>
-    <p class="ogt-footer-bottom">&copy; <span id="ogt-year"></span> Ottawa Garage Tech. All rights reserved.</p>
-  </footer>
-
-  <script>document.getElementById("ogt-year").textContent = new Date().getFullYear();</script>
-  <script src="js/nav.js" defer></script>
-  <script>
-    if (new URLSearchParams(window.location.search).get("sent") === "1") {
-      var el = document.getElementById("ogt-form-thanks");
-      if (el) el.classList.add("is-visible");
-    }
-  </script>
+  <div id="ogt-site-footer"></div>
+  <script src="/js/site-config.js"></script>
+  <script src="/js/layout.js"></script>
+  <script src="/js/form-setup.js"></script>
+  <script src="/js/contact-form.js"></script>
 </body>
 </html>
