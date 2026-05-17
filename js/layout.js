@@ -21,16 +21,20 @@
     return "mailto:" + cfg.email + "?subject=" + subject + "&body=" + body;
   }
 
-  function quoteEmailButton(className, label) {
+  function quoteButton(className, label, href) {
     return (
       '<a class="' +
       (className || "ogt-btn ogt-btn-secondary") +
       '" href="' +
-      quoteMailtoHref() +
+      esc(href || "/contact") +
       '">' +
-      esc(label || "Free quote by email") +
+      esc(label || "Free quote") +
       "</a>"
     );
+  }
+
+  function quoteEmailButton(className, label) {
+    return quoteButton(className, label || "Free quote by email", quoteMailtoHref());
   }
 
   function navLink(item) {
@@ -82,7 +86,7 @@
     '" aria-label="Call ' +
     esc(cfg.phone) +
     '">Call</a>' +
-    quoteEmailButton("ogt-btn ogt-btn-secondary ogt-header-quote", "Free quote") +
+    quoteButton("ogt-btn ogt-btn-secondary ogt-header-quote", "Free quote", "/contact") +
     "</div>" +
     '<button class="ogt-menu-btn" type="button" aria-expanded="false" aria-controls="ogt-nav-mobile" aria-label="Open menu">' +
     "<span></span><span></span><span></span></button></div>" +
@@ -93,7 +97,7 @@
     '<a class="ogt-btn ogt-btn-call" href="tel:' +
     cfg.phoneTel +
     '">Call now</a>' +
-    quoteEmailButton("ogt-btn ogt-btn-secondary ogt-nav-quote") +
+    quoteButton("ogt-btn ogt-btn-secondary ogt-nav-quote", "Free quote", "/contact") +
     "</nav></header>";
 
   var footerHtml =
