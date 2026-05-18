@@ -63,9 +63,9 @@ window.OGT = {
       cap: "Grey door · Ottawa",
     },
     {
-      src: "/assets/gallery/home-black-door-ottawa.png",
-      alt: "Modern black garage door with windows installed in Ottawa",
-      cap: "Modern black · Ottawa",
+      src: "/assets/gallery/home-rollers-replacement.png",
+      alt: "Worn garage door roller beside a new replacement roller — Ottawa maintenance",
+      cap: "Roller replacement",
     },
   ],
 
