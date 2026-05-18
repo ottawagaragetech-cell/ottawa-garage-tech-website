@@ -50,7 +50,10 @@ const images = {
   opener: { src: photo("20260227_140936.jpg", 600), alt: "Belt-drive garage door opener installation Ottawa" },
   cable: { src: photo("20250115_105310.jpg"), alt: "Garage door lift cable repair Ottawa" },
   maintenance: { src: photo("20250222_164415.jpg"), alt: "Garage door maintenance and tune-up Ottawa" },
-  weather: { src: photo("20260206_063252.jpg"), alt: "Garage door weather stripping Ottawa" },
+  weather: {
+    src: "/assets/services/weather-sealing.png",
+    alt: "Garage door jamb weatherstripping and side seal — Ottawa weather sealing",
+  },
 };
 
 const related = {

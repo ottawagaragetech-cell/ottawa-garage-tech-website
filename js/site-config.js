@@ -27,7 +27,7 @@ window.OGT = {
     emergency: "https://img1.wsimg.com/isteam/ip/1b277bec-adfe-487a-a8c7-5e77b97e6d1d/20251015_061012%20(1).jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:800,cg:true",
     cable: "https://img1.wsimg.com/isteam/ip/1b277bec-adfe-487a-a8c7-5e77b97e6d1d/20250115_105310.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:800,cg:true",
     maintenance: "https://img1.wsimg.com/isteam/ip/1b277bec-adfe-487a-a8c7-5e77b97e6d1d/20250222_164415.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:800,cg:true",
-    weather: "https://img1.wsimg.com/isteam/ip/1b277bec-adfe-487a-a8c7-5e77b97e6d1d/20260206_063252.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:800,cg:true",
+    weather: "/assets/services/weather-sealing.png",
     hardware: "https://img1.wsimg.com/isteam/ip/1b277bec-adfe-487a-a8c7-5e77b97e6d1d/20260224_153212.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:800,cg:true",
     modern: "/assets/services/install-kanata.png",
     springDetail: "/assets/services/spring-replacement-parts.png",
