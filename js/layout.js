@@ -4,6 +4,16 @@
 
   document.documentElement.classList.add("ogt-premium");
 
+  /* Load early so a later layout error cannot block these scripts */
+  (function loadSiteScripts() {
+    ["effects.js", "back-to-top.js"].forEach(function (file) {
+      var s = document.createElement("script");
+      s.src = "/js/" + file;
+      s.defer = true;
+      document.body.appendChild(s);
+    });
+  })();
+
   var page = document.documentElement.getAttribute("data-ogt-page") || "";
 
   function esc(s) {
@@ -532,7 +542,7 @@
       appendQuoteEmail(actions, "ogt-btn ogt-btn-secondary ogt-btn-on-dark");
       return;
     }
-    if (band.querySelector('a[href^="tel:"]') && !hasQuoteEmailAction(band)) {
+    if (band.querySelector('a[href^="tel:"]') && !hasQuoteFormLink(band)) {
       var wrap = document.createElement("div");
       wrap.className = "ogt-contact-quick ogt-cta-band-actions";
       var tel = band.querySelector('a[href^="tel:"]');
@@ -542,15 +552,6 @@
     }
   });
 
-  var effects = document.createElement("script");
-  effects.src = "/js/effects.js";
-  effects.defer = true;
-  document.body.appendChild(effects);
-
-  var backToTop = document.createElement("script");
-  backToTop.src = "/js/back-to-top.js";
-  backToTop.defer = true;
-  document.body.appendChild(backToTop);
 })();
 
 
