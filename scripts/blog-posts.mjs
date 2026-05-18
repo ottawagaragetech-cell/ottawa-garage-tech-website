@@ -215,7 +215,7 @@ export const blogPosts = [
   },
   {
     slug: "repair-vs-replace-garage-door",
-    title: "Repair vs Replace Your Garage Door: A Ottawa Homeowner Guide",
+    title: "Repair vs Replace Your Garage Door: An Ottawa Homeowner Guide",
     h1: "Repair vs replace your garage door: an Ottawa homeowner guide",
     desc: "Rust, noise, poor insulation, repeated breakdowns — when to repair your garage door in Ottawa and when replacement up to R-18 is the better investment.",
     keywords: "repair or replace garage door Ottawa, new garage door vs repair, garage door replacement",

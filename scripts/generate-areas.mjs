@@ -104,6 +104,65 @@ const AREAS = [
   { name: "Rockcliffe Park", region: "central" },
 ].map((a) => ({ ...a, slug: slugify(a.name) }));
 
+const AREA_GEO = {
+  ottawa: { lat: 45.4215, lng: -75.6972 },
+  kanata: { lat: 45.3088, lng: -75.8986 },
+  stittsville: { lat: 45.256, lng: -75.916 },
+  barrhaven: { lat: 45.2797, lng: -75.7325 },
+  nepean: { lat: 45.3369, lng: -75.7344 },
+  orleans: { lat: 45.48, lng: -75.515 },
+  gloucester: { lat: 45.436, lng: -75.61 },
+  manotick: { lat: 45.227, lng: -75.681 },
+  richmond: { lat: 45.194, lng: -75.838 },
+  carp: { lat: 45.35, lng: -76.04 },
+  rockland: { lat: 45.55, lng: -75.29 },
+  kemptville: { lat: 45.016, lng: -75.639 },
+  "carleton-place": { lat: 45.133, lng: -76.133 },
+  "alta-vista": { lat: 45.385, lng: -75.665 },
+  westboro: { lat: 45.392, lng: -75.755 },
+  vanier: { lat: 45.44, lng: -75.655 },
+  "hunt-club": { lat: 45.33, lng: -75.67 },
+  "riverside-south": { lat: 45.28, lng: -75.68 },
+  "findlay-creek": { lat: 45.26, lng: -75.52 },
+  greely: { lat: 45.25, lng: -75.55 },
+  metcalfe: { lat: 45.19, lng: -75.47 },
+  osgoode: { lat: 45.15, lng: -75.6 },
+  dunrobin: { lat: 45.38, lng: -76.05 },
+  "constance-bay": { lat: 45.5, lng: -76.08 },
+  cumberland: { lat: 45.52, lng: -75.42 },
+  "blackburn-hamlet": { lat: 45.43, lng: -75.58 },
+  "beacon-hill": { lat: 45.44, lng: -75.57 },
+  glebe: { lat: 45.4, lng: -75.69 },
+  "sandy-hill": { lat: 45.43, lng: -75.68 },
+  "rockcliffe-park": { lat: 45.45, lng: -75.66 },
+};
+
+const AREA_META = {
+  ottawa: "Garage door repair across Ottawa — emergency service, spring replacement, openers, and new insulated doors up to R-18.",
+  kanata: "Garage door repair in Kanata — broken springs, off-track doors, opener service, and new insulated installs for west-end homes.",
+  barrhaven: "Garage door service in Barrhaven — springs, cables, openers, and new doors for south Ottawa subdivisions.",
+  orleans: "Garage door repair in Orleans — east-end emergency help, spring replacement, and opener repairs.",
+  nepean: "Garage door repair in Nepean — mobile technicians for springs, openers, cables, and new installations.",
+  stittsville: "Garage door service in Stittsville — spring failures, opener issues, and insulated door upgrades.",
+  gloucester: "Garage door repair in Gloucester — same-day help when available for stuck or off-track doors.",
+  manotick: "Garage door repair in Manotick — village and rural properties, springs, openers, and weather sealing.",
+  rockland: "Garage door service in Rockland — mobile repair for springs, openers, and installations east of Ottawa.",
+};
+
+function areaMetaDescription(area) {
+  if (AREA_META[area.slug]) {
+    return AREA_META[area.slug] + " Call (613) 900-6005.";
+  }
+  const regional = {
+    west: `West-end garage door repair in ${area.name} — springs, openers, and insulated door installs.`,
+    south: `Garage door service in ${area.name} — spring replacement, opener repair, and new doors for south Ottawa.`,
+    east: `${area.name} garage door repair — off-track doors, broken springs, and opener service in the east end.`,
+    central: `Central Ottawa garage door repair in ${area.name} — older homes, laneways, and tight driveways.`,
+    outer: `Mobile garage door repair serving ${area.name} — call to confirm timing; stocked trucks for common parts.`,
+  };
+  return (regional[area.region] || `Garage door repair in ${area.name}.`) + " Upfront quotes. Call (613) 900-6005.";
+}
+
 const REGION_NOTE = {
   west: (n) =>
     `${n} and nearby west-end neighbourhoods see wide temperature swings — we often recommend insulated doors up to R-18 and solid bottom seals before winter.`,
@@ -135,7 +194,11 @@ function areaPage(area, index) {
   const imgs = pickPhotos(index, area.name);
   const canonical = `${domain}/areas/${area.slug}`;
   const title = `Garage Door Repair ${area.name} | Ottawa Garage Tech`;
-  const desc = `Garage door repair, springs, openers, and new installations in ${area.name}. Same-day service when available. Call (613) 900-6005.`;
+  const desc = areaMetaDescription(area);
+  const geo = AREA_GEO[area.slug];
+  const geoBlock = geo
+    ? `"geo": {"@type": "GeoCoordinates", "latitude": ${geo.lat}, "longitude": ${geo.lng}},`
+    : "";
   const near = nearby(area);
   const heroAlt = `Garage door service in ${area.name} — Ottawa Garage Tech`;
   const inlineAlt = `Garage door work near ${area.name}`;
@@ -167,6 +230,12 @@ function areaPage(area, index) {
   <meta property="og:description" content="${esc(desc)}">
   <meta property="og:url" content="${canonical}">
   <meta property="og:image" content="${imgs.hero.src}">
+  <meta property="og:site_name" content="Ottawa Garage Tech">
+  <meta property="og:locale" content="en_CA">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="${esc(title)}">
+  <meta name="twitter:description" content="${esc(desc)}">
+  <meta name="twitter:image" content="${imgs.hero.src}">
   <link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/css/style.css">
   <script type="application/ld+json">
@@ -177,8 +246,20 @@ function areaPage(area, index) {
     "url": "${domain}/",
     "telephone": "+16139006005",
     "image": ${JSON.stringify(imgs.hero.src)},
+    ${geoBlock}
     "areaServed": ${JSON.stringify(area.name + ", Ottawa, ON")},
     "description": ${JSON.stringify(desc)}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "${domain}/"},
+      {"@type": "ListItem", "position": 2, "name": "Service areas", "item": "${domain}/areas"},
+      {"@type": "ListItem", "position": 3, "name": ${JSON.stringify(area.name)}, "item": "${canonical}"}
+    ]
   }
   </script>
 </head>
