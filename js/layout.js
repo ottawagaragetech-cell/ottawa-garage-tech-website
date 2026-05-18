@@ -29,6 +29,30 @@
     return quoteButton(className, label || "Free quote by email", "/contact");
   }
 
+  function isValidSocialUrl(url, host) {
+    return url && url.indexOf(host) !== -1 && url.indexOf("REPLACE") === -1;
+  }
+
+  function socialFooterItems() {
+    var links = [];
+    if (isValidSocialUrl(cfg.instagram, "instagram.com")) {
+      links.push(
+        '<a href="' +
+          esc(cfg.instagram) +
+          '" target="_blank" rel="noopener noreferrer">Instagram</a>'
+      );
+    }
+    if (isValidSocialUrl(cfg.facebook, "facebook.com")) {
+      links.push(
+        '<a href="' +
+          esc(cfg.facebook) +
+          '" target="_blank" rel="noopener noreferrer">Facebook</a>'
+      );
+    }
+    if (!links.length) return "";
+    return '<li><span>Social</span>' + links.join(" · ") + "</li>";
+  }
+
   function navLink(item) {
     var current = page === item.id ? ' aria-current="page"' : "";
     return '<a href="' + item.href + '"' + current + ">" + esc(item.label) + "</a>";
@@ -130,11 +154,7 @@
       '/">' +
       esc(cfg.domain.replace(/^https?:\/\//, "")) +
       "</a></li>" +
-      (cfg.facebook && cfg.facebook.indexOf("facebook.com") !== -1 && cfg.facebook.indexOf("REPLACE") === -1
-        ? '<li><span>Social</span><a href="' +
-          esc(cfg.facebook) +
-          '" target="_blank" rel="noopener noreferrer">Facebook</a></li>'
-        : "") +
+      socialFooterItems() +
       "</ul>" +
       quoteButton("ogt-btn ogt-btn-secondary ogt-footer-quote", "Free quote", "/contact") +
       "</div></div>" +

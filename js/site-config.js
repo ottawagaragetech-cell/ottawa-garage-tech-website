@@ -7,8 +7,9 @@ window.OGT = {
   quoteEmailSubject: "Free quote request — Ottawa Garage Tech",
   domain: "https://ottawagaragetech.ca",
   hours: "Mon – Sun · 9:00 AM – 9:00 PM",
-  /** Set full Facebook page URL when available; leave empty to hide social links */
+  /** Set full Facebook page URL when available; leave empty to hide */
   facebook: "",
+  instagram: "https://www.instagram.com/ottawagaragetech",
   /** Quote & contact forms → Web3Forms (set key on Vercel or here) */
   formAction: "/api/contact",
   web3formsAccessKey: "2fc6b3ec-e3e3-4d43-a612-743c96999c96",
