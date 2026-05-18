@@ -11,7 +11,7 @@
 
   function imgSrc(keyOrUrl) {
     if (!keyOrUrl) return "";
-    if (keyOrUrl.indexOf("http") === 0) return keyOrUrl;
+    if (keyOrUrl.indexOf("http") === 0 || keyOrUrl.indexOf("/") === 0) return keyOrUrl;
     return (cfg.images && cfg.images[keyOrUrl]) || "";
   }
 
@@ -163,9 +163,13 @@
       el.innerHTML = cfg.showcase.map(showcaseTile).join("");
     },
     renderGalleryPreview: function (el, limit) {
-      if (!el || !cfg.showcase) return;
-      var items = cfg.showcase.slice(0, limit || 6);
+      if (!el) return;
+      var items = cfg.homeGallery || (cfg.showcase && cfg.showcase.slice(0, limit || 6));
+      if (!items || !items.length) return;
       el.innerHTML = items.map(galleryTile).join("");
+    },
+    renderHomeGallery: function (el) {
+      this.renderGalleryPreview(el, 6);
     },
     renderGalleryPage: renderGalleryPage,
     renderGalleryFilters: renderGalleryFilters,
@@ -229,6 +233,9 @@
 
   var galleryPrev = document.getElementById("ogt-gallery-preview");
   if (galleryPrev) OGTRender.renderGalleryPreview(galleryPrev, 6);
+
+  var homeGallery = document.getElementById("ogt-home-gallery");
+  if (homeGallery) OGTRender.renderHomeGallery(homeGallery);
 
   var galleryGrid = document.getElementById("ogt-gallery-grid");
   if (galleryGrid) OGTRender.renderGalleryPage(galleryGrid);

@@ -35,6 +35,40 @@ window.OGT = {
     seal: "https://img1.wsimg.com/isteam/ip/1b277bec-adfe-487a-a8c7-5e77b97e6d1d/20251020_211230.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:800,cg:true"
   },
 
+  /** Homepage gallery — 6 real project photos (also used for SEO image signals) */
+  homeGallery: [
+    {
+      src: "/assets/gallery/home-woodgrain-double.png",
+      alt: "Wood-grain double garage door installation on a red brick home in Ottawa",
+      cap: "Wood-grain double · Ottawa",
+    },
+    {
+      src: "/assets/gallery/home-barrhaven.png",
+      alt: "New cream garage door with side windows installed in Barrhaven",
+      cap: "New door · Barrhaven",
+    },
+    {
+      src: "/assets/gallery/home-orleans-double.png",
+      alt: "Two new tan garage doors installed in Orleans",
+      cap: "Double install · Orleans",
+    },
+    {
+      src: "/assets/gallery/home-kanata.png",
+      alt: "Grey raised-panel garage door installed in Kanata",
+      cap: "Raised panel · Kanata",
+    },
+    {
+      src: "/assets/gallery/home-ottawa-grey.png",
+      alt: "Grey sectional garage door installation in Ottawa on brick",
+      cap: "Grey door · Ottawa",
+    },
+    {
+      src: "/assets/gallery/home-black-door-ottawa.png",
+      alt: "Modern black garage door with windows installed in Ottawa",
+      cap: "Modern black · Ottawa",
+    },
+  ],
+
   showcase: [
     { srcKey: "install", alt: "New garage door installation Ottawa", cap: "Door installation", large: true },
     { srcKey: "spring", alt: "Garage door spring replacement", cap: "Spring repair", large: true },

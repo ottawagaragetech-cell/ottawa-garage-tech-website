@@ -2092,6 +2092,10 @@ body.ogt-lightbox-open {
 }
 .ogt-gallery-preview-cta { text-align: center; margin: var(--ogt-space-xl) 0 0; }
 
+.ogt-section--home-gallery .ogt-gallery-preview {
+  margin-top: var(--ogt-space-md);
+}
+
 .ogt-section--contact-visual .ogt-home-contact-wrap {
   align-items: stretch;
 }
