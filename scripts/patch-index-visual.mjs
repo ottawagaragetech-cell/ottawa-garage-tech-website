@@ -16,7 +16,7 @@ const heroOld = `    <section class="ogt-hero ogt-hero--with-image">
         </${d}>
       </${d}>
       <${d} class="ogt-hero-media">
-        <img src="https://img1.wsimg.com/isteam/ip/1b277bec-adfe-487a-a8c7-5e77b97e6d1d/blob-fddabbe.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:900,cg:true" width="600" height="450" alt="Insulated garage door installed in Kanata — Ottawa Garage Tech" loading="eager">
+        <img src="/assets/services/install-ottawa-grey.png" width="600" height="450" alt="New garage door installed in Ottawa — Ottawa Garage Tech" loading="eager">
       </${d}>
     </section>`;
 

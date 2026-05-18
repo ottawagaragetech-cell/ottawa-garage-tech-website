@@ -4,17 +4,15 @@
 const WS = "https://img1.wsimg.com/isteam/ip/1b277bec-adfe-487a-a8c7-5e77b97e6d1d";
 
 function jobPhoto(file, w = 900) {
+  if (file.startsWith("/assets/")) return file;
   const enc = encodeURIComponent(file).replace(/%2F/g, "/");
-  if (file.includes("blob-") || file.endsWith(".png")) {
-    return `${WS}/${enc}/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:${w},cg:true`;
-  }
   return `${WS}/${enc}/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:${w},cg:true`;
 }
 
 export const BLOG_IMAGES = {
   pricing: jobPhoto("20250124_095313.jpg"),
   springRepair: jobPhoto("20250110_075357-COLLAGE.jpg"),
-  insulatedHome: jobPhoto("blob-2c95119.png"),
+  insulatedHome: "/assets/services/install-woodgrain-double.png",
   troubleshooting: jobPhoto("20251015_061012 (1).jpg"),
   replacement: jobPhoto("20251106_094900.jpg"),
   winterPrep: jobPhoto("20260206_063252.jpg"),

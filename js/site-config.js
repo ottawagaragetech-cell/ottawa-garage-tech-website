@@ -16,7 +16,7 @@ window.OGT = {
   serviceArea: "Ottawa, ON and surrounding communities",
 
   images: {
-    hero: "https://img1.wsimg.com/isteam/ip/1b277bec-adfe-487a-a8c7-5e77b97e6d1d/blob-fddabbe.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:900,cg:true",
+    hero: "/assets/services/install-ottawa-grey.png",
     spring: "/assets/services/spring-broken-torsion.png",
     opener: "https://img1.wsimg.com/isteam/ip/1b277bec-adfe-487a-a8c7-5e77b97e6d1d/20260227_140936.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:600,cg:true",
     install: "/assets/services/install-woodgrain-double.png",

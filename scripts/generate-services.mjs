@@ -6,10 +6,7 @@ const domain = "https://ottawagaragetech.ca";
 const BASE = "https://img1.wsimg.com/isteam/ip/1b277bec-adfe-487a-a8c7-5e77b97e6d1d";
 
 function photo(file, w = 800) {
-  if (file.startsWith("http")) return file;
-  if (file.includes("blob-") || file.endsWith(".png")) {
-    return `${BASE}/${file}/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:${w},cg:true`;
-  }
+  if (file.startsWith("http") || file.startsWith("/assets/")) return file;
   if (file.includes("rs=w:")) return file;
   return `${BASE}/${file}/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:${w},cg:true`;
 }
@@ -24,7 +21,7 @@ const installAssets = {
 
 /** Exported for site-config / index */
 export const OGT_IMAGES = {
-  hero: photo("blob-fddabbe.png", 900),
+  hero: installAssets.ottawa,
   gallery: [
     { src: photo("20260224_153212.jpg", 600), alt: "Garage door hardware, cables, and bottom seal — Ottawa", cap: "Hardware & sealing" },
     { src: installAssets.kanata, alt: "New garage door installed in Kanata", cap: "Kanata install" },

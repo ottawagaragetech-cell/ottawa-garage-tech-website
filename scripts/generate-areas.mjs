@@ -20,18 +20,23 @@ function slugify(name) {
 }
 
 function photo(file, w = 800) {
+  if (file.startsWith("/assets/")) return file;
   const enc = encodeURIComponent(file).replace(/%2F/g, "/");
-  if (file.includes("blob-") || file.endsWith(".png")) {
-    return `${BASE}/${enc}/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:${w},cg:true`;
-  }
   return `${BASE}/${enc}/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:${w},cg:true`;
 }
 
+/** Real install photos (local) — replaces old GDS logo blob placeholders on wsimg. */
+const PROJECT_PHOTOS = {
+  ottawa: "/assets/services/install-ottawa-grey.png",
+  barrhaven: "/assets/services/install-barrhaven.png",
+  woodgrain: "/assets/services/install-woodgrain-double.png",
+};
+
 /** Unique photos — assign one hero + one inline per suburb (offset so pairs differ). */
 const PHOTO_POOL = [
-  { file: "blob-fddabbe.png", label: "insulated garage door up to R-18" },
-  { file: "blob-2c95119.png", label: "new garage door installation" },
-  { file: "blob-f2936a4.png", label: "garage door spring and hardware" },
+  { file: PROJECT_PHOTOS.ottawa, label: "new garage door installation in Ottawa" },
+  { file: PROJECT_PHOTOS.barrhaven, label: "new garage door installation in Barrhaven" },
+  { file: PROJECT_PHOTOS.woodgrain, label: "wood-grain double garage door installation" },
   { file: "20250110_075357-COLLAGE.jpg", label: "spring replacement work" },
   { file: "20250115_105310.jpg", label: "lift cable repair" },
   { file: "20250121_090341.jpg", label: "garage door and opener service" },
@@ -51,17 +56,22 @@ const PHOTO_POOL = [
   { file: "IMG-20260206-WA0001(8).jpg", label: "garage door panels and hardware" },
 ];
 
-function pickPhotos(index, areaName) {
+function pickPhotos(index, areaName, slug) {
   const n = PHOTO_POOL.length;
   let hi = index % n;
   let ii = (index * 7 + 11) % n;
   if (ii === hi) ii = (ii + 1) % n;
+  if (slug === "ottawa") hi = 0;
+  if (slug === "barrhaven") hi = 1;
   const hero = PHOTO_POOL[hi];
   const inline = PHOTO_POOL[ii];
   return {
     hero: {
       src: photo(hero.file, 900),
-      alt: `Garage door ${hero.label} in ${areaName}`,
+      alt:
+        slug === "ottawa"
+          ? `New garage door installed in Ottawa — Ottawa Garage Tech`
+          : `Garage door ${hero.label} in ${areaName}`,
     },
     inline: {
       src: photo(inline.file, 600),
@@ -191,7 +201,7 @@ function nearby(area) {
 }
 
 function areaPage(area, index) {
-  const imgs = pickPhotos(index, area.name);
+  const imgs = pickPhotos(index, area.name, area.slug);
   const canonical = `${domain}/areas/${area.slug}`;
   const title = `Garage Door Repair ${area.name} | Ottawa Garage Tech`;
   const desc = areaMetaDescription(area);
@@ -200,7 +210,12 @@ function areaPage(area, index) {
     ? `"geo": {"@type": "GeoCoordinates", "latitude": ${geo.lat}, "longitude": ${geo.lng}},`
     : "";
   const near = nearby(area);
-  const heroAlt = `Garage door service in ${area.name} — Ottawa Garage Tech`;
+  const heroAlt =
+    area.slug === "ottawa"
+      ? "New grey raised-panel garage door installed in Ottawa — Ottawa Garage Tech"
+      : area.slug === "barrhaven"
+        ? "New garage door installed in Barrhaven — Ottawa Garage Tech"
+        : `Garage door service in ${area.name} — Ottawa Garage Tech`;
   const inlineAlt = `Garage door work near ${area.name}`;
 
   const intro = [

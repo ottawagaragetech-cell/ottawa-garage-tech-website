@@ -40,7 +40,7 @@ function patchAbout() {
         <p class="ogt-section-intro">We are a local Ottawa team focused on garage doors and openers — repairs, installations, and maintenance without high-pressure sales.</p>
       </${d}>
       <${d} class="ogt-page-hero-media">
-        <img src="https://img1.wsimg.com/isteam/ip/1b277bec-adfe-487a-a8c7-5e77b97e6d1d/blob-2c95119.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:900,cg:true" width="800" height="500" alt="Ottawa Garage Tech door installation" loading="eager">
+        <img src="/assets/services/install-barrhaven.png" width="800" height="500" alt="New garage door installed in Barrhaven — Ottawa Garage Tech" loading="eager">
       </${d}>
     </${d}>`;
   c = c.replace(
