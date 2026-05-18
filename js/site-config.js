@@ -8,7 +8,7 @@ window.OGT = {
   domain: "https://ottawagaragetech.ca",
   hours: "Mon – Sun · 9:00 AM – 9:00 PM",
   /** Set full Facebook page URL when available; leave empty to hide */
-  facebook: "",
+  facebook: "https://www.facebook.com/profile.php?id=61563633766920",
   instagram: "https://www.instagram.com/ottawagaragetech",
   /** Quote & contact forms → Web3Forms (set key on Vercel or here) */
   formAction: "/api/contact",
