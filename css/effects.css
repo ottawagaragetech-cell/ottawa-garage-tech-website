@@ -94,6 +94,17 @@ html.ogt-premium .ogt-btn-call {
   isolation: isolate;
 }
 
+/* Back to top must not use reveal / button shine styles */
+html.ogt-premium .ogt-back-to-top {
+  position: fixed !important;
+  overflow: visible;
+  isolation: auto;
+}
+
+html.ogt-premium .ogt-back-to-top::before {
+  display: none !important;
+}
+
 html.ogt-premium .ogt-btn-primary::before,
 html.ogt-premium .ogt-btn-accent::before,
 html.ogt-premium .ogt-btn-call::before {

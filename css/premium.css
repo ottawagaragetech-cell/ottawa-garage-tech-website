@@ -453,11 +453,6 @@ html.ogt-premium .ogt-gallery-tile-cap {
   text-transform: uppercase;
 }
 
-/* —— Back to top —— */
-html.ogt-premium .ogt-back-to-top.is-visible:hover {
-  transform: translateY(-3px) scale(1);
-}
-
 /* —— Contact —— */
 html.ogt-premium .ogt-form-card,
 html.ogt-premium .ogt-home-form-card {
