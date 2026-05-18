@@ -1246,7 +1246,7 @@ a.ogt-area-chip:hover {
 
 /* Trust badges strip */
 .ogt-badges-section {
-  background: var(--ogt-primary);
+  background: var(--ogt-primary-dark);
   color: var(--ogt-text-inverse);
   padding: var(--ogt-space-xl) 4vw;
 }

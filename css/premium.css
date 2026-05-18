@@ -284,29 +284,21 @@ html.ogt-premium .ogt-hero-collage-badge {
 
 /* —— Trust badges —— */
 html.ogt-premium .ogt-badges-section {
-  background: var(--ogt-gradient-dark);
+  background: var(--ogt-primary-dark);
   padding: var(--ogt-space-2xl) 5vw;
   position: relative;
-  overflow: hidden;
 }
 
-html.ogt-premium .ogt-badges-section::after {
-  content: "";
-  position: absolute;
-  top: -50%;
-  right: -20%;
-  width: 60%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(196, 160, 82, 0.12), transparent 65%);
-  pointer-events: none;
+html.ogt-premium .ogt-badges-grid {
+  position: relative;
+  z-index: 1;
 }
 
 html.ogt-premium .ogt-badge {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   border-left: 3px solid var(--ogt-accent);
   border-radius: var(--ogt-radius-lg);
-  backdrop-filter: blur(8px);
   transition: transform var(--ogt-transition), background var(--ogt-transition);
 }
 
