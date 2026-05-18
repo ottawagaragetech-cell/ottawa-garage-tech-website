@@ -15,7 +15,7 @@ export const BLOG_IMAGES = {
   insulatedHome: "/assets/services/install-woodgrain-double.png",
   troubleshooting: jobPhoto("20251015_061012 (1).jpg"),
   replacement: jobPhoto("20251106_094900.jpg"),
-  winterPrep: jobPhoto("20260206_063252.jpg"),
+  winterPrep: "/assets/blog/garage-door-winter-prep-ottawa.png",
 };
 
 export const blogPosts = [
@@ -268,7 +268,7 @@ export const blogPosts = [
     category: "Maintenance",
     readMin: 6,
     imageKey: "winterPrep",
-    imageAlt: "Snowy home in winter — preparing your garage door for cold weather",
+    imageAlt: "Dark grey garage door with top weatherstripping — winter prep in Ottawa",
     relatedServices: ["weather-sealing", "maintenance", "spring-replacement"],
     relatedSlugs: ["insulated-garage-doors-r18-ottawa", "broken-garage-door-spring-ottawa"],
     body: `
