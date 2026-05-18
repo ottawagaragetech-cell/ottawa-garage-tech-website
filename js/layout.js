@@ -542,6 +542,32 @@
     }
   });
 
+  function initBackToTop() {
+    if (document.querySelector(".ogt-back-to-top")) return;
+    var btn = document.createElement("a");
+    btn.href = "#main";
+    btn.className = "ogt-back-to-top";
+    btn.setAttribute("aria-label", "Back to top");
+    btn.innerHTML = '<span class="ogt-back-to-top-icon" aria-hidden="true">↑</span>';
+    document.body.appendChild(btn);
+
+    function toggle() {
+      btn.classList.toggle("is-visible", window.scrollY > 400);
+    }
+
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+      var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      window.scrollTo({ top: 0, behavior: reduced ? "auto" : "smooth" });
+      btn.blur();
+    });
+
+    window.addEventListener("scroll", toggle, { passive: true });
+    toggle();
+  }
+
+  initBackToTop();
+
   var effects = document.createElement("script");
   effects.src = "/js/effects.js";
   effects.defer = true;

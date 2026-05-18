@@ -1568,6 +1568,72 @@ a.ogt-area-chip:hover {
   max-width: 52rem;
 }
 
+/* Back to top */
+.ogt-back-to-top {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 900;
+  width: 2.75rem;
+  height: 2.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--ogt-primary-dark);
+  color: var(--ogt-text-inverse);
+  border: 2px solid var(--ogt-accent);
+  box-shadow: var(--ogt-shadow-lg);
+  text-decoration: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(0.5rem);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    visibility 0.25s ease,
+    background 0.2s ease;
+  pointer-events: none;
+}
+
+.ogt-back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.ogt-back-to-top:hover {
+  background: var(--ogt-primary);
+  color: var(--ogt-text-inverse);
+}
+
+.ogt-back-to-top:focus-visible {
+  outline: 2px solid var(--ogt-accent-light, #e8d5a8);
+  outline-offset: 3px;
+}
+
+.ogt-back-to-top-icon {
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+@media (max-width: 599px) {
+  .ogt-back-to-top {
+    right: 1rem;
+    bottom: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ogt-back-to-top {
+    transition: opacity 0.15s ease, visibility 0.15s ease;
+  }
+}
+
 /* Lightbox */
 .ogt-lightbox {
   position: fixed;
