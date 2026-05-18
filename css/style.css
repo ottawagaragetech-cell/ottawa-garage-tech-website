@@ -1322,19 +1322,21 @@ a.ogt-area-chip:hover {
 .ogt-reviews-score {
   margin: 0 0 var(--ogt-space-xs);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: var(--ogt-space-sm);
+  gap: 0.35rem;
 }
-.ogt-reviews-score-num {
+.ogt-reviews-score-num,
+.ogt-reviews-score-label {
   font-family: var(--ogt-font-display);
-  font-size: 2rem;
+  font-size: 1.35rem;
   font-weight: 700;
   color: var(--ogt-primary);
-  line-height: 1;
+  line-height: 1.2;
 }
 .ogt-reviews-score-stars { color: var(--ogt-accent); font-size: 1.25rem; letter-spacing: 2px; }
-.ogt-reviews-score-meta { margin: 0; font-size: var(--ogt-text-sm); color: var(--ogt-text-muted); }
+.ogt-reviews-score-meta { margin: 0; font-size: var(--ogt-text-xs); color: var(--ogt-text-muted); }
 @media (min-width: 900px) {
   .ogt-reviews-grid { grid-template-columns: repeat(3, 1fr); }
 }

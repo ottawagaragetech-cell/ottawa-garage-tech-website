@@ -262,6 +262,26 @@ function areaPage(area, index) {
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": ${JSON.stringify("Garage door repair in " + area.name)},
+    "description": ${JSON.stringify(desc)},
+    "serviceType": "Garage door repair and installation",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Ottawa Garage Tech",
+      "url": "${domain}/",
+      "telephone": "+16139006005"
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": ${JSON.stringify(area.name)}${geo ? `,\n      "geo": {"@type": "GeoCoordinates", "latitude": ${geo.lat}, "longitude": ${geo.lng}}` : ""}
+    }
+  }
+  </script>
+
 </head>
 <body>
   <div id="ogt-site-header"></div>

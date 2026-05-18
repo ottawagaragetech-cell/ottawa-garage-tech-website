@@ -130,7 +130,7 @@
       '/">' +
       esc(cfg.domain.replace(/^https?:\/\//, "")) +
       "</a></li>" +
-      (cfg.facebook && cfg.facebook.indexOf("REPLACE") === -1
+      (cfg.facebook && cfg.facebook.indexOf("facebook.com") !== -1 && cfg.facebook.indexOf("REPLACE") === -1
         ? '<li><span>Social</span><a href="' +
           esc(cfg.facebook) +
           '" target="_blank" rel="noopener noreferrer">Facebook</a></li>'
@@ -441,8 +441,18 @@
   var reviewsSummary = document.getElementById("ogt-reviews-summary");
   if (reviewsSummary && cfg.reviews && cfg.reviews.length) {
     reviewsSummary.innerHTML =
-      '<p class="ogt-reviews-score"><span class="ogt-reviews-score-num">5.0</span><span class="ogt-reviews-score-stars" aria-hidden="true">\u2605\u2605\u2605\u2605\u2605</span></p>';
+      '<p class="ogt-reviews-score"><span class="ogt-reviews-score-label">5-star service</span><span class="ogt-reviews-score-stars" aria-hidden="true">\u2605\u2605\u2605\u2605\u2605</span><span class="ogt-reviews-score-meta">Customer feedback from Ottawa-area jobs</span></p>';
   }
+
+  (function injectHreflang() {
+    var canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical || !canonical.href) return;
+    var alt = document.createElement("link");
+    alt.rel = "alternate";
+    alt.hreflang = "en-CA";
+    alt.href = canonical.href;
+    document.head.appendChild(alt);
+  })();
 
   var badgesEl = document.getElementById("ogt-trust-badges");
   if (badgesEl && cfg.trustBadges) {

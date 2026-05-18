@@ -1,23 +1,23 @@
 /** Blog post source data — used by scripts/generate-blog.mjs */
 
-/** Stock photos (Pexels) — not from site gallery or uploaded project photos */
-function pexels(id) {
-  return (
-    "https://images.pexels.com/photos/" +
-    id +
-    "/pexels-photo-" +
-    id +
-    ".jpeg?auto=compress&cs=tinysrgb&w=900&h=560&fit=crop"
-  );
+/** Real job photos from the Ottawa Garage Tech project library (wsimg) */
+const WS = "https://img1.wsimg.com/isteam/ip/1b277bec-adfe-487a-a8c7-5e77b97e6d1d";
+
+function jobPhoto(file, w = 900) {
+  const enc = encodeURIComponent(file).replace(/%2F/g, "/");
+  if (file.includes("blob-") || file.endsWith(".png")) {
+    return `${WS}/${enc}/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:${w},cg:true`;
+  }
+  return `${WS}/${enc}/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:${w},cg:true`;
 }
 
 export const BLOG_IMAGES = {
-  pricing: pexels(259588),
-  springRepair: pexels(106399),
-  insulatedHome: pexels(280222),
-  troubleshooting: pexels(209296),
-  replacement: pexels(2447031),
-  winterPrep: pexels(1118448),
+  pricing: jobPhoto("20250124_095313.jpg"),
+  springRepair: jobPhoto("20250110_075357-COLLAGE.jpg"),
+  insulatedHome: jobPhoto("blob-2c95119.png"),
+  troubleshooting: jobPhoto("20251015_061012 (1).jpg"),
+  replacement: jobPhoto("20251106_094900.jpg"),
+  winterPrep: jobPhoto("20260206_063252.jpg"),
 };
 
 export const blogPosts = [
@@ -31,7 +31,7 @@ export const blogPosts = [
     category: "Pricing",
     readMin: 7,
     imageKey: "pricing",
-    imageAlt: "House keys and home — garage door repair cost guide",
+    imageAlt: "Torsion spring replacement on a garage door in Ottawa",
     relatedServices: ["spring-replacement", "emergency-repair", "maintenance"],
     relatedSlugs: ["broken-garage-door-spring-ottawa", "repair-vs-replace-garage-door"],
     body: `
@@ -219,7 +219,7 @@ export const blogPosts = [
     h1: "Repair vs replace your garage door: an Ottawa homeowner guide",
     desc: "Rust, noise, poor insulation, repeated breakdowns — when to repair your garage door in Ottawa and when replacement up to R-18 is the better investment.",
     keywords: "repair or replace garage door Ottawa, new garage door vs repair, garage door replacement",
-    date: "2025-12-12",
+    date: "2026-01-18",
     category: "Buying guide",
     readMin: 7,
     imageKey: "replacement",
@@ -266,7 +266,7 @@ export const blogPosts = [
     h1: "How to prepare your garage door for Ottawa winter",
     desc: "Cold, ice, and salt — an Ottawa checklist for garage door weather sealing, lubrication, balance checks, and when to book maintenance before deep freeze.",
     keywords: "garage door winter Ottawa, garage door weather seal, garage door maintenance winter",
-    date: "2025-11-08",
+    date: "2026-02-28",
     category: "Maintenance",
     readMin: 6,
     imageKey: "winterPrep",

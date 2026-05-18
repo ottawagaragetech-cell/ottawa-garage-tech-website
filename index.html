@@ -32,7 +32,17 @@
     "email": "ottawagaragetech@gmail.com",
     "priceRange": "$$",
     "description": "Garage door repair, spring replacement, opener service, and installation in Ottawa and surrounding communities.",
-    "areaServed": ["Ottawa", "Kanata", "Barrhaven", "Orleans", "Nepean", "Stittsville", "Gloucester", "Manotick", "Rockland"],
+    "areaServed": [
+      {"@type": "City", "name": "Ottawa", "containedInPlace": {"@type": "AdministrativeArea", "name": "Ontario"}},
+      {"@type": "City", "name": "Kanata"},
+      {"@type": "City", "name": "Barrhaven"},
+      {"@type": "City", "name": "Orleans"},
+      {"@type": "City", "name": "Nepean"},
+      {"@type": "City", "name": "Stittsville"},
+      {"@type": "City", "name": "Gloucester"},
+      {"@type": "City", "name": "Manotick"},
+      {"@type": "City", "name": "Rockland"}
+    ],
     "openingHoursSpecification": [{
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
@@ -119,7 +129,7 @@
         <header class="ogt-section-header">
           <p class="ogt-section-label">Reviews</p>
           <h2 id="reviews-heading">Garage door repair reviews in Ottawa</h2>
-          <p class="ogt-section-intro">Rated 5.0 by Ottawa-area homeowners for spring replacement, opener repair, new door installation, and emergency service.</p>
+          <p class="ogt-section-intro">5-star service from Ottawa-area homeowners for spring replacement, opener repair, new door installation, and emergency calls.</p>
         </header>
         <div class="ogt-reviews-summary-wrap" id="ogt-reviews-summary"></div>
         <div class="ogt-reviews-grid" id="ogt-reviews-grid" data-limit="6"></div>

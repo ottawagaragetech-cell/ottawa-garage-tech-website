@@ -7,7 +7,8 @@ window.OGT = {
   quoteEmailSubject: "Free quote request — Ottawa Garage Tech",
   domain: "https://ottawagaragetech.ca",
   hours: "Mon – Sun · 9:00 AM – 9:00 PM",
-  facebook: "https://www.facebook.com/REPLACE_FB_PAGE_ID",
+  /** Set full Facebook page URL when available; leave empty to hide social links */
+  facebook: "",
   /** Quote & contact forms → Web3Forms (set key on Vercel or here) */
   formAction: "/api/contact",
   web3formsAccessKey: "2fc6b3ec-e3e3-4d43-a612-743c96999c96",
@@ -72,7 +73,7 @@ window.OGT = {
   ],
 
   trustBadges: [
-    { title: "5.0★ reviews", text: "Five-star rated by Ottawa area customers" },
+    { title: "5-star service", text: "Quality work rated highly by Ottawa area customers" },
     { title: "Licensed & insured", text: "Fully licensed technicians and liability coverage" },
     { title: "Upfront quotes", text: "Clear scope and pricing before major work" },
     { title: "Same-day service", text: "When scheduling allows — call or text first" },
