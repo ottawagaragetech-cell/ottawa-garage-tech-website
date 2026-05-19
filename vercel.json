@@ -10,6 +10,7 @@
     { "source": "/blog/:slug", "destination": "/blog/:slug.html" },
     { "source": "/privacy", "destination": "/privacy.html" },
     { "source": "/terms", "destination": "/terms.html" },
+    { "source": "/accessibility", "destination": "/accessibility.html" },
     { "source": "/services/:slug", "destination": "/services/:slug.html" },
     { "source": "/areas/:slug", "destination": "/areas/:slug.html" }
   ],

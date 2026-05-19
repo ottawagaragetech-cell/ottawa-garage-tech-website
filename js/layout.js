@@ -111,8 +111,10 @@
       { label: "Gallery", href: "/gallery" },
       { label: "Blog", href: "/blog" },
       { label: "Contact", href: "/contact" },
-      { label: "Privacy", href: "/privacy" },
-      { label: "Terms", href: "/terms" }
+      { label: "Privacy Policy", href: "/privacy" },
+      { label: "Terms of Service", href: "/terms" },
+      { label: "Accessibility", href: "/accessibility" },
+      { label: "Sitemap", href: "/sitemap.xml" }
     ];
 
     return (
