@@ -168,7 +168,9 @@
     form.dataset.ogtBound = "1";
     options = options || {};
 
-    form.setAttribute("action", "/api/contact");
+    if (!form.getAttribute("action") || form.getAttribute("action") === "/api/contact") {
+      form.setAttribute("action", FORMSPREE_ENDPOINT);
+    }
     form.setAttribute("method", "POST");
     var thanksEl = findThanks(form, options);
     var errorEl = findOrCreateError(form);
