@@ -1,8 +1,11 @@
 /**
  * Contact form API — delivers leads to ottawagaragetech@gmail.com
- * Set WEB3FORMS_ACCESS_KEY on Vercel for best reliability (free at web3forms.com).
+ * Primary channel: Formspree (https://formspree.io/f/meedowjd).
+ * Fallbacks: Resend, FormSubmit.
  */
 const TO_EMAIL = process.env.CONTACT_TO || "ottawagaragetech@gmail.com";
+const FORMSPREE_ENDPOINT =
+  process.env.FORMSPREE_ENDPOINT || "https://formspree.io/f/meedowjd";
 
 function escapeHtml(s) {
   return String(s || "")
@@ -31,6 +34,38 @@ function buildHtml(data) {
     escapeHtml(data.message).replace(/\n/g, "<br>") +
     "</p>"
   );
+}
+
+async function sendViaFormspree(data) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 12000);
+  try {
+    const res = await fetch(FORMSPREE_ENDPOINT, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        name: data.name,
+        email: data.email,
+        phone: data.phone || "",
+        service: data.service || "",
+        message: data.message,
+        _subject: data._subject || "Ottawa Garage Tech website lead",
+        _replyto: data.email,
+      }),
+      signal: controller.signal,
+    });
+    clearTimeout(timer);
+    const json = await res.json().catch(() => ({}));
+    if (res.ok && (json.ok === true || !json.errors)) {
+      return { ok: true, provider: "formspree" };
+    }
+  } catch (e) {
+    clearTimeout(timer);
+  }
+  return null;
 }
 
 async function sendViaWeb3Forms(data) {
@@ -178,8 +213,13 @@ export default async function handler(req, res) {
     _subject: data._subject || "Ottawa Garage Tech website lead",
   };
 
-  // Web3Forms blocks datacenter/server requests (Cloudflare); browser submits directly instead.
-  const providers = [sendViaResend, sendViaFormSubmitAjax, sendViaFormSubmitClassic];
+  // Formspree first; Web3Forms blocks datacenter/server requests (browser submits directly instead).
+  const providers = [
+    sendViaFormspree,
+    sendViaResend,
+    sendViaFormSubmitAjax,
+    sendViaFormSubmitClassic,
+  ];
   for (const send of providers) {
     const result = await send(payload);
     if (result && result.ok) {

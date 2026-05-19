@@ -1,9 +1,11 @@
 /**
- * Contact / quote forms → Web3Forms (browser) or POST /api/contact (fallback)
+ * Contact / quote forms → Formspree (primary), Web3Forms, or POST /api/contact (fallback)
  */
 (function () {
   var cfg = window.OGT;
   if (!cfg) return;
+
+  var FORMSPREE_ENDPOINT = "https://formspree.io/f/meedowjd";
 
   var web3formsKey = (cfg.web3formsAccessKey || "").trim();
   var configLoaded = !web3formsKey ? loadFormConfig() : Promise.resolve();
@@ -98,6 +100,35 @@
       "mailto:" + encodeURIComponent(cfg.email) + "?subject=" + subject + "&body=" + body;
   }
 
+  function sendViaFormspree(payload) {
+    return fetch(FORMSPREE_ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify({
+        name: payload.name,
+        email: payload.email,
+        phone: payload.phone || "",
+        service: payload.service || "",
+        message: payload.message,
+        _subject: payload._subject || "Ottawa Garage Tech website lead",
+        _replyto: payload.email,
+      }),
+    })
+      .then(function (res) {
+        return res.json().then(
+          function (json) {
+            return { ok: res.ok && (json.ok === true || !json.errors), json: json };
+          },
+          function () {
+            return { ok: res.ok, json: {} };
+          }
+        );
+      })
+      .catch(function () {
+        return { ok: false };
+      });
+  }
+
   function sendViaWeb3Forms(payload) {
     if (!web3formsKey) return Promise.resolve({ ok: false });
     return fetch("https://api.web3forms.com/submit", {
@@ -174,10 +205,17 @@
 
       configLoaded
         .then(function () {
-          if (web3formsKey) {
-            return sendViaWeb3Forms(payload);
+          return sendViaFormspree(payload).then(function (result) {
+            if (result.ok) return result;
+            if (web3formsKey) return sendViaWeb3Forms(payload);
+            return sendViaApi(payload);
+          });
+        })
+        .then(function (result) {
+          if (!result.ok) {
+            return sendViaApi(payload);
           }
-          return sendViaApi(payload);
+          return result;
         })
         .then(function (result) {
           if (result.ok) {
