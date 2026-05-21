@@ -413,96 +413,131 @@ window.OGT = {
     "rockcliffe-park": { lat: 45.445, lng: -75.685 }
   },
 
+  faqCategories: [
+    { id: "all", label: "All" },
+    { id: "pricing", label: "Pricing" },
+    { id: "service", label: "Service & booking" },
+    { id: "springs", label: "Springs & cables" },
+    { id: "openers", label: "Openers" },
+    { id: "maintenance", label: "Maintenance" },
+    { id: "winter", label: "Winter & sealing" },
+    { id: "installation", label: "New doors" },
+    { id: "safety", label: "Safety" }
+  ],
+
   faqs: [
     {
+      category: "pricing",
       q: "How much does garage door repair cost in Ottawa?",
       a: "Costs depend on the repair. Spring work is often in the $220–$380 range; cable repairs $175–$275; tune-ups from $150. Emergency visits start around $199 before parts. New doors and openers are quoted after we see your setup. We explain pricing before work starts."
     },
     {
+      category: "service",
       q: "How fast can you come for an emergency?",
       a: "For urgent issues, call or text (613) 900-6005 — that is the fastest way to reach us. We serve Ottawa seven days a week, 9 AM – 9 PM, and prioritize safety issues like doors off track or broken springs."
     },
     {
+      category: "service",
       q: "Do you offer same-day service?",
       a: "Yes, when scheduling allows. We carry common springs, cables, rollers, and opener parts so many jobs finish in one visit."
     },
     {
+      category: "service",
       q: "What areas do you serve?",
       a: "We cover Ottawa and nearby communities including Kanata, Barrhaven, Orleans, Nepean, Stittsville, Gloucester, Manotick, Rockland, and more. If you are unsure whether we reach your neighbourhood, call and we will confirm."
     },
     {
+      category: "service",
       q: "What are your hours?",
       a: "Monday through Sunday, 9:00 AM to 9:00 PM. For urgent problems, calling or texting is faster than email."
     },
     {
+      category: "service",
       q: "How do I book service?",
       a: "Call or text (613) 900-6005 for the quickest response, or use our contact form for quotes and non-urgent requests. Tell us what the door is doing — we will suggest the right service."
     },
     {
+      category: "pricing",
       q: "Do you provide written quotes?",
       a: "Yes. For non-urgent work we assess the door, explain options, and quote before major repairs or installations. Emergency work is quoted on site after we secure the door and diagnose the issue."
     },
     {
+      category: "pricing",
       q: "What payment methods do you accept?",
       a: "We accept common payment methods including e-transfer and card where available. Ask when you book if you need a specific option."
     },
     {
+      category: "springs",
       q: "Should both garage door springs be replaced?",
       a: "Usually yes. If one torsion or extension spring has failed, the other is often near the end of its cycle. Replacing both restores balance and helps avoid a second breakdown soon after."
     },
     {
+      category: "springs",
       q: "Can I open my garage door with a broken spring?",
       a: "We do not recommend it. The door is unbalanced and heavy, and forcing it can damage the opener, cables, or tracks. Stop using the door and schedule service."
     },
     {
+      category: "springs",
       q: "My door is off track — is that an emergency?",
       a: "Often yes, especially if the door will not close and secure your home. Do not keep running the opener. Call or text so we can secure the door and inspect cables, rollers, and tracks."
     },
     {
+      category: "openers",
       q: "The opener runs but the door does not move — what is wrong?",
       a: "Sometimes the door itself is the problem (broken spring, locked door, or binding track). Other times the opener gear or carriage has failed. We test door balance first, then diagnose the opener — and repair rather than replace when that makes sense."
     },
     {
+      category: "openers",
       q: "Which opener brands do you service?",
       a: "LiftMaster, Chamberlain, Genie, Craftsman, Marantec, and most residential brands found in Ottawa homes. We also install new openers when repair is not economical."
     },
     {
+      category: "maintenance",
       q: "How often should I have my garage door serviced?",
       a: "Once a year is a good rule for most Ottawa homes — more often if the door gets heavy daily use. Tune-ups catch worn rollers, loose hardware, and sensor issues before they become breakdowns."
     },
     {
+      category: "maintenance",
       q: "Why is my garage door so noisy?",
       a: "Common causes are worn rollers, loose hinges or hardware, lack of lubrication on moving parts, or an opener that needs service. We identify the source during a tune-up rather than guessing."
     },
     {
+      category: "winter",
       q: "Do you work in cold weather and winter?",
       a: "Yes. Ottawa winters are hard on springs, seals, and metal hardware. We service doors year-round. If ice is blocking the door, clear what you safely can — we will handle the mechanical side."
     },
     {
+      category: "winter",
       q: "Can you improve drafts and cold air under the door?",
       a: "Yes. Bottom seals, threshold weatherstripping, and side/top seals make a real difference, especially when the garage shares a wall with heated living space."
     },
     {
+      category: "installation",
       q: "Do you install new garage doors?",
       a: "Yes. We measure on site, help you choose a door suited to Ottawa weather, remove the old door when included in the quote, and install, seal, and balance the new system."
     },
     {
+      category: "installation",
       q: "How long does a new garage door installation take?",
       a: "Most single-car replacements are completed in one day once your door has arrived. Lead time depends on the model you choose — we give you a clear timeline with your quote."
     },
     {
+      category: "installation",
       q: "Are insulated garage doors worth it in Ottawa?",
       a: "For many homes, yes — especially attached garages and workshops. Insulated panels up to R-18 reduce heat loss and can make the space more comfortable. We help you weigh insulation level, budget, and curb appeal."
     },
     {
+      category: "safety",
       q: "Is it safe to repair a garage door myself?",
       a: "Springs, cables, and tensioned hardware can cause serious injury. We recommend leaving spring, cable, and off-track work to trained technicians. Simple tasks like testing photo-eyes or keeping tracks clear of debris are fine for homeowners."
     },
     {
+      category: "service",
       q: "Do you service commercial or multi-bay doors?",
       a: "We focus on residential and light commercial doors. Describe your setup when you call — we will let you know if we are the right fit."
     },
     {
+      category: "service",
       q: "What should I do before the technician arrives?",
       a: "Clear vehicles and items from the garage bay so we can access the door and opener. Note anything unusual — noises, when it started, and whether the opener light flashes. Pets should be kept away from the work area."
     }

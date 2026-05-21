@@ -28,14 +28,26 @@
       <h1>Frequently asked questions</h1>
       <p class="ogt-section-intro">Answers about pricing, emergencies, springs, openers, winter care, and booking — for Ottawa and nearby communities. For a quote, <a href="/contact">contact us</a> or call <a href="tel:+16139006005">(613) 900-6005</a>.</p>
     </div>
-    <section class="ogt-section">
-      
-      <div class="ogt-section-inner ogt-faq-list" id="ogt-faq-list"></div>
+    <section class="ogt-section ogt-faq-page">
+      <div class="ogt-section-inner">
+        <div class="ogt-faq-toolbar" id="ogt-faq-toolbar" aria-label="Filter questions"></div>
+        <p class="ogt-faq-meta" id="ogt-faq-meta" aria-live="polite"></p>
+        <div class="ogt-faq-list" id="ogt-faq-list"></div>
+        <p class="ogt-faq-empty" id="ogt-faq-empty" hidden role="status">No questions match your search. Try another keyword or category, or <a href="/contact">contact us</a>.</p>
+        <div class="ogt-faq-page-cta">
+          <p>Still have a question?</p>
+          <div class="ogt-faq-page-cta-actions">
+            <a class="ogt-btn ogt-btn-call" href="tel:+16139006005">Call (613) 900-6005</a>
+            <a class="ogt-btn ogt-btn-secondary" href="/contact">Send a message</a>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
   <div id="ogt-site-footer"></div>
   <script src="/js/site-config.js"></script>
   <script src="/js/layout.js"></script>
+  <script src="/js/faq-page.js"></script>
   <script>
     (function () {
       var el = document.getElementById("ogt-faq-schema");

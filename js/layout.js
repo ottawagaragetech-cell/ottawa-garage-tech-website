@@ -395,7 +395,7 @@
   });
 
   var faqList = document.getElementById("ogt-faq-list");
-  if (faqList && cfg.faqs) {
+  if (faqList && cfg.faqs && page !== "faq") {
     faqList.innerHTML = cfg.faqs
       .map(function (f) {
         return (
