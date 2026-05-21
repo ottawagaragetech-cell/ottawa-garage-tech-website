@@ -15,6 +15,14 @@ html.ogt-premium body {
 }
 
 /* —— Header —— */
+html.ogt-premium #ogt-site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
 html.ogt-premium .ogt-header {
   background: rgba(255, 255, 255, 0.82);
   backdrop-filter: blur(16px) saturate(1.2);

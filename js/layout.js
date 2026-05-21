@@ -502,12 +502,34 @@
   }
 
   var header = document.querySelector(".ogt-header");
+  var headerWrap = document.getElementById("ogt-site-header");
   if (header) {
     function onScroll() {
       header.classList.toggle("is-scrolled", window.scrollY > 20);
     }
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
+  }
+  if (headerWrap) {
+    function syncHeaderOffset() {
+      document.documentElement.style.setProperty(
+        "--ogt-header-height",
+        headerWrap.offsetHeight + "px"
+      );
+    }
+    syncHeaderOffset();
+    window.addEventListener("resize", syncHeaderOffset, { passive: true });
+    if (window.ResizeObserver) {
+      new ResizeObserver(syncHeaderOffset).observe(headerWrap);
+    }
+    var mobileNav = document.getElementById("ogt-nav-mobile");
+    var menuBtn = document.querySelector(".ogt-menu-btn");
+    if (mobileNav && menuBtn) {
+      mobileNav.addEventListener("transitionend", syncHeaderOffset);
+      menuBtn.addEventListener("click", function () {
+        setTimeout(syncHeaderOffset, 0);
+      });
+    }
   }
 
   function hasQuoteFormLink(container) {
