@@ -19,8 +19,8 @@ window.OGT = {
     hero: "/assets/services/install-ottawa-grey.png",
     spring: "/assets/services/spring-broken-torsion.png",
     opener: "https://img1.wsimg.com/isteam/ip/1b277bec-adfe-487a-a8c7-5e77b97e6d1d/20260227_140936.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:600,cg:true",
-    install: "/assets/services/install-woodgrain-double.png",
-    installBarrhaven: "/assets/services/install-barrhaven.png",
+    install: "/assets/gallery/gallery-barrhaven-grey.png",
+    installBarrhaven: "/assets/gallery/gallery-opener-liftmaster.png",
     installOttawa: "/assets/services/install-ottawa-grey.png",
     installKanata: "/assets/services/install-kanata.png",
     installOrleans: "/assets/services/install-orleans-double.png",
@@ -38,14 +38,14 @@ window.OGT = {
   /** Homepage gallery — 6 real project photos (also used for SEO image signals) */
   homeGallery: [
     {
-      src: "/assets/gallery/home-woodgrain-double.png",
-      alt: "Wood-grain double garage door installation on a red brick home in Ottawa",
-      cap: "Wood-grain double · Ottawa",
+      src: "/assets/gallery/gallery-barrhaven-grey.png",
+      alt: "Grey raised-panel garage door installed in Barrhaven",
+      cap: "New door · Barrhaven",
     },
     {
-      src: "/assets/gallery/home-barrhaven.png",
-      alt: "New cream garage door with side windows installed in Barrhaven",
-      cap: "New door · Barrhaven",
+      src: "/assets/gallery/gallery-opener-liftmaster.png",
+      alt: "LiftMaster garage door opener installation with LED lighting",
+      cap: "Opener install · Ottawa",
     },
     {
       src: "/assets/gallery/home-orleans-double.png",
@@ -81,8 +81,8 @@ window.OGT = {
   ],
 
   gallery: [
-    { srcKey: "install", alt: "Wood-grain double garage door installation Ottawa", cap: "Double door install", cat: "install", wide: true },
-    { srcKey: "installBarrhaven", alt: "New garage door installed in Barrhaven", cap: "Barrhaven install", cat: "install" },
+    { srcKey: "install", alt: "Grey raised-panel garage door installed in Barrhaven", cap: "Barrhaven · new door", cat: "install", wide: true },
+    { srcKey: "installBarrhaven", alt: "LiftMaster belt-drive garage door opener with LED lighting", cap: "Opener install", cat: "openers" },
     { srcKey: "installOttawa", alt: "Grey raised-panel garage door installed in Ottawa", cap: "Ottawa install", cat: "install" },
     { srcKey: "installKanata", alt: "New garage door installed in Kanata", cap: "Kanata install", cat: "install" },
     { srcKey: "installOrleans", alt: "Two new garage doors installed in Orleans", cap: "Orleans · double doors", cat: "install" },
