@@ -5,7 +5,7 @@ export const BLOG_IMAGES = {
   pricing: "/assets/services/spring-replacement-parts.png",
   springRepair: "/assets/services/spring-broken-torsion.png",
   insulatedHome: "/assets/services/install-woodgrain-double.png",
-  troubleshooting: "/assets/services/spring-broken-torsion.png",
+  troubleshooting: "/assets/blog/garage-door-wont-close-springs.png",
   replacement: "/assets/gallery/gallery-barrhaven-grey.png",
   winterPrep: "/assets/blog/garage-door-winter-prep-ottawa.png",
 };
@@ -169,7 +169,7 @@ export const blogPosts = [
     category: "Troubleshooting",
     readMin: 7,
     imageKey: "troubleshooting",
-    imageAlt: "Garage door on a house — troubleshooting when it will not close",
+    imageAlt: "Intact and broken torsion springs on concrete — why a garage door will not close",
     relatedServices: ["opener-service", "emergency-repair", "cable-repair"],
     relatedSlugs: ["broken-garage-door-spring-ottawa", "garage-door-repair-cost-ottawa"],
     body: `
