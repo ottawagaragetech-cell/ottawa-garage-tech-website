@@ -32,7 +32,7 @@ window.OGT = {
     modern: "/assets/services/install-kanata.png",
     springDetail: "/assets/services/spring-replacement-parts.png",
     track: "/assets/gallery/home-rollers-replacement.png",
-    seal: "/assets/services/weather-sealing.png"
+    seal: "/assets/gallery/garage-door-bottom-seal-ottawa.png"
   },
 
   /** Signature visits — highlighted on home and services hub */
@@ -114,7 +114,7 @@ window.OGT = {
     { srcKey: "maintenance", alt: "Garage door maintenance tune-up", cap: "Maintenance tune-up", cat: "maintenance" },
     { srcKey: "hardware", alt: "Garage door hardware, cables, and seals", cap: "Hardware & seals", cat: "maintenance" },
     { srcKey: "weather", alt: "Garage door weather sealing Ottawa", cap: "Weather sealing", cat: "maintenance" },
-    { srcKey: "seal", alt: "Bottom seal replacement Ottawa", cap: "Bottom seal", cat: "maintenance" }
+    { srcKey: "seal", alt: "Close-up of black rubber bottom seal on a garage door with track and roller — Ottawa", cap: "Bottom seal", cat: "maintenance" }
   ],
 
   galleryFilters: [
