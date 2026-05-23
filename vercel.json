@@ -17,7 +17,7 @@
   "redirects": [
     {
       "source": "/reviews",
-      "destination": "https://ottawagaragetech.ca/#reviews",
+      "destination": "https://ottawagaragetech.ca/",
       "permanent": true
     },
     {

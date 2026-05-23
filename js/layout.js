@@ -106,7 +106,6 @@
     var companyItems = [
       { label: "About", href: "/about" },
       { label: "Service areas", href: "/areas" },
-      { label: "Reviews", href: "/#reviews" },
       { label: "FAQ", href: "/faq" },
       { label: "Gallery", href: "/gallery" },
       { label: "Blog", href: "/blog" },
@@ -437,45 +436,6 @@
   if (homeAreas && cfg.areas) {
     homeAreas.innerHTML = cfg.areas.map(areaChip).join("");
   }
-
-  function renderReviewCard(r) {
-    var stars = "\u2605".repeat(r.stars);
-    var service = r.service
-      ? '<p class="ogt-review-service">' + esc(r.service) + "</p>"
-      : "";
-    return (
-      '<article class="ogt-review-card"><div class="ogt-review-stars" aria-label="' +
-      r.stars +
-      ' out of 5 stars">' +
-      stars +
-      "</div>" +
-      service +
-      '<p class="ogt-review-text">' +
-      esc(r.text) +
-      '</p><p class="ogt-review-meta"><strong>' +
-      esc(r.name) +
-      "</strong> Â· " +
-      esc(r.area) +
-      " Â· " +
-      esc(r.date) +
-      "</p></article>"
-    );
-  }
-
-  var reviewsEl = document.getElementById("ogt-reviews-grid");
-  if (reviewsEl && cfg.reviews) {
-    var limit = reviewsEl.getAttribute("data-limit");
-    var list = cfg.reviews;
-    if (limit) list = list.slice(0, parseInt(limit, 10) || list.length);
-    reviewsEl.innerHTML = list.map(renderReviewCard).join("");
-  }
-
-  var reviewsSummary = document.getElementById("ogt-reviews-summary");
-  if (reviewsSummary && cfg.reviews && cfg.reviews.length) {
-    reviewsSummary.innerHTML =
-      '<p class="ogt-reviews-score"><span class="ogt-reviews-score-label">5-star service</span><span class="ogt-reviews-score-stars" aria-hidden="true">\u2605\u2605\u2605\u2605\u2605</span><span class="ogt-reviews-score-meta">Customer feedback from Ottawa-area jobs</span></p>';
-  }
-
   (function injectHreflang() {
     var canonical = document.querySelector('link[rel="canonical"]');
     if (!canonical || !canonical.href) return;

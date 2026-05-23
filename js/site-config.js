@@ -108,7 +108,7 @@ window.OGT = {
   ],
 
   trustBadges: [
-    { title: "5-star service", text: "Quality work rated highly by Ottawa area customers" },
+    { title: "Trusted local service", text: "Canadian-owned garage door specialists serving Ottawa and suburbs" },
     { title: "Licensed & insured", text: "Fully licensed technicians and liability coverage" },
     { title: "Upfront quotes", text: "Clear scope and pricing before major work" },
     { title: "Same-day service", text: "When scheduling allows — call or text first" },
@@ -118,20 +118,6 @@ window.OGT = {
     { title: "Respectful crews", text: "We protect your driveway and workspace" }
   ],
 
-  reviews: [
-    { name: "Marcus T.", area: "Barrhaven", stars: 5, date: "March 2026", service: "Spring replacement", text: "Spring snapped on a Sunday evening. They walked me through what happened, came next day, and replaced both springs with a clear price before starting." },
-    { name: "Helen K.", area: "Kanata", stars: 5, date: "February 2026", service: "New door installation", text: "New insulated door (up to R-18) install looks great. Crew was on time, cleaned up, and explained how to care for it through winter." },
-    { name: "David P.", area: "Orleans", stars: 5, date: "January 2026", service: "Opener repair", text: "Opener was humming but not moving. Fixed the gear assembly instead of pushing a full replacement. Honest advice." },
-    { name: "Aisha M.", area: "Nepean", stars: 5, date: "December 2025", service: "Emergency repair", text: "Door was off track after the plow pushed snow against it. Quick response, straightened everything, and checked the balance." },
-    { name: "James R.", area: "Stittsville", stars: 5, date: "March 2026", service: "Maintenance tune-up", text: "Annual tune-up caught a frayed cable before it snapped. Worth it — door runs quieter and they showed me what they adjusted." },
-    { name: "Priya S.", area: "Gloucester", stars: 5, date: "February 2026", service: "Weather sealing", text: "Bottom seal was shredded and we had a cold draft all winter. New seal and threshold — garage feels noticeably warmer." },
-    { name: "Tom W.", area: "Alta Vista", stars: 5, date: "February 2026", service: "Cable repair", text: "One cable had come off the drum. They secured the door, replaced both cables, and rebalanced everything in about two hours." },
-    { name: "Nadia L.", area: "Westboro", stars: 5, date: "January 2026", service: "Opener installation", text: "Upgraded to a quieter belt-drive opener. Remotes programmed, sensors tested, and they explained the safety reverse — professional start to finish." },
-    { name: "Chris B.", area: "Riverside South", stars: 5, date: "January 2026", service: "Spring replacement", text: "Heard a loud bang in the garage — torsion spring gone. Called in the morning, same-day repair, fair price, no upsell on a new door." },
-    { name: "Sandra H.", area: "Rockland", stars: 5, date: "December 2025", service: "Emergency repair", text: "Door would not close before we left for the holidays. They came out same day, fixed the track and rollers, and made sure the opener was not straining." },
-    { name: "Kevin M.", area: "Manotick", stars: 5, date: "November 2025", service: "New door installation", text: "Replaced our old steel door with a new insulated model up to R-18. Measurements were careful, install was one day, and the trim looks clean." },
-    { name: "Elaine F.", area: "Beacon Hill", stars: 5, date: "November 2025", service: "Opener repair", text: "Door reversed halfway up every time. Photo-eyes were misaligned — fixed quickly and they tested it with a box like they should." }
-  ],
 
   nav: [
     { id: "home", label: "Home", href: "/" },

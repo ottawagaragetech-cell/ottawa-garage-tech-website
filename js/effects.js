@@ -65,11 +65,11 @@
         targets.push(mark(el, { right: true }));
       });
 
-    document.querySelectorAll(".ogt-reviews-summary-wrap, .ogt-contact-visual-side, .ogt-form-card, .ogt-areas-map-panel, .ogt-areas-map-sidebar").forEach(function (el) {
+    document.querySelectorAll(".ogt-contact-visual-side, .ogt-form-card, .ogt-areas-map-panel, .ogt-areas-map-sidebar").forEach(function (el) {
       targets.push(mark(el, { fade: true }));
     });
 
-    var grids = ".ogt-services-grid, .ogt-reviews-grid, .ogt-showcase-grid, .ogt-gallery-preview, .ogt-gallery-grid--page, .ogt-blog-grid, .ogt-badges-grid";
+    var grids = ".ogt-services-grid, .ogt-showcase-grid, .ogt-gallery-preview, .ogt-gallery-grid--page, .ogt-blog-grid, .ogt-badges-grid";
     document.querySelectorAll(grids).forEach(function (grid) {
       Array.from(grid.children).forEach(function (child, i) {
         targets.push(mark(child, { delay: (i % 6) + 1 }));
