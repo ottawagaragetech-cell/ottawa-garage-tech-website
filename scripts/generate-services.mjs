@@ -32,8 +32,8 @@ const springAssets = {
 
 const images = {
   emergency: {
-    src: springAssets.broken,
-    alt: "Broken garage door torsion spring — urgent repair Ottawa",
+    src: "/assets/services/emergency-repair-stuck-door.png",
+    alt: "Garage door stuck crooked halfway open — emergency repair Ottawa",
   },
   spring: {
     src: springAssets.broken,
@@ -107,7 +107,7 @@ const services = {
       "We complete the repair and test safety sensors and balance",
     ],
     bullets: ["Off-track and stuck doors", "Broken torsion or extension springs", "Snapped cables and roller failures", "Opener not responding or reversing"],
-    inline: { src: "/assets/gallery/home-rollers-replacement.png", alt: "Garage door roller and hardware service Ottawa", caption: "Urgent visits include balance, tracks, and safety checks on site." },
+    inline: { src: "/assets/services/emergency-repair-stuck-door.png", alt: "Stuck crooked garage door during emergency service call", caption: "Urgent visits secure the door first, then diagnose springs, cables, and tracks." },
     faqs: [
       { q: "What counts as a garage door emergency?", a: "A door that will not close and secure your home, a door off track, or a broken spring are urgent. Call or text (613) 900-6005." },
       { q: "How quickly can you come?", a: "We prioritize safety calls when scheduling allows, every day from 9 a.m. to 9 p.m." },
