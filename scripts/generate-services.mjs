@@ -48,8 +48,8 @@ const images = {
     alt: "LiftMaster belt-drive garage door opener installation Ottawa",
   },
   cable: {
-    src: springAssets.parts,
-    alt: "Garage door lift cables, drums, and hardware — Ottawa",
+    src: "/assets/services/cable-repair-hardware.png",
+    alt: "Rusty garage door lift cable and roller hardware — cable repair Ottawa",
   },
   maintenance: {
     src: "/assets/gallery/home-rollers-replacement.png",
@@ -245,7 +245,7 @@ const services = {
       "Re-tension and balance the full system",
     ],
     bullets: ["Snapped or frayed lift cables", "Drum re-winding", "Bottom bracket inspection", "Balance check after repair"],
-    inline: { src: springAssets.parts, alt: "Garage door cables, drums, and hardware Ottawa", caption: "Cable work often includes checking drums, brackets, and seals together." },
+    inline: { src: "/assets/services/cable-repair-hardware.png", alt: "Worn garage door cable and roller on concrete — Ottawa", caption: "Frayed or rusted cables are replaced in pairs with drum and bracket checks." },
     faqs: [
       { q: "Is it safe to use the door with a frayed cable?", a: "No — schedule repair. A failing cable can snap under load." },
       { q: "Why replace both cables?", a: "Matched cables wear evenly and keep the door balanced." },
