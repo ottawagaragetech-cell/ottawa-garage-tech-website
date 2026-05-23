@@ -15,7 +15,7 @@ function patchServices() {
         <a class="ogt-btn ogt-btn-primary" href="tel:+16139006005">Call (613) 900-6005</a>
       </${d}>
       <${d} class="ogt-page-hero-media">
-        <img src="https://img1.wsimg.com/isteam/ip/1b277bec-adfe-487a-a8c7-5e77b97e6d1d/20251106_094900.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:900,cg:true" width="800" height="500" alt="Garage door services Ottawa" loading="eager">
+        <img src="/assets/gallery/gallery-barrhaven-grey.png" width="800" height="500" alt="Grey garage door installed in Barrhaven — Ottawa Garage Tech services" loading="eager">
       </${d}>
     </${d}>`;
   const close = "</" + "div>";

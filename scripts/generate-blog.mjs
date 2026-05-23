@@ -231,7 +231,7 @@ function indexPage() {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Garage Door Blog Ottawa | Tips, Costs &amp; Repair Guides | Ottawa Garage Tech</title>
-  <meta name="description" content="Expert garage door tips for Ottawa homeowners — repair costs, broken springs, insulation up to R-18, winter prep, and troubleshooting from Ottawa Garage Tech.">
+  <meta name="description" content="Garage door tips for Ottawa homeowners — repair pricing, broken springs, insulation, winter prep, and troubleshooting from Ottawa Garage Tech.">
   <meta name="keywords" content="garage door blog Ottawa, garage door tips, garage door repair guide Ottawa">
   <link rel="canonical" href="${domain}/blog">
   <meta property="og:type" content="website">
@@ -295,7 +295,7 @@ function indexPage() {
     <section class="ogt-section ogt-section--alt">
       <div class="ogt-section-inner ogt-seo-prose">
         <h2>Local garage door advice you can use</h2>
-        <p>Whether you live in <a href="/areas/kanata">Kanata</a>, <a href="/areas/barrhaven">Barrhaven</a>, <a href="/areas/orleans">Orleans</a>, or central Ottawa, garage doors face the same seasons — hot summers, freeze-thaw winters, and daily use that wears springs, cables, and openers. Our blog explains what to watch for, typical <a href="/services/spring-replacement">spring replacement</a> and <a href="/services/opener-service">opener repair</a> scenarios, and when <a href="/services/garage-door-installation">new door installation</a> with insulation up to R-18 is the better long-term fix.</p>
+        <p>Whether you live in <a href="/areas/kanata">Kanata</a>, <a href="/areas/barrhaven">Barrhaven</a>, <a href="/areas/orleans">Orleans</a>, or central Ottawa, garage doors face the same seasons — hot summers, freeze-thaw winters, and daily use that wears springs, cables, and openers. Our blog explains what to watch for, typical <a href="/services/spring-replacement">spring replacement</a> and <a href="/services/opener-service">opener repair</a> scenarios, and when a <a href="/services/garage-door-installation">new insulated door</a> is the better long-term fix.</p>
         <p>Questions not covered here? See our <a href="/faq">FAQ</a>, <a href="/gallery">project gallery</a>, or <a href="/contact">contact Ottawa Garage Tech</a> — call or text <a href="tel:+16139006005">(613) 900-6005</a> for urgent issues.</p>
       </div>
     </section>

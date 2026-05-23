@@ -1,29 +1,21 @@
 /** Blog post source data — used by scripts/generate-blog.mjs */
 
-/** Real job photos from the Ottawa Garage Tech project library (wsimg) */
-const WS = "https://img1.wsimg.com/isteam/ip/1b277bec-adfe-487a-a8c7-5e77b97e6d1d";
-
-function jobPhoto(file, w = 900) {
-  if (file.startsWith("/assets/")) return file;
-  const enc = encodeURIComponent(file).replace(/%2F/g, "/");
-  return `${WS}/${enc}/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:${w},cg:true`;
-}
-
+/** Blog hero images — local project photos only */
 export const BLOG_IMAGES = {
-  pricing: jobPhoto("20250124_095313.jpg"),
-  springRepair: jobPhoto("20250110_075357-COLLAGE.jpg"),
+  pricing: "/assets/services/spring-replacement-parts.png",
+  springRepair: "/assets/services/spring-broken-torsion.png",
   insulatedHome: "/assets/services/install-woodgrain-double.png",
-  troubleshooting: jobPhoto("20251015_061012 (1).jpg"),
-  replacement: jobPhoto("20251106_094900.jpg"),
+  troubleshooting: "/assets/services/spring-broken-torsion.png",
+  replacement: "/assets/gallery/gallery-barrhaven-grey.png",
   winterPrep: "/assets/blog/garage-door-winter-prep-ottawa.png",
 };
 
 export const blogPosts = [
   {
     slug: "garage-door-repair-cost-ottawa",
-    title: "How Much Does Garage Door Repair Cost in Ottawa?",
-    h1: "Garage door repair costs in Ottawa (2026 guide)",
-    desc: "Typical garage door repair prices in Ottawa — springs, cables, openers, and emergency visits. What affects cost and how to get an upfront quote.",
+    title: "Ottawa Garage Door Repair Pricing: What to Expect in 2026",
+    h1: "Ottawa garage door repair pricing (2026 guide)",
+    desc: "Ballpark garage door repair costs in Ottawa — springs, cables, openers, and priority visits. What moves the price and how estimates work at Ottawa Garage Tech.",
     keywords: "garage door repair cost Ottawa, garage door spring cost, garage door repair prices Ottawa",
     date: "2026-03-10",
     category: "Pricing",
@@ -38,14 +30,14 @@ export const blogPosts = [
 <h2>Typical garage door repair prices in Ottawa</h2>
 <p>These ranges reflect common residential jobs. Your door size, hardware type, and whether both sides of a paired system need work will move the final number up or down.</p>
 <ul>
-<li><strong>Spring replacement:</strong> often $220–$380 for standard residential torsion or extension springs, usually replaced in pairs for balance</li>
-<li><strong>Cable repair:</strong> roughly $175–$275 when drums, cables, or bottom fixtures are involved</li>
-<li><strong>Maintenance tune-up:</strong> from about $150 — lubrication, balance check, hardware inspection</li>
-<li><strong>Opener repair:</strong> commonly $195–$350 for gears, limits, sensors, or motor issues; replacement quoted separately</li>
-<li><strong>Emergency / same-day visit:</strong> often starts around $199 before parts, when scheduling allows</li>
-<li><strong>Weather sealing:</strong> from about $250 for bottom seals, thresholds, and jambs</li>
+<li><strong>Spring replacement:</strong> often $235–$395 for standard residential torsion or extension springs, usually replaced in pairs for balance</li>
+<li><strong>Cable repair:</strong> roughly $180–$285 when drums, cables, or bottom fixtures are involved</li>
+<li><strong>Maintenance tune-up:</strong> from about $165 — lubrication, balance check, hardware inspection</li>
+<li><strong>Opener repair:</strong> commonly $210–$365 for gears, limits, sensors, or motor issues; replacement quoted separately</li>
+<li><strong>Priority safety visit:</strong> often starts around $215 before parts, when scheduling allows</li>
+<li><strong>Weather sealing:</strong> from about $260 for bottom seals, thresholds, and jambs</li>
 </ul>
-<p>New <a href="/services/garage-door-installation">garage door installation</a> is quoted after on-site measurement — insulated steel doors up to <strong>R-18</strong> are popular in Ottawa for attached garages.</p>
+<p>New <a href="/services/garage-door-installation">garage door installation</a> is quoted after on-site measurement — well-insulated steel doors are popular in Ottawa for attached garages and workshops.</p>
 
 <h2>What affects your garage door repair bill?</h2>
 <h3>Door size and spring type</h3>
@@ -68,11 +60,11 @@ export const blogPosts = [
 
 <h2>FAQ: garage door repair pricing in Ottawa</h2>
 <h3>Do you charge a service call fee?</h3>
-<p>We explain visit and repair pricing before proceeding on significant work. Emergency visits often start around $199 before parts.</p>
+<p>We explain visit and repair pricing before proceeding on significant work. Priority safety visits often start around $215 before parts.</p>
 <h3>Is spring replacement always done in pairs?</h3>
 <p>Usually yes. If one torsion spring broke, the other is often near end of life. Balanced springs protect your opener and reduce repeat calls.</p>
 <h3>Are insulated doors worth the extra cost?</h3>
-<p>For many attached garages and workshops, yes. See our guide on <a href="/blog/insulated-garage-doors-r18-ottawa">insulated doors up to R-18 in Ottawa</a>.</p>
+<p>For many attached garages and workshops, yes. See our guide on <a href="/blog/insulated-garage-doors-r18-ottawa">insulated garage doors for Ottawa winters</a>.</p>
 `,
   },
   {
@@ -109,21 +101,21 @@ export const blogPosts = [
 <p>Our <a href="/services/spring-replacement">spring replacement service</a> includes correct sizing, balancing the door, and checking cables and rollers while we are on site.</p>
 
 <h2>What does spring replacement cost in Ottawa?</h2>
-<p>Most residential spring jobs fall in the <strong>$220–$380</strong> range depending on door size and spring type. Replacing both springs together is standard practice. See our full <a href="/blog/garage-door-repair-cost-ottawa">garage door repair cost guide</a> for other common prices.</p>
+<p>Most residential spring jobs fall in the <strong>$235–$395</strong> range depending on door size and spring type. Replacing both springs together is standard practice. See our full <a href="/blog/garage-door-repair-cost-ottawa">Ottawa pricing guide</a> for other common ranges.</p>
 
 <h2>Why springs break more often in winter</h2>
 <p>Metal contracts in cold temperatures. A spring near the end of its cycle count is more likely to snap on the coldest mornings — exactly when you need the door for work. An annual <a href="/services/maintenance">tune-up</a> can spot rust, gaps in coils, and balance issues before failure.</p>
 
 <h2>When to call Ottawa Garage Tech</h2>
-<p>Call or text <a href="tel:+16139006005">(613) 900-6005</a> for same-day help when scheduling allows. We carry common spring sizes on our trucks for many Ottawa-area jobs completed in one visit. Serving Ottawa, Stittsville, Gloucester, Manotick, Rockland, and surrounding communities — <a href="/areas">view all service areas</a>.</p>
+<p>Call or text <a href="tel:+16139006005">(613) 900-6005</a> for priority scheduling when routes allow. We carry common spring sizes on our trucks for many jobs finished in one visit. Serving the National Capital Region — <a href="/areas">view all service areas</a>.</p>
 `,
   },
   {
     slug: "insulated-garage-doors-r18-ottawa",
-    title: "Insulated Garage Doors Up to R-18: Worth It in Ottawa?",
-    h1: "Are insulated garage doors up to R-18 worth it in Ottawa?",
-    desc: "Attached garages, workshops, and rooms above the garage — when insulation up to R-18 pays off in Ottawa winters and what to expect on installation.",
-    keywords: "insulated garage door Ottawa, R-18 garage door, garage door insulation Ottawa winter",
+    title: "Insulated Garage Doors for Ottawa Winters: Worth It?",
+    h1: "Are insulated garage doors worth it in Ottawa?",
+    desc: "Attached garages, workshops, and rooms above the garage — when insulated panels pay off in Ottawa winters and what to expect on installation.",
+    keywords: "insulated garage door Ottawa, high R-value garage door, garage door insulation Ottawa winter",
     date: "2026-01-22",
     category: "Installation",
     readMin: 8,
@@ -132,10 +124,10 @@ export const blogPosts = [
     relatedServices: ["garage-door-installation", "weather-sealing", "maintenance"],
     relatedSlugs: ["garage-door-winter-prep-ottawa", "repair-vs-replace-garage-door"],
     body: `
-<p>Ottawa winters test every part of your home’s envelope — including the garage door. If your garage shares a wall with heated living space, or you use the space as a workshop, <strong>insulated garage doors with ratings up to R-18</strong> can reduce drafts, condensation, and cold transfer. This article explains when upgrade makes sense, how insulation is measured, and what installation looks like locally.</p>
+<p>Ottawa winters test every part of your home’s envelope — including the garage door. If your garage shares a wall with heated living space, or you use the space as a workshop, <strong>well-insulated garage doors</strong> can reduce drafts, condensation, and cold transfer. This article explains when upgrade makes sense, how insulation is measured, and what installation looks like locally.</p>
 
-<h2>What does R-18 mean for a garage door?</h2>
-<p>R-value measures resistance to heat flow. Higher numbers mean better insulation. Residential steel doors in Ottawa are often available with insulated panels up to approximately <strong>R-18</strong>, with polyurethane or polystyrene cores sandwiched between steel skins. That is a meaningful step up from single-layer “non-insulated” doors common on older builds.</p>
+<h2>How garage door insulation is measured</h2>
+<p>R-value measures resistance to heat flow — higher numbers mean better insulation. Residential steel doors in Ottawa are often available with polyurethane or polystyrene cores sandwiched between steel skins, commonly in the mid to high teens for R-value on premium panels. That is a meaningful step up from single-layer “non-insulated” doors common on older builds.</p>
 <p>Insulation helps the panel itself; you still need proper <a href="/services/weather-sealing">weather sealing</a> at the bottom, jambs, and header to cut drafts.</p>
 
 <h2>When insulated doors are worth it in Ottawa</h2>
@@ -158,7 +150,7 @@ export const blogPosts = [
 
 <h2>Installation process in Ottawa</h2>
 <p>Our <a href="/services/garage-door-installation">installation service</a> includes on-site measurement, panel and colour selection, removal of the old door when quoted, track alignment, spring balancing, sealing, and opener pairing if needed. Most single-car replacements complete in one day once your door arrives.</p>
-<p>We install insulated steel panels up to R-18 suited to Ottawa climate — plus classic styles when insulation is less critical.</p>
+<p>We install insulated steel panels suited to Ottawa climate — plus classic styles when insulation is less critical.</p>
 
 <h2>Pair insulation with sealing and maintenance</h2>
 <p>Even the best insulated panel underperforms with a shredded bottom seal or bent track. Before winter, consider a <a href="/blog/garage-door-winter-prep-ottawa">garage door winter prep checklist</a> or an annual tune-up.</p>
@@ -208,14 +200,14 @@ export const blogPosts = [
 <p>Extreme cold can stiffen rollers and thicken grease on the rail. Ice at the threshold can block the seal. Rubber bottom seals that freeze to the floor may need gentle clearing — never yank a stuck door with the opener. See <a href="/blog/garage-door-winter-prep-ottawa">winter prep tips</a> for prevention.</p>
 
 <h2>When this is an emergency</h2>
-<p>Call or text <a href="tel:+16139006005">(613) 900-6005</a> if the door is stuck open overnight, hanging on one side, or you suspect a broken spring or cable. We serve Ottawa and suburbs seven days a week, 9 AM – 9 PM, with same-day service when scheduling allows.</p>
+<p>Call or text <a href="tel:+16139006005">(613) 900-6005</a> if the door is stuck open overnight, hanging on one side, or you suspect a broken spring or cable. We are available every day, 9 a.m.–9 p.m., with priority scheduling when routes allow.</p>
 `,
   },
   {
     slug: "repair-vs-replace-garage-door",
     title: "Repair vs Replace Your Garage Door: An Ottawa Homeowner Guide",
     h1: "Repair vs replace your garage door: an Ottawa homeowner guide",
-    desc: "Rust, noise, poor insulation, repeated breakdowns — when to repair your garage door in Ottawa and when replacement up to R-18 is the better investment.",
+    desc: "Rust, noise, poor insulation, repeated breakdowns — when to repair your garage door in Ottawa and when a new insulated door is the better investment.",
     keywords: "repair or replace garage door Ottawa, new garage door vs repair, garage door replacement",
     date: "2026-01-18",
     category: "Buying guide",
@@ -241,7 +233,7 @@ export const blogPosts = [
 <ul>
 <li>Rusted or cracked panels, especially at the bottom sections</li>
 <li>Repeated failures every few months — chasing one part after another</li>
-<li>Poor insulation on an attached garage — upgrade to doors up to <strong>R-18</strong></li>
+<li>Poor insulation on an attached garage — upgrade to a well-insulated door</li>
 <li>Major impact damage or chronic off-track problems from bent tracks</li>
 <li>Updating curb appeal before selling — front garage doors dominate street view</li>
 <li>Noise and vibration despite tune-ups — worn hinges and thin panels</li>
@@ -252,7 +244,7 @@ export const blogPosts = [
 <p>Read our <a href="/blog/garage-door-repair-cost-ottawa">Ottawa repair cost guide</a> for current ranges.</p>
 
 <h2>Insulation and replacement together</h2>
-<p>If you are already replacing, choosing an insulated model suited to Ottawa winters is logical for attached garages. We help compare <a href="/blog/insulated-garage-doors-r18-ottawa">insulated options up to R-18</a> during measurement visits.</p>
+<p>If you are already replacing, choosing an insulated model suited to Ottawa winters is logical for attached garages. We help compare <a href="/blog/insulated-garage-doors-r18-ottawa">insulated door options</a> during measurement visits.</p>
 
 <h2>Get an honest recommendation</h2>
 <p>We are happy to repair when it is the smart choice — no pressure to sell a new door. For a second opinion, <a href="/contact">send us photos</a> or book a visit: <a href="tel:+16139006005">(613) 900-6005</a>. Browse <a href="/services">all services</a> and <a href="/areas">service areas</a>.</p>
@@ -288,7 +280,7 @@ export const blogPosts = [
 <ul>
 <li>Schedule a professional tune-up if the door is noisy or over 5 years without service</li>
 <li>Replace springs that are past their cycle life — winter is when they fail</li>
-<li>Consider insulation upgrades if the garage shares walls with living space (<a href="/blog/insulated-garage-doors-r18-ottawa">R-18 doors</a>)</li>
+<li>Consider insulation upgrades if the garage shares walls with living space (<a href="/blog/insulated-garage-doors-r18-ottawa">insulated doors</a>)</li>
 <li>Keep the area in front of the door shovelled — ice binding the seal can burn out the opener if you force it</li>
 </ul>
 

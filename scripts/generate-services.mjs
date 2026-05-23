@@ -3,13 +3,6 @@ import path from "path";
 
 const root = path.resolve(import.meta.dirname, "..");
 const domain = "https://ottawagaragetech.ca";
-const BASE = "https://img1.wsimg.com/isteam/ip/1b277bec-adfe-487a-a8c7-5e77b97e6d1d";
-
-function photo(file, w = 800) {
-  if (file.startsWith("http") || file.startsWith("/assets/")) return file;
-  if (file.includes("rs=w:")) return file;
-  return `${BASE}/${file}/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:${w},cg:true`;
-}
 
 const installAssets = {
   hero: "/assets/services/install-woodgrain-double.png",
@@ -23,12 +16,12 @@ const installAssets = {
 export const OGT_IMAGES = {
   hero: installAssets.ottawa,
   gallery: [
-    { src: photo("20260224_153212.jpg", 600), alt: "Garage door hardware, cables, and bottom seal — Ottawa", cap: "Hardware & sealing" },
+    { src: "/assets/services/spring-replacement-parts.png", alt: "Garage door hardware, cables, and springs — Ottawa", cap: "Hardware & springs" },
     { src: installAssets.kanata, alt: "New garage door installed in Kanata", cap: "Kanata install" },
-    { src: photo("20250110_075357-COLLAGE.jpg", 600), alt: "Garage door spring repair before and after", cap: "Spring repair" },
-    { src: photo("20260227_140936.jpg", 600), alt: "Belt-drive opener installation", cap: "Opener install" },
+    { src: "/assets/services/spring-broken-torsion.png", alt: "Broken torsion spring on a garage door", cap: "Spring repair" },
+    { src: "/assets/gallery/gallery-opener-liftmaster.png", alt: "Belt-drive opener installation", cap: "Opener install" },
     { src: installAssets.hero, alt: "Wood-grain double garage door installation Ottawa", cap: "Door installation" },
-    { src: photo("20251015_061012%20(1).jpg", 600), alt: "Off-track garage door repair", cap: "Emergency repair" },
+    { src: "/assets/gallery/gallery-barrhaven-grey.png", alt: "Grey garage door installed in Barrhaven", cap: "Barrhaven install" },
   ],
 };
 
@@ -38,7 +31,10 @@ const springAssets = {
 };
 
 const images = {
-  emergency: { src: photo("20251015_061012%20(1).jpg"), alt: "Off-track garage door emergency repair Ottawa" },
+  emergency: {
+    src: springAssets.broken,
+    alt: "Broken garage door torsion spring — urgent repair Ottawa",
+  },
   spring: {
     src: springAssets.broken,
     alt: "Broken garage door torsion spring with a visible gap above the door",
@@ -47,9 +43,18 @@ const images = {
     src: installAssets.hero,
     alt: "Wood-grain double garage door installed on a brick Ottawa home",
   },
-  opener: { src: photo("20260227_140936.jpg", 600), alt: "Belt-drive garage door opener installation Ottawa" },
-  cable: { src: photo("20250115_105310.jpg"), alt: "Garage door lift cable repair Ottawa" },
-  maintenance: { src: photo("20250222_164415.jpg"), alt: "Garage door maintenance and tune-up Ottawa" },
+  opener: {
+    src: "/assets/gallery/gallery-opener-liftmaster.png",
+    alt: "LiftMaster belt-drive garage door opener installation Ottawa",
+  },
+  cable: {
+    src: springAssets.parts,
+    alt: "Garage door lift cables, drums, and hardware — Ottawa",
+  },
+  maintenance: {
+    src: "/assets/gallery/home-rollers-replacement.png",
+    alt: "Garage door roller replacement during maintenance Ottawa",
+  },
   weather: {
     src: "/assets/services/weather-sealing.png",
     alt: "Garage door jamb weatherstripping and side seal — Ottawa weather sealing",
@@ -78,12 +83,12 @@ const serviceTitles = {
 
 const services = {
   "emergency-repair": {
-    title: "Emergency Garage Door Repair Ottawa | Same-Day",
-    desc: "Emergency garage door repair in Ottawa — off-track doors, broken springs, doors that will not close. Call (613) 900-6005 for same-day help.",
+    title: "Urgent Garage Door Repair Ottawa | Priority Visits",
+    desc: "Urgent garage door repair in Ottawa — off-track doors, broken springs, doors that will not close. Call (613) 900-6005 when safety is at risk.",
     h1: "Emergency garage door repair",
     imageKey: "emergency",
     keywords: "emergency garage door repair Ottawa, stuck garage door, off track door, same day garage door repair",
-    priceNote: "Emergency visits from $199 — final price depends on parts and labour after inspection.",
+    priceNote: "Priority safety visits from $215 — final price depends on parts and labour after inspection.",
     intro: [
       "When your garage door will not close, hangs crooked, or a spring has just snapped, waiting is not an option. Ottawa Garage Tech treats safety issues as priorities and explains your options in plain language before major work begins.",
       "Our technicians arrive with common springs, cables, rollers, and opener parts on the truck so many emergencies are resolved in a single visit across Ottawa and nearby suburbs.",
@@ -102,20 +107,20 @@ const services = {
       "We complete the repair and test safety sensors and balance",
     ],
     bullets: ["Off-track and stuck doors", "Broken torsion or extension springs", "Snapped cables and roller failures", "Opener not responding or reversing"],
-    inline: { src: photo("20250222_164415.jpg", 600), alt: "Garage door repair work completed in Ottawa", caption: "Typical emergency repair — hardware, tracks, and balance checked on site." },
+    inline: { src: "/assets/gallery/home-rollers-replacement.png", alt: "Garage door roller and hardware service Ottawa", caption: "Urgent visits include balance, tracks, and safety checks on site." },
     faqs: [
       { q: "What counts as a garage door emergency?", a: "A door that will not close and secure your home, a door off track, or a broken spring are urgent. Call or text (613) 900-6005." },
-      { q: "How quickly can you come?", a: "We prioritize safety calls when scheduling allows, seven days a week from 9 AM to 9 PM." },
+      { q: "How quickly can you come?", a: "We prioritize safety calls when scheduling allows, every day from 9 a.m. to 9 p.m." },
       { q: "Do you charge extra for evenings?", a: "We quote clearly before work — ask when you call so there are no surprises." },
     ],
   },
   "spring-replacement": {
     title: "Garage Door Spring Replacement Ottawa | Torsion & Extension",
-    desc: "Garage door spring replacement in Ottawa. Correct sizing, both springs when needed, upfront quotes. Ottawa Garage Tech — (613) 900-6005.",
+    desc: "Garage door spring replacement in Ottawa. Correct sizing, matched pairs when needed, clear on-site estimates. Ottawa Garage Tech — (613) 900-6005.",
     h1: "Garage door spring replacement",
     imageKey: "spring",
     keywords: "garage door spring replacement Ottawa, broken torsion spring, extension spring repair, garage door spring cost Ottawa",
-    priceNote: "Most spring replacements fall in the $220–$380 range depending on door size and spring type.",
+    priceNote: "Most spring replacements land around $235–$395 depending on door size and spring type.",
     intro: [
       "Garage door springs counterbalance hundreds of pounds of weight. When one fails, the door becomes dangerous to lift and strains your opener. We install correctly rated springs and replace both sides when that is the right long-term fix.",
       "Ottawa temperature swings accelerate metal fatigue. If you heard a bang from the garage, stop using the door and schedule service — forcing it can damage cables, tracks, and the opener.",
@@ -147,22 +152,22 @@ const services = {
     ],
   },
   "garage-door-installation": {
-    title: "New Garage Door Installation Ottawa | Insulated Doors up to R-18",
-    desc: "New garage door supply and installation in Ottawa. Insulated doors up to R-18 and standard doors, free estimates, old door removal. Call Ottawa Garage Tech.",
+    title: "New Garage Door Installation Ottawa | Insulated & Standard Doors",
+    desc: "New garage door supply and installation in Ottawa. Well-insulated and standard steel doors, free estimates, old door removal. Call Ottawa Garage Tech.",
     h1: "New garage door installation",
     imageKey: "install",
-    keywords: "garage door installation Ottawa, new garage door, insulated garage door Ottawa, R-18 garage door, replace garage door",
-    priceNote: "Installed doors are quoted after measurements — insulated steel doors up to R-18 are popular for Ottawa winters.",
+    keywords: "garage door installation Ottawa, new garage door, insulated garage door Ottawa, high R-value garage door, replace garage door",
+    priceNote: "Installed doors are quoted after measurements — well-insulated steel panels are popular for Ottawa winters.",
     intro: [
-      "A new garage door changes how your home looks from the street and how comfortable your garage feels in January. We help you choose panel style, insulation up to R-18, and window options that fit your budget.",
+      "A new garage door changes how your home looks from the street and how comfortable your garage feels in January. We help you choose panel style, insulation level, and window options that fit your budget.",
       "Every installation includes proper track alignment, weather sealing at the jambs, and opener pairing when needed. We can remove and dispose of your old door on request.",
     ],
     signs: [
       "Door is rusted, cracked, or sagging",
-      "Poor insulation (below R-18) — garage freezes in winter",
+      "Thin, non-insulated panels — garage freezes in winter",
       "Frequent breakdowns on an old door",
       "Updating curb appeal before selling",
-      "Converting to a quieter insulated system (up to R-18)",
+      "Converting to a quieter, better-insulated system",
     ],
     steps: [
       "On-site measurement and style consultation",
@@ -170,7 +175,7 @@ const services = {
       "Removal of existing door and hardware if included",
       "Install, seal, balance, and program opener",
     ],
-    bullets: ["Single and double residential doors", "Insulated steel panels up to R-18 and classic panels", "Window and colour options", "Opener upgrade available"],
+    bullets: ["Single and double residential doors", "Well-insulated steel panels and classic non-insulated styles", "Window and colour options", "Opener upgrade available"],
     inline: {
       src: installAssets.barrhaven,
       alt: "New cream garage door with windows installed in Barrhaven",
@@ -178,8 +183,8 @@ const services = {
     },
     faqs: [
       { q: "How long does installation take?", a: "Most single-car replacements are completed in one day once your door arrives." },
-      { q: "Do you supply the door?", a: "Yes — we source doors sized for your opening and Ottawa climate, including insulated steel panels up to R-18." },
-      { q: "What insulation level do you offer?", a: "We install insulated garage doors with insulation up to R-18 — a strong choice for attached garages and cold Ottawa winters." },
+      { q: "Do you supply the door?", a: "Yes — we source doors sized for your opening and Ottawa climate, including well-insulated steel panels." },
+      { q: "What insulation level do you offer?", a: "We install insulated garage doors with ratings suited to attached garages and cold Ottawa winters — we explain options during your estimate." },
       { q: "Can you match my home colour?", a: "Many colours and panel designs are available — we review samples during the estimate." },
     ],
   },
@@ -189,7 +194,7 @@ const services = {
     h1: "Garage door opener service",
     imageKey: "opener",
     keywords: "garage door opener repair Ottawa, LiftMaster repair, opener installation, smart garage door opener Ottawa",
-    priceNote: "Opener repairs often from $195; gear assemblies from $250; new installed openers quoted by model.",
+    priceNote: "Opener repairs often from $210; gear assemblies from $265; new installed openers quoted by model.",
     intro: [
       "A garage door opener is more than a motor — it is sensors, limits, force settings, and a drive system that must work together. We troubleshoot the full chain, not just replace parts blindly.",
       "Whether your remote stopped working, the motor grinds but nothing moves, or you want a quiet belt-drive upgrade, we service major brands found in Ottawa homes.",
@@ -208,7 +213,7 @@ const services = {
       "Program remotes and test auto-reverse safety",
     ],
     bullets: ["Chain, belt, and wall-mount openers", "Gear and sprocket replacement", "Safety sensor alignment", "Smart WiFi opener setup"],
-    inline: { src: photo("20251015_182306.jpg", 600), alt: "Garage door openers ready for installation Ottawa", caption: "Opener installs include sensor alignment and safety testing." },
+    inline: { src: "/assets/gallery/gallery-opener-liftmaster.png", alt: "LiftMaster opener installed in Ottawa", caption: "Opener installs include sensor alignment and safety testing." },
     faqs: [
       { q: "My opener hums but the door does not move — why?", a: "Often stripped plastic gears inside the unit. Repair is usually cheaper than full replacement." },
       { q: "Which opener type is quietest?", a: "Belt-drive models are typically quieter than chain-drive — good for bedrooms above the garage." },
@@ -221,7 +226,7 @@ const services = {
     h1: "Garage door cable repair",
     imageKey: "cable",
     keywords: "garage door cable repair Ottawa, broken lift cable, frayed garage door cable, garage door off balance",
-    priceNote: "Cable repairs typically $175–$275 when both cables and drums are serviced together.",
+    priceNote: "Cable repairs typically $180–$285 when both cables and drums are serviced together.",
     intro: [
       "Lift cables work with springs and drums to raise your door evenly. When one cable frays or snaps, the door can drop on one side and damage tracks or panels.",
       "Cable replacement is high-tension work. Our technicians clamp and secure the door before swapping cables so your family stays safe.",
@@ -240,7 +245,7 @@ const services = {
       "Re-tension and balance the full system",
     ],
     bullets: ["Snapped or frayed lift cables", "Drum re-winding", "Bottom bracket inspection", "Balance check after repair"],
-    inline: { src: photo("20260224_153212.jpg", 600), alt: "Garage door cables, bottom seal, and hardware Ottawa", caption: "Cable work often includes checking drums, brackets, and seals together." },
+    inline: { src: springAssets.parts, alt: "Garage door cables, drums, and hardware Ottawa", caption: "Cable work often includes checking drums, brackets, and seals together." },
     faqs: [
       { q: "Is it safe to use the door with a frayed cable?", a: "No — schedule repair. A failing cable can snap under load." },
       { q: "Why replace both cables?", a: "Matched cables wear evenly and keep the door balanced." },
@@ -253,7 +258,7 @@ const services = {
     h1: "Maintenance tune-ups",
     imageKey: "maintenance",
     keywords: "garage door maintenance Ottawa, garage door tune up, annual garage door service Ottawa",
-    priceNote: "Tune-ups from $150 — includes inspection, lubrication, and a written summary of findings.",
+    priceNote: "Tune-ups from $165 — includes inspection, lubrication, and a written summary of findings.",
     intro: [
       "Most garage door failures give warning signs months earlier — noisy rollers, slow response, or a door that drifts off balance. A yearly tune-up catches those issues before they become emergency calls.",
       "Our maintenance visit is designed for Ottawa homes: we account for salt, cold, and hardware contraction that affects rollers, hinges, and seals.",
@@ -272,7 +277,7 @@ const services = {
       "Adjust opener limits if needed and provide a report",
     ],
     bullets: ["21-point inspection checklist", "Hinge and roller lubrication", "Hardware tightening", "Safety sensor testing"],
-    inline: { src: photo("20250121_200049.jpg", 600), alt: "Garage door opener gear and maintenance Ottawa", caption: "Tune-ups often catch worn opener gears before total failure." },
+    inline: { src: "/assets/gallery/home-rollers-replacement.png", alt: "Garage door roller maintenance Ottawa", caption: "Tune-ups often catch worn rollers and balance issues before failure." },
     faqs: [
       { q: "How often should I service my door?", a: "Once a year is ideal for most Ottawa households — more if heavy daily use." },
       { q: "Is maintenance worth it vs waiting for a break?", a: "Yes — preventing a spring or cable failure avoids higher emergency costs." },
@@ -285,7 +290,7 @@ const services = {
     h1: "Weather sealing",
     imageKey: "weather",
     keywords: "garage door weather seal Ottawa, bottom seal replacement, garage door weatherstripping Ottawa",
-    priceNote: "Weather sealing from $250 depending on door width and seal type.",
+    priceNote: "Weather sealing from $260 depending on door width and seal type.",
     intro: [
       "A thin gap under your garage door lets in Ottawa winter air, slush, and rodents. Quality bottom seals and jamb weatherstripping make a noticeable difference in comfort and energy loss.",
       "Sealing only works when the door is aligned — we check contact across the full width and adjust tracks or limits if needed so the new seal wears evenly.",
@@ -304,7 +309,7 @@ const services = {
       "Replace side and top weatherstrip as quoted",
     ],
     bullets: ["T-style and U-shaped bottom seals", "Threshold bars", "PVC and rubber jamb seal", "Track tweaks for even contact"],
-    inline: { src: photo("20251020_211230.jpg", 600), alt: "New garage door bottom seal and retainer Ottawa", caption: "Fresh bottom seal and retainer — common before winter in Ottawa." },
+    inline: { src: "/assets/services/weather-sealing.png", alt: "Garage door weather sealing Ottawa", caption: "Fresh bottom seal and jamb stripping — common before winter in Ottawa." },
     faqs: [
       { q: "When is the best time to replace seals?", a: "Late fall before deep cold, or when you notice drafts and daylight under the door." },
       { q: "Will sealing reduce heating costs?", a: "It helps especially if the garage shares a wall with heated space." },
@@ -454,43 +459,5 @@ fs.mkdirSync(path.join(root, "services"), { recursive: true });
 for (const [slug, data] of Object.entries(services)) {
   fs.writeFileSync(path.join(root, "services", `${slug}.html`), servicePage(slug, data));
 }
-
-// patch site-config images in JS file
-const cfgPath = path.join(root, "js", "site-config.js");
-let cfg = fs.readFileSync(cfgPath, "utf8");
-const heroUrl = OGT_IMAGES.hero;
-cfg = cfg.replace(
-  /hero: "[^"]+"/,
-  `hero: "${heroUrl}"`
-);
-cfg = cfg.replace(
-  /spring: "[^"]+"/,
-  `spring: "${images.spring.src}"`
-);
-cfg = cfg.replace(
-  /opener: "[^"]+"/,
-  `opener: "${images.opener.src}"`
-);
-cfg = cfg.replace(
-  /install: "[^"]+"/,
-  `install: "${images.install.src}"`
-);
-cfg = cfg.replace(
-  /emergency: "[^"]+"/,
-  `emergency: "${images.emergency.src}"`
-);
-cfg = cfg.replace(
-  /cable: "[^"]+"/,
-  `cable: "${images.cable.src}"`
-);
-cfg = cfg.replace(
-  /maintenance: "[^"]+"/,
-  `maintenance: "${images.maintenance.src}"`
-);
-cfg = cfg.replace(
-  /weather: "[^"]+"/,
-  `weather: "${images.weather.src}"`
-);
-fs.writeFileSync(cfgPath, cfg);
 
 console.log("Regenerated", Object.keys(services).length, "rich service pages");

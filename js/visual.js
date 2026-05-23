@@ -183,7 +183,7 @@
         { key: "opener", cls: "ogt-hero-collage-small" },
       ];
       var alts = {
-        hero: "Insulated garage door installation Ottawa up to R-18",
+        hero: "Insulated garage door installation Ottawa",
         spring: "Garage door spring replacement",
         opener: "Garage door opener installation",
       };

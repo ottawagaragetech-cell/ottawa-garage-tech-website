@@ -1,9 +1,14 @@
 import fs from "fs";
 import path from "path";
+import {
+  AREA_COPY,
+  LOCAL_PHOTOS,
+  REGION_VISIT,
+  TYPICAL_JOBS_DEFAULT,
+} from "./area-copy-data.mjs";
 
 const root = path.resolve(import.meta.dirname, "..");
 const domain = "https://ottawagaragetech.ca";
-const BASE = "https://img1.wsimg.com/isteam/ip/1b277bec-adfe-487a-a8c7-5e77b97e6d1d";
 
 function esc(s) {
   return String(s)
@@ -19,65 +24,40 @@ function slugify(name) {
     .replace(/\s+/g, "-");
 }
 
-function photo(file, w = 800) {
-  if (file.startsWith("/assets/")) return file;
-  const enc = encodeURIComponent(file).replace(/%2F/g, "/");
-  return `${BASE}/${enc}/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:${w},cg:true`;
+function absUrl(src) {
+  if (src.startsWith("http")) return src;
+  if (src.startsWith("/")) return domain + src;
+  return src;
 }
 
-/** Real install photos (local) — replaces old GDS logo blob placeholders on wsimg. */
-const PROJECT_PHOTOS = {
-  ottawa: "/assets/services/install-ottawa-grey.png",
-  barrhaven: "/assets/services/install-barrhaven.png",
-  woodgrain: "/assets/services/install-woodgrain-double.png",
-};
-
-/** Unique photos — assign one hero + one inline per suburb (offset so pairs differ). */
-const PHOTO_POOL = [
-  { file: PROJECT_PHOTOS.ottawa, label: "new garage door installation in Ottawa" },
-  { file: PROJECT_PHOTOS.barrhaven, label: "new garage door installation in Barrhaven" },
-  { file: PROJECT_PHOTOS.woodgrain, label: "wood-grain double garage door installation" },
-  { file: "20250110_075357-COLLAGE.jpg", label: "spring replacement work" },
-  { file: "20250115_105310.jpg", label: "lift cable repair" },
-  { file: "20250121_090341.jpg", label: "garage door and opener service" },
-  { file: "20250121_200049.jpg", label: "opener gear service" },
-  { file: "20250124_095313.jpg", label: "torsion spring replacement" },
-  { file: "20250222_164415.jpg", label: "door repair and balance check" },
-  { file: "20251005_173951.jpg", label: "opener repair" },
-  { file: "20251015_061012 (1).jpg", label: "off-track door repair" },
-  { file: "20251015_182306.jpg", label: "opener installation" },
-  { file: "20251020_211230.jpg", label: "bottom seal replacement" },
-  { file: "20251025_142148.jpg", label: "residential garage door service" },
-  { file: "20251106_094900.jpg", label: "modern garage door install" },
-  { file: "20260206_063252.jpg", label: "weather sealing" },
-  { file: "20260224_153212.jpg", label: "cables and hardware" },
-  { file: "20260227_140936.jpg", label: "belt-drive opener install" },
-  { file: "IMG-20260206-WA0000(1).jpg", label: "new door install" },
-  { file: "IMG-20260206-WA0001(8).jpg", label: "garage door panels and hardware" },
-];
-
-function pickPhotos(index, areaName, slug) {
-  const n = PHOTO_POOL.length;
-  let hi = index % n;
-  let ii = (index * 7 + 11) % n;
-  if (ii === hi) ii = (ii + 1) % n;
-  if (slug === "ottawa") hi = 0;
-  if (slug === "barrhaven") hi = 1;
-  const hero = PHOTO_POOL[hi];
-  const inline = PHOTO_POOL[ii];
+function getAreaImages(area, index) {
+  const copy = AREA_COPY[area.slug];
+  const heroIdx = copy?.hero ?? index % LOCAL_PHOTOS.length;
+  const inlineIdx = copy?.inline ?? (index * 3 + 5) % LOCAL_PHOTOS.length;
+  const heroPhoto = LOCAL_PHOTOS[heroIdx];
+  const inlinePhoto = LOCAL_PHOTOS[inlineIdx];
   return {
     hero: {
-      src: photo(hero.file, 900),
-      alt:
-        slug === "ottawa"
-          ? `New garage door installed in Ottawa — Ottawa Garage Tech`
-          : `Garage door ${hero.label} in ${areaName}`,
+      src: heroPhoto.src,
+      alt: `${heroPhoto.cap} — ${area.name} — Ottawa Garage Tech`,
     },
     inline: {
-      src: photo(inline.file, 600),
-      alt: `Garage door ${inline.label} near ${areaName}`,
-      caption: `Recent ${inline.label} — mobile service with parts on the truck.`,
+      src: inlinePhoto.src,
+      alt: `${inlinePhoto.cap} near ${area.name}`,
+      caption: inlinePhoto.cap,
     },
+  };
+}
+
+function areaLocalContent(area) {
+  const copy = AREA_COPY[area.slug];
+  if (copy) return copy;
+  return {
+    paragraphs: [
+      `We provide mobile garage door repair and installation in ${area.name} and nearby streets.`,
+      REGION_NOTE[area.region](area.name),
+    ],
+    jobs: TYPICAL_JOBS_DEFAULT,
   };
 }
 
@@ -148,15 +128,15 @@ const AREA_GEO = {
 };
 
 const AREA_META = {
-  ottawa: "Garage door repair across Ottawa — emergency service, spring replacement, openers, and new insulated doors up to R-18.",
-  kanata: "Garage door repair in Kanata — broken springs, off-track doors, opener service, and new insulated installs for west-end homes.",
-  barrhaven: "Garage door service in Barrhaven — springs, cables, openers, and new doors for south Ottawa subdivisions.",
-  orleans: "Garage door repair in Orleans — east-end emergency help, spring replacement, and opener repairs.",
-  nepean: "Garage door repair in Nepean — mobile technicians for springs, openers, cables, and new installations.",
-  stittsville: "Garage door service in Stittsville — spring failures, opener issues, and insulated door upgrades.",
-  gloucester: "Garage door repair in Gloucester — same-day help when available for stuck or off-track doors.",
-  manotick: "Garage door repair in Manotick — village and rural properties, springs, openers, and weather sealing.",
-  rockland: "Garage door service in Rockland — mobile repair for springs, openers, and installations east of Ottawa.",
+  ottawa: "Mobile garage door help across Ottawa — urgent safety calls, springs, openers, and new insulated installs.",
+  kanata: "Garage door technicians in Kanata — springs, off-track doors, openers, and new doors for west-end homes.",
+  barrhaven: "Garage door visits in Barrhaven — cables, springs, openers, and replacements for south Ottawa homes.",
+  orleans: "East-end garage door service in Orleans — spring work, opener fixes, and new door installs.",
+  nepean: "Nepean garage door repairs — mobile crew for springs, openers, cables, and full replacements.",
+  stittsville: "Stittsville garage door service — spring failures, noisy openers, and insulated upgrades.",
+  gloucester: "Gloucester garage door help — priority scheduling when routes allow for stuck or crooked doors.",
+  manotick: "Manotick garage door repairs — village and rural driveways, springs, openers, and sealing.",
+  rockland: "Rockland garage door service — mobile repairs for springs, openers, and installs east of Ottawa.",
 };
 
 function areaMetaDescription(area) {
@@ -164,26 +144,26 @@ function areaMetaDescription(area) {
     return AREA_META[area.slug] + " Call (613) 900-6005.";
   }
   const regional = {
-    west: `West-end garage door repair in ${area.name} — springs, openers, and insulated door installs.`,
-    south: `Garage door service in ${area.name} — spring replacement, opener repair, and new doors for south Ottawa.`,
-    east: `${area.name} garage door repair — off-track doors, broken springs, and opener service in the east end.`,
-    central: `Central Ottawa garage door repair in ${area.name} — older homes, laneways, and tight driveways.`,
-    outer: `Mobile garage door repair serving ${area.name} — call to confirm timing; stocked trucks for common parts.`,
+    west: `West-end garage door help in ${area.name} — springs, openers, and insulated replacements.`,
+    south: `South Ottawa garage door visits in ${area.name} — springs, openers, and new door installs.`,
+    east: `${area.name} garage door crew — crooked doors, failed springs, and opener diagnostics.`,
+    central: `Central Ottawa service in ${area.name} — older homes, laneways, and narrow driveways.`,
+    outer: `We travel to ${area.name} and nearby — call to confirm timing; vans carry common parts.`,
   };
-  return (regional[area.region] || `Garage door repair in ${area.name}.`) + " Upfront quotes. Call (613) 900-6005.";
+  return (regional[area.region] || `Garage door service in ${area.name}.`) + " Clear on-site estimates. (613) 900-6005.";
 }
 
 const REGION_NOTE = {
   west: (n) =>
-    `${n} and nearby west-end neighbourhoods see wide temperature swings — we often recommend insulated doors up to R-18 and solid bottom seals before winter.`,
+    `${n} and the west end see sharp freeze-thaw swings — a well-insulated door plus fresh bottom sealing before winter often pays off.`,
   south: (n) =>
-    `In growing areas like ${n}, newer subdivisions and established streets both need reliable spring sizing and opener setups that handle daily family use.`,
+    `Around ${n}, busy family garages need correctly sized springs and openers that are not overworked day after day.`,
   east: (n) =>
-    `${n} homeowners often book us for storm-related off-track issues, spring failures, and opener repairs after heavy garage use.`,
+    `In ${n}, we often see storm-related off-track calls, spring fatigue, and opener strain after heavy seasonal use.`,
   central: (n) =>
-    `From older homes to infill properties in ${n}, we match hardware to door weight and keep repairs tidy in tighter driveways and laneways.`,
+    `From century homes to infill in ${n}, we size hardware to door weight and work carefully in tighter driveways and laneways.`,
   outer: (n) =>
-    `We travel to ${n} and surrounding communities — call to confirm timing; our trucks carry common springs, cables, and opener parts.`,
+    `Trips to ${n} and nearby are scheduled in advance — call to confirm timing; our vans still carry common springs, cables, and opener parts.`,
 };
 
 const SERVICE_LINKS = [
@@ -201,27 +181,20 @@ function nearby(area) {
 }
 
 function areaPage(area, index) {
-  const imgs = pickPhotos(index, area.name, area.slug);
+  const imgs = getAreaImages(area, index);
+  const heroSrc = absUrl(imgs.hero.src);
+  const local = areaLocalContent(area);
+  const visit = REGION_VISIT[area.region];
   const canonical = `${domain}/areas/${area.slug}`;
-  const title = `Garage Door Repair ${area.name} | Ottawa Garage Tech`;
+  const title = `Garage Door Service ${area.name} | Ottawa Garage Tech`;
   const desc = areaMetaDescription(area);
   const geo = AREA_GEO[area.slug];
   const geoBlock = geo
     ? `"geo": {"@type": "GeoCoordinates", "latitude": ${geo.lat}, "longitude": ${geo.lng}},`
     : "";
   const near = nearby(area);
-  const heroAlt =
-    area.slug === "ottawa"
-      ? "New grey raised-panel garage door installed in Ottawa — Ottawa Garage Tech"
-      : area.slug === "barrhaven"
-        ? "New garage door installed in Barrhaven — Ottawa Garage Tech"
-        : `Garage door service in ${area.name} — Ottawa Garage Tech`;
-  const inlineAlt = `Garage door work near ${area.name}`;
 
-  const intro = [
-    `Ottawa Garage Tech provides mobile garage door repair and installation in ${area.name} and surrounding streets. Springs, cables, openers, new doors, and emergency help — with upfront quotes before major work.`,
-    REGION_NOTE[area.region](area.name),
-  ];
+  const heroIntro = `Ottawa Garage Tech serves ${area.name} and nearby streets for springs, openers, cables, new doors, and urgent safety calls — with clear scope and price before major work.`;
 
   const serviceList = SERVICE_LINKS.map(
     ([slug, label]) => `<li><a href="/services/${slug}">${esc(label)}</a></li>`
@@ -244,13 +217,13 @@ function areaPage(area, index) {
   <meta property="og:title" content="${esc(title)}">
   <meta property="og:description" content="${esc(desc)}">
   <meta property="og:url" content="${canonical}">
-  <meta property="og:image" content="${imgs.hero.src}">
+  <meta property="og:image" content="${heroSrc}">
   <meta property="og:site_name" content="Ottawa Garage Tech">
   <meta property="og:locale" content="en_CA">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${esc(title)}">
   <meta name="twitter:description" content="${esc(desc)}">
-  <meta name="twitter:image" content="${imgs.hero.src}">
+  <meta name="twitter:image" content="${heroSrc}">
   <link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/css/style.css">
   <script type="application/ld+json">
@@ -260,7 +233,7 @@ function areaPage(area, index) {
     "name": "Ottawa Garage Tech",
     "url": "${domain}/",
     "telephone": "+16139006005",
-    "image": ${JSON.stringify(imgs.hero.src)},
+    "image": ${JSON.stringify(heroSrc)},
     ${geoBlock}
     "areaServed": ${JSON.stringify(area.name + ", Ottawa, ON")},
     "description": ${JSON.stringify(desc)}
@@ -309,41 +282,36 @@ function areaPage(area, index) {
     <div class="ogt-service-hero">
       <div class="ogt-service-hero-text">
         <h1>Garage door service in ${esc(area.name)}</h1>
-        ${intro.map((p) => `<p class="ogt-section-intro">${esc(p)}</p>`).join("")}
+        <p class="ogt-section-intro">${esc(heroIntro)}</p>
         <div class="ogt-contact-quick">
           <a class="ogt-btn ogt-btn-primary" href="tel:+16139006005">Call (613) 900-6005</a>
           <a class="ogt-btn ogt-btn-secondary" href="/contact?area=${area.slug}">Request a quote</a>
         </div>
       </div>
       <figure class="ogt-service-hero-img">
-        <img src="${imgs.hero.src}" width="800" height="600" alt="${esc(heroAlt)}" loading="eager">
+        <img src="${imgs.hero.src}" width="800" height="600" alt="${esc(imgs.hero.alt)}" loading="eager">
       </figure>
     </div>
 
     <section class="ogt-section">
       <div class="ogt-section-inner ogt-rich-grid">
         <div class="ogt-rich-main">
+          <h2>Garage doors in ${esc(area.name)}</h2>
+          ${local.paragraphs.map((p) => `<p>${esc(p)}</p>`).join("\n          ")}
           <h2>Services we offer in ${esc(area.name)}</h2>
           <ul class="ogt-check-list ogt-area-services-list">${serviceList}</ul>
-          <h2>Why homeowners choose us</h2>
+          <h2>${esc(visit.heading)}</h2>
           <ul class="ogt-check-list">
-            <li>Upfront quotes before major repair or installation work</li>
-            <li>Same-day service when scheduling allows — call or text first</li>
-            <li>Stocked trucks with common springs, cables, rollers, and opener parts</li>
-            <li>Seven days a week · 9 AM – 9 PM</li>
+            ${visit.points.map((p) => `<li>${esc(p)}</li>`).join("")}
           </ul>
-          <h2>Common calls from ${esc(area.name)}</h2>
+          <h2>Typical jobs in ${esc(area.name)}</h2>
           <ul class="ogt-check-list">
-            <li>Broken torsion or extension springs</li>
-            <li>Door off track or stuck halfway</li>
-            <li>Opener humming but door not moving</li>
-            <li>Frayed cables, worn rollers, and noisy operation</li>
-            <li>New insulated doors (up to R-18) and weather sealing before winter</li>
+            ${local.jobs.map((p) => `<li>${esc(p)}</li>`).join("")}
           </ul>
         </div>
         <aside class="ogt-rich-aside">
           <figure class="ogt-inline-figure">
-            <img src="${imgs.inline.src}" width="600" height="450" alt="${esc(inlineAlt)}" loading="lazy">
+            <img src="${imgs.inline.src}" width="600" height="450" alt="${esc(imgs.inline.alt)}" loading="lazy">
             <figcaption>${esc(imgs.inline.caption)}</figcaption>
           </figure>
           <div class="ogt-aside-card">

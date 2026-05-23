@@ -461,6 +461,27 @@
       .join("");
   }
 
+  document.querySelectorAll("#ogt-signature-offers").forEach(function (el) {
+    if (!cfg.signatureOffers || !cfg.signatureOffers.length) return;
+    el.innerHTML = cfg.signatureOffers
+      .map(function (o) {
+        return (
+          '<article class="ogt-signature-card">' +
+          "<h3><a href=\"" +
+          esc(o.href) +
+          "\">" +
+          esc(o.title) +
+          "</a></h3><p>" +
+          esc(o.short) +
+          "</p>" +
+          '<a class="ogt-link-arrow" href="' +
+          esc(o.href) +
+          '">View service</a></article>'
+        );
+      })
+      .join("");
+  });
+
   var header = document.querySelector(".ogt-header");
   var headerWrap = document.getElementById("ogt-site-header");
   if (header) {
