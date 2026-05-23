@@ -2,6 +2,7 @@
 
 /** Blog hero images — local project photos only */
 export const BLOG_IMAGES = {
+  blogIndex: "/assets/blog/blog-index-hero-opener.png",
   pricing: "/assets/services/spring-replacement-parts.png",
   springRepair: "/assets/services/spring-broken-torsion.png",
   insulatedHome: "/assets/services/install-woodgrain-double.png",
