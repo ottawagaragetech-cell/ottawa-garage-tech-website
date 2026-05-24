@@ -90,7 +90,7 @@ window.OGT = {
 
   showcase: [
     { srcKey: "install", alt: "New garage door installation Ottawa", cap: "Door installation", large: true },
-    { srcKey: "spring", alt: "Garage door spring replacement", cap: "Spring repair", large: true },
+    { srcKey: "spring", alt: "Broken garage door torsion spring snapped on the shaft — Ottawa", cap: "Spring repair", large: true },
     { srcKey: "opener", alt: "Belt-drive opener install", cap: "Opener service" },
     { srcKey: "emergency", alt: "Garage door stuck crooked in a home garage — emergency repair", cap: "Emergency repair" },
     { srcKey: "hardware", alt: "Cables and bottom seal hardware", cap: "Hardware & seals" },
@@ -105,7 +105,7 @@ window.OGT = {
     { srcKey: "installOttawa", alt: "Grey raised-panel garage door installed in Ottawa", cap: "Ottawa install", cat: "install" },
     { srcKey: "installKanata", alt: "New garage door installed in Kanata", cap: "Kanata install", cat: "install" },
     { srcKey: "installOrleans", alt: "Two new garage doors installed in Orleans", cap: "Orleans · double doors", cat: "install" },
-    { srcKey: "spring", alt: "Broken torsion spring on a garage door — spring replacement Ottawa", cap: "Broken spring", cat: "springs" },
+    { srcKey: "spring", alt: "Broken garage door torsion spring snapped in two on the shaft — Ottawa", cap: "Broken spring", cat: "springs" },
     { srcKey: "springDetail", alt: "New torsion springs and hardware for replacement", cap: "Springs & parts", cat: "springs" },
     { srcKey: "opener", alt: "Belt-drive garage door opener installation", cap: "Opener install", cat: "openers" },
     { srcKey: "emergency", alt: "Garage door stuck off balance — urgent repair Ottawa", cap: "Emergency repair", cat: "repair" },

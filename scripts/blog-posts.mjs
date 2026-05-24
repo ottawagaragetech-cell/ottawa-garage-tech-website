@@ -78,7 +78,7 @@ export const blogPosts = [
     category: "Springs",
     readMin: 6,
     imageKey: "springRepair",
-    imageAlt: "Residential garage door on a home — broken spring guide",
+    imageAlt: "Broken garage door torsion spring snapped in two on the shaft — Ottawa",
     relatedServices: ["spring-replacement", "emergency-repair", "maintenance"],
     relatedSlugs: ["garage-door-repair-cost-ottawa", "garage-door-wont-close"],
     body: `

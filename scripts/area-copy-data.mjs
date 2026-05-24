@@ -10,7 +10,7 @@ export const LOCAL_PHOTOS = [
   { src: "/assets/gallery/gallery-opener-liftmaster.png", label: "LiftMaster opener install", cap: "Belt-drive opener with LED lighting" },
   { src: "/assets/gallery/home-orleans-double.png", label: "tan double doors in Orleans", cap: "Orleans double install" },
   { src: "/assets/gallery/home-kanata.png", label: "grey door in Kanata", cap: "Kanata raised panel" },
-  { src: "/assets/services/spring-broken-torsion.png", label: "broken torsion spring repair", cap: "Spring replacement on site" },
+  { src: "/assets/services/spring-broken-torsion.png", label: "broken torsion spring snapped on shaft", cap: "Broken spring on site" },
   { src: "/assets/services/spring-replacement-parts.png", label: "new torsion springs and hardware", cap: "Springs and hardware" },
   { src: "/assets/services/weather-sealing.png", label: "weather sealing work", cap: "Jamb and bottom sealing" },
   { src: "/assets/gallery/home-rollers-replacement.png", label: "roller replacement", cap: "Roller and hinge service" },

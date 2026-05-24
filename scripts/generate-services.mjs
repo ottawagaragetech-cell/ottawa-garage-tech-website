@@ -18,7 +18,7 @@ export const OGT_IMAGES = {
   gallery: [
     { src: "/assets/services/spring-replacement-parts.png", alt: "Garage door hardware, cables, and springs — Ottawa", cap: "Hardware & springs" },
     { src: installAssets.kanata, alt: "New garage door installed in Kanata", cap: "Kanata install" },
-    { src: "/assets/services/spring-broken-torsion.png", alt: "Broken torsion spring on a garage door", cap: "Spring repair" },
+    { src: "/assets/services/spring-broken-torsion.png", alt: "Broken garage door torsion spring snapped in two on the shaft", cap: "Spring repair" },
     { src: "/assets/gallery/gallery-opener-liftmaster.png", alt: "Belt-drive opener installation", cap: "Opener install" },
     { src: installAssets.hero, alt: "Wood-grain double garage door installation Ottawa", cap: "Door installation" },
     { src: "/assets/gallery/gallery-barrhaven-grey.png", alt: "Grey garage door installed in Barrhaven", cap: "Barrhaven install" },
@@ -37,7 +37,7 @@ const images = {
   },
   spring: {
     src: springAssets.broken,
-    alt: "Broken garage door torsion spring with a visible gap above the door",
+    alt: "Broken garage door torsion spring snapped in two on the metal shaft — Ottawa",
   },
   install: {
     src: installAssets.hero,
