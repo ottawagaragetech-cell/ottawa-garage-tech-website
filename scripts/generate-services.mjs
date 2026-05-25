@@ -140,10 +140,10 @@ const services = {
     ],
     bullets: ["Torsion spring systems", "Extension spring systems", "High-cycle spring upgrades", "Balance and tension testing"],
     inline: {
-      src: springAssets.parts,
-      alt: "New torsion springs, rollers, and hardware ready for garage door spring replacement",
+      src: "/assets/services/spring-replacement-inline-parts.png",
+      alt: "Extension spring, cable, roller bracket, and track laid out for garage door replacement — Ottawa",
       caption:
-        "Correctly sized torsion springs and hardware — we match spring weight to your door before installation.",
+        "Springs, cables, rollers, and track hardware — matched to your door before we install.",
     },
     faqs: [
       { q: "Should I replace one or both springs?", a: "Usually both. If one broke, the other is often near end of life. Balanced springs last longer." },
