@@ -187,7 +187,7 @@ window.OGT = {
       price: "From $210",
       time: "1–3 hours",
       imageKey: "opener",
-      keywords: "garage door opener repair Ottawa, LiftMaster repair, opener installation Ottawa",
+      keywords: "garage door opener repair Ottawa, Chamberlain opener repair, opener installation Ottawa",
       seoExtra: "Remotes, sensors, gears, and motors — we troubleshoot the full system, not just one part."
     },
     {

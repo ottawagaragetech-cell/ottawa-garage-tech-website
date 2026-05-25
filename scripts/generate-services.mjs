@@ -1,8 +1,15 @@
 import fs from "fs";
 import path from "path";
+import {
+  DOMAIN as domain,
+  OG_IMAGE,
+  absUrl,
+  esc,
+  socialMeta,
+  breadcrumbSchema,
+} from "./seo-meta.mjs";
 
 const root = path.resolve(import.meta.dirname, "..");
-const domain = "https://ottawagaragetech.ca";
 
 const installAssets = {
   hero: "/assets/services/install-woodgrain-double.png",
@@ -190,10 +197,10 @@ const services = {
   },
   "opener-service": {
     title: "Garage Door Opener Repair & Installation Ottawa",
-    desc: "Garage door opener repair in Ottawa — LiftMaster, Chamberlain, Genie, smart openers. Gear repair, sensors, new installs.",
+    desc: "Garage door opener repair and installation in Ottawa — Chamberlain, LiftMaster, Genie, and smart openers. Gears, sensors, remotes, and new installs.",
     h1: "Garage door opener service",
     imageKey: "opener",
-    keywords: "garage door opener repair Ottawa, LiftMaster repair, opener installation, smart garage door opener Ottawa",
+    keywords: "garage door opener repair Ottawa, Chamberlain opener repair, opener installation Ottawa, smart garage door opener",
     priceNote: "Opener repairs often from $210; gear assemblies from $265; new installed openers quoted by model.",
     intro: [
       "A garage door opener is more than a motor — it is sensors, limits, force settings, and a drive system that must work together. We troubleshoot the full chain, not just replace parts blindly.",
@@ -318,16 +325,6 @@ const services = {
   },
 };
 
-function esc(s) {
-  return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/"/g, "&quot;");
-}
-
-function absUrl(src) {
-  if (src.startsWith("http")) return src;
-  if (src.startsWith("/")) return domain + src;
-  return src;
-}
-
 function relatedLinks(slug) {
   return (related[slug] || [])
     .map((s) => `<a href="/services/${s}">${esc(serviceTitles[s])}</a>`)
@@ -353,15 +350,12 @@ function servicePage(slug, data) {
   <meta name="description" content="${esc(data.desc)}">
   <meta name="keywords" content="${esc(data.keywords)}">
   <link rel="canonical" href="${canonical}">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="${esc(data.title)}">
-  <meta property="og:description" content="${esc(data.desc)}">
-  <meta property="og:url" content="${canonical}">
-  <meta property="og:image" content="${absUrl(img.src)}">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="${esc(data.title)}">
-  <meta name="twitter:description" content="${esc(data.desc)}">
-  <meta name="twitter:image" content="${absUrl(img.src)}">
+  <meta name="robots" content="index, follow">${socialMeta({
+    title: data.title,
+    description: data.desc,
+    url: canonical,
+    image: img.src,
+  })}
   <link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/css/style.css">
   <script type="application/ld+json">
@@ -377,6 +371,11 @@ function servicePage(slug, data) {
   }
   </script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[${faqSchema}]}</script>
+  <script type="application/ld+json">${breadcrumbSchema([
+    { name: "Home", url: `${domain}/` },
+    { name: "Services", url: `${domain}/services` },
+    { name: data.h1, url: canonical },
+  ])}</script>
 </head>
 <body>
   <div id="ogt-site-header"></div>

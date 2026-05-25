@@ -1,17 +1,17 @@
 import fs from "fs";
 import path from "path";
 import { blogPosts, BLOG_IMAGES } from "./blog-posts.mjs";
+import {
+  DOMAIN as domain,
+  OG_IMAGE,
+  absUrl,
+  esc,
+  socialMeta,
+  breadcrumbSchema,
+} from "./seo-meta.mjs";
 
 const root = path.resolve(import.meta.dirname, "..");
-const domain = "https://ottawagaragetech.ca";
 const blogDir = path.join(root, "blog");
-
-function esc(s) {
-  return String(s)
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/"/g, "&quot;");
-}
 
 function serviceTitle(slug) {
   const map = {
@@ -65,24 +65,28 @@ function relatedServicesHtml(post) {
 
 function articlePage(post) {
   const canonical = domain + "/blog/" + post.slug;
-  const img = BLOG_IMAGES[post.imageKey] || BLOG_IMAGES.pricing;
+  const imgPath = BLOG_IMAGES[post.imageKey] || BLOG_IMAGES.pricing;
+  const imgAbs = absUrl(imgPath);
   const isoDate = post.date + "T09:00:00-05:00";
+  const pageTitle = `${post.title} | Ottawa Garage Tech Blog`;
 
   return `<!DOCTYPE html>
 <html lang="en-CA" data-ogt-page="blog-post">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>${esc(post.title)} | Ottawa Garage Tech Blog</title>
+  <title>${esc(pageTitle)}</title>
   <meta name="description" content="${esc(post.desc)}">
   <meta name="keywords" content="${esc(post.keywords)}">
-  <link rel="canonical" href="${canonical}">
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="${esc(post.title)}">
-  <meta property="og:description" content="${esc(post.desc)}">
-  <meta property="og:url" content="${canonical}">
-  <meta property="og:image" content="${img}">
-  <meta name="twitter:card" content="summary_large_image">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="${canonical}">${socialMeta({
+    title: post.title,
+    description: post.desc,
+    url: canonical,
+    image: imgPath,
+    type: "article",
+    published: isoDate,
+  })}
   <link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/css/style.css">
   <script type="application/ld+json">
@@ -91,7 +95,7 @@ function articlePage(post) {
     "@type": "BlogPosting",
     "headline": ${JSON.stringify(post.h1)},
     "description": ${JSON.stringify(post.desc)},
-    "image": ${JSON.stringify(img)},
+    "image": ${JSON.stringify(imgAbs)},
     "datePublished": ${JSON.stringify(isoDate)},
     "dateModified": ${JSON.stringify(isoDate)},
     "author": {
@@ -104,7 +108,7 @@ function articlePage(post) {
       "name": "Ottawa Garage Tech",
       "logo": {
         "@type": "ImageObject",
-        "url": "${domain}/assets/og-preview.png"
+        "url": "${OG_IMAGE}"
       }
     },
     "mainEntityOfPage": {
@@ -113,6 +117,11 @@ function articlePage(post) {
     }
   }
   </script>
+  <script type="application/ld+json">${breadcrumbSchema([
+    { name: "Home", url: `${domain}/` },
+    { name: "Blog", url: `${domain}/blog` },
+    { name: post.h1, url: canonical },
+  ])}</script>
 </head>
 <body>
   <div id="ogt-site-header"></div>
@@ -135,7 +144,7 @@ function articlePage(post) {
       </header>
 
       <figure class="ogt-blog-hero-img">
-        <img src="${img}" width="900" height="560" alt="${esc(post.imageAlt)}" loading="eager">
+        <img src="${imgPath}" width="900" height="560" alt="${esc(post.imageAlt)}" loading="eager">
       </figure>
 
       <div class="ogt-section-inner ogt-blog-layout">
@@ -234,11 +243,13 @@ function indexPage() {
   <meta name="description" content="Garage door tips for Ottawa homeowners — repair pricing, broken springs, insulation, winter prep, and troubleshooting from Ottawa Garage Tech.">
   <meta name="keywords" content="garage door blog Ottawa, garage door tips, garage door repair guide Ottawa">
   <link rel="canonical" href="${domain}/blog">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Garage Door Blog | Ottawa Garage Tech">
-  <meta property="og:description" content="Garage door repair tips, cost guides, and Ottawa-specific advice from local technicians.">
-  <meta property="og:url" content="${domain}/blog">
-  <meta property="og:image" content="${domain}/assets/og-preview.png">
+  <meta name="robots" content="index, follow">${socialMeta({
+    title: "Garage Door Blog | Ottawa Garage Tech",
+    description:
+      "Garage door repair tips, cost guides, and Ottawa-specific advice from local technicians.",
+    url: `${domain}/blog`,
+    image: BLOG_IMAGES.blogIndex,
+  })}
   <link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/css/style.css">
   <script type="application/ld+json">

@@ -22,7 +22,7 @@ export const blogPosts = [
     category: "Pricing",
     readMin: 7,
     imageKey: "pricing",
-    imageAlt: "Torsion spring replacement on a garage door in Ottawa",
+    imageAlt: "Garage door springs, cables, and hardware laid out for repair — Ottawa pricing guide",
     relatedServices: ["spring-replacement", "emergency-repair", "maintenance"],
     relatedSlugs: ["broken-garage-door-spring-ottawa", "repair-vs-replace-garage-door"],
     body: `

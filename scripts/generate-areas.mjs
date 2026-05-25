@@ -213,6 +213,7 @@ function areaPage(area, index) {
   <meta name="description" content="${esc(desc)}">
   <meta name="keywords" content="garage door repair ${esc(area.name)}, garage door service ${esc(area.name)}, garage door springs ${esc(area.name)}">
   <link rel="canonical" href="${canonical}">
+  <meta name="robots" content="index, follow">
   <meta property="og:type" content="website">
   <meta property="og:title" content="${esc(title)}">
   <meta property="og:description" content="${esc(desc)}">
