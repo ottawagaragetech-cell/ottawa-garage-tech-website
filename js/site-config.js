@@ -63,7 +63,7 @@ window.OGT = {
     },
     {
       src: "/assets/gallery/gallery-opener-liftmaster.png",
-      alt: "LiftMaster garage door opener installation with LED lighting",
+      alt: "Chamberlain garage door opener installed on a garage ceiling — Ottawa",
       cap: "Opener install · Ottawa",
     },
     {
@@ -91,7 +91,7 @@ window.OGT = {
   showcase: [
     { srcKey: "install", alt: "New garage door installation Ottawa", cap: "Door installation", large: true },
     { srcKey: "spring", alt: "Broken garage door torsion spring snapped on the shaft — Ottawa", cap: "Spring repair", large: true },
-    { srcKey: "opener", alt: "Belt-drive opener install", cap: "Opener service" },
+    { srcKey: "opener", alt: "Chamberlain garage door opener install — Ottawa", cap: "Opener service" },
     { srcKey: "emergency", alt: "Garage door stuck crooked in a home garage — emergency repair", cap: "Emergency repair" },
     { srcKey: "hardware", alt: "Cables and bottom seal hardware", cap: "Hardware & seals" },
     { srcKey: "installKanata", alt: "New garage door installed in Kanata", cap: "Kanata install" },
@@ -101,13 +101,13 @@ window.OGT = {
 
   gallery: [
     { srcKey: "install", alt: "Grey raised-panel garage door installed in Barrhaven", cap: "Barrhaven · new door", cat: "install", wide: true },
-    { srcKey: "installBarrhaven", alt: "LiftMaster belt-drive garage door opener with LED lighting", cap: "Opener install", cat: "openers" },
+    { srcKey: "installBarrhaven", alt: "Chamberlain garage door opener installed on a garage ceiling", cap: "Opener install", cat: "openers" },
     { srcKey: "installOttawa", alt: "Grey raised-panel garage door installed in Ottawa", cap: "Ottawa install", cat: "install" },
     { srcKey: "installKanata", alt: "New garage door installed in Kanata", cap: "Kanata install", cat: "install" },
     { srcKey: "installOrleans", alt: "Two new garage doors installed in Orleans", cap: "Orleans · double doors", cat: "install" },
     { srcKey: "spring", alt: "Broken garage door torsion spring snapped in two on the shaft — Ottawa", cap: "Broken spring", cat: "springs" },
     { srcKey: "springDetail", alt: "New torsion springs and hardware for replacement", cap: "Springs & parts", cat: "springs" },
-    { srcKey: "opener", alt: "Belt-drive garage door opener installation", cap: "Opener install", cat: "openers" },
+    { srcKey: "opener", alt: "Chamberlain garage door opener installed on a garage ceiling — Ottawa", cap: "Opener install", cat: "openers" },
     { srcKey: "emergency", alt: "Garage door stuck off balance — urgent repair Ottawa", cap: "Emergency repair", cat: "repair" },
     { srcKey: "track", alt: "Garage door track alignment Ottawa", cap: "Track & rollers", cat: "repair" },
     { srcKey: "cable", alt: "Rusty garage door cable and roller hardware replaced", cap: "Cable repair", cat: "repair" },

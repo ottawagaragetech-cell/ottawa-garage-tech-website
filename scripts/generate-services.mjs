@@ -19,7 +19,7 @@ export const OGT_IMAGES = {
     { src: "/assets/services/spring-replacement-parts.png", alt: "Garage door hardware, cables, and springs — Ottawa", cap: "Hardware & springs" },
     { src: installAssets.kanata, alt: "New garage door installed in Kanata", cap: "Kanata install" },
     { src: "/assets/services/spring-broken-torsion.png", alt: "Broken garage door torsion spring snapped in two on the shaft", cap: "Spring repair" },
-    { src: "/assets/gallery/gallery-opener-liftmaster.png", alt: "Belt-drive opener installation", cap: "Opener install" },
+    { src: "/assets/gallery/gallery-opener-liftmaster.png", alt: "Chamberlain garage door opener installation", cap: "Opener install" },
     { src: installAssets.hero, alt: "Wood-grain double garage door installation Ottawa", cap: "Door installation" },
     { src: "/assets/gallery/gallery-barrhaven-grey.png", alt: "Grey garage door installed in Barrhaven", cap: "Barrhaven install" },
   ],
@@ -45,7 +45,7 @@ const images = {
   },
   opener: {
     src: "/assets/gallery/gallery-opener-liftmaster.png",
-    alt: "LiftMaster belt-drive garage door opener installation Ottawa",
+    alt: "Chamberlain garage door opener installed on a garage ceiling — Ottawa",
   },
   cable: {
     src: "/assets/services/cable-repair-hardware.png",
@@ -213,7 +213,7 @@ const services = {
       "Program remotes and test auto-reverse safety",
     ],
     bullets: ["Chain, belt, and wall-mount openers", "Gear and sprocket replacement", "Safety sensor alignment", "Smart WiFi opener setup"],
-    inline: { src: "/assets/gallery/gallery-opener-liftmaster.png", alt: "LiftMaster opener installed in Ottawa", caption: "Opener installs include sensor alignment and safety testing." },
+    inline: { src: "/assets/gallery/gallery-opener-liftmaster.png", alt: "Chamberlain opener mounted on a garage ceiling in Ottawa", caption: "Opener installs include sensor alignment and safety testing." },
     faqs: [
       { q: "My opener hums but the door does not move — why?", a: "Often stripped plastic gears inside the unit. Repair is usually cheaper than full replacement." },
       { q: "Which opener type is quietest?", a: "Belt-drive models are typically quieter than chain-drive — good for bedrooms above the garage." },

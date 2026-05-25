@@ -7,7 +7,7 @@ export const LOCAL_PHOTOS = [
   { src: "/assets/services/install-orleans-double.png", label: "double garage door install", cap: "Double-door install — east end" },
   { src: "/assets/services/install-woodgrain-double.png", label: "wood-grain double door install", cap: "Wood-grain double door" },
   { src: "/assets/gallery/gallery-barrhaven-grey.png", label: "grey door in Barrhaven", cap: "Barrhaven grey door" },
-  { src: "/assets/gallery/gallery-opener-liftmaster.png", label: "LiftMaster opener install", cap: "Belt-drive opener with LED lighting" },
+  { src: "/assets/gallery/gallery-opener-liftmaster.png", label: "Chamberlain opener install", cap: "Chamberlain opener on ceiling" },
   { src: "/assets/gallery/home-orleans-double.png", label: "tan double doors in Orleans", cap: "Orleans double install" },
   { src: "/assets/gallery/home-kanata.png", label: "grey door in Kanata", cap: "Kanata raised panel" },
   { src: "/assets/services/spring-broken-torsion.png", label: "broken torsion spring snapped on shaft", cap: "Broken spring on site" },

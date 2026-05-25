@@ -282,7 +282,7 @@ function indexPage() {
         <a class="ogt-btn ogt-btn-primary" href="/contact">Get a quote</a>
       </div>
       <div class="ogt-page-hero-media">
-        <img src="${BLOG_IMAGES.blogIndex}" width="800" height="500" alt="Chamberlain myQ garage door opener installed on a garage ceiling in Ottawa" loading="eager">
+        <img src="${BLOG_IMAGES.blogIndex}" width="800" height="500" alt="Chamberlain garage door opener installed on a garage ceiling in Ottawa" loading="eager">
       </div>
     </div>
 
