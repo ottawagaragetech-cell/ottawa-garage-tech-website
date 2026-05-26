@@ -28,7 +28,7 @@ export const OGT_IMAGES = {
     { src: "/assets/services/spring-broken-torsion.png", alt: "Broken garage door torsion spring snapped in two on the shaft", cap: "Spring repair" },
     { src: "/assets/gallery/gallery-opener-liftmaster.png", alt: "Chamberlain garage door opener installation", cap: "Opener install" },
     { src: installAssets.hero, alt: "Wood-grain double garage door installation Ottawa", cap: "Door installation" },
-    { src: "/assets/gallery/gallery-barrhaven-grey.png", alt: "Grey garage door installed in Barrhaven", cap: "Barrhaven install" },
+    { src: "/assets/gallery/gallery-barrhaven-grey.png", alt: "Taupe wood-grain garage door with bottom seal — Barrhaven install", cap: "Barrhaven install" },
   ],
 };
 
@@ -64,7 +64,7 @@ const images = {
   },
   weather: {
     src: "/assets/services/weather-sealing.png",
-    alt: "Garage door jamb weatherstripping and side seal — Ottawa weather sealing",
+    alt: "PVC jamb weatherstrip seal installed along a garage door edge — Ottawa",
   },
 };
 
@@ -316,7 +316,7 @@ const services = {
       "Replace side and top weatherstrip as quoted",
     ],
     bullets: ["T-style and U-shaped bottom seals", "Threshold bars", "PVC and rubber jamb seal", "Track tweaks for even contact"],
-    inline: { src: "/assets/services/weather-sealing.png", alt: "Garage door weather sealing Ottawa", caption: "Fresh bottom seal and jamb stripping — common before winter in Ottawa." },
+    inline: { src: "/assets/services/weather-sealing.png", alt: "Jamb weatherstrip seal along a garage door edge — Ottawa", caption: "Side jamb seals and bottom rubber — replaced before winter in Ottawa." },
     faqs: [
       { q: "When is the best time to replace seals?", a: "Late fall before deep cold, or when you notice drafts and daylight under the door." },
       { q: "Will sealing reduce heating costs?", a: "It helps especially if the garage shares a wall with heated space." },

@@ -214,7 +214,7 @@ export const blogPosts = [
     category: "Buying guide",
     readMin: 7,
     imageKey: "replacement",
-    imageAlt: "Home interior and renovation — repair vs replace your garage door",
+    imageAlt: "Taupe wood-grain garage door with bottom seal — repair vs replace in Ottawa",
     relatedServices: ["garage-door-installation", "spring-replacement", "maintenance"],
     relatedSlugs: ["insulated-garage-doors-r18-ottawa", "garage-door-repair-cost-ottawa"],
     body: `

@@ -58,7 +58,7 @@ window.OGT = {
   homeGallery: [
     {
       src: "/assets/gallery/gallery-barrhaven-grey.png",
-      alt: "Grey raised-panel garage door installed in Barrhaven",
+      alt: "Taupe wood-grain garage door with bottom seal — new install Barrhaven",
       cap: "New door · Barrhaven",
     },
     {
@@ -96,11 +96,11 @@ window.OGT = {
     { srcKey: "hardware", alt: "Cables and bottom seal hardware", cap: "Hardware & seals" },
     { srcKey: "installKanata", alt: "New garage door installed in Kanata", cap: "Kanata install" },
     { srcKey: "springDetail", alt: "Torsion spring close-up", cap: "Springs & parts" },
-    { srcKey: "weather", alt: "Weather sealing Ottawa", cap: "Weather sealing" }
+    { srcKey: "weather", alt: "Jamb weatherstrip seal on a garage door — Ottawa", cap: "Weather sealing" }
   ],
 
   gallery: [
-    { srcKey: "install", alt: "Grey raised-panel garage door installed in Barrhaven", cap: "Barrhaven · new door", cat: "install", wide: true },
+    { srcKey: "install", alt: "Taupe raised-panel garage door with wood-grain texture and bottom seal — Barrhaven install", cap: "Barrhaven · new door", cat: "install", wide: true },
     { srcKey: "installBarrhaven", alt: "Chamberlain garage door opener installed on a garage ceiling", cap: "Opener install", cat: "openers" },
     { srcKey: "installOttawa", alt: "Grey raised-panel garage door installed in Ottawa", cap: "Ottawa install", cat: "install" },
     { srcKey: "installKanata", alt: "New garage door installed in Kanata", cap: "Kanata install", cat: "install" },
@@ -113,7 +113,7 @@ window.OGT = {
     { srcKey: "cable", alt: "Rusty garage door cable and roller hardware replaced", cap: "Cable repair", cat: "repair" },
     { srcKey: "maintenance", alt: "Garage door maintenance tune-up", cap: "Maintenance tune-up", cat: "maintenance" },
     { srcKey: "hardware", alt: "Garage door hardware, cables, and seals", cap: "Hardware & seals", cat: "maintenance" },
-    { srcKey: "weather", alt: "Garage door weather sealing Ottawa", cap: "Weather sealing", cat: "maintenance" },
+    { srcKey: "weather", alt: "PVC jamb weatherstrip seal along a garage door edge — Ottawa weather sealing", cap: "Weather sealing", cat: "maintenance" },
     { srcKey: "seal", alt: "Close-up of black rubber bottom seal on a garage door with track and roller — Ottawa", cap: "Bottom seal", cat: "maintenance" }
   ],
 
