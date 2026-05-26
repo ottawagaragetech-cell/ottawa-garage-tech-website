@@ -284,7 +284,7 @@ const services = {
       "Adjust opener limits if needed and provide a report",
     ],
     bullets: ["21-point inspection checklist", "Hinge and roller lubrication", "Hardware tightening", "Safety sensor testing"],
-    inline: { src: "/assets/gallery/garage-door-maintenance-tune-up.png", alt: "Technician lubricating a garage door torsion spring during maintenance — Ottawa", caption: "Tune-ups include lubricating springs, hinges, and rollers before wear becomes failure." },
+    inline: null,
     faqs: [
       { q: "How often should I service my door?", a: "Once a year is ideal for most Ottawa households — more if heavy daily use." },
       { q: "Is maintenance worth it vs waiting for a break?", a: "Yes — preventing a spring or cable failure avoids higher emergency costs." },
@@ -411,10 +411,14 @@ function servicePage(slug, data) {
           <ul class="ogt-check-list">${data.bullets.map((b) => `<li>${esc(b)}</li>`).join("")}</ul>
         </div>
         <aside class="ogt-rich-aside">
-          <figure class="ogt-inline-figure">
+          ${
+            data.inline
+              ? `<figure class="ogt-inline-figure">
             <img src="${data.inline.src}" width="600" height="450" alt="${esc(data.inline.alt)}" loading="lazy">
             <figcaption>${esc(data.inline.caption)}</figcaption>
-          </figure>
+          </figure>`
+              : ""
+          }
           <div class="ogt-aside-card">
             <h3>Related services</h3>
             <p class="ogt-related-links">${relatedLinks(slug)}</p>

@@ -82,9 +82,9 @@ window.OGT = {
       cap: "Grey door · Ottawa",
     },
     {
-      src: "/assets/gallery/home-rollers-replacement.png",
-      alt: "Worn garage door roller beside a new replacement roller — Ottawa maintenance",
-      cap: "Roller replacement",
+      src: "/assets/gallery/garage-door-maintenance-tune-up.png",
+      alt: "Technician lubricating a garage door torsion spring during a tune-up — Ottawa",
+      cap: "Maintenance tune-up",
     },
   ],
 
@@ -112,7 +112,7 @@ window.OGT = {
     { srcKey: "cable", alt: "Rusty garage door cable and roller hardware replaced", cap: "Cable repair", cat: "repair" },
     { srcKey: "maintenance", alt: "Technician lubricating a garage door torsion spring during a tune-up — Ottawa", cap: "Maintenance tune-up", cat: "maintenance" },
     { srcKey: "weather", alt: "PVC jamb weatherstrip seal along a garage door edge — Ottawa weather sealing", cap: "Weather sealing", cat: "maintenance" },
-    { srcKey: "seal", alt: "Close-up of black rubber bottom seal on a garage door with track and roller — Ottawa", cap: "Bottom seal", cat: "maintenance" }
+    { srcKey: "seal", alt: "Close-up of black rubber bottom seal on a garage door — Ottawa", cap: "Bottom seal", cat: "repair" }
   ],
 
   galleryFilters: [
