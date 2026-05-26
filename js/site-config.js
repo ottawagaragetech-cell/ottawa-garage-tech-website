@@ -93,7 +93,6 @@ window.OGT = {
     { srcKey: "spring", alt: "Broken garage door torsion spring snapped on the shaft — Ottawa", cap: "Spring repair", large: true },
     { srcKey: "opener", alt: "Chamberlain garage door opener install — Ottawa", cap: "Opener service" },
     { srcKey: "emergency", alt: "Garage door stuck crooked in a home garage — emergency repair", cap: "Emergency repair" },
-    { srcKey: "hardware", alt: "Cables and bottom seal hardware", cap: "Hardware & seals" },
     { srcKey: "installKanata", alt: "New garage door installed in Kanata", cap: "Kanata install" },
     { srcKey: "springDetail", alt: "Torsion spring close-up", cap: "Springs & parts" },
     { srcKey: "weather", alt: "Jamb weatherstrip seal on a garage door — Ottawa", cap: "Weather sealing" }
@@ -112,7 +111,6 @@ window.OGT = {
     { srcKey: "track", alt: "Garage door track alignment Ottawa", cap: "Track & rollers", cat: "repair" },
     { srcKey: "cable", alt: "Rusty garage door cable and roller hardware replaced", cap: "Cable repair", cat: "repair" },
     { srcKey: "maintenance", alt: "Garage door maintenance tune-up", cap: "Maintenance tune-up", cat: "maintenance" },
-    { srcKey: "hardware", alt: "Garage door hardware, cables, and seals", cap: "Hardware & seals", cat: "maintenance" },
     { srcKey: "weather", alt: "PVC jamb weatherstrip seal along a garage door edge — Ottawa weather sealing", cap: "Weather sealing", cat: "maintenance" },
     { srcKey: "seal", alt: "Close-up of black rubber bottom seal on a garage door with track and roller — Ottawa", cap: "Bottom seal", cat: "maintenance" }
   ],
