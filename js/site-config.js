@@ -26,7 +26,7 @@ window.OGT = {
     installOrleans: "/assets/services/install-orleans-double.png",
     emergency: "/assets/services/emergency-repair-stuck-door.png",
     cable: "/assets/services/cable-repair-hardware.png",
-    maintenance: "/assets/gallery/home-rollers-replacement.png",
+    maintenance: "/assets/gallery/garage-door-maintenance-tune-up.png",
     weather: "/assets/services/weather-sealing.png",
     hardware: "/assets/services/spring-replacement-parts.png",
     modern: "/assets/services/install-kanata.png",
@@ -110,7 +110,7 @@ window.OGT = {
     { srcKey: "emergency", alt: "Garage door stuck off balance — urgent repair Ottawa", cap: "Emergency repair", cat: "repair" },
     { srcKey: "track", alt: "Garage door track alignment Ottawa", cap: "Track & rollers", cat: "repair" },
     { srcKey: "cable", alt: "Rusty garage door cable and roller hardware replaced", cap: "Cable repair", cat: "repair" },
-    { srcKey: "maintenance", alt: "Garage door maintenance tune-up", cap: "Maintenance tune-up", cat: "maintenance" },
+    { srcKey: "maintenance", alt: "Technician lubricating a garage door torsion spring during a tune-up — Ottawa", cap: "Maintenance tune-up", cat: "maintenance" },
     { srcKey: "weather", alt: "PVC jamb weatherstrip seal along a garage door edge — Ottawa weather sealing", cap: "Weather sealing", cat: "maintenance" },
     { srcKey: "seal", alt: "Close-up of black rubber bottom seal on a garage door with track and roller — Ottawa", cap: "Bottom seal", cat: "maintenance" }
   ],

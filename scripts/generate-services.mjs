@@ -59,8 +59,8 @@ const images = {
     alt: "Rusty garage door lift cable and roller hardware — cable repair Ottawa",
   },
   maintenance: {
-    src: "/assets/gallery/home-rollers-replacement.png",
-    alt: "Garage door roller replacement during maintenance Ottawa",
+    src: "/assets/gallery/garage-door-maintenance-tune-up.png",
+    alt: "Technician lubricating a garage door torsion spring during a tune-up — Ottawa",
   },
   weather: {
     src: "/assets/services/weather-sealing.png",
@@ -284,7 +284,7 @@ const services = {
       "Adjust opener limits if needed and provide a report",
     ],
     bullets: ["21-point inspection checklist", "Hinge and roller lubrication", "Hardware tightening", "Safety sensor testing"],
-    inline: { src: "/assets/gallery/home-rollers-replacement.png", alt: "Garage door roller maintenance Ottawa", caption: "Tune-ups often catch worn rollers and balance issues before failure." },
+    inline: { src: "/assets/gallery/garage-door-maintenance-tune-up.png", alt: "Technician lubricating a garage door torsion spring during maintenance — Ottawa", caption: "Tune-ups include lubricating springs, hinges, and rollers before wear becomes failure." },
     faqs: [
       { q: "How often should I service my door?", a: "Once a year is ideal for most Ottawa households — more if heavy daily use." },
       { q: "Is maintenance worth it vs waiting for a break?", a: "Yes — preventing a spring or cable failure avoids higher emergency costs." },
