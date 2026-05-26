@@ -1,28 +1,31 @@
 {
-  "rewrites": [
-    { "source": "/contact", "destination": "/contact.html" },
-    { "source": "/services", "destination": "/services.html" },
-    { "source": "/about", "destination": "/about.html" },
-    { "source": "/faq", "destination": "/faq.html" },
-    { "source": "/areas", "destination": "/areas.html" },
-    { "source": "/gallery", "destination": "/gallery.html" },
-    { "source": "/blog", "destination": "/blog.html" },
-    { "source": "/blog/:slug", "destination": "/blog/:slug.html" },
-    { "source": "/privacy", "destination": "/privacy.html" },
-    { "source": "/terms", "destination": "/terms.html" },
-    { "source": "/accessibility", "destination": "/accessibility.html" },
-    { "source": "/services/:slug", "destination": "/services/:slug.html" },
-    { "source": "/areas/:slug", "destination": "/areas/:slug.html" }
-  ],
+  "cleanUrls": true,
+  "trailingSlash": false,
   "redirects": [
     {
       "source": "/reviews",
-      "destination": "https://ottawagaragetech.ca/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/reviews.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/index.html",
+      "destination": "/",
       "permanent": true
     },
     {
       "source": "/:path*",
       "has": [{ "type": "host", "value": "www.ottawagaragetech.ca" }],
+      "destination": "https://ottawagaragetech.ca/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "ottawa-garage-tech-website.vercel.app" }],
       "destination": "https://ottawagaragetech.ca/:path*",
       "permanent": true
     }
