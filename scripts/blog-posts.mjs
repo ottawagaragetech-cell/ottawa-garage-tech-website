@@ -8,7 +8,7 @@ export const BLOG_IMAGES = {
   insulatedHome: "/assets/blog/insulated-garage-doors-ottawa-winter.png",
   troubleshooting: "/assets/blog/garage-door-wont-close-springs.png",
   replacement: "/assets/gallery/gallery-barrhaven-grey.png",
-  winterPrep: "/assets/blog/garage-door-winter-prep-ottawa.png",
+  winterPrep: "/assets/blog/garage-door-winter-prep-jamb-seal.png",
 };
 
 export const blogPosts = [
@@ -261,7 +261,7 @@ export const blogPosts = [
     category: "Maintenance",
     readMin: 6,
     imageKey: "winterPrep",
-    imageAlt: "Dark grey garage door with top weatherstripping — winter prep in Ottawa",
+    imageAlt: "PVC jamb weatherstrip seal along a garage door edge — Ottawa winter prep",
     relatedServices: ["weather-sealing", "maintenance", "spring-replacement"],
     relatedSlugs: ["insulated-garage-doors-r18-ottawa", "broken-garage-door-spring-ottawa"],
     body: `
