@@ -5,7 +5,7 @@ export const BLOG_IMAGES = {
   blogIndex: "/assets/gallery/gallery-opener-liftmaster.png",
   pricing: "/assets/services/spring-replacement-parts.png",
   springRepair: "/assets/services/spring-broken-torsion.png",
-  insulatedHome: "/assets/services/install-woodgrain-double.png",
+  insulatedHome: "/assets/blog/insulated-garage-doors-ottawa-winter.png",
   troubleshooting: "/assets/blog/garage-door-wont-close-springs.png",
   replacement: "/assets/gallery/gallery-barrhaven-grey.png",
   winterPrep: "/assets/blog/garage-door-winter-prep-ottawa.png",
@@ -121,7 +121,7 @@ export const blogPosts = [
     category: "Installation",
     readMin: 8,
     imageKey: "insulatedHome",
-    imageAlt: "Modern home exterior — insulated garage door options",
+    imageAlt: "Black insulated garage door with windows on a brick Ottawa home in winter",
     relatedServices: ["garage-door-installation", "weather-sealing", "maintenance"],
     relatedSlugs: ["garage-door-winter-prep-ottawa", "repair-vs-replace-garage-door"],
     body: `
