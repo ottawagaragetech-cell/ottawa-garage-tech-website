@@ -179,12 +179,12 @@
       if (!root || !cfg.images) return;
       var imgs = [
         { key: "hero", cls: "ogt-hero-collage-main" },
-        { key: "spring", cls: "ogt-hero-collage-accent" },
+        { key: "springHome", cls: "ogt-hero-collage-accent" },
         { key: "opener", cls: "ogt-hero-collage-small" },
       ];
       var alts = {
         hero: "Insulated garage door installation Ottawa",
-        spring: "Garage door spring replacement",
+        springHome: "Garage door torsion spring on the shaft — Ottawa spring service",
         opener: "Garage door opener installation",
       };
       root.innerHTML = imgs

@@ -18,6 +18,7 @@ window.OGT = {
   images: {
     hero: "/assets/services/install-ottawa-grey.png",
     spring: "/assets/services/spring-broken-torsion.png",
+    springHome: "/assets/gallery/torsion-spring-center-bearing.png",
     opener: "/assets/gallery/gallery-opener-liftmaster.png",
     install: "/assets/gallery/gallery-barrhaven-grey.png",
     installBarrhaven: "/assets/gallery/gallery-opener-liftmaster.png",
