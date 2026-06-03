@@ -6,7 +6,7 @@ window.OGT = {
   email: "ottawagaragetech@gmail.com",
   quoteEmailSubject: "Free quote request — Ottawa Garage Tech",
   domain: "https://ottawagaragetech.ca",
-  hours: "Open daily · 9 a.m.–9 p.m.",
+  hours: "Open daily · 8 a.m.–8 p.m.",
   /** Set full Facebook page URL when available; leave empty to hide */
   facebook: "https://www.facebook.com/profile.php?id=61563633766920",
   instagram: "https://www.instagram.com/ottawagaragetech",
@@ -131,7 +131,7 @@ window.OGT = {
     { title: "Clear estimates", text: "Scope and price agreed before major repair or install work" },
     { title: "Fast scheduling", text: "Many jobs fit the same day when you call early — phone is best" },
     { title: "Mobile across the NCR", text: "West, south, east, and outer communities on our route" },
-    { title: "Evening hours", text: "Every day, 9 a.m.–9 p.m., including after work" },
+    { title: "Evening hours", text: "Every day, 8 a.m.–8 p.m., including after work" },
     { title: "Stocked vans", text: "Common springs, cables, rollers, and opener parts on board" },
     { title: "Respectful crews", text: "We protect your driveway and workspace" }
   ],
@@ -438,7 +438,7 @@ window.OGT = {
     {
       category: "service",
       q: "How quickly can you respond to an urgent call?",
-      a: "Phone or text (613) 900-6005 is best when the door will not close or a spring just broke. We are available every day from 9 a.m. to 9 p.m. and prioritize safety issues such as off-track doors or failed springs."
+      a: "Phone or text (613) 900-6005 is best when the door will not close or a spring just broke. We are available every day from 8 a.m. to 8 p.m. and prioritize safety issues such as off-track doors or failed springs."
     },
     {
       category: "service",
@@ -453,7 +453,7 @@ window.OGT = {
     {
       category: "service",
       q: "When are you open?",
-      a: "Every day, 9 a.m. to 9 p.m., including evenings. For urgent problems, calling or texting beats email."
+      a: "Every day, 8 a.m. to 8 p.m., including evenings. For urgent problems, calling or texting beats email."
     },
     {
       category: "service",

@@ -34,7 +34,7 @@ export const REGION_VISIT = {
       "Springs sized for door weight — important on wide Kanata and Stittsville doubles",
       "Insulation and seal advice before arctic air off open fields",
       "Scope and price agreed before major work on site",
-      "Daily service 9 a.m.–9 p.m., including after-work slots",
+      "Daily service 8 a.m.–8 p.m., including after-work slots",
     ],
   },
   south: {
@@ -61,7 +61,7 @@ export const REGION_VISIT = {
       "Careful work in laneways, tight driveways, and heritage streetscapes",
       "Solutions for low headroom and non-standard older openings",
       "Written scope before major repair on rental or owner-occupied homes",
-      "Open daily 9 a.m.–9 p.m. for urgent secure-close issues",
+      "Open daily 8 a.m.–8 p.m. for urgent secure-close issues",
     ],
   },
   outer: {
@@ -296,7 +296,7 @@ export const AREA_COPY = {
     paragraphs: [
       "Alta Vista’s 1950s–70s bungalows and split-levels near Alta Vista Drive and Riverside often have original doors with decades of cycles. Low headroom and short driveways are common — we plan ladder placement and protect landscaping.",
       "Many homes have bedrooms above or beside the garage; quiet belt-drive openers and balanced doors reduce vibration. We test auto-reverse and photo-eyes on every service call.",
-      "Proximity to the hospital and transit corridor means some customers need evening appointments — we are open until 9 p.m. daily.",
+      "Proximity to the hospital and transit corridor means some customers need evening appointments — we are open until 8 p.m. daily.",
     ],
     jobs: [
       "Original door replacement on post-war bungalows",
@@ -342,7 +342,7 @@ export const AREA_COPY = {
     hero: 0,
     inline: 10,
     paragraphs: [
-      "Hunt Club and the airport corridor combine 1960s bungalows, townhomes, and streets where garage doors see odd hours. Shift workers often need evening service — we are open daily until 9 p.m.",
+      "Hunt Club and the airport corridor combine 1960s bungalows, townhomes, and streets where garage doors see odd hours. Shift workers often need evening service — we are open daily until 8 p.m.",
       "Traffic vibration can loosen mounting hardware over time. We tighten structure-mounted tracks and check opener attachment to the header.",
       "Some properties have expansive driveways; others are tight courts near Uplands — tell us which so we bring the right equipment.",
     ],

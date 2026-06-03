@@ -117,7 +117,7 @@ const services = {
     inline: { src: "/assets/services/emergency-repair-stuck-door.png", alt: "Stuck crooked garage door during emergency service call", caption: "Urgent visits secure the door first, then diagnose springs, cables, and tracks." },
     faqs: [
       { q: "What counts as a garage door emergency?", a: "A door that will not close and secure your home, a door off track, or a broken spring are urgent. Call or text (613) 900-6005." },
-      { q: "How quickly can you come?", a: "We prioritize safety calls when scheduling allows, every day from 9 a.m. to 9 p.m." },
+      { q: "How quickly can you come?", a: "We prioritize safety calls when scheduling allows, every day from 8 a.m. to 8 p.m." },
       { q: "Do you charge extra for evenings?", a: "We quote clearly before work — ask when you call so there are no surprises." },
     ],
   },
