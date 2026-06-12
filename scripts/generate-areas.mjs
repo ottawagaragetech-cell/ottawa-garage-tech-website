@@ -6,6 +6,7 @@ import {
   REGION_VISIT,
   TYPICAL_JOBS_DEFAULT,
 } from "./area-copy-data.mjs";
+import { isDuplicateImagePair } from "./image-dedupe.mjs";
 
 const root = path.resolve(import.meta.dirname, "..");
 const domain = "https://ottawagaragetech.ca";
@@ -36,11 +37,15 @@ function getAreaImages(area, index) {
   const inlineIdx = copy?.inline ?? (index * 3 + 5) % LOCAL_PHOTOS.length;
   const heroPhoto = LOCAL_PHOTOS[heroIdx];
   const inlinePhoto = LOCAL_PHOTOS[inlineIdx];
+  const hero = {
+    src: heroPhoto.src,
+    alt: `${heroPhoto.cap} — ${area.name} — Ottawa Garage Tech`,
+  };
+  if (isDuplicateImagePair(heroPhoto.src, inlinePhoto.src)) {
+    return { hero, inline: null };
+  }
   return {
-    hero: {
-      src: heroPhoto.src,
-      alt: `${heroPhoto.cap} — ${area.name} — Ottawa Garage Tech`,
-    },
+    hero,
     inline: {
       src: inlinePhoto.src,
       alt: `${inlinePhoto.cap} near ${area.name}`,
@@ -311,10 +316,14 @@ function areaPage(area, index) {
           </ul>
         </div>
         <aside class="ogt-rich-aside">
-          <figure class="ogt-inline-figure">
+          ${
+            imgs.inline
+              ? `<figure class="ogt-inline-figure">
             <img src="${imgs.inline.src}" width="600" height="450" alt="${esc(imgs.inline.alt)}" loading="lazy">
             <figcaption>${esc(imgs.inline.caption)}</figcaption>
-          </figure>
+          </figure>`
+              : ""
+          }
           <div class="ogt-aside-card">
             <h3>Nearby areas</h3>
             <p class="ogt-related-links">${nearLinks || '<a href="/areas">All service areas</a>'}</p>

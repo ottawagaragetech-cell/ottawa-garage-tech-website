@@ -8,6 +8,7 @@ import {
   socialMeta,
   breadcrumbSchema,
 } from "./seo-meta.mjs";
+import { isDuplicateImagePair } from "./image-dedupe.mjs";
 
 const root = path.resolve(import.meta.dirname, "..");
 
@@ -114,7 +115,7 @@ const services = {
       "We complete the repair and test safety sensors and balance",
     ],
     bullets: ["Off-track and stuck doors", "Broken torsion or extension springs", "Snapped cables and roller failures", "Opener not responding or reversing"],
-    inline: { src: "/assets/services/emergency-repair-stuck-door.png", alt: "Stuck crooked garage door during emergency service call", caption: "Urgent visits secure the door first, then diagnose springs, cables, and tracks." },
+    inline: null,
     faqs: [
       { q: "What counts as a garage door emergency?", a: "A door that will not close and secure your home, a door off track, or a broken spring are urgent. Call or text (613) 900-6005." },
       { q: "How quickly can you come?", a: "We prioritize safety calls when scheduling allows, every day from 7 a.m. to 9 p.m." },
@@ -184,9 +185,9 @@ const services = {
     ],
     bullets: ["Single and double residential doors", "Well-insulated steel panels and classic non-insulated styles", "Window and colour options", "Opener upgrade available"],
     inline: {
-      src: installAssets.barrhaven,
-      alt: "New cream garage door with windows installed in Barrhaven",
-      caption: "Recent Barrhaven install — contemporary door with clean trim and sealing.",
+      src: "/assets/gallery/gallery-opener-liftmaster.png",
+      alt: "Chamberlain garage door opener installed on a garage ceiling — Ottawa",
+      caption: "New door installs often include opener pairing, sensor alignment, and safety testing.",
     },
     faqs: [
       { q: "How long does installation take?", a: "Most single-car replacements are completed in one day once your door arrives." },
@@ -220,7 +221,7 @@ const services = {
       "Program remotes and test auto-reverse safety",
     ],
     bullets: ["Chain, belt, and wall-mount openers", "Gear and sprocket replacement", "Safety sensor alignment", "Smart WiFi opener setup"],
-    inline: { src: "/assets/gallery/gallery-opener-liftmaster.png", alt: "Chamberlain opener mounted on a garage ceiling in Ottawa", caption: "Opener installs include sensor alignment and safety testing." },
+    inline: null,
     faqs: [
       { q: "My opener hums but the door does not move — why?", a: "Often stripped plastic gears inside the unit. Repair is usually cheaper than full replacement." },
       { q: "Which opener type is quietest?", a: "Belt-drive models are typically quieter than chain-drive — good for bedrooms above the garage." },
@@ -252,7 +253,7 @@ const services = {
       "Re-tension and balance the full system",
     ],
     bullets: ["Snapped or frayed lift cables", "Drum re-winding", "Bottom bracket inspection", "Balance check after repair"],
-    inline: { src: "/assets/services/cable-repair-hardware.png", alt: "Worn garage door cable and roller on concrete — Ottawa", caption: "Frayed or rusted cables are replaced in pairs with drum and bracket checks." },
+    inline: null,
     faqs: [
       { q: "Is it safe to use the door with a frayed cable?", a: "No — schedule repair. A failing cable can snap under load." },
       { q: "Why replace both cables?", a: "Matched cables wear evenly and keep the door balanced." },
@@ -316,7 +317,7 @@ const services = {
       "Replace side and top weatherstrip as quoted",
     ],
     bullets: ["T-style and U-shaped bottom seals", "Threshold bars", "PVC and rubber jamb seal", "Track tweaks for even contact"],
-    inline: { src: "/assets/services/weather-sealing.png", alt: "Jamb weatherstrip seal along a garage door edge — Ottawa", caption: "Side jamb seals and bottom rubber — replaced before winter in Ottawa." },
+    inline: null,
     faqs: [
       { q: "When is the best time to replace seals?", a: "Late fall before deep cold, or when you notice drafts and daylight under the door." },
       { q: "Will sealing reduce heating costs?", a: "It helps especially if the garage shares a wall with heated space." },
@@ -413,7 +414,7 @@ function servicePage(slug, data) {
         </div>
         <aside class="ogt-rich-aside">
           ${
-            data.inline
+            data.inline && !isDuplicateImagePair(img.src, data.inline.src)
               ? `<figure class="ogt-inline-figure">
             <img src="${data.inline.src}" width="600" height="450" alt="${esc(data.inline.alt)}" loading="lazy">
             <figcaption>${esc(data.inline.caption)}</figcaption>
