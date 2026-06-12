@@ -1,5 +1,13 @@
 import fs from "fs";
 import path from "path";
+import { DOMAIN, socialMeta } from "./seo-meta.mjs";
+
+const contactSocial = socialMeta({
+  title: "Contact Ottawa Garage Tech | Call, Text, or Send a Message",
+  description:
+    "Contact Ottawa Garage Tech for garage door quotes and service in Ottawa. Call or text (613) 900-6005 for urgent repairs; use the form for non-urgent requests. Open daily 7 a.m.–9 p.m.",
+  url: `${DOMAIN}/contact`,
+});
 
 const d = "div";
 const c = (n) => `<${d}${n ? " " + n : ""}>`;
@@ -12,8 +20,10 @@ const parts = [
   '  <meta charset="UTF-8">',
   '  <meta name="viewport" content="width=device-width, initial-scale=1.0">',
   "  <title>Contact Ottawa Garage Tech | Call, Text, or Send a Message</title>",
-  '  <meta name="description" content="Contact Ottawa Garage Tech for garage door quotes and service in Ottawa. Call or text for urgent repairs; use the form for non-urgent requests.">',
+  '  <meta name="description" content="Contact Ottawa Garage Tech for garage door quotes and service in Ottawa. Call or text (613) 900-6005 for urgent repairs; use the form for non-urgent requests. Open daily 7 a.m.–9 p.m.">',
+  '  <meta name="robots" content="index, follow">',
   '  <link rel="canonical" href="https://ottawagaragetech.ca/contact">',
+  contactSocial.trim(),
   '  <link rel="icon" href="/assets/logo.svg" type="image/svg+xml">',
   '  <link rel="stylesheet" href="/css/style.css">',
   "</head>",

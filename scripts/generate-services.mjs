@@ -47,8 +47,8 @@ const images = {
     alt: "Broken garage door torsion spring snapped in two on the metal shaft — Ottawa",
   },
   install: {
-    src: installAssets.hero,
-    alt: "Wood-grain double garage door installed on a brick Ottawa home",
+    src: "/assets/gallery/gallery-barrhaven-grey.png",
+    alt: "Taupe wood-grain garage door with bottom seal — new garage door installation Barrhaven, Ottawa",
   },
   opener: {
     src: "/assets/gallery/gallery-opener-liftmaster.png",
@@ -355,6 +355,7 @@ function servicePage(slug, data) {
     description: data.desc,
     url: canonical,
     image: img.src,
+    imageAlt: img.alt,
   })}
   <link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/css/style.css">

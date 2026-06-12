@@ -227,7 +227,7 @@ export const AREA_COPY = {
     ],
   },
   carp: {
-    hero: 12,
+    hero: 5,
     inline: 2,
     paragraphs: [
       "Carp and the western rural fringe have larger lots, detached garages, and doors that face open fields. Wind load and temperature swings stress springs and top fixtures more than in suburban courts.",
@@ -403,7 +403,7 @@ export const AREA_COPY = {
     ],
   },
   metcalfe: {
-    hero: 12,
+    hero: 5,
     inline: 2,
     paragraphs: [
       "Metcalfe is a village hub surrounded by acreages and hobby farms. Shop doors, standard residential doubles, and older single bays all appear on the same south route from Ottawa.",
@@ -419,7 +419,7 @@ export const AREA_COPY = {
     ],
   },
   osgoode: {
-    hero: 12,
+    hero: 5,
     inline: 11,
     paragraphs: [
       "Osgoode village and surrounding rural roads include century homes, new subdivisions, and farms with equipment storage. Door weight varies widely — never guess spring size from the curb.",
@@ -451,7 +451,7 @@ export const AREA_COPY = {
     ],
   },
   "constance-bay": {
-    hero: 12,
+    hero: 5,
     inline: 10,
     paragraphs: [
       "Constance Bay is a waterfront community with cottages, year-round homes, and seasonal properties. Bay humidity, wind, and sand corrode hardware faster than inland.",

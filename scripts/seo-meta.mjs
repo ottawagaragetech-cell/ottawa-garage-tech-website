@@ -2,7 +2,9 @@
 
 export const DOMAIN = "https://ottawagaragetech.ca";
 export const SITE_NAME = "Ottawa Garage Tech";
-export const OG_IMAGE = `${DOMAIN}/assets/og-preview.png`;
+export const OG_IMAGE = `${DOMAIN}/assets/gallery/gallery-barrhaven-grey.png`;
+export const OG_IMAGE_ALT =
+  "Taupe wood-grain garage door with bottom seal — new garage door installation Barrhaven, Ottawa";
 export const LOCALE = "en_CA";
 export const PHONE = "+16139006005";
 
@@ -26,6 +28,7 @@ export function socialMeta({
   description,
   url,
   image,
+  imageAlt,
   type = "website",
   published,
 }) {
@@ -37,7 +40,8 @@ export function socialMeta({
   <meta property="og:title" content="${esc(title)}">
   <meta property="og:description" content="${esc(description)}">
   <meta property="og:url" content="${url}">
-  <meta property="og:image" content="${img}">`;
+  <meta property="og:image" content="${img}">
+  <meta property="og:image:alt" content="${esc(imageAlt || OG_IMAGE_ALT)}">`;
   if (type === "article" && published) {
     html += `\n  <meta property="article:published_time" content="${published}">`;
     html += `\n  <meta property="article:author" content="${SITE_NAME}">`;
