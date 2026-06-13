@@ -599,7 +599,7 @@ html.ogt-cinematic .ogt-home-cta-inline p {
   color: rgba(250, 248, 244, 0.88);
 }
 
-/* Dark bands — signature + booking */
+/* Dark band — signature offers */
 html.ogt-cinematic .ogt-section--cinematic-dark {
   position: relative;
   background: linear-gradient(
@@ -668,76 +668,55 @@ html.ogt-cinematic .ogt-section--cinematic-dark .ogt-link-arrow {
   color: var(--ogt-accent-light);
 }
 
-/* Booking flow — cinematic glass cards */
-html.ogt-cinematic .ogt-section--cinematic-booking .ogt-section-header--booking .ogt-section-intro {
-  color: rgba(250, 248, 244, 0.82);
+/* Booking — light frosted band (alternates after dark signature section) */
+html.ogt-cinematic .ogt-section--cinematic-booking {
+  position: relative;
+  overflow: hidden;
+}
+
+html.ogt-cinematic .ogt-section--cinematic-booking::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 50% 0%, rgba(196, 160, 82, 0.1), transparent 55%);
+}
+
+html.ogt-cinematic .ogt-section--cinematic-booking .ogt-section-inner {
+  position: relative;
+  z-index: 1;
 }
 
 html.ogt-cinematic .ogt-booking-step {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(20, 92, 73, 0.12);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 10px 30px rgba(10, 46, 38, 0.1);
 }
 
 html.ogt-cinematic .ogt-booking-step:hover {
-  border-color: rgba(196, 160, 82, 0.55);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.26);
+  border-color: var(--ogt-accent);
+  box-shadow: 0 16px 40px rgba(10, 46, 38, 0.16);
 }
 
 html.ogt-cinematic .ogt-booking-step__num {
-  color: var(--ogt-primary-dark);
   background: linear-gradient(135deg, var(--ogt-accent-light), var(--ogt-accent));
-  border-color: rgba(255, 255, 255, 0.35);
-  box-shadow: 0 4px 14px rgba(196, 160, 82, 0.35);
-}
-
-html.ogt-cinematic .ogt-booking-step__title {
-  color: var(--ogt-text-inverse);
-}
-
-html.ogt-cinematic .ogt-booking-step__text {
-  color: rgba(250, 248, 244, 0.78);
-}
-
-@media (min-width: 1100px) {
-  html.ogt-cinematic .ogt-booking-step:not(:last-child)::after {
-    background: linear-gradient(90deg, var(--ogt-accent), rgba(196, 160, 82, 0.15));
-  }
+  border-color: var(--ogt-accent);
+  box-shadow: 0 4px 12px rgba(196, 160, 82, 0.3);
 }
 
 html.ogt-cinematic .ogt-booking-perk {
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(255, 255, 255, 0.12);
-  color: rgba(250, 248, 244, 0.88);
-}
-
-html.ogt-cinematic .ogt-booking-perk__icon {
-  background: var(--ogt-accent);
-  color: var(--ogt-primary-dark);
+  background: rgba(255, 255, 255, 0.75);
+  border-color: rgba(20, 92, 73, 0.1);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 
 html.ogt-cinematic .ogt-booking-tip {
-  background: rgba(0, 0, 0, 0.22);
-  border-left-color: var(--ogt-accent);
-  color: rgba(250, 248, 244, 0.8);
-}
-
-html.ogt-cinematic .ogt-booking-tip strong {
-  color: var(--ogt-accent-light);
-}
-
-html.ogt-cinematic .ogt-booking-actions .ogt-btn-secondary {
-  color: var(--ogt-text-inverse);
-  border-color: rgba(255, 255, 255, 0.45);
-  background: rgba(255, 255, 255, 0.06);
-}
-
-html.ogt-cinematic .ogt-booking-actions .ogt-btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.14);
-  border-color: var(--ogt-accent-light);
-  color: var(--ogt-text-inverse);
+  background: rgba(255, 255, 255, 0.8);
+  border-left-color: var(--ogt-primary);
+  box-shadow: 0 4px 16px rgba(10, 46, 38, 0.06);
 }
 
 /* Gallery — spotlight frame */
