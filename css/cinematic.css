@@ -1,33 +1,127 @@
 /**
  * Cinematic homepage — html.ogt-cinematic only.
- * Ken Burns hero, film grain, ambient mesh. Respects prefers-reduced-motion.
+ * Full-page Ken Burns backdrop, film grain, glass sections. Respects prefers-reduced-motion.
  */
 
-/* Ambient sitewide mesh (homepage only) */
-html.ogt-cinematic.ogt-premium body {
-  background-color: var(--ogt-bg);
-  background-image:
-    radial-gradient(ellipse 80% 50% at 20% 0%, rgba(20, 92, 73, 0.08), transparent 55%),
-    radial-gradient(ellipse 60% 40% at 90% 10%, rgba(196, 160, 82, 0.1), transparent 50%),
-    radial-gradient(ellipse 70% 50% at 50% 100%, rgba(20, 92, 73, 0.06), transparent 60%);
+/* —— Full-page cinematic backdrop —— */
+html.ogt-cinematic body {
+  position: relative;
+  background-color: var(--ogt-bg-dark);
 }
 
-html.ogt-cinematic.ogt-premium body::before {
-  content: "";
+html.ogt-cinematic .ogt-cinematic-page-bg {
   position: fixed;
   inset: 0;
-  z-index: -1;
+  z-index: 0;
   pointer-events: none;
-  opacity: 0.45;
+  overflow: hidden;
+}
+
+html.ogt-cinematic #ogt-site-header {
+  position: relative;
+  z-index: 100;
+}
+
+html.ogt-cinematic #main,
+html.ogt-cinematic #ogt-site-footer {
+  position: relative;
+  z-index: 1;
+}
+
+html.ogt-cinematic .ogt-cinematic-page-bg__media {
+  position: absolute;
+  inset: -5%;
+}
+
+html.ogt-cinematic .ogt-cinematic-page-bg__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+  transform: scale(1.08);
+  animation: ogt-ken-burns 28s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+html.ogt-cinematic .ogt-cinematic-page-bg__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
   background:
-    radial-gradient(circle at 30% 40%, rgba(196, 160, 82, 0.12), transparent 42%),
-    radial-gradient(circle at 75% 65%, rgba(20, 92, 73, 0.1), transparent 45%);
+    linear-gradient(
+      180deg,
+      rgba(10, 46, 38, 0.9) 0%,
+      rgba(10, 46, 38, 0.74) 28%,
+      rgba(10, 46, 38, 0.68) 55%,
+      rgba(10, 46, 38, 0.72) 78%,
+      rgba(10, 46, 38, 0.88) 100%
+    ),
+    radial-gradient(ellipse at 12% 25%, rgba(20, 92, 73, 0.4), transparent 52%),
+    radial-gradient(ellipse at 88% 70%, rgba(196, 160, 82, 0.12), transparent 45%);
+}
+
+html.ogt-cinematic .ogt-cinematic-page-bg__grain {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  opacity: 0.065;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+}
+
+html.ogt-cinematic .ogt-cinematic-page-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  opacity: 0.4;
+  background:
+    radial-gradient(circle at 30% 40%, rgba(196, 160, 82, 0.14), transparent 42%),
+    radial-gradient(circle at 75% 65%, rgba(20, 92, 73, 0.12), transparent 45%);
   animation: ogt-cinematic-mesh 18s ease-in-out infinite alternate;
 }
 
+/* Ambient mesh shimmer — moved into page backdrop stack */
+html.ogt-cinematic body::before {
+  display: none;
+}
+
 @keyframes ogt-cinematic-mesh {
-  0% { transform: scale(1) translate(0, 0); opacity: 0.4; }
-  100% { transform: scale(1.08) translate(2%, -1%); opacity: 0.55; }
+  0% { transform: scale(1) translate(0, 0); opacity: 0.35; }
+  100% { transform: scale(1.08) translate(2%, -1%); opacity: 0.5; }
+}
+
+/* Sections — frosted glass over full-page backdrop */
+html.ogt-cinematic .ogt-section {
+  background: rgba(243, 240, 234, 0.5);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+html.ogt-cinematic .ogt-section--compact.ogt-section--cinematic-trust {
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+html.ogt-cinematic .ogt-section--alt {
+  background: rgba(243, 240, 234, 0.68);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+html.ogt-cinematic .ogt-badges-section {
+  background: rgba(10, 46, 38, 0.82);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+html.ogt-cinematic .ogt-footer {
+  background: rgba(10, 30, 26, 0.94);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 /* Hero cinematic layers */
@@ -36,25 +130,8 @@ html.ogt-cinematic .ogt-hero--cinematic {
   min-height: min(92vh, 920px);
   padding-top: var(--ogt-space-3xl);
   padding-bottom: var(--ogt-space-3xl);
-  background: var(--ogt-bg-dark);
-  overflow: hidden;
-}
-
-html.ogt-cinematic .ogt-hero-cinematic-bg {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  overflow: hidden;
-}
-
-html.ogt-cinematic .ogt-hero-cinematic-bg img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 35%;
-  transform: scale(1.08);
-  animation: ogt-ken-burns 22s ease-in-out infinite alternate;
-  will-change: transform;
+  background: transparent;
+  overflow: visible;
 }
 
 @keyframes ogt-ken-burns {
@@ -66,27 +143,8 @@ html.ogt-cinematic .ogt-hero-cinematic-bg img {
   }
 }
 
-html.ogt-cinematic .ogt-hero-cinematic-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  background:
-    linear-gradient(105deg, rgba(10, 46, 38, 0.92) 0%, rgba(10, 46, 38, 0.78) 42%, rgba(10, 46, 38, 0.45) 68%, rgba(10, 46, 38, 0.25) 100%),
-    radial-gradient(ellipse at 15% 50%, rgba(20, 92, 73, 0.5), transparent 55%);
-}
-
-html.ogt-cinematic .ogt-hero-cinematic-grain {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  pointer-events: none;
-  opacity: 0.07;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-size: 180px 180px;
-}
-
-html.ogt-cinematic .ogt-hero--cinematic::before {
+html.ogt-cinematic .ogt-hero--cinematic::before,
+html.ogt-cinematic .ogt-hero--cinematic::after {
   display: none;
 }
 
@@ -168,23 +226,14 @@ html.ogt-cinematic .ogt-hero-collage-wrap {
   filter: drop-shadow(0 20px 48px rgba(0, 0, 0, 0.45));
 }
 
-/* Problem section — blurred photo strip */
+/* Problem section — light frosted band over page bg */
 html.ogt-cinematic .ogt-section--cinematic-problem {
   position: relative;
   overflow: hidden;
 }
 
 html.ogt-cinematic .ogt-section--cinematic-problem::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(180deg, var(--ogt-bg-elevated) 0%, rgba(243, 240, 234, 0.92) 100%),
-    url("/assets/services/install-kanata.png") center / cover no-repeat;
-  filter: blur(6px) saturate(0.85);
-  transform: scale(1.06);
-  z-index: 0;
-  opacity: 0.35;
+  display: none;
 }
 
 html.ogt-cinematic .ogt-section--cinematic-problem .ogt-section-inner {
@@ -196,7 +245,9 @@ html.ogt-cinematic .ogt-section--cinematic-problem .ogt-section-inner {
 html.ogt-cinematic .ogt-cta-band--cinematic {
   position: relative;
   overflow: hidden;
-  background: var(--ogt-bg-dark);
+  background: rgba(10, 46, 38, 0.82);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 html.ogt-cinematic .ogt-cta-band--cinematic::before {
@@ -224,19 +275,6 @@ html.ogt-cinematic .ogt-cta-band--cinematic .ogt-contact-quick {
 }
 
 /* —— Rest of homepage: visual rhythm —— */
-
-/* Fade hero into content */
-html.ogt-cinematic .ogt-hero--cinematic::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 120px;
-  z-index: 4;
-  pointer-events: none;
-  background: linear-gradient(to bottom, transparent, var(--ogt-bg));
-}
 
 /* Trust bridge — glass cards + marquee */
 html.ogt-cinematic .ogt-section--cinematic-trust {
@@ -423,9 +461,17 @@ html.ogt-cinematic .ogt-home-cta-inline p {
 /* Dark bands — signature + booking */
 html.ogt-cinematic .ogt-section--cinematic-dark {
   position: relative;
-  background: linear-gradient(165deg, var(--ogt-bg-dark) 0%, #0e3a30 50%, var(--ogt-primary-dark) 100%);
+  background: linear-gradient(
+    165deg,
+    rgba(10, 46, 38, 0.9) 0%,
+    rgba(14, 58, 48, 0.86) 50%,
+    rgba(10, 46, 38, 0.88) 100%
+  );
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   color: var(--ogt-text-inverse);
   overflow: hidden;
+  border-block: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 html.ogt-cinematic .ogt-section--cinematic-dark::before {
@@ -549,23 +595,14 @@ html.ogt-cinematic .ogt-areas-map-sidebar {
   border-radius: var(--ogt-radius-lg);
 }
 
-/* Contact — glass panels */
+/* Contact — glass panels over page bg */
 html.ogt-cinematic .ogt-section--cinematic-contact {
   position: relative;
   overflow: hidden;
 }
 
 html.ogt-cinematic .ogt-section--cinematic-contact::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(180deg, rgba(243, 240, 234, 0.95), rgba(243, 240, 234, 0.88)),
-    url("/assets/gallery/gallery-opener-liftmaster.png") center / cover no-repeat;
-  filter: blur(8px) saturate(0.8);
-  transform: scale(1.05);
-  opacity: 0.4;
-  z-index: 0;
+  display: none;
 }
 
 html.ogt-cinematic .ogt-section--cinematic-contact .ogt-section-inner {
@@ -587,8 +624,8 @@ html.ogt-cinematic .ogt-section-label {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html.ogt-cinematic .ogt-hero-cinematic-bg img,
-  html.ogt-cinematic.ogt-premium body::before,
+  html.ogt-cinematic .ogt-cinematic-page-bg__media img,
+  html.ogt-cinematic .ogt-cinematic-page-bg::after,
   html.ogt-cinematic .ogt-cta-band--cinematic::before {
     animation: none;
   }
