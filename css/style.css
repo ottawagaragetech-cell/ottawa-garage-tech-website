@@ -2315,6 +2315,139 @@ body.ogt-lightbox-open {
 .ogt-hero-stats a { color: var(--ogt-primary); text-decoration: none; font-weight: 600; }
 .ogt-hero-stats a:hover { text-decoration: underline; }
 
+.ogt-hero-quick {
+  margin-top: var(--ogt-space-lg);
+}
+
+.ogt-hero-quick-label {
+  margin: 0 0 var(--ogt-space-sm);
+  font-size: var(--ogt-text-sm);
+  font-weight: 600;
+  color: var(--ogt-text-muted);
+}
+
+.ogt-hero-quick-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ogt-hero-quick-list a {
+  display: inline-block;
+  padding: 0.4rem 0.75rem;
+  font-size: var(--ogt-text-sm);
+  font-weight: 600;
+  color: var(--ogt-primary);
+  background: var(--ogt-bg-elevated);
+  border: 1px solid var(--ogt-border);
+  border-radius: var(--ogt-radius-sm);
+  text-decoration: none;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.ogt-hero-quick-list a:hover {
+  border-color: var(--ogt-primary);
+  background: var(--ogt-accent-soft);
+}
+
+/* Homepage problem finder */
+.ogt-problem-grid {
+  display: grid;
+  gap: var(--ogt-space-md);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 540px) {
+  .ogt-problem-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 900px) {
+  .ogt-problem-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.ogt-problem-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: var(--ogt-space-lg);
+  background: var(--ogt-bg-elevated);
+  border: 1px solid var(--ogt-border);
+  border-radius: var(--ogt-radius-lg);
+  text-decoration: none;
+  color: inherit;
+  box-shadow: var(--ogt-shadow-sm);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.ogt-problem-card:hover {
+  border-color: var(--ogt-primary);
+  box-shadow: var(--ogt-shadow-md);
+  transform: translateY(-2px);
+}
+
+.ogt-problem-card strong {
+  font-family: var(--ogt-font-display);
+  font-size: var(--ogt-text-base);
+  color: var(--ogt-primary-dark);
+}
+
+.ogt-problem-card span {
+  font-size: var(--ogt-text-sm);
+  color: var(--ogt-text-muted);
+  line-height: 1.45;
+}
+
+.ogt-problem-card em {
+  margin-top: auto;
+  padding-top: var(--ogt-space-sm);
+  font-size: var(--ogt-text-xs);
+  font-style: normal;
+  font-weight: 600;
+  color: var(--ogt-primary);
+}
+
+.ogt-problem-cta {
+  margin: var(--ogt-space-lg) 0 0;
+  font-size: var(--ogt-text-sm);
+  text-align: center;
+}
+
+.ogt-problem-cta a {
+  font-weight: 600;
+  color: var(--ogt-primary);
+}
+
+.ogt-home-cta-inline {
+  margin-top: var(--ogt-space-2xl);
+}
+
+.ogt-home-booking .ogt-steps--home {
+  max-width: 42rem;
+}
+
+.ogt-steps--home li strong {
+  color: var(--ogt-primary-dark);
+}
+
+.ogt-check-list--home-booking {
+  margin-top: var(--ogt-space-lg);
+  max-width: 42rem;
+}
+
+.ogt-home-lead-card h2 {
+  margin: 0 0 var(--ogt-space-sm);
+  font-size: var(--ogt-text-xl);
+}
+
+.ogt-home-form-card h3 {
+  margin: 0 0 var(--ogt-space-sm);
+  font-family: var(--ogt-font-display);
+  font-size: var(--ogt-text-lg);
+}
+
 .ogt-hero-collage-wrap { position: relative; }
 .ogt-hero-collage {
   position: relative;
