@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-CA" data-ogt-page="home">
+<html lang="en-CA" data-ogt-page="home" class="ogt-cinematic">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -142,7 +142,12 @@
   <div id="ogt-site-header"></div>
 
   <main id="main">
-    <section class="ogt-hero ogt-hero--visual">
+    <section class="ogt-hero ogt-hero--visual ogt-hero--cinematic">
+      <div class="ogt-hero-cinematic-bg" aria-hidden="true">
+        <img src="/assets/gallery/gallery-barrhaven-grey.png" width="1920" height="1080" alt="" loading="eager">
+      </div>
+      <div class="ogt-hero-cinematic-overlay" aria-hidden="true"></div>
+      <div class="ogt-hero-cinematic-grain" aria-hidden="true"></div>
       <div class="ogt-hero-content">
         <p class="ogt-hero-eyebrow ogt-hero-eyebrow--ca">
           <img class="ogt-ca-flag" src="/assets/flag-canada.png" width="56" height="28" alt="Flag of Canada" aria-hidden="true">
@@ -180,18 +185,24 @@
       </div>
     </section>
 
-    <section class="ogt-section ogt-section--compact" aria-label="Trust highlights">
-      <div class="ogt-section-inner">
-        <div class="ogt-trust">
-          <div class="ogt-trust-item"><strong>Canadian-owned</strong><span>Local garage door specialists across Ottawa and suburbs</span></div>
-          <div class="ogt-trust-item"><strong>Clear on-site quotes</strong><span>Scope and price agreed before major repair or install</span></div>
-          <div class="ogt-trust-item"><strong>Stocked vans</strong><span>Many springs, cables, and rollers fitted in one visit</span></div>
-          <div class="ogt-trust-item"><strong>Evening appointments</strong><span>Open 7 a.m.–9 p.m. daily — after-work slots available</span></div>
+    <section class="ogt-section ogt-section--compact ogt-section--cinematic-trust" aria-label="Trust highlights">
+      <div class="ogt-trust ogt-trust--marquee">
+        <div class="ogt-trust-marquee-viewport">
+          <div class="ogt-trust-marquee-track">
+            <div class="ogt-trust-item"><strong>Canadian-owned</strong><span>Local garage door specialists across Ottawa and suburbs</span></div>
+            <div class="ogt-trust-item"><strong>Clear on-site quotes</strong><span>Scope and price agreed before major repair or install</span></div>
+            <div class="ogt-trust-item"><strong>Stocked vans</strong><span>Many springs, cables, and rollers fitted in one visit</span></div>
+            <div class="ogt-trust-item"><strong>Evening appointments</strong><span>Open 7 a.m.–9 p.m. daily — after-work slots available</span></div>
+            <div class="ogt-trust-item" aria-hidden="true"><strong>Canadian-owned</strong><span>Local garage door specialists across Ottawa and suburbs</span></div>
+            <div class="ogt-trust-item" aria-hidden="true"><strong>Clear on-site quotes</strong><span>Scope and price agreed before major repair or install</span></div>
+            <div class="ogt-trust-item" aria-hidden="true"><strong>Stocked vans</strong><span>Many springs, cables, and rollers fitted in one visit</span></div>
+            <div class="ogt-trust-item" aria-hidden="true"><strong>Evening appointments</strong><span>Open 7 a.m.–9 p.m. daily — after-work slots available</span></div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="ogt-section ogt-section--alt" aria-labelledby="problem-heading">
+    <section class="ogt-section ogt-section--alt ogt-section--cinematic-problem" aria-labelledby="problem-heading">
       <div class="ogt-section-inner">
         <header class="ogt-section-header">
           <p class="ogt-section-label">Start here</p>
@@ -240,7 +251,7 @@
       </div>
     </section>
 
-    <section class="ogt-section" aria-labelledby="services-heading">
+    <section class="ogt-section ogt-section--cinematic-services" aria-labelledby="services-heading">
       <div class="ogt-section-inner">
         <header class="ogt-section-header">
           <p class="ogt-section-label">Services</p>
@@ -259,7 +270,7 @@
       </div>
     </section>
 
-    <section class="ogt-section ogt-section--alt" aria-labelledby="signature-heading">
+    <section class="ogt-section ogt-section--alt ogt-section--cinematic-dark" aria-labelledby="signature-heading">
       <div class="ogt-section-inner">
         <header class="ogt-section-header">
           <p class="ogt-section-label">Popular visits</p>
@@ -270,7 +281,7 @@
       </div>
     </section>
 
-    <section class="ogt-section" aria-labelledby="booking-heading">
+    <section class="ogt-section ogt-section--cinematic-dark ogt-section--cinematic-booking" aria-labelledby="booking-heading">
       <div class="ogt-section-inner ogt-home-booking">
         <header class="ogt-section-header">
           <p class="ogt-section-label">Easy booking</p>
@@ -291,7 +302,7 @@
       </div>
     </section>
 
-    <section class="ogt-section ogt-section--home-gallery" aria-labelledby="home-gallery-heading">
+    <section class="ogt-section ogt-section--home-gallery ogt-section--cinematic-gallery" aria-labelledby="home-gallery-heading">
       <div class="ogt-section-inner">
         <header class="ogt-section-header">
           <p class="ogt-section-label">Project gallery</p>
@@ -380,7 +391,7 @@
       </div>
     </section>
 
-    <section class="ogt-section ogt-section--alt" aria-labelledby="contact-home-heading">
+    <section class="ogt-section ogt-section--alt ogt-section--cinematic-contact" aria-labelledby="contact-home-heading">
       <div class="ogt-section-inner ogt-home-contact-wrap">
         <div class="ogt-aside-card ogt-aside-card--lead ogt-home-lead-card">
           <h2 id="contact-home-heading">Request garage door service</h2>
@@ -423,7 +434,7 @@
       </div>
     </section>
 
-    <section class="ogt-cta-band" aria-label="Contact call to action">
+    <section class="ogt-cta-band ogt-cta-band--cinematic" aria-label="Contact call to action">
       <h2>Need garage door help today?</h2>
       <p>Call or text for broken springs and doors that won't close. Email a message for install quotes.</p>
       <div class="ogt-contact-quick ogt-cta-band-actions">
