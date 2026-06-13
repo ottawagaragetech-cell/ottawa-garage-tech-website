@@ -16,14 +16,21 @@
   var listEl =
     document.getElementById("ogt-home-areas") ||
     document.getElementById("ogt-areas-grid");
-  var layoutEl = mapEl.closest(".ogt-areas-map-layout");
+  var featuredListEl = document.getElementById("ogt-home-areas-featured");
+  var layoutEl = mapEl.closest(".ogt-areas-map-layout, .ogt-coverage-shell");
+
+  var mapTheme = mapEl.getAttribute("data-map-theme");
+  var tileUrl =
+    mapTheme === "dark"
+      ? "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
+      : "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png";
 
   var map = L.map(mapEl, {
     scrollWheelZoom: false,
     tap: true,
   });
 
-  L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
+  L.tileLayer(tileUrl, {
     attribution:
       '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
     subdomains: "abcd",
@@ -58,6 +65,11 @@
         chip.classList.toggle("is-active", chip.getAttribute("data-area") === slug);
       });
     }
+    if (featuredListEl) {
+      featuredListEl.querySelectorAll(".ogt-coverage-featured-card").forEach(function (card) {
+        card.classList.toggle("is-active", card.getAttribute("data-area") === slug);
+      });
+    }
 
     Object.keys(markers).forEach(function (key) {
       var el = markers[key].getElement();
@@ -75,6 +87,11 @@
     if (listEl) {
       listEl.querySelectorAll(".ogt-area-chip.is-active").forEach(function (chip) {
         chip.classList.remove("is-active");
+      });
+    }
+    if (featuredListEl) {
+      featuredListEl.querySelectorAll(".ogt-coverage-featured-card.is-active").forEach(function (card) {
+        card.classList.remove("is-active");
       });
     }
     Object.keys(markers).forEach(function (key) {
@@ -121,8 +138,9 @@
 
   map.fitBounds(bounds.pad(0.12));
 
-  if (listEl) {
-    listEl.querySelectorAll("a.ogt-area-chip[data-area]").forEach(function (chip) {
+  function bindAreaSelectors(root) {
+    if (!root) return;
+    root.querySelectorAll("a[data-area]").forEach(function (chip) {
       chip.addEventListener("mouseenter", function () {
         var slug = chip.getAttribute("data-area");
         if (markers[slug]) {
@@ -131,15 +149,18 @@
         }
       });
       chip.addEventListener("mouseleave", function () {
-        listEl.querySelectorAll(".ogt-map-marker-wrap.is-hovered").forEach(function (m) {
+        document.querySelectorAll(".ogt-map-marker-wrap.is-hovered").forEach(function (m) {
           m.classList.remove("is-hovered");
         });
       });
       chip.addEventListener("click", function (e) {
         var slug = chip.getAttribute("data-area");
-        if (markers[slug]) {
+        if (!markers[slug]) return;
+        if (chip.classList.contains("ogt-area-chip")) {
           e.preventDefault();
           setActive(slug, true);
+        } else {
+          setActive(slug, false);
         }
       });
       chip.addEventListener("focus", function () {
@@ -148,6 +169,9 @@
       });
     });
   }
+
+  bindAreaSelectors(listEl);
+  bindAreaSelectors(featuredListEl);
 
   map.on("click", function () {
     clearActive();

@@ -434,7 +434,31 @@
 
   var homeAreas = document.getElementById("ogt-home-areas");
   if (homeAreas && cfg.areas) {
-    homeAreas.innerHTML = cfg.areas.map(areaChip).join("");
+    homeAreas.innerHTML = homeAreas.classList.contains("ogt-areas-grouped")
+      ? renderAreasGrouped()
+      : cfg.areas.map(areaChip).join("");
+  }
+
+  var featuredAreas = document.getElementById("ogt-home-areas-featured");
+  if (featuredAreas && cfg.areas) {
+    var featuredSlugs = ["ottawa", "kanata", "barrhaven", "stittsville", "nepean", "orleans"];
+    featuredAreas.innerHTML = featuredSlugs
+      .map(function (slug) {
+        var area = cfg.areas.find(function (a) {
+          return a.slug === slug;
+        });
+        if (!area) return "";
+        return (
+          '<a class="ogt-coverage-featured-card" href="/areas/' +
+          esc(area.slug) +
+          '" data-area="' +
+          esc(area.slug) +
+          '"><strong>' +
+          esc(area.name) +
+          "</strong><span>Local service page</span></a>"
+        );
+      })
+      .join("");
   }
   (function injectHreflang() {
     var canonical = document.querySelector('link[rel="canonical"]');
