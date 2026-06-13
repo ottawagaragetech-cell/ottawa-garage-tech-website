@@ -453,9 +453,9 @@
           esc(area.slug) +
           '" data-area="' +
           esc(area.slug) +
-          '"><strong>' +
+          '">' +
           esc(area.name) +
-          "</strong><span>Local service page</span></a>"
+          "</a>"
         );
       })
       .join("");

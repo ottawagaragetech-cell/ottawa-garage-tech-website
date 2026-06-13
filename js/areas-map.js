@@ -23,7 +23,10 @@
   var tileUrl =
     mapTheme === "dark"
       ? "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
-      : "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png";
+      : mapTheme === "soft"
+        ? "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
+        : "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png";
+  var serviceRadiusOpacity = mapTheme === "soft" ? 0.05 : 0.07;
 
   var map = L.map(mapEl, {
     scrollWheelZoom: false,
@@ -43,7 +46,7 @@
     weight: 1.5,
     opacity: 0.35,
     fillColor: "#145c49",
-    fillOpacity: 0.07,
+    fillOpacity: serviceRadiusOpacity,
   }).addTo(map);
 
   var bounds = L.latLngBounds([]);

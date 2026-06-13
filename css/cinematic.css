@@ -764,90 +764,38 @@ html.ogt-cinematic .ogt-home-faq .ogt-faq-item {
   box-shadow: 0 4px 16px rgba(10, 46, 38, 0.06);
 }
 
-/* Coverage — dark cinematic band */
-html.ogt-cinematic .ogt-section--cinematic-coverage .ogt-section-header--coverage .ogt-section-intro {
-  color: rgba(250, 248, 244, 0.82);
+/* Coverage — soft light frosted band */
+html.ogt-cinematic .ogt-section--cinematic-coverage {
+  position: relative;
 }
 
-html.ogt-cinematic .ogt-coverage-featured-card {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.14);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+html.ogt-cinematic .ogt-section--cinematic-coverage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 50% 0%, rgba(196, 160, 82, 0.06), transparent 58%);
 }
 
-html.ogt-cinematic .ogt-coverage-featured-card:hover {
-  border-color: rgba(196, 160, 82, 0.55);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
-}
-
-html.ogt-cinematic .ogt-coverage-featured-card.is-active {
-  background: rgba(196, 160, 82, 0.18);
-  border-color: var(--ogt-accent);
-}
-
-html.ogt-cinematic .ogt-coverage-featured-card strong {
-  color: var(--ogt-text-inverse);
-}
-
-html.ogt-cinematic .ogt-coverage-featured-card span {
-  color: rgba(250, 248, 244, 0.65);
+html.ogt-cinematic .ogt-section--cinematic-coverage .ogt-section-inner {
+  position: relative;
+  z-index: 1;
 }
 
 html.ogt-cinematic .ogt-coverage-shell {
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.25);
+  background: rgba(255, 255, 255, 0.82);
+  border-color: rgba(20, 92, 73, 0.08);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 8px 32px rgba(10, 46, 38, 0.05);
+}
+
+html.ogt-cinematic .ogt-coverage-featured-card {
+  background: rgba(255, 255, 255, 0.9);
 }
 
 html.ogt-cinematic .ogt-service-map--coverage {
-  border-color: rgba(255, 255, 255, 0.12);
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
-}
-
-html.ogt-cinematic .ogt-map-hint--coverage {
-  color: rgba(250, 248, 244, 0.72);
-}
-
-html.ogt-cinematic .ogt-map-hint--coverage .ogt-map-hint-icon {
-  color: var(--ogt-accent);
-}
-
-html.ogt-cinematic .ogt-coverage-regions .ogt-areas-region {
-  background: rgba(0, 0, 0, 0.18);
-  border-color: rgba(255, 255, 255, 0.1);
-}
-
-html.ogt-cinematic .ogt-coverage-regions .ogt-areas-region-title {
-  color: var(--ogt-accent-light);
-  border-bottom-color: var(--ogt-accent);
-}
-
-html.ogt-cinematic .ogt-coverage-regions .ogt-area-chip {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.14);
-  color: rgba(250, 248, 244, 0.9);
-}
-
-html.ogt-cinematic .ogt-coverage-regions .ogt-area-chip:hover,
-html.ogt-cinematic .ogt-coverage-regions .ogt-area-chip.is-active {
-  background: rgba(196, 160, 82, 0.2);
-  border-color: var(--ogt-accent);
-  color: var(--ogt-text-inverse);
-}
-
-html.ogt-cinematic .ogt-coverage-cta .ogt-btn-on-dark {
-  color: var(--ogt-text-inverse);
-  border-color: rgba(255, 255, 255, 0.45);
-  background: rgba(255, 255, 255, 0.06);
-}
-
-html.ogt-cinematic .ogt-coverage-cta .ogt-btn-on-dark:hover {
-  background: rgba(255, 255, 255, 0.14);
-  border-color: var(--ogt-accent-light);
-  color: var(--ogt-text-inverse);
+  background: #f4f1ea;
 }
 
 /* Contact — glass panels over page bg */
