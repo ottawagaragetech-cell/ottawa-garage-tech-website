@@ -134,11 +134,15 @@ const AREA_GEO = {
 
 const AREA_META = {
   ottawa: "Mobile garage door help across Ottawa — urgent safety calls, springs, openers, and new insulated installs.",
-  kanata: "Garage door technicians in Kanata — springs, off-track doors, openers, and new doors for west-end homes.",
-  barrhaven: "Garage door visits in Barrhaven — cables, springs, openers, and replacements for south Ottawa homes.",
+  kanata:
+    "Kanata garage door repair and installation — Beaverbrook, Bridlewood, Kanata North, springs, openers, and insulated double-door replacements.",
+  barrhaven:
+    "Barrhaven garage door service — Chapman Mills, Half Moon Bay, Longfields, spring repair, opener fixes, and new door installs on south Ottawa routes.",
   orleans: "East-end garage door service in Orleans — spring work, opener fixes, and new door installs.",
-  nepean: "Nepean garage door repairs — mobile crew for springs, openers, cables, and full replacements.",
-  stittsville: "Stittsville garage door service — spring failures, noisy openers, and insulated upgrades.",
+  nepean:
+    "Nepean garage door repairs — Centrepointe, Craig Henry, Merivale corridor, extension and torsion springs, openers, and full replacements.",
+  stittsville:
+    "Stittsville garage door service — village homes and west-end subdivisions, spring failures, track alignment, and insulated upgrades.",
   gloucester: "Gloucester garage door help — priority scheduling when routes allow for stuck or crooked doors.",
   manotick: "Manotick garage door repairs — village and rural driveways, springs, openers, and sealing.",
   rockland: "Rockland garage door service — mobile repairs for springs, openers, and installs east of Ottawa.",
@@ -185,11 +189,111 @@ function nearby(area) {
   return AREAS.filter((a) => a.region === area.region && a.slug !== area.slug).slice(0, 4);
 }
 
+function neighborhoodsBlock(area, list) {
+  if (!list?.length) return "";
+  const items = list.map((n) => `<li>${esc(n)}</li>`).join("");
+  return `<h2>Neighbourhoods we serve in ${esc(area.name)}</h2>
+          <p>We take garage door calls across ${esc(area.name)} — from urgent spring breaks to planned upgrades — including these communities and nearby streets:</p>
+          <ul class="ogt-check-list">${items}</ul>`;
+}
+
+function leadTrustStrip() {
+  return `<section class="ogt-section ogt-section--compact">
+      <div class="ogt-section-inner">
+        <div class="ogt-trust">
+          <div class="ogt-trust-item"><strong>Clear on-site quotes</strong><span>Scope and price agreed before major repair or install work</span></div>
+          <div class="ogt-trust-item"><strong>7 a.m.–9 p.m. daily</strong><span>Call or text — fastest when the door will not close</span></div>
+          <div class="ogt-trust-item"><strong>Licensed &amp; insured</strong><span>Professional mobile technicians across Ottawa</span></div>
+          <div class="ogt-trust-item"><strong>Stocked vans</strong><span>Many springs, cables, and rollers fitted in one visit</span></div>
+        </div>
+      </div>
+    </section>`;
+}
+
+function leadMidCta(area, lead) {
+  return `<div class="ogt-blog-cta-inline ogt-area-cta-inline">
+          <h2>${esc(lead.midCtaHeading || `Need garage door help in ${area.name}?`)}</h2>
+          <p>${esc(lead.midCtaText || "Call or text for the fastest response — especially if the door will not close.")}</p>
+          <p class="ogt-contact-quick">
+            <a class="ogt-btn ogt-btn-primary" href="tel:+16139006005">Call (613) 900-6005</a>
+            <a class="ogt-btn ogt-btn-secondary" href="/contact?area=${area.slug}">Free quote by email</a>
+          </p>
+        </div>`;
+}
+
+function leadAsideCard(area, lead) {
+  const points = (lead.asidePoints || [])
+    .map((p) => `<li>${esc(p)}</li>`)
+    .join("");
+  return `<div class="ogt-aside-card ogt-aside-card--lead">
+            <h3>${esc(lead.asideHeading || `Book ${area.name} service`)}</h3>
+            <p class="ogt-lead-phone"><a href="tel:+16139006005">(613) 900-6005</a></p>
+            <p class="ogt-lead-hours">Open daily 7 a.m.–9 p.m.</p>
+            ${lead.asideNote ? `<p>${esc(lead.asideNote)}</p>` : ""}
+            ${points ? `<ul class="ogt-check-list ogt-check-list--compact">${points}</ul>` : ""}
+            <p class="ogt-contact-quick ogt-contact-quick--stack">
+              <a class="ogt-btn ogt-btn-primary ogt-btn-block" href="tel:+16139006005">Call now</a>
+              <a class="ogt-btn ogt-btn-secondary ogt-btn-block" href="/contact?area=${area.slug}">Request quote</a>
+            </p>
+          </div>`;
+}
+
+function leadFaqSection(area, faqs) {
+  const items = faqs
+    .map(
+      (f) =>
+        `<details class="ogt-faq-item"><summary>${esc(f.q)}</summary><p>${esc(f.a)}</p></details>`
+    )
+    .join("");
+  return `<section class="ogt-section">
+      <div class="ogt-section-inner">
+        <h2>Common questions about garage door service in ${esc(area.name)}</h2>
+        <div class="ogt-faq-list">${items}</div>
+      </div>
+    </section>`;
+}
+
+function leadFaqSchema(faqs) {
+  if (!faqs?.length) return "";
+  return `<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": ${JSON.stringify(
+      faqs.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      }))
+    )}
+  }
+  </script>`;
+}
+
+function leadConversionSection(area, lead) {
+  if (!lead.conversionProse) return "";
+  return `<section class="ogt-section">
+      <div class="ogt-section-inner ogt-seo-prose">
+        ${lead.conversionProse}
+        <div class="ogt-blog-cta-inline ogt-area-cta-inline">
+          <h2>Ready to book in ${esc(area.name)}?</h2>
+          <p>Call or text for urgent issues. Use the form for installation quotes and scheduling questions.</p>
+          <p class="ogt-contact-quick">
+            <a class="ogt-btn ogt-btn-primary" href="tel:+16139006005">(613) 900-6005</a>
+            <a class="ogt-btn ogt-btn-secondary" href="/contact?area=${area.slug}">Send a message</a>
+            <a class="ogt-btn ogt-btn-secondary" href="sms:+16139006005">Text us</a>
+          </p>
+        </div>
+      </div>
+    </section>`;
+}
+
 function areaPage(area, index) {
   const imgs = getAreaImages(area, index);
   const heroSrc = absUrl(imgs.hero.src);
   const local = areaLocalContent(area);
-  const visit = REGION_VISIT[area.region];
+  const lead = local.lead;
+  const visit = local.visit ?? REGION_VISIT[area.region];
   const canonical = `${domain}/areas/${area.slug}`;
   const title = `Garage Door Service ${area.name} | Ottawa Garage Tech`;
   const desc = areaMetaDescription(area);
@@ -199,7 +303,21 @@ function areaPage(area, index) {
     : "";
   const near = nearby(area);
 
-  const heroIntro = `Ottawa Garage Tech serves ${area.name} and nearby streets for springs, openers, cables, new doors, and urgent safety calls — with clear scope and price before major work.`;
+  const heroIntro =
+    local.heroIntro ??
+    `Ottawa Garage Tech serves ${area.name} and nearby streets for springs, openers, cables, new doors, and urgent safety calls — with clear scope and price before major work.`;
+  const keywords =
+    local.keywords ??
+    `garage door repair ${area.name}, garage door service ${area.name}, garage door springs ${area.name}`;
+  const seoSection =
+    local.neighborhoods?.length || local.seoProse
+      ? `<section class="ogt-section ogt-section--alt">
+      <div class="ogt-section-inner ogt-seo-prose">
+        ${neighborhoodsBlock(area, local.neighborhoods)}
+        ${local.seoProse ?? ""}
+      </div>
+    </section>`
+      : "";
 
   const serviceList = SERVICE_LINKS.map(
     ([slug, label]) => `<li><a href="/services/${slug}">${esc(label)}</a></li>`
@@ -209,6 +327,39 @@ function areaPage(area, index) {
     .map((a) => `<a href="/areas/${a.slug}">${esc(a.name)}</a>`)
     .join("");
 
+  const quoteLabel = lead ? "Free quote by email" : "Request a quote";
+  const heroLeadExtras = lead
+    ? `${lead.priceNote ? `<p class="ogt-price-note">${esc(lead.priceNote)}</p>` : ""}${lead.urgency ? `<p class="ogt-urgency-note">${esc(lead.urgency)}</p>` : ""}`
+    : "";
+  const trustSection = lead ? leadTrustStrip() : "";
+  const midCta = lead ? leadMidCta(area, lead) : "";
+  const stepsBlock =
+    lead?.steps?.length
+      ? `<h2>How booking works in ${esc(area.name)}</h2>
+          <ol class="ogt-steps">${lead.steps.map((s) => `<li>${esc(s)}</li>`).join("")}</ol>`
+      : "";
+  const asideLead = lead ? leadAsideCard(area, lead) : "";
+  const faqSection = lead?.faqs?.length ? leadFaqSection(area, lead.faqs) : "";
+  const faqSchema = lead?.faqs?.length ? leadFaqSchema(lead.faqs) : "";
+  const conversionSection = lead ? leadConversionSection(area, lead) : "";
+  const ctaHeading = lead?.ctaHeading || `Book garage door service in ${area.name}`;
+  const ctaSubtext =
+    lead?.ctaSubtext || "Call or text for the fastest response — especially for doors that will not close.";
+  const bottomCta = lead
+    ? `<section class="ogt-cta-band">
+      <h2>${esc(ctaHeading)}</h2>
+      <p>${esc(ctaSubtext)}</p>
+      <div class="ogt-contact-quick ogt-cta-band-actions">
+        <a class="ogt-btn ogt-btn-accent" href="tel:+16139006005">(613) 900-6005</a>
+        <a class="ogt-btn ogt-btn-secondary ogt-btn-on-dark" href="/contact?area=${area.slug}">Free quote by email</a>
+      </div>
+    </section>`
+    : `<section class="ogt-cta-band">
+      <h2>Book garage door service in ${esc(area.name)}</h2>
+      <p>Call or text for the fastest response — especially for doors that will not close.</p>
+      <a class="ogt-btn ogt-btn-accent" href="tel:+16139006005">(613) 900-6005</a>
+    </section>`;
+
   return `<!DOCTYPE html>
 <html lang="en-CA" data-ogt-page="areas">
 <head>
@@ -216,7 +367,7 @@ function areaPage(area, index) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${esc(title)}</title>
   <meta name="description" content="${esc(desc)}">
-  <meta name="keywords" content="garage door repair ${esc(area.name)}, garage door service ${esc(area.name)}, garage door springs ${esc(area.name)}">
+  <meta name="keywords" content="${esc(keywords)}">
   <link rel="canonical" href="${canonical}">
   <meta name="robots" content="index, follow">
   <meta property="og:type" content="website">
@@ -275,6 +426,7 @@ function areaPage(area, index) {
     }
   }
   </script>
+  ${faqSchema}
 
 </head>
 <body>
@@ -289,9 +441,10 @@ function areaPage(area, index) {
       <div class="ogt-service-hero-text">
         <h1>Garage door service in ${esc(area.name)}</h1>
         <p class="ogt-section-intro">${esc(heroIntro)}</p>
+        ${heroLeadExtras}
         <div class="ogt-contact-quick">
           <a class="ogt-btn ogt-btn-primary" href="tel:+16139006005">Call (613) 900-6005</a>
-          <a class="ogt-btn ogt-btn-secondary" href="/contact?area=${area.slug}">Request a quote</a>
+          <a class="ogt-btn ogt-btn-secondary" href="/contact?area=${area.slug}">${quoteLabel}</a>
         </div>
       </div>
       <figure class="ogt-service-hero-img">
@@ -299,11 +452,14 @@ function areaPage(area, index) {
       </figure>
     </div>
 
+    ${trustSection}
+
     <section class="ogt-section">
       <div class="ogt-section-inner ogt-rich-grid">
         <div class="ogt-rich-main">
           <h2>Garage doors in ${esc(area.name)}</h2>
           ${local.paragraphs.map((p) => `<p>${esc(p)}</p>`).join("\n          ")}
+          ${midCta}
           <h2>Services we offer in ${esc(area.name)}</h2>
           <ul class="ogt-check-list ogt-area-services-list">${serviceList}</ul>
           <h2>${esc(visit.heading)}</h2>
@@ -314,8 +470,10 @@ function areaPage(area, index) {
           <ul class="ogt-check-list">
             ${local.jobs.map((p) => `<li>${esc(p)}</li>`).join("")}
           </ul>
+          ${stepsBlock}
         </div>
         <aside class="ogt-rich-aside">
+          ${asideLead}
           ${
             imgs.inline
               ? `<figure class="ogt-inline-figure">
@@ -333,11 +491,13 @@ function areaPage(area, index) {
       </div>
     </section>
 
-    <section class="ogt-cta-band">
-      <h2>Book garage door service in ${esc(area.name)}</h2>
-      <p>Call or text for the fastest response — especially for doors that will not close.</p>
-      <a class="ogt-btn ogt-btn-accent" href="tel:+16139006005">(613) 900-6005</a>
-    </section>
+    ${seoSection}
+
+    ${faqSection}
+
+    ${conversionSection}
+
+    ${bottomCta}
   </main>
   <div id="ogt-site-footer"></div>
   <script src="/js/site-config.js"></script>

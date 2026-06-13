@@ -97,69 +97,410 @@ export const AREA_COPY = {
   kanata: {
     hero: 1,
     inline: 8,
+    heroIntro:
+      "Kanata homeowners call us for snapped torsion springs on double garages, off-track doors after west-end snow, and quieter opener upgrades in Bridlewood and Kanata North — with clear pricing before major work.",
+    keywords:
+      "garage door repair Kanata, garage door springs Kanata North, garage door installation Bridlewood, garage door opener Kanata, garage door service Beaverbrook",
+    visit: {
+      heading: "What Kanata homeowners can expect",
+      points: [
+        "Springs sized to actual door weight on 16-foot doubles common in Katimavik and Glen Cairn",
+        "Insulation and bottom-seal advice before cold air off the open fields hits attached garages",
+        "Belt-drive opener options when bedrooms sit above high-cycle Kanata North garages",
+        "Same west-end routes as Stittsville — mention your community when booking for spring stock",
+        "Daily service 7 a.m.–9 p.m., including after-work slots near the tech park",
+      ],
+    },
+    neighborhoods: [
+      "Beaverbrook",
+      "Katimavik",
+      "Glen Cairn",
+      "Bridlewood",
+      "Kanata Lakes",
+      "Kanata North",
+      "Morgan's Grant",
+      "Marchwood",
+      "South March",
+    ],
     paragraphs: [
       "Kanata’s mix of 1980s–2000s subdivisions, townhome rows near the Tanger Outlets, and newer infill near Bridlewood means plenty of standard 16-foot doubles with torsion springs over the header. Many homeowners run the door four or five times a day — springs and rollers wear on a predictable cycle.",
-      "West-end cold hits hard off the open fields: insulated panels and tight bottom seals make a real difference for garages under bedrooms. We often upgrade noisy chain-drive openers to quieter belt drives when the door itself is still sound.",
-      "Whether you are off Castlefrank, in Katimavik, or closer to the tech park, we size springs to door weight and test balance before we leave — especially after any spring or cable work.",
+      "West-end cold hits hard off the open fields: insulated panels and tight bottom seals make a real difference for garages under bedrooms in Kanata North and Morgan's Grant. We often upgrade noisy chain-drive openers to quieter belt drives when the door itself is still sound.",
+      "Whether you are off Castlefrank, in Katimavik, or closer to the tech park, we size springs to door weight and test balance before we leave — especially after any spring or cable work on Beaverbrook and Glen Cairn doubles.",
+      "Kanata Lakes and South March homes sometimes have wider or custom-height openings. We measure on site rather than guessing spring length from a phone photo — the wrong size leaves a heavy door or a dangerous over-springed setup.",
+      "Townhome and row-house garages near Kanata Centrum share tight driveways. We plan parking and protect walkways while we work, and we explain track alignment issues that start with worn rollers rather than a bent panel.",
       "Kanata North and south share the same van routes as Stittsville and Richmond — mention your community when booking so we confirm timing and spring stock for double-wide doors.",
     ],
     jobs: [
-      "Torsion spring failures on double-wide doors",
-      "Townhome doors binding on shared driveways",
-      "Belt-drive opener upgrades for bedrooms above",
-      "Insulated door replacements in Kanata North",
-      "Tune-ups before winter on high-cycle doors",
+      "Torsion spring failures on double-wide doors in Bridlewood",
+      "Townhome doors binding on shared driveways near Centrum",
+      "Belt-drive opener upgrades for bedrooms above Kanata North",
+      "Insulated door replacements in Kanata Lakes and Marchwood",
+      "Tune-ups before winter on high-cycle Katimavik doors",
+      "Off-track panels after snow banks on Castlefrank-area streets",
     ],
+    seoProse: `<h2>Common garage door issues in Kanata</h2>
+<p>Most Kanata calls start with a loud snap from the garage — a torsion spring that finally gave out after thousands of cycles. Doubles on busy streets in Katimavik and Glen Cairn are especially hard on hardware. If the door feels heavy by hand or the opener strains, schedule <a href="/services/spring-replacement">spring replacement</a> before a second spring fails or cables fray.</p>
+<p>West-end wind and temperature swings also punish bottom seals and roller hinges. A door that scrapes on one side often needs track adjustment and new rollers, not just a quick shove back on track. For doors that will not close safely, see our <a href="/services/emergency-repair">emergency repair</a> page — we treat secure-close issues as priority on Kanata routes.</p>
+<h3>New doors and upgrades in Kanata</h3>
+<p>When rust, noise, or poor insulation outweigh repair costs, we measure your opening and quote an installed door suited to Ottawa winters. Many Kanata North homeowners choose insulated steel with wood-grain texture to match brick and stone exteriors. Browse our <a href="/gallery">gallery</a> for recent Kanata-area installs, or read <a href="/services/garage-door-installation">garage door installation</a> for what is included in a typical swap.</p>
+<p>Opener upgrades are common where chain drives rattle into bedrooms above the garage. We service LiftMaster and Chamberlain units and can recommend quieter belt-drive options during a <a href="/services/opener-service">opener service</a> visit. Annual <a href="/services/maintenance">maintenance tune-ups</a> catch worn cables and hinges before a busy January commute turns into a stuck door.</p>`,
+    lead: {
+      priceNote:
+        "Kanata doubles: springs often $235–$395 · priority safety visits from $215 · tune-ups from $165",
+      urgency: "Door won't close or hear a spring snap? Call now — we run Kanata routes daily.",
+      midCtaHeading: "Broken spring or stuck door in Kanata?",
+      midCtaText:
+        "Stop using the opener on an unbalanced door. Call or text and mention your neighbourhood — Bridlewood, Katimavik, Kanata North — so we confirm timing and parts.",
+      asideHeading: "Book Kanata service",
+      asideNote: "Fastest for urgent doors. Form works well for install quotes.",
+      asidePoints: [
+        "Springs sized to your door — not a generic kit",
+        "West-end van stock for common doubles",
+        "Price agreed before major work",
+      ],
+      steps: [
+        "Call or text (613) 900-6005 — mention Kanata and your cross-street",
+        "We secure the door, diagnose springs, tracks, cables, or opener strain",
+        "You get a clear quote on site before repair or install work starts",
+        "We complete the job, test balance, and adjust opener limits if needed",
+      ],
+      faqs: [
+        {
+          q: "Do you offer same-day garage door repair in Kanata?",
+          a: "Often yes when you call early — especially for doors that will not close. We route Kanata with Stittsville and Richmond daily. Phone is the fastest way to hold a slot.",
+        },
+        {
+          q: "How much does spring replacement cost on a Kanata double garage?",
+          a: "Most Kanata double-door spring jobs land around $235–$395 depending on door weight and spring type. We measure and quote on site before work starts.",
+        },
+        {
+          q: "Do you serve Kanata North and Bridlewood?",
+          a: "Yes — Beaverbrook, Katimavik, Glen Cairn, Bridlewood, Kanata Lakes, Morgan's Grant, and nearby streets are all on our west-end routes.",
+        },
+        {
+          q: "Can I book an evening appointment in Kanata?",
+          a: "Yes — we are open 7 a.m.–9 p.m. every day, including after-work slots near the tech park and Kanata Centrum area.",
+        },
+      ],
+      conversionProse: `<h2>What Kanata garage door repair usually costs</h2>
+<p>Transparent pricing builds trust — here are typical ranges we quote on site in Kanata (final price depends on door size and parts):</p>
+<ul>
+<li><strong>Spring replacement</strong> — $235–$395 on most residential doubles</li>
+<li><strong>Emergency / safety visit</strong> — from $215 before parts</li>
+<li><strong>Cable repair</strong> — $180–$285 when both cables are serviced</li>
+<li><strong>Tune-up</strong> — from $165 with a written summary</li>
+<li><strong>New door installation</strong> — quoted after measurement (see our <a href="/services/garage-door-installation">installation page</a>)</li>
+</ul>
+<p><strong>When to call:</strong> doors that will not close, hanging panels, snapped springs, or anything that feels unsafe. <strong>When to use the form:</strong> new door quotes, colour and window choices, or scheduling questions. Read more in our <a href="/blog/garage-door-repair-cost-ottawa">Ottawa pricing guide</a>.</p>`,
+      ctaHeading: "Get Kanata garage door help today",
+      ctaSubtext:
+        "Call or text for urgent springs and off-track doors. Email a message for install quotes — we reply within 2 hours during business hours.",
+    },
   },
   stittsville: {
     hero: 1,
     inline: 12,
+    heroIntro:
+      "Stittsville garage door help for village-era singles, triple-wide new builds near Jackson Trails, and commuter homes that need springs fixed before the morning drive — stocked vans on west-end routes daily.",
+    keywords:
+      "garage door repair Stittsville, garage door springs Stittsville, garage door service Fernbank, garage door opener Stittsville, garage door installation Jackson Trails",
+    visit: {
+      heading: "What Stittsville homeowners can expect",
+      points: [
+        "Correct spring weight on singles near the village core and triple-wide bays on newer streets",
+        "Cold-weather spring stock for early-morning failures before the Kanata commute",
+        "Access planning for longer driveways toward Carp and Huntley Road",
+        "Weather sealing and roller checks ahead of first deep freeze off open fields",
+        "Phone-first booking — fastest way to confirm same-day west-end routing",
+      ],
+    },
+    neighborhoods: [
+      "Crossing Bridge",
+      "Bryanston",
+      "Jackson Trails",
+      "Fernbank",
+      "Fairwinds",
+      "Amberway",
+      "Timbermere",
+      "Huntley",
+    ],
     paragraphs: [
       "Stittsville blends village-era homes near the main street with large subdivisions west toward Fernbank and Huntley. Garages range from single bays on older lots to triple-wide setups on newer streets — each needs correct spring weight and track alignment.",
-      "Commuter traffic means early-morning door cycles in January, when cold metal is most likely to snap a tired spring. We carry common sizes so many Stittsville calls finish in one visit.",
-      "Properties toward Carp and the west often have longer driveways; we confirm access and timing when you book so the van arrives with the right hardware.",
+      "Commuter traffic means early-morning door cycles in January, when cold metal is most likely to snap a tired spring. We carry common sizes so many Stittsville calls finish in one visit without a return trip for parts.",
+      "Jackson Trails and Fairwinds feature uniform double and triple garages built for daily family use. We match torsion springs to door weight rather than swapping in a generic kit that leaves the opener overworked.",
+      "Older pockets near Crossing Bridge and the village core sometimes still run extension springs on shorter tracks. We explain when a controlled upgrade to a modern torsion setup is worth it versus replacing like-for-like.",
+      "Properties toward Carp and the west often have longer driveways and rural-style access. We confirm timing and van parking when you book so the crew arrives with the right hardware the first time.",
+      "Stittsville shares west-end routes with Kanata and Richmond — mention your street off Abbott, Fernbank, or Huntmar when you call so we align spring stock with typical door widths in your area.",
     ],
     jobs: [
-      "Extension springs on older village homes",
-      "Double-door balance issues on new builds",
+      "Extension springs on older village homes near Main Street",
+      "Double-door balance issues on Jackson Trails new builds",
       "Cold-weather spring breaks on commute schedules",
-      "Weather sealing before first deep freeze",
-      "Opener limits after spring changes",
+      "Weather sealing before first deep freeze in Amberway",
+      "Opener travel limits after spring changes in Bryanston",
+      "Roller and hinge wear on high-cycle Fernbank doubles",
     ],
+    seoProse: `<h2>Garage door repair in Stittsville</h2>
+<p>Stittsville sits between village-scale lots and fast-growing subdivisions, so we see everything from original extension-spring doors to brand-new insulated doubles. A door that suddenly feels twice as heavy usually means a broken spring — book <a href="/services/spring-replacement">spring replacement</a> before operating the opener on a half-balanced door.</p>
+<p>Long driveways and west-end wind make <a href="/services/weather-sealing">weather sealing</a> worthwhile on attached garages, especially where bedrooms sit above the bay. Grinding or scraping noises often trace to worn rollers; a <a href="/services/maintenance">maintenance tune-up</a> is cheaper than an off-track emergency after the next ice storm.</p>
+<h3>Installations and opener work</h3>
+<p>New-build streets in Jackson Trails and Fairwinds sometimes need opener programming, sensor alignment, or a full <a href="/services/garage-door-installation">door installation</a> when builders' spec doors underperform. We measure openings on site and quote installed doors that suit Stittsville exteriors and Ottawa winters.</p>
+<p>For doors that will not close or hang crooked after a cable slip, see <a href="/services/cable-repair">cable repair</a> and <a href="/services/emergency-repair">emergency repair</a>. Calling early helps us slot your address into the same west-end run as Kanata and Richmond.</p>`,
+    lead: {
+      priceNote:
+        "Stittsville springs often $235–$395 · extension systems quoted on site · tune-ups from $165",
+      urgency: "Spring broke before the morning commute? Call — many Stittsville jobs finish in one visit.",
+      midCtaHeading: "Garage door trouble in Stittsville?",
+      midCtaText:
+        "Village singles and Jackson Trails triples need different spring sizes. Call with your street and we will confirm west-end routing and parts.",
+      asideHeading: "Book Stittsville service",
+      asideNote: "Mention Abbott, Fernbank, or Huntmar when you call.",
+      asidePoints: [
+        "Common spring sizes on the van",
+        "Cold-weather priority for stuck doors",
+        "Clear quote before major work",
+      ],
+      steps: [
+        "Call or text — tell us Stittsville and whether the door is stuck open or closed",
+        "We diagnose extension or torsion systems and check balance and cables",
+        "On-site quote before springs, rollers, or opener work begins",
+        "Repair and test — many calls done in one trip",
+      ],
+      faqs: [
+        {
+          q: "Can you fix a garage door before my commute from Stittsville?",
+          a: "We prioritize doors that will not secure and early-morning calls when routes allow. Call as soon as you find the problem — we carry common spring sizes for typical Stittsville door widths.",
+        },
+        {
+          q: "Do you work on older village homes and new subdivisions?",
+          a: "Yes — extension springs near Main Street, torsion doubles in Jackson Trails and Fairwinds, and triple-wide bays on newer streets are all common for us.",
+        },
+        {
+          q: "How do I get a quote for a new door in Stittsville?",
+          a: "Use our contact form with your neighbourhood and a short description, or call to book a measurement visit. Installed doors are quoted after we see the opening.",
+        },
+        {
+          q: "Is there an extra trip charge for Stittsville?",
+          a: "Stittsville is on our regular west-end routes with Kanata — no surprise travel fees. You receive a clear on-site estimate before work starts.",
+        },
+      ],
+      conversionProse: `<h2>Stittsville pricing and how to book</h2>
+<p>Most repair calls in Stittsville fall into these ranges (confirmed on site):</p>
+<ul>
+<li><strong>Torsion spring replacement</strong> — $235–$395 on typical doubles and triples</li>
+<li><strong>Extension spring work</strong> — quoted after we inspect older village setups</li>
+<li><strong>Priority safety visit</strong> — from $215 when the door will not close</li>
+<li><strong>Maintenance tune-up</strong> — from $165 — smart before the first deep freeze</li>
+</ul>
+<p>Phone is best for urgent issues and same-day timing. The <a href="/contact?area=stittsville">contact form</a> works well for installation quotes and non-urgent scheduling. See <a href="/faq">FAQ</a> for springs, openers, and winter prep.</p>`,
+      ctaHeading: "Book Stittsville garage door service",
+      ctaSubtext:
+        "Call or text for spring failures and stuck doors. Send a message for new door quotes and evening scheduling.",
+    },
   },
   barrhaven: {
     hero: 2,
     inline: 5,
+    heroIntro:
+      "Barrhaven families rely on double garages every day — we fix snapped springs in Chapman Mills, realign off-track doors in Half Moon Bay, and install insulated replacements on south Ottawa routes with clear on-site estimates.",
+    keywords:
+      "garage door repair Barrhaven, garage door springs Chapman Mills, garage door installation Half Moon Bay, garage door opener Barrhaven, garage door service Longfields",
+    visit: {
+      heading: "What Barrhaven homeowners can expect",
+      points: [
+        "High-cycle family doors get balance checks — not just a quick spring swap on doubles",
+        "On-site quotes for cream, grey, and window layouts on front-facing corner lots",
+        "Track and roller fixes when bikes, nets, or snow narrow the opening",
+        "LiftMaster and Chamberlain diagnostics with stock for standard south-end widths",
+        "Same routes as Riverside South and Findlay Creek — evening slots often available",
+      ],
+    },
+    neighborhoods: [
+      "Chapman Mills",
+      "Half Moon Bay",
+      "Longfields",
+      "Stonebridge",
+      "Knollsbrook",
+      "Heart's Desire",
+      "Barrhaven on the Green",
+      "Pheasant Run",
+    ],
     paragraphs: [
       "Barrhaven’s south-end subdivisions — Chapman Mills, Half Moon Bay, Longfields — are built around double garages and daily family use. Raised-panel steel doors and standard torsion springs are the norm; we match parts to door weight, not a one-size kit.",
-      "Newer streets still see off-track calls when basketball nets, bikes, or packed snow narrow the opening. We realign tracks, replace worn rollers, and explain what caused the bind so it does not repeat.",
-      "For front-facing garages on corner lots, colour and window layout matter as much as insulation. We measure on site and quote installed doors that suit Barrhaven exteriors and Ottawa winters.",
+      "Newer streets still see off-track calls when basketball nets, bikes, or packed snow narrow the opening. We realign tracks, replace worn rollers, and explain what caused the bind so it does not repeat on the next school-day rush.",
+      "For front-facing garages on corner lots in Stonebridge and Knollsbrook, colour and window layout matter as much as insulation. We measure on site and quote installed doors that suit Barrhaven exteriors and Ottawa winters.",
+      "Heart's Desire and Pheasant Run see the same high-cycle wear: opener strain after a spring ages out, frayed cables on doors that still look fine from the curb, and bottom seals that let slush into attached mudrooms.",
+      "Many Barrhaven homes use 16-foot doubles with bedrooms or playrooms above. Quieter belt-drive openers and properly balanced doors make a noticeable difference — we test balance by hand after every spring or cable job.",
       "Riverside South and Findlay Creek are on the same south-end routes as Barrhaven — many of our Barrhaven gallery photos are from installs minutes from your neighbourhood.",
     ],
     jobs: [
-      "Broken springs on high-traffic double doors",
-      "Off-track panels after driveway obstructions",
-      "Cream and grey door replacements with windows",
-      "LiftMaster and Chamberlain opener repairs",
-      "Bottom seal replacement on attached garages",
+      "Broken springs on high-traffic Chapman Mills doubles",
+      "Off-track panels after driveway obstructions in Half Moon Bay",
+      "Cream and grey door replacements with windows in Stonebridge",
+      "LiftMaster and Chamberlain opener repairs in Longfields",
+      "Bottom seal replacement on attached Knollsbrook garages",
+      "Cable fray on doors still running on one good spring",
     ],
+    seoProse: `<h2>Why Barrhaven garage doors wear faster</h2>
+<p>South Ottawa subdivisions were designed around two-car garages and school-run schedules — that means more cycles per year than many older Ottawa neighbourhoods. When a torsion spring snaps in Chapman Mills or Longfields, the door should stay put until <a href="/services/spring-replacement">springs are replaced</a> in matched pairs and the balance is rechecked.</p>
+<p>Off-track calls are common when rollers are already worn and something blocks the path — sports equipment, recycling bins, or frozen slush. We inspect the full track, not only pop the panel back in. For urgent secure-close problems, see <a href="/services/emergency-repair">emergency repair</a>.</p>
+<h3>New doors and curb appeal in Barrhaven</h3>
+<p>Barrhaven homeowners often upgrade for appearance as much as function — taupe wood-grain steel, window layouts, and insulated panels that cut noise into the house. Our <a href="/services/garage-door-installation">installation service</a> includes measurement, haul-away, and alignment; the <a href="/gallery">gallery</a> shows recent south-end work including Barrhaven grey and cream installs.</p>
+<p>Opener issues after spring work usually mean travel limits or force settings need adjustment — a short <a href="/services/opener-service">opener service</a> visit beats replacing a motor that is still sound. Ask about <a href="/services/weather-sealing">weather sealing</a> before winter; attached garages in Half Moon Bay and Stonebridge benefit from tight jambs and bottom rubber.</p>`,
+    lead: {
+      priceNote:
+        "Barrhaven family doubles: springs $235–$395 · emergency visits from $215 · new doors quoted on site",
+      urgency: "Door stuck or spring snapped in Chapman Mills or Longfields? Call — south-end routes run daily.",
+      midCtaHeading: "High-cycle door wearing out in Barrhaven?",
+      midCtaText:
+        "School-run schedules are hard on springs and rollers. Call or text with your subdivision — we will confirm south Ottawa timing and parts.",
+      asideHeading: "Book Barrhaven service",
+      asideNote: "Same routes as Riverside South and Findlay Creek.",
+      asidePoints: [
+        "Balance checks on busy family doubles",
+        "LiftMaster & Chamberlain diagnostics",
+        "On-site install quotes with colour options",
+      ],
+      steps: [
+        "Call or text — say Barrhaven and whether the door is crooked, noisy, or won't move",
+        "We inspect springs, cables, tracks, and opener strain from daily use",
+        "Clear written scope and price before parts and labour",
+        "Repair or install, then test safety sensors and balance",
+      ],
+      faqs: [
+        {
+          q: "How fast can you get to Barrhaven for an emergency?",
+          a: "Phone is fastest — we treat secure-close issues as priority on south-end routes. Call early in the day for the best chance of same-day service in Chapman Mills, Half Moon Bay, or Longfields.",
+        },
+        {
+          q: "Do you install new garage doors in Barrhaven?",
+          a: "Yes — we measure on site and quote installed insulated doors, including cream, grey, and wood-grain options popular on Barrhaven front garages. See our gallery for recent south-end work.",
+        },
+        {
+          q: "Why do Barrhaven garage door springs break sooner?",
+          a: "Double garages on daily school and activity schedules mean more open-close cycles per year. Correct spring sizing and periodic tune-ups extend life — we replace in matched pairs and rebalance.",
+        },
+        {
+          q: "Can you fix an off-track door after kids' gear blocked the opening?",
+          a: "Yes — we realign tracks, replace worn rollers, and explain what caused the bind so it is less likely to repeat on the next busy morning.",
+        },
+      ],
+      conversionProse: `<h2>Barrhaven repair pricing — what to expect</h2>
+<p>South Ottawa families usually ask about springs first. Typical on-site ranges:</p>
+<ul>
+<li><strong>Spring replacement (double door)</strong> — $235–$395</li>
+<li><strong>Emergency safety visit</strong> — from $215</li>
+<li><strong>Opener repair</strong> — often from $210; new units quoted by model</li>
+<li><strong>Weather sealing</strong> — from $260 before winter</li>
+<li><strong>Full door replacement</strong> — measured and quoted in person</li>
+</ul>
+<p><strong>Call now</strong> if the door will not close or hangs uneven — do not leave the home unsecured. Use the <a href="/contact?area=barrhaven">quote form</a> for new door colours, windows, and install scheduling. Browse <a href="/gallery">recent Barrhaven installs</a> for ideas.</p>`,
+      ctaHeading: "Book Barrhaven garage door service",
+      ctaSubtext:
+        "Call or text for broken springs and off-track doors. Email us for cream, grey, and windowed install quotes.",
+    },
   },
   nepean: {
     hero: 4,
     inline: 9,
+    heroIntro:
+      "Nepean garage door service from Merivale and Baseline to Centrepointe and Craig Henry — extension and torsion springs, rental turnovers, opener fixes, and insulated upgrades on mixed-era west-south streets.",
+    keywords:
+      "garage door repair Nepean, garage door springs Centrepointe, garage door service Craig Henry, garage door opener Merivale, garage door installation Nepean",
+    visit: {
+      heading: "What Nepean homeowners can expect",
+      points: [
+        "Experience with both extension and torsion systems on 1970s–1990s Nepean stock",
+        "Fast turnaround when a rental or shared driveway door will not secure overnight",
+        "Tune-ups along the transit corridor where vibration loosens hinges and rollers",
+        "Insulated replacement quotes for raised-ranch garages near Centrepointe",
+        "Mobile service 7 a.m.–9 p.m. across Nepean, Barrhaven border streets, and Bells Corners",
+      ],
+    },
+    neighborhoods: [
+      "Centrepointe",
+      "Craig Henry",
+      "Merivale Gardens",
+      "Bells Corners",
+      "College Square",
+      "City View",
+      "Queensway Terrace",
+      "Parkwood Hills",
+    ],
     paragraphs: [
       "Nepean stretches from established streets near Merivale and Baseline to mature areas around Centrepointe and Craig Henry. You will find 1970s–1990s homes with original doors next to renovated facades — extension springs still appear alongside modern torsion setups.",
-      "Basement apartments and in-law suites sometimes share driveways; we work cleanly and keep lanes clear. Rentals often need fast turnaround when a door will not close — phone is the best way to reach us.",
-      "Along the transit corridor, vibration and frequent cycling can loosen hinge hardware. A tune-up often catches worn rollers before they derail the door.",
-      "Centrepointe, Craig Henry, and Merivale-adjacent streets mix 1980s raised ranches with renovated fronts — we see both extension upgrades and full door replacements in the same week.",
+      "Basement apartments and in-law suites sometimes share driveways in City View and Parkwood Hills; we work cleanly and keep lanes clear. Rentals often need fast turnaround when a door will not close — phone is the best way to reach us.",
+      "Along the transit corridor, vibration and frequent cycling can loosen hinge hardware. A tune-up often catches worn rollers before they derail the door on a Merivale-area commute morning.",
+      "Centrepointe and Craig Henry mix 1980s raised ranches with renovated fronts — we see both extension upgrades and full door replacements in the same week. We explain when repair still makes sense versus a new insulated door.",
+      "Bells Corners and College Square include townhomes and singles with varied ceiling heights. Low-headroom tracks and older opener mounts need careful measurement before ordering hardware.",
+      "Nepean borders Barrhaven and Kanata routes — if you are off Greenbank, Woodroffe, or the Queensway corridors, mention your cross-street when booking so we confirm south- or west-end van timing.",
     ],
     jobs: [
       "Extension spring systems near Merivale corridor",
       "Rental unit doors that will not secure overnight",
       "Noisy rollers on older Algonquin-area homes",
-      "Opener sensor alignment on busy driveways",
+      "Opener sensor alignment on busy Centrepointe driveways",
       "Insulated upgrades on 1980s raised-ranch garages",
+      "Cable replacement on doors with one fatigued torsion spring",
     ],
+    seoProse: `<h2>Garage doors across Nepean's mixed housing stock</h2>
+<p>Unlike uniform new subdivisions, Nepean combines decades of housing styles — so we diagnose what is actually on your ceiling before quoting. Extension springs still show up near older Merivale pockets; most Centrepointe and Craig Henry doubles use standard torsion tubes. Operating a door with a visible gap in the spring is unsafe; schedule <a href="/services/spring-replacement">spring replacement</a> and keep the opener off until balance is restored.</p>
+<p>Landlords and shared-driveway properties need doors that close and lock reliably. We prioritize secure-close issues and document what was replaced for turnover files. See <a href="/services/emergency-repair">emergency repair</a> when a door is crooked or hanging by a cable.</p>
+<h3>Upgrades and maintenance in Nepean</h3>
+<p>Renovated raised ranches often deserve a quieter, better-sealed door to match new siding and windows. We provide on-site quotes for <a href="/services/garage-door-installation">full installation</a> and can suggest insulation levels that help heated garages near Baseline and College Square.</p>
+<p>Transit vibration and daily cycles loosen rollers and opener chains over time. An annual <a href="/services/maintenance">maintenance tune-up</a> catches small problems before they become <a href="/services/cable-repair">cable repairs</a> or off-track panels. For drafty jambs on older bays, <a href="/services/weather-sealing">weather sealing</a> is a practical winter prep step.</p>`,
+    lead: {
+      priceNote:
+        "Nepean repairs: springs $235–$395 · extension systems quoted on site · rentals prioritized when door won't close",
+      urgency: "Rental or shared driveway door won't secure? Call — we turn around Nepean safety calls quickly.",
+      midCtaHeading: "Garage door issue in Nepean?",
+      midCtaText:
+        "Extension and torsion systems need different fixes. Call with your area — Centrepointe, Craig Henry, Merivale — and describe what the door is doing.",
+      asideHeading: "Book Nepean service",
+      asideNote: "Fast for secure-close issues. Form ideal for upgrade quotes.",
+      asidePoints: [
+        "1970s–1990s and modern systems",
+        "Rental-friendly turnaround",
+        "Insulated upgrade quotes on site",
+      ],
+      steps: [
+        "Call or text — mention Nepean, your street, and if the door is a safety issue",
+        "We identify extension vs torsion hardware and inspect cables and balance",
+        "Quote repair or replacement options in plain language",
+        "Complete work and leave the door balanced and secure",
+      ],
+      faqs: [
+        {
+          q: "Do you repair extension spring doors in older Nepean homes?",
+          a: "Yes — we still service extension systems near Merivale and older pockets, and advise when upgrading to a modern torsion setup is worth the investment.",
+        },
+        {
+          q: "Can landlords get fast service in Nepean?",
+          a: "We prioritize doors that will not close on rentals and shared driveways. Call for the fastest dispatch; mention if tenants need access restored the same day.",
+        },
+        {
+          q: "Do you serve Centrepointe and Craig Henry?",
+          a: "Yes — along with Merivale Gardens, Bells Corners, College Square, City View, and Queensway Terrace corridors on our south-west routes.",
+        },
+        {
+          q: "Should I repair or replace my Nepean garage door?",
+          a: "If the door is structurally sound and only springs or rollers failed, repair often makes sense. Rusted panels, poor insulation, and chronic noise on 1980s doors may justify a measured replacement — we quote both paths honestly.",
+        },
+      ],
+      conversionProse: `<h2>Nepean garage door costs and booking tips</h2>
+<p>Nepean's mixed housing stock means prices depend on what is on your ceiling — we always inspect first. Common ranges:</p>
+<ul>
+<li><strong>Torsion spring replacement</strong> — $235–$395 on standard doubles</li>
+<li><strong>Extension spring repair</strong> — quoted after inspection</li>
+<li><strong>Emergency visit</strong> — from $215 when the door is unsafe or unsecured</li>
+<li><strong>Tune-up</strong> — from $165 — useful along the transit corridor</li>
+<li><strong>Full replacement</strong> — on-site quote for raised ranches and renovated fronts</li>
+</ul>
+<p>Call for anything that affects security tonight. Use the <a href="/contact?area=nepean">contact form</a> for insulated upgrade quotes near Baseline or College Square. Compare repair vs replace in our <a href="/blog/repair-vs-replace-garage-door">guide</a>.</p>`,
+      ctaHeading: "Get Nepean garage door help",
+      ctaSubtext:
+        "Call or text for urgent and rental turnovers. Message us for replacement quotes on older raised-ranch garages.",
+    },
   },
   orleans: {
     hero: 3,
