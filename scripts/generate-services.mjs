@@ -128,7 +128,7 @@ const services = {
     h1: "Garage door spring replacement",
     imageKey: "spring",
     keywords: "garage door spring replacement Ottawa, broken torsion spring, extension spring repair, garage door spring cost Ottawa",
-    priceNote: "Most spring replacements land around $235–$395 depending on door size and spring type.",
+    priceNote: "One spring $235–$350 · both springs $450–$550 — sized to your door on site.",
     intro: [
       "Garage door springs counterbalance hundreds of pounds of weight. When one fails, the door becomes dangerous to lift and strains your opener. We install correctly rated springs and replace both sides when that is the right long-term fix.",
       "Ottawa temperature swings accelerate metal fatigue. If you heard a bang from the garage, stop using the door and schedule service — forcing it can damage cables, tracks, and the opener.",

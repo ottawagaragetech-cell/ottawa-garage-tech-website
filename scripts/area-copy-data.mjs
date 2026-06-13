@@ -146,7 +146,7 @@ export const AREA_COPY = {
 <p>Opener upgrades are common where chain drives rattle into bedrooms above the garage. We service LiftMaster and Chamberlain units and can recommend quieter belt-drive options during a <a href="/services/opener-service">opener service</a> visit. Annual <a href="/services/maintenance">maintenance tune-ups</a> catch worn cables and hinges before a busy January commute turns into a stuck door.</p>`,
     lead: {
       priceNote:
-        "Kanata doubles: springs often $235–$395 · priority safety visits from $215 · tune-ups from $165",
+        "Kanata doubles: one spring $235–$350 · both $450–$550 · priority safety visits from $215 · tune-ups from $165",
       urgency: "Door won't close or hear a spring snap? Call now — we run Kanata routes daily.",
       midCtaHeading: "Broken spring or stuck door in Kanata?",
       midCtaText:
@@ -171,7 +171,7 @@ export const AREA_COPY = {
         },
         {
           q: "How much does spring replacement cost on a Kanata double garage?",
-          a: "Most Kanata double-door spring jobs land around $235–$395 depending on door weight and spring type. We measure and quote on site before work starts.",
+          a: "Most Kanata double-door jobs need both springs — typically $450–$550. A single spring is $235–$350 when only one side needs replacement. We measure and quote on site before work starts.",
         },
         {
           q: "Do you serve Kanata North and Bridlewood?",
@@ -185,7 +185,8 @@ export const AREA_COPY = {
       conversionProse: `<h2>What Kanata garage door repair usually costs</h2>
 <p>Transparent pricing builds trust — here are typical ranges we quote on site in Kanata (final price depends on door size and parts):</p>
 <ul>
-<li><strong>Spring replacement</strong> — $235–$395 on most residential doubles</li>
+<li><strong>One spring</strong> — $235–$350</li>
+<li><strong>Both springs (matched pair)</strong> — $450–$550 on most residential doubles</li>
 <li><strong>Emergency / safety visit</strong> — from $215 before parts</li>
 <li><strong>Cable repair</strong> — $180–$285 when both cables are serviced</li>
 <li><strong>Tune-up</strong> — from $165 with a written summary</li>
@@ -248,7 +249,7 @@ export const AREA_COPY = {
 <p>For doors that will not close or hang crooked after a cable slip, see <a href="/services/cable-repair">cable repair</a> and <a href="/services/emergency-repair">emergency repair</a>. Calling early helps us slot your address into the same west-end run as Kanata and Richmond.</p>`,
     lead: {
       priceNote:
-        "Stittsville springs often $235–$395 · extension systems quoted on site · tune-ups from $165",
+        "Stittsville: one spring $235–$350 · both $450–$550 · extension systems quoted on site · tune-ups from $165",
       urgency: "Spring broke before the morning commute? Call — many Stittsville jobs finish in one visit.",
       midCtaHeading: "Garage door trouble in Stittsville?",
       midCtaText:
@@ -287,7 +288,8 @@ export const AREA_COPY = {
       conversionProse: `<h2>Stittsville pricing and how to book</h2>
 <p>Most repair calls in Stittsville fall into these ranges (confirmed on site):</p>
 <ul>
-<li><strong>Torsion spring replacement</strong> — $235–$395 on typical doubles and triples</li>
+<li><strong>One torsion spring</strong> — $235–$350</li>
+<li><strong>Both springs (matched pair)</strong> — $450–$550 on typical doubles and triples</li>
 <li><strong>Extension spring work</strong> — quoted after we inspect older village setups</li>
 <li><strong>Priority safety visit</strong> — from $215 when the door will not close</li>
 <li><strong>Maintenance tune-up</strong> — from $165 — smart before the first deep freeze</li>
@@ -349,7 +351,7 @@ export const AREA_COPY = {
 <p>Opener issues after spring work usually mean travel limits or force settings need adjustment — a short <a href="/services/opener-service">opener service</a> visit beats replacing a motor that is still sound. Ask about <a href="/services/weather-sealing">weather sealing</a> before winter; attached garages in Half Moon Bay and Stonebridge benefit from tight jambs and bottom rubber.</p>`,
     lead: {
       priceNote:
-        "Barrhaven family doubles: springs $235–$395 · emergency visits from $215 · new doors quoted on site",
+        "Barrhaven doubles: one spring $235–$350 · both $450–$550 · emergency visits from $215 · new doors quoted on site",
       urgency: "Door stuck or spring snapped in Chapman Mills or Longfields? Call — south-end routes run daily.",
       midCtaHeading: "High-cycle door wearing out in Barrhaven?",
       midCtaText:
@@ -388,7 +390,8 @@ export const AREA_COPY = {
       conversionProse: `<h2>Barrhaven repair pricing — what to expect</h2>
 <p>South Ottawa families usually ask about springs first. Typical on-site ranges:</p>
 <ul>
-<li><strong>Spring replacement (double door)</strong> — $235–$395</li>
+<li><strong>One spring</strong> — $235–$350</li>
+<li><strong>Both springs (double door)</strong> — $450–$550</li>
 <li><strong>Emergency safety visit</strong> — from $215</li>
 <li><strong>Opener repair</strong> — often from $210; new units quoted by model</li>
 <li><strong>Weather sealing</strong> — from $260 before winter</li>
@@ -451,7 +454,7 @@ export const AREA_COPY = {
 <p>Transit vibration and daily cycles loosen rollers and opener chains over time. An annual <a href="/services/maintenance">maintenance tune-up</a> catches small problems before they become <a href="/services/cable-repair">cable repairs</a> or off-track panels. For drafty jambs on older bays, <a href="/services/weather-sealing">weather sealing</a> is a practical winter prep step.</p>`,
     lead: {
       priceNote:
-        "Nepean repairs: springs $235–$395 · extension systems quoted on site · rentals prioritized when door won't close",
+        "Nepean: one spring $235–$350 · both $450–$550 · extension systems quoted on site · rentals prioritized when door won't close",
       urgency: "Rental or shared driveway door won't secure? Call — we turn around Nepean safety calls quickly.",
       midCtaHeading: "Garage door issue in Nepean?",
       midCtaText:
@@ -490,7 +493,8 @@ export const AREA_COPY = {
       conversionProse: `<h2>Nepean garage door costs and booking tips</h2>
 <p>Nepean's mixed housing stock means prices depend on what is on your ceiling — we always inspect first. Common ranges:</p>
 <ul>
-<li><strong>Torsion spring replacement</strong> — $235–$395 on standard doubles</li>
+<li><strong>One torsion spring</strong> — $235–$350</li>
+<li><strong>Both springs (matched pair)</strong> — $450–$550 on standard doubles</li>
 <li><strong>Extension spring repair</strong> — quoted after inspection</li>
 <li><strong>Emergency visit</strong> — from $215 when the door is unsafe or unsecured</li>
 <li><strong>Tune-up</strong> — from $165 — useful along the transit corridor</li>

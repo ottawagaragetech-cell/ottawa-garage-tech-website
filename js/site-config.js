@@ -163,7 +163,7 @@ window.OGT = {
       slug: "spring-replacement",
       title: "Spring replacement",
       short: "Torsion and extension springs sized and installed safely — both sides when needed.",
-      price: "$235–$395",
+      price: "$235–$550",
       time: "1–2 hours",
       imageKey: "spring",
       keywords: "garage door spring replacement Ottawa, broken torsion spring, extension spring repair",
@@ -433,7 +433,7 @@ window.OGT = {
     {
       category: "pricing",
       q: "What should I budget for garage door work in Ottawa?",
-      a: "It depends on the fault. Spring jobs often land around $235–$395; cables about $180–$285; a full tune-up from $165. Priority visits for safety issues usually start near $215 before parts. New doors and openers are quoted after we see the door. We walk you through scope and price before anything major begins."
+      a: "It depends on the fault. One spring $235–$350; both springs $450–$550; cables about $180–$285; a full tune-up from $165. Priority visits for safety issues usually start near $215 before parts. New doors and openers are quoted after we see the door. We walk you through scope and price before anything major begins."
     },
     {
       category: "service",

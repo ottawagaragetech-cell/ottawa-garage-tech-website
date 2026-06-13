@@ -31,7 +31,7 @@ export const blogPosts = [
 <h2>Typical garage door repair prices in Ottawa</h2>
 <p>These ranges reflect common residential jobs. Your door size, hardware type, and whether both sides of a paired system need work will move the final number up or down.</p>
 <ul>
-<li><strong>Spring replacement:</strong> often $235–$395 for standard residential torsion or extension springs, usually replaced in pairs for balance</li>
+<li><strong>Spring replacement:</strong> one spring $235–$350, both springs $450–$550 for standard residential torsion or extension springs — usually replaced in pairs for balance</li>
 <li><strong>Cable repair:</strong> roughly $180–$285 when drums, cables, or bottom fixtures are involved</li>
 <li><strong>Maintenance tune-up:</strong> from about $165 — lubrication, balance check, hardware inspection</li>
 <li><strong>Opener repair:</strong> commonly $210–$365 for gears, limits, sensors, or motor issues; replacement quoted separately</li>
@@ -102,7 +102,7 @@ export const blogPosts = [
 <p>Our <a href="/services/spring-replacement">spring replacement service</a> includes correct sizing, balancing the door, and checking cables and rollers while we are on site.</p>
 
 <h2>What does spring replacement cost in Ottawa?</h2>
-<p>Most residential spring jobs fall in the <strong>$235–$395</strong> range depending on door size and spring type. Replacing both springs together is standard practice. See our full <a href="/blog/garage-door-repair-cost-ottawa">Ottawa pricing guide</a> for other common ranges.</p>
+<p>One spring typically runs <strong>$235–$350</strong>; both springs (matched pair) <strong>$450–$550</strong> depending on door size and spring type. Replacing both springs together is standard practice. See our full <a href="/blog/garage-door-repair-cost-ottawa">Ottawa pricing guide</a> for other common ranges.</p>
 
 <h2>Why springs break more often in winter</h2>
 <p>Metal contracts in cold temperatures. A spring near the end of its cycle count is more likely to snap on the coldest mornings — exactly when you need the door for work. An annual <a href="/services/maintenance">tune-up</a> can spot rust, gaps in coils, and balance issues before failure.</p>
