@@ -123,7 +123,7 @@
       '<a class="ogt-footer-logo" href="' +
       esc(cfg.domain) +
       '/">' +
-      '<img src="/assets/logo.svg" width="40" height="40" alt="">' +
+      '<img src="' + esc(cfg.logo || "/assets/logo.svg") + '" width="40" height="40" alt="">' +
       "<span>" +
       esc(cfg.name) +
       "</span></a>" +
@@ -304,7 +304,7 @@
     '<header class="ogt-header">' +
     '<div class="ogt-header-inner">' +
     '<a class="ogt-logo" href="' + esc(cfg.domain) + '/">' +
-    '<img src="/assets/logo.svg" width="44" height="44" alt="' +
+    '<img src="' + esc(cfg.logo || "/assets/logo.svg") + '" width="44" height="44" alt="' +
     esc(cfg.name) +
     ' logo">' +
     '<span class="ogt-logo-text">' + esc(cfg.name) + "</span></a>" +

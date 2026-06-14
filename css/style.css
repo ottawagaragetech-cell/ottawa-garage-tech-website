@@ -2606,9 +2606,9 @@ body.ogt-lightbox-open {
 .ogt-hero-collage-wrap { position: relative; }
 .ogt-hero-collage {
   position: relative;
-  min-height: 280px;
+  min-height: 300px;
 }
-@media (min-width: 900px) { .ogt-hero-collage { min-height: 380px; } }
+@media (min-width: 900px) { .ogt-hero-collage { min-height: 400px; } }
 .ogt-hero-collage img {
   position: absolute;
   border-radius: var(--ogt-radius-lg);
@@ -2617,31 +2617,32 @@ body.ogt-lightbox-open {
   object-fit: cover;
 }
 .ogt-hero-collage-main {
-  width: 72%;
+  width: 68%;
   aspect-ratio: 4/3;
   top: 0;
   right: 0;
-  z-index: 2;
+  z-index: 1;
 }
 .ogt-hero-collage-accent {
-  width: 48%;
+  width: 44%;
   aspect-ratio: 1;
   bottom: 0;
   left: 0;
-  z-index: 3;
+  z-index: 2;
 }
 .ogt-hero-collage-small {
-  width: 38%;
+  width: 40%;
   aspect-ratio: 4/3;
-  top: 8%;
-  left: 12%;
-  z-index: 1;
-  opacity: 0.95;
+  bottom: 14%;
+  left: 36%;
+  z-index: 3;
+  opacity: 1;
 }
 .ogt-hero-collage-badge {
   position: absolute;
   bottom: -0.5rem;
-  right: 1rem;
+  left: 1rem;
+  right: auto;
   z-index: 4;
   display: inline-flex;
   align-items: center;

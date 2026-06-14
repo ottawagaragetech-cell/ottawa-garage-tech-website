@@ -192,7 +192,7 @@
       var alts = {
         hero: "Insulated garage door installation Ottawa",
         springHome: "Garage door torsion spring on the shaft — Ottawa spring service",
-        opener: "Garage door opener installation",
+        opener: "Chamberlain garage door opener installed on a garage ceiling — Ottawa",
       };
       root.innerHTML = imgs
         .map(function (item) {

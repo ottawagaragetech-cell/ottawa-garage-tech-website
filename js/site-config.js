@@ -14,6 +14,7 @@ window.OGT = {
   formAction: "/api/contact",
   web3formsAccessKey: "2fc6b3ec-e3e3-4d43-a612-743c96999c96",
   serviceArea: "Ottawa, ON and surrounding communities",
+  logo: "/assets/logo.svg?v=2",
 
   images: {
     hero: "/assets/services/install-ottawa-grey.png",
