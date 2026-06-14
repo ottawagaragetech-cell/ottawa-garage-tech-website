@@ -40,12 +40,12 @@ window.OGT = {
   signatureOffers: [
     {
       title: "Winter-ready tune-up",
-      short: "21-point inspection, lubrication, balance check, and seal review before freeze — from $165.",
+      short: "21-point inspection, lubrication, balance check, and seal review before freeze.",
       href: "/services/maintenance"
     },
     {
       title: "Door won't close visit",
-      short: "Priority safety diagnostic when your home won't secure — scope agreed on site, from $215.",
+      short: "Priority safety diagnostic when your home won't secure — scope agreed on site.",
       href: "/services/emergency-repair"
     },
     {

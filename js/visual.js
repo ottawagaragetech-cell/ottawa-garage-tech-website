@@ -15,7 +15,17 @@
     return (cfg.images && cfg.images[keyOrUrl]) || "";
   }
 
-  function serviceCard(s, textOnly) {
+  function serviceCard(s, textOnly, hidePricing) {
+    var meta =
+      hidePricing
+        ? '<p class="ogt-service-card-meta"><span class="ogt-service-card-time">' +
+          esc(s.time) +
+          "</span></p>"
+        : '<p class="ogt-service-card-meta"><span class="ogt-service-card-price">' +
+          esc(s.price) +
+          '</span><span class="ogt-service-card-time">' +
+          esc(s.time) +
+          "</span></p>";
     if (textOnly) {
       return (
         '<a class="ogt-service-card ogt-service-card--text ogt-service-card--link" href="/services/' +
@@ -24,11 +34,9 @@
         esc(s.title) +
         "</h3><p>" +
         esc(s.short) +
-        '</p><p class="ogt-service-card-meta"><span class="ogt-service-card-price">' +
-        esc(s.price) +
-        '</span><span class="ogt-service-card-time">' +
-        esc(s.time) +
-        '</span></p><span class="ogt-service-card-link">Learn more →</span></a>'
+        "</p>" +
+        meta +
+        '<span class="ogt-service-card-link">Learn more →</span></a>'
       );
     }
     var src = imgSrc(s.imageKey);
@@ -50,11 +58,9 @@
       esc(s.title) +
       "</h3><p>" +
       esc(s.short) +
-      '</p><p class="ogt-service-card-meta"><span class="ogt-service-card-price">' +
-      esc(s.price) +
-      '</span><span class="ogt-service-card-time">' +
-      esc(s.time) +
-      "</span></p></span></a>"
+      "</p>" +
+      meta +
+      "</span></a>"
     );
   }
 
@@ -154,8 +160,9 @@
     renderServiceGrid: function (el) {
       if (!el || !cfg.services) return;
       var textOnly = el.getAttribute("data-card-style") === "text";
+      var hidePricing = el.getAttribute("data-hide-pricing") === "true";
       el.innerHTML = cfg.services.map(function (s) {
-        return serviceCard(s, textOnly);
+        return serviceCard(s, textOnly, hidePricing);
       }).join("");
     },
     renderShowcase: function (el) {
