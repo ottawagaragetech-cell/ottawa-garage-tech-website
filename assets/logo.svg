@@ -1,6 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Ottawa Garage Tech">
   <rect width="64" height="64" rx="12" fill="#145c49"/>
-  <path d="M14 38V26l18-10 18 10v12" fill="none" stroke="#c4a052" stroke-width="3" stroke-linejoin="round"/>
-  <rect x="26" y="34" width="12" height="14" rx="2" fill="#f7f5f1"/>
-  <circle cx="32" cy="41" r="1.5" fill="#145c49"/>
+  <rect x="7" y="16" width="50" height="38" rx="2.5" fill="none" stroke="#c4a052" stroke-width="2.5"/>
+  <rect x="10.5" y="19.5" width="43" height="31" rx="1" fill="#f7f5f1"/>
+  <rect x="13" y="22" width="8" height="5.5" rx="0.75" fill="#c8ddd6"/>
+  <rect x="23.5" y="22" width="8" height="5.5" rx="0.75" fill="#c8ddd6"/>
+  <rect x="34" y="22" width="8" height="5.5" rx="0.75" fill="#c8ddd6"/>
+  <rect x="44.5" y="22" width="8" height="5.5" rx="0.75" fill="#c8ddd6"/>
+  <path d="M10.5 30h43M10.5 35.5h43M10.5 41h43M10.5 46.5h43" stroke="#145c49" stroke-width="1.4" stroke-opacity="0.22"/>
+  <rect x="10.5" y="29" width="43" height="6.5" fill="#ebe8e3"/>
+  <rect x="10.5" y="40.5" width="43" height="6.5" fill="#ebe8e3"/>
+  <rect x="27" y="47.5" width="10" height="2.5" rx="1.25" fill="#c4a052"/>
 </svg>
