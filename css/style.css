@@ -3155,6 +3155,21 @@ body.ogt-lightbox-open {
   color: var(--ogt-text-muted);
 }
 
+.ogt-coverage-regions-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ogt-space-sm);
+  min-width: 0;
+}
+
+.ogt-coverage-regions-label {
+  margin: 0;
+  font-family: var(--ogt-font-display);
+  font-size: var(--ogt-text-sm);
+  font-weight: 700;
+  color: var(--ogt-primary-dark);
+}
+
 .ogt-coverage-regions.ogt-areas-grouped {
   display: flex;
   flex-direction: column;
@@ -3211,8 +3226,29 @@ body.ogt-lightbox-open {
 }
 
 @media (max-width: 959px) {
+  .ogt-service-map--coverage {
+    height: min(260px, 45vh);
+    min-height: 220px;
+  }
+
   .ogt-coverage-regions.ogt-areas-grouped {
-    max-height: 240px;
+    max-height: none;
     min-height: 0;
+    overflow: visible;
+    padding-right: 0;
+  }
+
+  .ogt-coverage-regions-label {
+    margin-top: var(--ogt-space-xs);
+    text-align: center;
+  }
+
+  .ogt-coverage-regions .ogt-areas-region {
+    padding-bottom: var(--ogt-space-md);
+  }
+
+  .ogt-coverage-regions .ogt-area-chip {
+    font-size: var(--ogt-text-sm);
+    padding: 0.45em 0.85em;
   }
 }

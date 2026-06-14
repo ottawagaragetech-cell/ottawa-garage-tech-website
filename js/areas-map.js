@@ -143,6 +143,7 @@
 
   function bindAreaSelectors(root) {
     if (!root) return;
+    var mapOnlyTap = window.matchMedia("(min-width: 960px)").matches;
     root.querySelectorAll("a[data-area]").forEach(function (chip) {
       chip.addEventListener("mouseenter", function () {
         var slug = chip.getAttribute("data-area");
@@ -159,7 +160,7 @@
       chip.addEventListener("click", function (e) {
         var slug = chip.getAttribute("data-area");
         if (!markers[slug]) return;
-        if (chip.classList.contains("ogt-area-chip")) {
+        if (chip.classList.contains("ogt-area-chip") && mapOnlyTap) {
           e.preventDefault();
           setActive(slug, true);
         } else {
