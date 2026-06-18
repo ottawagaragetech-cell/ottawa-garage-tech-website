@@ -93,6 +93,16 @@ export const AREA_COPY = {
       "Drafty bottom seals on attached garages",
       "Curb-appeal door upgrades before listing",
     ],
+    neighborhoods: [
+      "Centretown",
+      "The Glebe",
+      "Sandy Hill",
+      "Alta Vista",
+      "Hunt Club",
+      "Vanier",
+      "Westboro",
+      "Orleans corridor",
+    ],
   },
   kanata: {
     hero: 1,
@@ -522,6 +532,16 @@ export const AREA_COPY = {
       "Tan and charcoal door colour updates",
       "Opener gear repairs on aging units",
     ],
+    neighborhoods: [
+      "Chapel Hill",
+      "Fallingbrook",
+      "Avalon",
+      "Notting Gate",
+      "Orléans Village",
+      "Châteauneuf",
+      "Tenth Line",
+      "Innes corridor",
+    ],
   },
   gloucester: {
     hero: 3,
@@ -537,6 +557,15 @@ export const AREA_COPY = {
       "Townhome doors stuck after power outages",
       "Sensor issues on short driveways",
       "Seal replacement on 1960s–70s builds",
+    ],
+    neighborhoods: [
+      "Carson Grove",
+      "Pineview",
+      "Cyrville",
+      "Beacon Hill North",
+      "Blair Road",
+      "Montreal Road",
+      "Ogilvie",
     ],
   },
   manotick: {
@@ -554,6 +583,14 @@ export const AREA_COPY = {
       "Threshold and bottom seal upgrades",
       "Rural-lot scheduling by phone",
     ],
+    neighborhoods: [
+      "Manotick Village",
+      "Rideau Forest",
+      "Mahogany",
+      "Miller's Farm",
+      "Sunset Shores",
+      "Watson's Mill",
+    ],
   },
   richmond: {
     hero: 1,
@@ -569,6 +606,13 @@ export const AREA_COPY = {
       "Wind-related off-track on exposed bays",
       "Opener installs with battery backup",
       "Seasonal maintenance on high-lift doors",
+    ],
+    neighborhoods: [
+      "Richmond Village",
+      "Fallowfield",
+      "Bells Corners border",
+      "Twin Elm",
+      "Franktown Road",
     ],
   },
   carp: {
@@ -586,6 +630,13 @@ export const AREA_COPY = {
       "Detached garage opener replacements",
       "Track reinforcement on wide openings",
     ],
+    neighborhoods: [
+      "Carp Village",
+      "Huntley",
+      "Corkery",
+      "West Carleton",
+      "Kinburn",
+    ],
   },
   rockland: {
     hero: 3,
@@ -601,6 +652,14 @@ export const AREA_COPY = {
       "Double-door installs on new Rockland builds",
       "Opener safety tests after power blips",
       "Rusty panel assessment before winter",
+    ],
+    neighborhoods: [
+      "Rockland Centre",
+      "Laurier",
+      "St. Joseph",
+      "Clarence Creek",
+      "Bourget",
+      "Hammond",
     ],
   },
   kemptville: {
@@ -618,6 +677,13 @@ export const AREA_COPY = {
       "Opener repairs on older chain drives",
       "New door quotes on acreage builds",
     ],
+    neighborhoods: [
+      "Kemptville Centre",
+      "North Grenville",
+      "Oxford Mills",
+      "Bishop's Mills",
+      "County Road 43",
+    ],
   },
   "carleton-place": {
     hero: 0,
@@ -633,6 +699,13 @@ export const AREA_COPY = {
       "Curb-appeal door swaps on main street",
       "Tune-ups on high-mileage hardware",
       "Opener battery backup installs",
+    ],
+    neighborhoods: [
+      "Carleton Place downtown",
+      "Mississippi Quays",
+      "McNeely Avenue",
+      "Ashton border",
+      "Franktown Road",
     ],
   },
   "alta-vista": {
@@ -650,6 +723,14 @@ export const AREA_COPY = {
       "Safety sensor realignment",
       "Insulated panel upgrades on attached garages",
     ],
+    neighborhoods: [
+      "Alta Vista",
+      "Riverside Park",
+      "Riverview",
+      "Guildwood Estates",
+      "Alta Vista Drive",
+      "Riverside Drive",
+    ],
   },
   westboro: {
     hero: 13,
@@ -665,6 +746,14 @@ export const AREA_COPY = {
       "Rear-lane access repairs",
       "Track clearing after windstorms",
       "Smart opener setup on renovated homes",
+    ],
+    neighborhoods: [
+      "Westboro",
+      "Wellington Village",
+      "Island Park",
+      "McKellar Park",
+      "Byron Avenue",
+      "Richmond Road",
     ],
   },
   vanier: {
@@ -682,6 +771,14 @@ export const AREA_COPY = {
       "Opener remotes for multi-tenant access",
       "Budget-conscious repair vs replace advice",
     ],
+    neighborhoods: [
+      "Vanier",
+      "Overbrook",
+      "Beechwood Village",
+      "Cardinal Heights",
+      "Montreal Road",
+      "St. Laurent Boulevard",
+    ],
   },
   "hunt-club": {
     hero: 0,
@@ -697,6 +794,14 @@ export const AREA_COPY = {
       "Townhome off-track after tight parking",
       "Weather seal replacement before winter",
       "Opener limit adjustments after spring work",
+    ],
+    neighborhoods: [
+      "Hunt Club",
+      "South Keys",
+      "Uplands",
+      "Airport Parkway",
+      "Walkley Road",
+      "Bank Street south",
     ],
   },
   "riverside-south": {
@@ -714,6 +819,14 @@ export const AREA_COPY = {
       "Charcoal and grey panel colour matching",
       "Opener gear wear on builder-grade units",
     ],
+    neighborhoods: [
+      "Riverside South",
+      "Riverview",
+      "Limebank Road",
+      "Earl Armstrong",
+      "Vimy Ridge",
+      "Leitrim",
+    ],
   },
   "findlay-creek": {
     hero: 2,
@@ -729,6 +842,13 @@ export const AREA_COPY = {
       "Track cleaning after construction dust",
       "Insulation upgrades on standard panels",
       "Double-door balance checks",
+    ],
+    neighborhoods: [
+      "Findlay Creek",
+      "Bank Street south",
+      "Vimy Ridge",
+      "Leitrim",
+      "Gloucester South",
     ],
   },
   greely: {
@@ -746,6 +866,13 @@ export const AREA_COPY = {
       "Heavy door balance on estate garages",
       "Opener upgrades on workshop bays",
     ],
+    neighborhoods: [
+      "Greely Village",
+      "Mitch Owens Road",
+      "Bank Street south",
+      "Manotick border",
+      "Osgoode fringe",
+    ],
   },
   metcalfe: {
     hero: 5,
@@ -761,6 +888,13 @@ export const AREA_COPY = {
       "Farm garage weather sealing",
       "Opener repairs on detached buildings",
       "Oversized door consultations",
+    ],
+    neighborhoods: [
+      "Metcalfe Village",
+      "Vernon",
+      "Wilson Road",
+      "8th Line Road",
+      "Osgoode border",
     ],
   },
   osgoode: {
@@ -778,6 +912,13 @@ export const AREA_COPY = {
       "Rural sensor issues after outages",
       "Custom door measurement visits",
     ],
+    neighborhoods: [
+      "Osgoode Village",
+      "Edward",
+      "River Road",
+      "Manotick Station",
+      "Vernon border",
+    ],
   },
   dunrobin: {
     hero: 1,
@@ -793,6 +934,14 @@ export const AREA_COPY = {
       "River-lot draft sealing",
       "Heavy spring setups on wide doors",
       "Detached garage opener replacement",
+    ],
+    neighborhoods: [
+      "Dunrobin Shores",
+      "Fitzroy Harbour",
+      "Dunrobin Village",
+      "West Carleton",
+      "Thomas Dolan Parkway",
+      "Dunrobin Road",
     ],
   },
   "constance-bay": {
@@ -810,6 +959,13 @@ export const AREA_COPY = {
       "Wind off-track realignment",
       "Seasonal scheduling for waterfront homes",
     ],
+    neighborhoods: [
+      "Constance Bay",
+      "Buckham's Bay",
+      "Torbolton",
+      "Dunrobin fringe",
+      "Bayview Road",
+    ],
   },
   cumberland: {
     hero: 3,
@@ -825,6 +981,14 @@ export const AREA_COPY = {
       "New subdivision double-door installs",
       "East-end wind seal upgrades",
       "Opener repairs after power events",
+    ],
+    neighborhoods: [
+      "Cumberland Village",
+      "Vars",
+      "Navan",
+      "Leonard",
+      "Innes Road east",
+      "Tenth Line",
     ],
   },
   "blackburn-hamlet": {
@@ -842,6 +1006,13 @@ export const AREA_COPY = {
       "Insulated upgrade on attached garages",
       "Opener gear wear on original units",
     ],
+    neighborhoods: [
+      "Blackburn Hamlet",
+      "Pineglen",
+      "Humphrey",
+      "Innes corridor",
+      "Greenspace loop",
+    ],
   },
   "beacon-hill": {
     hero: 3,
@@ -857,6 +1028,13 @@ export const AREA_COPY = {
       "Sloped driveway limit adjustments",
       "Roller replacement on high-cycle doors",
       "Storm-related off-track fixes",
+    ],
+    neighborhoods: [
+      "Beacon Hill North",
+      "Beacon Hill South",
+      "Cardinal Heights",
+      "Rothwell Heights",
+      "Tomkins Bay",
     ],
   },
   glebe: {
@@ -874,6 +1052,14 @@ export const AREA_COPY = {
       "Custom width measurement",
       "Quiet opener upgrades on lane homes",
     ],
+    neighborhoods: [
+      "The Glebe",
+      "Lansdowne",
+      "Bank Street",
+      "Canal area",
+      "Fifth Avenue",
+      "O'Connor Street",
+    ],
   },
   "sandy-hill": {
     hero: 0,
@@ -890,6 +1076,14 @@ export const AREA_COPY = {
       "Low-headroom solutions",
       "Landlord maintenance scheduling",
     ],
+    neighborhoods: [
+      "Sandy Hill",
+      "Lowertown fringe",
+      "University of Ottawa area",
+      "Charlotte Street",
+      "Nelson Street",
+      "Rideau Street",
+    ],
   },
   "rockcliffe-park": {
     hero: 4,
@@ -905,6 +1099,13 @@ export const AREA_COPY = {
       "Premium panel replacement consultations",
       "Corrosion on shaded, damp bays",
       "Quiet belt-drive opener installs",
+    ],
+    neighborhoods: [
+      "Rockcliffe Park",
+      "New Edinburgh fringe",
+      "Stanley Avenue",
+      "Acacia Avenue",
+      "Lansdowne Road",
     ],
   },
 };

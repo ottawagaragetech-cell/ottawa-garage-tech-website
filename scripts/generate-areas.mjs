@@ -138,38 +138,35 @@ const AREA_GEO = {
   "rockcliffe-park": { lat: 45.45, lng: -75.66 },
 };
 
-const AREA_META = {
-  ottawa: "Mobile garage door help across Ottawa — urgent safety calls, springs, openers, and new insulated installs.",
-  kanata:
-    "Kanata garage door repair and installation — Beaverbrook, Bridlewood, Kanata North, springs, openers, and insulated double-door replacements.",
-  barrhaven:
-    "Barrhaven garage door service — Chapman Mills, Half Moon Bay, Longfields, spring repair, opener fixes, and new door installs on south Ottawa routes.",
-  orleans: "East-end garage door service in Orleans — spring work, opener fixes, and new door installs.",
-  nepean:
-    "Nepean garage door repairs — Centrepointe, Craig Henry, Merivale corridor, extension and torsion springs, openers, and full replacements.",
-  stittsville:
-    "Stittsville garage door service — village homes and west-end subdivisions, spring failures, track alignment, and insulated upgrades.",
-  gloucester: "Gloucester garage door help — priority scheduling when routes allow for stuck or crooked doors.",
-  manotick: "Manotick garage door repairs — village and rural driveways, springs, openers, and sealing.",
-  rockland: "Rockland garage door service — mobile repairs for springs, openers, and installs east of Ottawa.",
-};
+function areaNeighborhoods(area) {
+  const copy = AREA_COPY[area.slug];
+  return copy?.neighborhoods || [];
+}
+
+function formatMetaNeighborhoods(names, max = 3) {
+  if (!names?.length) return "";
+  const picked = names.slice(0, max);
+  let text = picked.join(", ");
+  if (names.length > max) text += ", and more";
+  return text;
+}
 
 function areaMetaDescription(area) {
-  if (AREA_META[area.slug]) {
-    return AREA_META[area.slug] + " Call " + PHONE_DISPLAY + ".";
+  const hoods = formatMetaNeighborhoods(areaNeighborhoods(area), 3);
+  const services = "springs, cables, openers";
+  if (hoods) {
+    return `Garage door repair in ${area.name} — ${hoods} — ${services}. Clear on-site estimates. Call ${PHONE_DISPLAY}.`;
   }
   const regional = {
-    west: `West-end garage door repair in ${area.name} — springs, cables, openers, and insulated replacements`,
-    south: `South Ottawa garage door repair in ${area.name} — springs, cables, openers, and new door installs`,
-    east: `${area.name} garage door repair — crooked doors, failed springs, cables, and opener diagnostics`,
-    central: `Central Ottawa garage door repair in ${area.name} — springs, cables, openers, and older-home installs`,
-    outer: `Garage door repair in ${area.name} and nearby — springs, cables, openers; call to confirm timing`,
+    west: `West-end garage door repair in ${area.name}`,
+    south: `South Ottawa garage door repair in ${area.name}`,
+    east: `East-end garage door repair in ${area.name}`,
+    central: `Central Ottawa garage door repair in ${area.name}`,
+    outer: `Garage door repair in ${area.name} and nearby communities`,
   };
   return (
-    (regional[area.region] || `Garage door repair in ${area.name} — springs, cables, and openers`) +
-    ". Clear on-site estimates. Call " +
-    PHONE_DISPLAY +
-    "."
+    (regional[area.region] || `Garage door repair in ${area.name}`) +
+    ` — ${services}. Clear on-site estimates. Call ${PHONE_DISPLAY}.`
   );
 }
 
@@ -319,7 +316,18 @@ function areaPage(area, index) {
     `Ottawa Garage Tech serves ${area.name} and nearby streets for springs, openers, cables, new doors, and urgent safety calls — with clear scope and price before major work.`;
   const keywords =
     local.keywords ??
-    `garage door repair ${area.name}, garage door service ${area.name}, garage door springs ${area.name}`;
+    (function () {
+      const hoods = areaNeighborhoods(area);
+      const parts = [
+        `garage door repair ${area.name}`,
+        `garage door service ${area.name}`,
+        `garage door springs ${area.name}`,
+      ];
+      hoods.slice(0, 3).forEach(function (n) {
+        parts.push(`garage door repair ${n}`);
+      });
+      return parts.join(", ");
+    })();
   const seoSection =
     local.neighborhoods?.length || local.seoProse
       ? `<section class="ogt-section ogt-section--alt">
