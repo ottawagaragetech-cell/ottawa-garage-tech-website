@@ -95,13 +95,13 @@ html.ogt-premium .ogt-btn-call {
 }
 
 /* Back to top must not use reveal / button shine styles */
-html.ogt-premium .ogt-back-to-top {
+html.ogt-premium #ogt-back-to-top-btn.ogt-back-to-top {
   position: fixed !important;
   overflow: visible;
   isolation: auto;
 }
 
-html.ogt-premium .ogt-back-to-top::before {
+html.ogt-premium #ogt-back-to-top-btn.ogt-back-to-top::before {
   display: none !important;
 }
 

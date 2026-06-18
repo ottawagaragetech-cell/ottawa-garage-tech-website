@@ -6,12 +6,10 @@
 
   /* Load early so a later layout error cannot block these scripts */
   (function loadSiteScripts() {
-    ["effects.js", "back-to-top.js"].forEach(function (file) {
-      var s = document.createElement("script");
-      s.src = "/js/" + file;
-      s.defer = true;
-      document.body.appendChild(s);
-    });
+    var s = document.createElement("script");
+    s.src = "/js/effects.js";
+    s.defer = true;
+    document.body.appendChild(s);
   })();
 
   var page = document.documentElement.getAttribute("data-ogt-page") || "";
@@ -598,6 +596,44 @@
       quoteButton("ogt-btn ogt-btn-secondary ogt-sticky-cta-quote", "Free quote", "/contact");
     document.body.appendChild(bar);
     document.documentElement.classList.add("ogt-sticky-cta-on");
+  })();
+
+  (function initBackToTop() {
+    document.querySelectorAll(".ogt-back-to-top").forEach(function (el) {
+      el.remove();
+    });
+    if (document.getElementById("ogt-back-to-top-btn")) return;
+
+    function scrollY() {
+      return (
+        window.pageYOffset ||
+        document.documentElement.scrollTop ||
+        document.body.scrollTop ||
+        0
+      );
+    }
+
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.id = "ogt-back-to-top-btn";
+    btn.className = "ogt-back-to-top";
+    btn.setAttribute("aria-label", "Back to top");
+    btn.innerHTML = '<span class="ogt-back-to-top-icon" aria-hidden="true">↑</span>';
+    document.body.appendChild(btn);
+
+    function update() {
+      btn.classList.toggle("is-visible", scrollY() > 120);
+    }
+
+    btn.addEventListener("click", function () {
+      var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      window.scrollTo({ top: 0, behavior: reduced ? "auto" : "smooth" });
+    });
+
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update, { passive: true });
+    update();
+    setTimeout(update, 100);
   })();
 
 })();

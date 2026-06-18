@@ -1871,14 +1871,14 @@ a.ogt-area-chip:hover {
   max-width: 52rem;
 }
 
-/* Back to top — always fixed; visibility via opacity (not display:none) */
-.ogt-back-to-top {
+/* Back to top — single fixed button, bottom-right only */
+#ogt-back-to-top-btn.ogt-back-to-top {
   position: fixed !important;
   top: auto !important;
   left: auto !important;
-  right: max(1.25rem, env(safe-area-inset-right, 0px)) !important;
+  right: max(0.85rem, env(safe-area-inset-right, 0px)) !important;
   bottom: max(1.25rem, env(safe-area-inset-bottom, 0px)) !important;
-  z-index: 2147483000 !important;
+  z-index: 9995 !important;
   width: 3rem;
   height: 3rem;
   display: flex !important;
@@ -1907,19 +1907,23 @@ a.ogt-area-chip:hover {
     box-shadow 0.2s ease;
 }
 
-.ogt-back-to-top.is-visible {
+.ogt-back-to-top:not(#ogt-back-to-top-btn) {
+  display: none !important;
+}
+
+#ogt-back-to-top-btn.ogt-back-to-top.is-visible {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
   transform: translateY(0);
 }
 
-.ogt-back-to-top:hover {
+#ogt-back-to-top-btn.ogt-back-to-top:hover {
   background: var(--ogt-accent-light, #e8d5a8);
   box-shadow: 0 6px 24px rgba(12, 40, 32, 0.45);
 }
 
-.ogt-back-to-top:focus-visible {
+#ogt-back-to-top-btn.ogt-back-to-top:focus-visible {
   outline: 2px solid var(--ogt-primary-dark);
   outline-offset: 3px;
 }
@@ -1933,17 +1937,17 @@ a.ogt-area-chip:hover {
 }
 
 /* Never treat as scroll-reveal target */
-html.ogt-premium .ogt-back-to-top,
-html.ogt-premium .ogt-back-to-top.is-visible {
+html.ogt-premium #ogt-back-to-top-btn.ogt-back-to-top,
+html.ogt-premium #ogt-back-to-top-btn.ogt-back-to-top.is-visible {
   transform: translateY(0.75rem);
 }
 
-html.ogt-premium .ogt-back-to-top.is-visible {
+html.ogt-premium #ogt-back-to-top-btn.ogt-back-to-top.is-visible {
   transform: translateY(0);
 }
 
 @media (max-width: 599px) {
-  .ogt-back-to-top {
+  #ogt-back-to-top-btn.ogt-back-to-top {
     width: 2.85rem;
     height: 2.85rem;
   }
@@ -1987,19 +1991,20 @@ html.ogt-cinematic.ogt-sticky-cta-on body {
     display: grid;
   }
 
-  .ogt-back-to-top,
-  html.ogt-premium .ogt-back-to-top {
-    bottom: calc(4.65rem + env(safe-area-inset-bottom, 0px)) !important;
+  #ogt-back-to-top-btn.ogt-back-to-top {
+    bottom: calc(4.75rem + env(safe-area-inset-bottom, 0px)) !important;
+    right: max(0.85rem, env(safe-area-inset-right, 0px)) !important;
+    left: auto !important;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .ogt-back-to-top {
+  #ogt-back-to-top-btn.ogt-back-to-top {
     transition: opacity 0.15s ease, visibility 0.15s ease;
     transform: none;
   }
-  html.ogt-premium .ogt-back-to-top,
-  html.ogt-premium .ogt-back-to-top.is-visible {
+  html.ogt-premium #ogt-back-to-top-btn.ogt-back-to-top,
+  html.ogt-premium #ogt-back-to-top-btn.ogt-back-to-top.is-visible {
     transform: none;
   }
 }
