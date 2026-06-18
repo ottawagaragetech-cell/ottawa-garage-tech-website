@@ -26,6 +26,14 @@
       "bottom:max(1.25rem,env(safe-area-inset-bottom,0px));" +
       "top:auto;left:auto;z-index:2147483000;margin:0;";
 
+    function syncBottomOffset() {
+      var stickyOn = window.matchMedia("(max-width: 1179px)").matches;
+      var bottom = stickyOn
+        ? "calc(4.65rem + env(safe-area-inset-bottom,0px))"
+        : "max(1.25rem,env(safe-area-inset-bottom,0px))";
+      btn.style.bottom = bottom;
+    }
+
     document.body.appendChild(btn);
 
     function update() {
@@ -39,7 +47,11 @@
 
     window.addEventListener("scroll", update, { passive: true });
     document.addEventListener("scroll", update, { passive: true });
-    window.addEventListener("resize", update, { passive: true });
+    window.addEventListener("resize", function () {
+      syncBottomOffset();
+      update();
+    }, { passive: true });
+    syncBottomOffset();
     update();
     setTimeout(update, 100);
     setTimeout(update, 500);

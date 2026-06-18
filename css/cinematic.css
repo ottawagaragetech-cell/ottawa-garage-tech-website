@@ -794,8 +794,21 @@ html.ogt-cinematic .ogt-coverage-featured-card {
   background: rgba(255, 255, 255, 0.9);
 }
 
+html.ogt-cinematic .ogt-coverage-map-wrap {
+  background: rgba(255, 255, 255, 0.92);
+}
+
 html.ogt-cinematic .ogt-service-map--coverage {
   background: #f4f1ea;
+}
+
+@media (max-width: 959px) {
+  html.ogt-cinematic .ogt-coverage-regions-wrap,
+  html.ogt-cinematic .ogt-coverage-map-wrap {
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
 }
 
 /* Contact — glass panels over page bg */

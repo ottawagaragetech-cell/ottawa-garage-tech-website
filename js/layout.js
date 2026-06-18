@@ -516,7 +516,10 @@
     window.addEventListener("scroll", onScroll, { passive: true });
   }
   if (headerWrap) {
+    var headerInner = document.querySelector(".ogt-header-inner");
     function syncHeaderOffset() {
+      var barH = headerInner ? headerInner.offsetHeight : 72;
+      document.documentElement.style.setProperty("--ogt-header-bar-height", barH + "px");
       document.documentElement.style.setProperty(
         "--ogt-header-height",
         headerWrap.offsetHeight + "px"
@@ -580,6 +583,22 @@
       appendQuoteEmail(wrap, "ogt-btn ogt-btn-secondary ogt-btn-on-dark");
     }
   });
+
+  (function injectStickyCta() {
+    if (document.getElementById("ogt-sticky-cta")) return;
+    var bar = document.createElement("div");
+    bar.id = "ogt-sticky-cta";
+    bar.className = "ogt-sticky-cta";
+    bar.setAttribute("role", "region");
+    bar.setAttribute("aria-label", "Quick contact");
+    bar.innerHTML =
+      '<a class="ogt-btn ogt-btn-call ogt-sticky-cta-call" href="tel:' +
+      cfg.phoneTel +
+      '">Call now</a>' +
+      quoteButton("ogt-btn ogt-btn-secondary ogt-sticky-cta-quote", "Free quote", "/contact");
+    document.body.appendChild(bar);
+    document.documentElement.classList.add("ogt-sticky-cta-on");
+  })();
 
 })();
 
