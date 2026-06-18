@@ -10,6 +10,12 @@ import { isDuplicateImagePair } from "./image-dedupe.mjs";
 
 const root = path.resolve(import.meta.dirname, "..");
 const domain = "https://ottawagaragetech.ca";
+const PHONE_DISPLAY = "(613) 900-6005";
+const AREA_TITLE_SERVICES = "Springs, Cables";
+
+function areaMetaTitle(area) {
+  return `Garage Door Repair ${area.name} | ${PHONE_DISPLAY} | ${AREA_TITLE_SERVICES}`;
+}
 
 function esc(s) {
   return String(s)
@@ -150,16 +156,21 @@ const AREA_META = {
 
 function areaMetaDescription(area) {
   if (AREA_META[area.slug]) {
-    return AREA_META[area.slug] + " Call (613) 900-6005.";
+    return AREA_META[area.slug] + " Call " + PHONE_DISPLAY + ".";
   }
   const regional = {
-    west: `West-end garage door help in ${area.name} — springs, openers, and insulated replacements.`,
-    south: `South Ottawa garage door visits in ${area.name} — springs, openers, and new door installs.`,
-    east: `${area.name} garage door crew — crooked doors, failed springs, and opener diagnostics.`,
-    central: `Central Ottawa service in ${area.name} — older homes, laneways, and narrow driveways.`,
-    outer: `We travel to ${area.name} and nearby — call to confirm timing; vans carry common parts.`,
+    west: `West-end garage door repair in ${area.name} — springs, cables, openers, and insulated replacements`,
+    south: `South Ottawa garage door repair in ${area.name} — springs, cables, openers, and new door installs`,
+    east: `${area.name} garage door repair — crooked doors, failed springs, cables, and opener diagnostics`,
+    central: `Central Ottawa garage door repair in ${area.name} — springs, cables, openers, and older-home installs`,
+    outer: `Garage door repair in ${area.name} and nearby — springs, cables, openers; call to confirm timing`,
   };
-  return (regional[area.region] || `Garage door service in ${area.name}.`) + " Clear on-site estimates. (613) 900-6005.";
+  return (
+    (regional[area.region] || `Garage door repair in ${area.name} — springs, cables, and openers`) +
+    ". Clear on-site estimates. Call " +
+    PHONE_DISPLAY +
+    "."
+  );
 }
 
 const REGION_NOTE = {
@@ -295,7 +306,7 @@ function areaPage(area, index) {
   const lead = local.lead;
   const visit = local.visit ?? REGION_VISIT[area.region];
   const canonical = `${domain}/areas/${area.slug}`;
-  const title = `Garage Door Service ${area.name} | Ottawa Garage Tech`;
+  const title = areaMetaTitle(area);
   const desc = areaMetaDescription(area);
   const geo = AREA_GEO[area.slug];
   const geoBlock = geo
@@ -411,7 +422,7 @@ function areaPage(area, index) {
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": ${JSON.stringify("Garage door repair in " + area.name)},
+    "name": ${JSON.stringify("Garage Door Repair " + area.name)},
     "description": ${JSON.stringify(desc)},
     "serviceType": "Garage door repair and installation",
     "provider": {
