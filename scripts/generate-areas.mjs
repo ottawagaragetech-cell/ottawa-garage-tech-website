@@ -151,11 +151,21 @@ function formatMetaNeighborhoods(names, max = 3) {
   return text;
 }
 
+const AREA_META_SERVICES = {
+  west: "spring replacement, opener repair, insulated doors & emergency service",
+  south: "spring replacement, opener service, new door installs & tune-ups",
+  east: "spring repair, off-track doors, opener fixes & weather sealing",
+  central: "spring & cable repair, opener service, new doors & emergency calls",
+  outer: "mobile spring repair, opener service, new doors & rural scheduling",
+};
+
 function areaMetaDescription(area) {
   const hoods = formatMetaNeighborhoods(areaNeighborhoods(area), 3);
-  const services = "springs, cables, openers";
+  const services =
+    AREA_META_SERVICES[area.region] ||
+    "spring replacement, cable repair, opener service, new doors & emergency repair";
   if (hoods) {
-    return `Garage door repair in ${area.name} — ${hoods} — ${services}. Clear on-site estimates. Call ${PHONE_DISPLAY}.`;
+    return `Garage door repair in ${area.name} — ${hoods} — ${services}. Licensed mobile technicians. Call ${PHONE_DISPLAY}.`;
   }
   const regional = {
     west: `West-end garage door repair in ${area.name}`,
@@ -166,7 +176,7 @@ function areaMetaDescription(area) {
   };
   return (
     (regional[area.region] || `Garage door repair in ${area.name}`) +
-    ` — ${services}. Clear on-site estimates. Call ${PHONE_DISPLAY}.`
+    ` — ${services}. Licensed mobile technicians. Call ${PHONE_DISPLAY}.`
   );
 }
 

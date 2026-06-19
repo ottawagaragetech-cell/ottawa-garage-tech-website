@@ -240,13 +240,13 @@ function indexPage() {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Garage Door Blog Ottawa | Tips, Costs &amp; Repair Guides | Ottawa Garage Tech</title>
-  <meta name="description" content="Garage door tips for Ottawa homeowners — repair pricing, broken springs, insulation, winter prep, and troubleshooting from Ottawa Garage Tech.">
+  <meta name="description" content="Garage door tips for Ottawa homeowners — broken springs, opener troubleshooting, insulation, winter prep & repair guides from local technicians.">
   <meta name="keywords" content="garage door blog Ottawa, garage door tips, garage door repair guide Ottawa">
   <link rel="canonical" href="${domain}/blog">
   <meta name="robots" content="index, follow">${socialMeta({
     title: "Garage Door Blog | Ottawa Garage Tech",
     description:
-      "Garage door repair tips, cost guides, and Ottawa-specific advice from local technicians.",
+      "Garage door repair tips, spring & opener guides, and Ottawa-specific advice for Kanata, Barrhaven, Orleans & suburbs.",
     url: `${domain}/blog`,
     image: BLOG_IMAGES.blogIndex,
   })}
@@ -289,7 +289,7 @@ function indexPage() {
       <div class="ogt-page-hero-text">
         <p class="ogt-section-label">Blog</p>
         <h1>Garage door tips for Ottawa homeowners</h1>
-        <p class="ogt-section-intro">Practical guides on repair costs, broken springs, insulation, winter prep, and when to call a local technician — written for Ottawa's climate and neighbourhoods.</p>
+        <p class="ogt-section-intro">Practical guides on broken springs, opener troubleshooting, insulation, winter prep, and when to call a local technician — written for Ottawa's climate and neighbourhoods.</p>
         <a class="ogt-btn ogt-btn-primary" href="/contact">Get a quote</a>
       </div>
       <div class="ogt-page-hero-media">

@@ -92,7 +92,7 @@ const serviceTitles = {
 const services = {
   "emergency-repair": {
     title: "Urgent Garage Door Repair Ottawa | Priority Visits",
-    desc: "Urgent garage door repair in Ottawa — off-track doors, broken springs, doors that will not close. Call (613) 900-6005 when safety is at risk.",
+    desc: "Emergency garage door repair in Ottawa, Kanata & Barrhaven — off-track doors, broken springs, doors that will not close. Priority safety visits. Call (613) 900-6005.",
     h1: "Emergency garage door repair",
     imageKey: "emergency",
     keywords: "emergency garage door repair Ottawa, stuck garage door, off track door, same day garage door repair",
@@ -124,7 +124,7 @@ const services = {
   },
   "spring-replacement": {
     title: "Garage Door Spring Replacement Ottawa | Torsion & Extension",
-    desc: "Garage door spring replacement in Ottawa. Correct sizing, matched pairs when needed, clear on-site estimates. Ottawa Garage Tech — (613) 900-6005.",
+    desc: "Garage door spring replacement in Ottawa & suburbs — torsion and extension springs, matched pairs, balance testing. Kanata, Barrhaven, Orleans & more. (613) 900-6005.",
     h1: "Garage door spring replacement",
     imageKey: "spring",
     keywords: "garage door spring replacement Ottawa, broken torsion spring, extension spring repair, garage door spring cost Ottawa",
@@ -161,7 +161,7 @@ const services = {
   },
   "garage-door-installation": {
     title: "New Garage Door Installation Ottawa | Insulated & Standard Doors",
-    desc: "New garage door supply and installation in Ottawa. Well-insulated and standard steel doors, free estimates, old door removal. Call Ottawa Garage Tech.",
+    desc: "New garage door installation in Ottawa, Kanata & Barrhaven — insulated steel, wood-grain panels, old door removal & opener pairing. Free on-site estimates.",
     h1: "New garage door installation",
     imageKey: "install",
     keywords: "garage door installation Ottawa, new garage door, insulated garage door Ottawa, high R-value garage door, replace garage door",
@@ -198,7 +198,7 @@ const services = {
   },
   "opener-service": {
     title: "Garage Door Opener Repair & Installation Ottawa",
-    desc: "Garage door opener repair and installation in Ottawa — Chamberlain, LiftMaster, Genie, and smart openers. Gears, sensors, remotes, and new installs.",
+    desc: "Garage door opener repair in Ottawa & suburbs — Chamberlain, LiftMaster, Genie, smart openers, sensors, remotes & new installs. (613) 900-6005.",
     h1: "Garage door opener service",
     imageKey: "opener",
     keywords: "garage door opener repair Ottawa, Chamberlain opener repair, opener installation Ottawa, smart garage door opener",
@@ -230,7 +230,7 @@ const services = {
   },
   "cable-repair": {
     title: "Garage Door Cable Repair Ottawa | Lift Cables",
-    desc: "Garage door cable replacement in Ottawa. Frayed or snapped lift cables repaired safely in pairs. Ottawa Garage Tech.",
+    desc: "Garage door cable repair in Ottawa & suburbs — frayed or snapped lift cables, drum re-winding, balance checks. Safe high-tension service. (613) 900-6005.",
     h1: "Garage door cable repair",
     imageKey: "cable",
     keywords: "garage door cable repair Ottawa, broken lift cable, frayed garage door cable, garage door off balance",
@@ -262,7 +262,7 @@ const services = {
   },
   maintenance: {
     title: "Garage Door Maintenance & Tune-Up Ottawa",
-    desc: "Annual garage door tune-ups in Ottawa — lubrication, safety tests, balance check. Prevent costly breakdowns. Book Ottawa Garage Tech.",
+    desc: "Garage door tune-ups in Ottawa & suburbs — lubrication, safety tests, balance checks & 21-point inspection. Prevent breakdowns before winter. Book Ottawa Garage Tech.",
     h1: "Maintenance tune-ups",
     imageKey: "maintenance",
     keywords: "garage door maintenance Ottawa, garage door tune up, annual garage door service Ottawa",
@@ -294,7 +294,7 @@ const services = {
   },
   "weather-sealing": {
     title: "Garage Door Weather Sealing Ottawa | Bottom Seals",
-    desc: "Garage door weather seals and bottom rubber in Ottawa. Cut drafts, snow, and pests. Threshold and jamb sealing.",
+    desc: "Garage door weather sealing in Ottawa & suburbs — bottom rubber seals, thresholds, jamb weatherstrip. Cut drafts, snow & pests. (613) 900-6005.",
     h1: "Weather sealing",
     imageKey: "weather",
     keywords: "garage door weather seal Ottawa, bottom seal replacement, garage door weatherstripping Ottawa",
