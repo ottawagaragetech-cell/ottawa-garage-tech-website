@@ -13,7 +13,7 @@ import { isDuplicateImagePair } from "./image-dedupe.mjs";
 const root = path.resolve(import.meta.dirname, "..");
 
 const installAssets = {
-  hero: "/assets/services/install-woodgrain-double.png",
+  hero: "/assets/gallery/gallery-barrhaven-grey.png",
   barrhaven: "/assets/services/install-barrhaven.png",
   ottawa: "/assets/services/install-ottawa-grey.png",
   kanata: "/assets/services/install-kanata.png",
@@ -28,8 +28,8 @@ export const OGT_IMAGES = {
     { src: installAssets.kanata, alt: "New garage door installed in Kanata", cap: "Kanata install" },
     { src: "/assets/services/spring-broken-torsion.png", alt: "Broken garage door torsion spring snapped in two on the shaft", cap: "Spring repair" },
     { src: "/assets/gallery/gallery-opener-liftmaster.png", alt: "Chamberlain garage door opener installation", cap: "Opener install" },
-    { src: installAssets.hero, alt: "Wood-grain double garage door installation Ottawa", cap: "Door installation" },
-    { src: "/assets/gallery/gallery-barrhaven-grey.png", alt: "Taupe wood-grain garage door with bottom seal — Barrhaven install", cap: "Barrhaven install" },
+    { src: "/assets/gallery/install-carp-white.png", alt: "White garage door with top windows on red brick — Ottawa install", cap: "White door install" },
+    { src: "/assets/gallery/install-beige-brick.png", alt: "Beige raised-panel garage door on red brick — Ottawa install", cap: "Beige door install" },
   ],
 };
 

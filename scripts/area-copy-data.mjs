@@ -5,8 +5,8 @@ export const LOCAL_PHOTOS = [
   { src: "/assets/services/install-kanata.png", label: "garage door install in Kanata", cap: "West-end door replacement" },
   { src: "/assets/services/install-barrhaven.png", label: "garage door install in Barrhaven", cap: "South Ottawa install" },
   { src: "/assets/services/install-orleans-double.png", label: "double garage door install", cap: "Double-door install — east end" },
-  { src: "/assets/services/install-woodgrain-double.png", label: "wood-grain double door install", cap: "Wood-grain double door" },
-  { src: "/assets/gallery/gallery-barrhaven-grey.png", label: "taupe wood-grain door in Barrhaven", cap: "New door · Barrhaven" },
+  { src: "/assets/gallery/gallery-barrhaven-grey.png", label: "taupe wood-grain door install", cap: "New door · Barrhaven" },
+  { src: "/assets/gallery/install-carp-white.png", label: "white door with windows on brick", cap: "White door · Carp area" },
   { src: "/assets/gallery/gallery-opener-liftmaster.png", label: "Chamberlain opener install", cap: "Chamberlain opener on ceiling" },
   { src: "/assets/gallery/home-orleans-double.png", label: "tan double doors in Orleans", cap: "Orleans double install" },
   { src: "/assets/gallery/home-kanata.png", label: "grey door in Kanata", cap: "Kanata raised panel" },
@@ -17,6 +17,7 @@ export const LOCAL_PHOTOS = [
   { src: "/assets/gallery/home-ottawa-grey.png", label: "grey door on brick home", cap: "Ottawa brick exterior" },
   { src: "/assets/gallery/home-woodgrain-double.png", label: "wood-grain door on stone home", cap: "Wood-grain on stone" },
   { src: "/assets/gallery/home-barrhaven.png", label: "cream door with windows", cap: "Barrhaven door with windows" },
+  { src: "/assets/gallery/install-beige-brick.png", label: "beige door on red brick", cap: "Beige door · brick home" },
 ];
 
 export const TYPICAL_JOBS_DEFAULT = [
@@ -414,7 +415,7 @@ export const AREA_COPY = {
     },
   },
   nepean: {
-    hero: 4,
+    hero: 5,
     inline: 9,
     heroIntro:
       "Nepean garage door service from Merivale and Baseline to Centrepointe and Craig Henry — extension and torsion springs, rental turnovers, opener fixes, and insulated upgrades on mixed-era west-south streets.",
@@ -569,7 +570,7 @@ export const AREA_COPY = {
     ],
   },
   manotick: {
-    hero: 4,
+    hero: 16,
     inline: 11,
     paragraphs: [
       "Manotick mixes village character near the dam and Watson’s Mill with estate properties and rural lots toward Rideau Forest. Oversized or custom-width doors need heavier springs and careful balancing — we measure before we order parts.",
@@ -852,7 +853,7 @@ export const AREA_COPY = {
     ],
   },
   greely: {
-    hero: 4,
+    hero: 5,
     inline: 11,
     paragraphs: [
       "Greely and the south rural fringe mix village homes, estate lots, and new builds toward Manotick. Detached and oversized garages are common — spring weight must match the actual door.",
@@ -1086,7 +1087,7 @@ export const AREA_COPY = {
     ],
   },
   "rockcliffe-park": {
-    hero: 4,
+    hero: 16,
     inline: 0,
     paragraphs: [
       "Rockcliffe Park properties range from estate homes with oversized openings to discreet rear garages. We discuss access and timing when you book.",
