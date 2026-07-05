@@ -9,9 +9,66 @@ export const BLOG_IMAGES = {
   troubleshooting: "/assets/blog/garage-door-wont-close-springs.png",
   replacement: "/assets/gallery/gallery-barrhaven-grey.png",
   winterPrep: "/assets/blog/garage-door-winter-prep-jamb-seal.png",
+  noisyDoor: "/assets/gallery/home-rollers-replacement.png",
 };
 
 export const blogPosts = [
+  {
+    slug: "noisy-garage-door-ottawa",
+    title: "Noisy Garage Door in Ottawa? Grinding, Squeaking & Rattling Fixes",
+    h1: "Noisy garage door in Ottawa: what causes it and how to fix it",
+    desc: "Grinding, squeaking, or banging garage door in Ottawa? Common causes — worn rollers, loose hardware, dry hinges, opener strain — and when to book maintenance in Kanata, Barrhaven & suburbs.",
+    keywords: "noisy garage door Ottawa, garage door squeaking, grinding garage door, garage door rattling fix",
+    date: "2026-07-05",
+    category: "Maintenance",
+    readMin: 6,
+    imageKey: "noisyDoor",
+    imageAlt: "Garage door roller and hinge hardware — noisy door troubleshooting Ottawa",
+    relatedServices: ["maintenance", "opener-service", "spring-replacement"],
+    relatedSlugs: ["garage-door-winter-prep-ottawa", "garage-door-wont-close", "broken-garage-door-spring-ottawa"],
+    body: `
+<p>A <strong>noisy garage door</strong> is one of those problems that starts small — a squeak on the way up, a rattle when the wind hits the panels — and slowly becomes impossible to ignore, especially if a bedroom sits above the garage. In Ottawa, cold mornings, road salt, and daily school-run cycles all speed up wear on rollers, hinges, and opener hardware. This guide explains the most common sounds, what you can safely check at home, and when to book professional <a href="/services/maintenance">maintenance</a>.</p>
+
+<h2>Common garage door noises and what they mean</h2>
+<h3>Squeaking or chirping</h3>
+<p>Usually dry metal-on-metal contact — hinges, rollers, or the bearing plate at the end of the torsion spring tube. Silicone-based lubricant on hinges and roller stems (not the track itself) often helps temporarily, but worn nylon rollers will squeak again until replaced.</p>
+<h3>Grinding or scraping</h3>
+<p>Often a bent track, a roller that has popped out of the rail, or debris in the track. Stop using the opener if you hear metal grinding — continuing can bend panels or strip opener gears.</p>
+<h3>Banging or popping</h3>
+<p>A loud bang when the door moves can mean a <a href="/blog/broken-garage-door-spring-ottawa">broken or failing spring</a>, a loose hinge, or panel sections flexing against a binding track. If the bang happened once and the door still moves unevenly, get it inspected before the next cold snap.</p>
+<h3>Rattling and vibration</h3>
+<p>Loose nuts on hinges, worn opener chain or belt, or a door that is out of balance — the opener shakes the whole assembly on every cycle. Townhomes in Barrhaven and Kanata with front-attached garages often notice this first in upstairs rooms.</p>
+
+<h2>Safe checks you can do at home</h2>
+<ul>
+<li><strong>Visual track inspection</strong> — look for bent sections, gaps between rollers and rail, and obstructions</li>
+<li><strong>Hardware tightness</strong> — hinge bolts and bracket screws can loosen over time; tighten only what is clearly loose, do not over-torque</li>
+<li><strong>Light lubrication</strong> — silicone spray on hinges and roller bearings; avoid grease on tracks (it attracts grit)</li>
+<li><strong>Opener rail</strong> — on chain-drive units, a light chain lubricant per the manufacturer manual; belt-drive openers generally need no belt lube</li>
+<li><strong>Balance test</strong> — with the opener disconnected per manual instructions, the door should lift smoothly; if it slams or shoots up, springs need professional adjustment</li>
+</ul>
+<p>Do not adjust torsion springs, cables, or opener force limits without training — those are high-tension systems.</p>
+
+<h2>Why Ottawa doors get noisy faster</h2>
+<p>Freeze-thaw cycles stiffen old grease and shrink rubber seals. Salt from the driveway corrodes bottom fixtures and roller stems. Attached garages on busy family schedules — common in Orleans, Riverside South, and Nepean subdivisions — mean more open-close cycles per year than the hardware was originally rated for.</p>
+<p>An annual <a href="/services/maintenance">tune-up</a> catches worn rollers, fraying cables, and opener strain before they become emergency calls. Pair it with <a href="/services/weather-sealing">weather sealing</a> in fall so the door closes evenly against the floor — uneven contact makes noise and wears the opener.</p>
+
+<h2>When noise means a bigger problem</h2>
+<ul>
+<li>Door feels heavy or crooked — possible spring or cable issue</li>
+<li>Opener hums but the door barely moves — gears, carriage, or balance problem (<a href="/services/opener-service">opener service</a>)</li>
+<li>Door reverses or will not close — see our <a href="/blog/garage-door-wont-close">troubleshooting guide</a></li>
+<li>Noise returned within days after DIY lube — worn rollers or hinges likely need replacement</li>
+</ul>
+
+<h2>What a professional tune-up includes</h2>
+<p>Our maintenance visit covers lubrication of moving parts, hinge and roller inspection, balance and safety sensor testing, opener force review, and a written summary of anything that should be addressed soon. Many noisy-door calls in Ottawa are resolved in one visit without replacing the whole door.</p>
+<p>Before winter, see our <a href="/blog/garage-door-winter-prep-ottawa">garage door winter prep checklist</a> — stiff rollers and frozen seals are a common noise combo in January.</p>
+
+<h2>Book garage door maintenance in Ottawa</h2>
+<p>Call or text <a href="tel:+16139006005">(613) 900-6005</a> to schedule a tune-up, or <a href="/contact">contact us</a> with a short description of the sound and your neighbourhood. We serve Ottawa, Kanata, Barrhaven, Orleans, Nepean, Stittsville, and communities across the region — <a href="/areas">view service areas</a>.</p>
+`,
+  },
   {
     slug: "garage-door-repair-cost-ottawa",
     title: "Ottawa Garage Door Repair Pricing: What to Expect in 2026",
