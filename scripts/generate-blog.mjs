@@ -84,6 +84,7 @@ function articlePage(post) {
     description: post.desc,
     url: canonical,
     image: imgPath,
+    imageAlt: post.imageAlt,
     type: "article",
     published: isoDate,
   })}
