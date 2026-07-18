@@ -10,9 +10,51 @@ export const BLOG_IMAGES = {
   replacement: "/assets/gallery/gallery-barrhaven-grey.png",
   winterPrep: "/assets/blog/garage-door-winter-prep-jamb-seal.png",
   noisyDoor: "/assets/gallery/home-rollers-replacement.png",
+  vacationSecurity: "/assets/gallery/gallery-opener-liftmaster.png",
 };
 
 export const blogPosts = [
+  {
+    slug: "garage-door-vacation-security-ottawa",
+    title: "Garage Door Security Before Vacation: An Ottawa Checklist",
+    h1: "Garage door security before vacation: an Ottawa summer checklist",
+    desc: "Heading out of Ottawa this summer? Quick garage door checks — sensors, remotes, keypad codes, and when to lock the opener — so your home stays secure while you're away.",
+    keywords: "garage door security Ottawa, garage door vacation tips, lock garage door opener, vacation home checklist Ottawa",
+    date: "2026-07-18",
+    category: "Safety",
+    readMin: 5,
+    imageKey: "vacationSecurity",
+    imageAlt: "Chamberlain garage door opener on a garage ceiling — vacation security checklist Ottawa",
+    relatedServices: ["opener-service", "emergency-repair", "maintenance"],
+    relatedSlugs: ["garage-door-wont-close", "noisy-garage-door-ottawa", "garage-door-winter-prep-ottawa"],
+    body: `
+<p>Summer is peak travel season for Ottawa households — cottages, road trips, and flights. Before you leave, spend ten minutes on the <strong>garage door</strong>. It is often the largest opening into the home, and a door that will not close properly (or that still responds to an old remote) is an easy miss when packing bags.</p>
+
+<h2>Quick checks the night before you go</h2>
+<ul>
+<li><strong>Close and open once</strong> — confirm the door travels smoothly and seals at the floor. If it reverses or stops halfway, fix it before you leave (see our <a href="/blog/garage-door-wont-close">won't-close guide</a>)</li>
+<li><strong>Photo-eye sensors</strong> — keep the beam clear; bikes, bins, and summer gear often block sensors after a busy week</li>
+<li><strong>Bottom seal</strong> — daylight under a closed door means drafts and a weaker seal against pests and weather</li>
+<li><strong>Wall button and remotes</strong> — test the wall control and at least one remote; replace weak batteries now, not from the airport</li>
+</ul>
+
+<h2>Lock or disable the opener while you're away</h2>
+<p>Most openers have a lock feature on the wall control that ignores remotes and wireless keypads while still allowing the wall button. Use it if you will be gone more than a few days — especially if spare remotes are in a second vehicle or with a neighbour. When you return, unlock and test before relying on the remote again.</p>
+<p>If you have a smart opener or camera, verify the app shows the door closed after you leave. Our <a href="/services/opener-service">opener service</a> covers remotes, sensors, and lock features if something feels unreliable.</p>
+
+<h2>Keypad codes and spare access</h2>
+<p>Change or temporarily disable an outdoor keypad PIN if it has not been updated in years. Share a temporary code only with the person checking the house — and revoke it when you get home. Leave a spare remote with a trusted neighbour only if they know how to use the wall lock feature.</p>
+
+<h2>If something fails while you're gone</h2>
+<p>Tell your house-sitter: do not force a stuck or crooked door. A hung panel or broken spring is a safety issue — they should call a pro rather than yank the emergency release repeatedly. Ottawa Garage Tech is open daily 7 a.m.–9 p.m. at <a href="tel:+16139006005">(613) 900-6005</a> for <a href="/services/emergency-repair">urgent secure-close problems</a>.</p>
+
+<h2>One more summer tip</h2>
+<p>Heat and dry weather make squeaky rollers and dry hinges more noticeable. A short <a href="/services/maintenance">tune-up</a> before a long trip is often quieter and more reliable than waiting until September — and quieter doors matter when bedrooms sit above the garage (see <a href="/blog/noisy-garage-door-ottawa">noisy garage door fixes</a>).</p>
+
+<h2>Book before you leave Ottawa</h2>
+<p><a href="/contact">Send a quick note</a> or call if the door is already acting up. We serve Ottawa, Kanata, Barrhaven, Orleans, Nepean, Stittsville, and nearby communities — <a href="/areas">service areas</a>.</p>
+`,
+  },
   {
     slug: "noisy-garage-door-ottawa",
     title: "Noisy Garage Door in Ottawa? Grinding, Squeaking & Rattling Fixes",
