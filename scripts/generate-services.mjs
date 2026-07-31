@@ -96,7 +96,7 @@ const services = {
     h1: "Emergency garage door repair",
     imageKey: "emergency",
     keywords: "emergency garage door repair Ottawa, stuck garage door, off track door, same day garage door repair",
-    priceNote: "Priority safety visits from $215 — final price depends on parts and labour after inspection.",
+    priceNote: "Priority safety visits — clear quote after on-site inspection before major work.",
     intro: [
       "When your garage door will not close, hangs crooked, or a spring has just snapped, waiting is not an option. Ottawa Garage Tech treats safety issues as priorities and explains your options in plain language before major work begins.",
       "Our technicians arrive with common springs, cables, rollers, and opener parts on the truck so many emergencies are resolved in a single visit across Ottawa and nearby suburbs.",
@@ -128,7 +128,7 @@ const services = {
     h1: "Garage door spring replacement",
     imageKey: "spring",
     keywords: "garage door spring replacement Ottawa, broken torsion spring, extension spring repair, garage door spring cost Ottawa",
-    priceNote: "One spring $235–$350 · both springs $450–$550 — sized to your door on site.",
+    priceNote: "Springs sized to your door on site — clear quote before we start.",
     intro: [
       "Garage door springs counterbalance hundreds of pounds of weight. When one fails, the door becomes dangerous to lift and strains your opener. We install correctly rated springs and replace both sides when that is the right long-term fix.",
       "Ottawa temperature swings accelerate metal fatigue. If you heard a bang from the garage, stop using the door and schedule service — forcing it can damage cables, tracks, and the opener.",
@@ -202,7 +202,7 @@ const services = {
     h1: "Garage door opener service",
     imageKey: "opener",
     keywords: "garage door opener repair Ottawa, Chamberlain opener repair, opener installation Ottawa, smart garage door opener",
-    priceNote: "Opener repairs often from $210; gear assemblies from $265; new installed openers quoted by model.",
+    priceNote: "Opener repairs and new units quoted after diagnosis — clear scope before work.",
     intro: [
       "A garage door opener is more than a motor — it is sensors, limits, force settings, and a drive system that must work together. We troubleshoot the full chain, not just replace parts blindly.",
       "Whether your remote stopped working, the motor grinds but nothing moves, or you want a quiet belt-drive upgrade, we service major brands found in Ottawa homes.",
@@ -234,7 +234,7 @@ const services = {
     h1: "Garage door cable repair",
     imageKey: "cable",
     keywords: "garage door cable repair Ottawa, broken lift cable, frayed garage door cable, garage door off balance",
-    priceNote: "Cable repairs typically $180–$285 when both cables and drums are serviced together.",
+    priceNote: "Cable and drum repairs quoted on site after we secure and inspect the door.",
     intro: [
       "Lift cables work with springs and drums to raise your door evenly. When one cable frays or snaps, the door can drop on one side and damage tracks or panels.",
       "Cable replacement is high-tension work. Our technicians clamp and secure the door before swapping cables so your family stays safe.",
@@ -266,7 +266,7 @@ const services = {
     h1: "Maintenance tune-ups",
     imageKey: "maintenance",
     keywords: "garage door maintenance Ottawa, garage door tune up, annual garage door service Ottawa",
-    priceNote: "Tune-ups from $165 — includes inspection, lubrication, and a written summary of findings.",
+    priceNote: "Tune-ups include inspection, lubrication, balance check, and a written summary.",
     intro: [
       "Most garage door failures give warning signs months earlier — noisy rollers, slow response, or a door that drifts off balance. A yearly tune-up catches those issues before they become emergency calls.",
       "Our maintenance visit is designed for Ottawa homes: we account for salt, cold, and hardware contraction that affects rollers, hinges, and seals.",
@@ -298,7 +298,7 @@ const services = {
     h1: "Weather sealing",
     imageKey: "weather",
     keywords: "garage door weather seal Ottawa, bottom seal replacement, garage door weatherstripping Ottawa",
-    priceNote: "Weather sealing from $260 depending on door width and seal type.",
+    priceNote: "Bottom seals, thresholds, and jambs quoted by door width and seal type on site.",
     intro: [
       "A thin gap under your garage door lets in Ottawa winter air, slush, and rodents. Quality bottom seals and jamb weatherstripping make a noticeable difference in comfort and energy loss.",
       "Sealing only works when the door is aligned — we check contact across the full width and adjust tracks or limits if needed so the new seal wears evenly.",
