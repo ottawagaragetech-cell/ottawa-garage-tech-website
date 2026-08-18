@@ -121,7 +121,7 @@ function shell(page, title, desc, canonical, main) {
   <title>${title} | Ottawa Garage Tech</title>
   <meta name="description" content="${desc}">
   <link rel="canonical" href="${canonical}">
-  <link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" href="/assets/favicon-48.png" sizes="48x48">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>

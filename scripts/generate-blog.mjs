@@ -88,7 +88,7 @@ function articlePage(post) {
     type: "article",
     published: isoDate,
   })}
-  <link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" href="/assets/favicon-48.png" sizes="48x48">
   <link rel="stylesheet" href="/css/style.css">
   <script type="application/ld+json">
   {
@@ -251,7 +251,7 @@ function indexPage() {
     url: `${domain}/blog`,
     image: BLOG_IMAGES.blogIndex,
   })}
-  <link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" href="/assets/favicon-48.png" sizes="48x48">
   <link rel="stylesheet" href="/css/style.css">
   <script type="application/ld+json">
   {

@@ -13,7 +13,7 @@ const html = `<!DOCTYPE html>
   <title>Service Areas | Ottawa Garage Tech</title>
   <meta name="description" content="Garage door repair in Ottawa, Kanata, Barrhaven, Orleans, Nepean, and 25+ communities. Local pages with service details.">
   <link rel="canonical" href="https://ottawagaragetech.ca/areas">
-  <link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" href="/assets/favicon-48.png" sizes="48x48">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>

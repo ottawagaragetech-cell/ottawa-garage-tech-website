@@ -13,7 +13,7 @@ const html = `<!DOCTYPE html>
   <title>Customer Reviews | Ottawa Garage Tech</title>
   <meta name="description" content="Read customer reviews for Ottawa Garage Tech — garage door repair, springs, openers, and installations across Ottawa and suburbs.">
   <link rel="canonical" href="https://ottawagaragetech.ca/reviews">
-  <link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" href="/assets/favicon-48.png" sizes="48x48">
   <link rel="stylesheet" href="/css/style.css">
   <script type="application/ld+json" id="ogt-reviews-schema"></script>
 </head>

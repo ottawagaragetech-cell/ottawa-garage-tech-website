@@ -358,7 +358,7 @@ function servicePage(slug, data) {
     image: img.src,
     imageAlt: img.alt,
   })}
-  <link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" href="/assets/favicon-48.png" sizes="48x48">
   <link rel="stylesheet" href="/css/style.css">
   <script type="application/ld+json">
   {
