@@ -11,9 +11,76 @@ export const BLOG_IMAGES = {
   winterPrep: "/assets/blog/garage-door-winter-prep-jamb-seal.png",
   noisyDoor: "/assets/gallery/home-rollers-replacement.png",
   vacationSecurity: "/assets/gallery/gallery-opener-liftmaster.png",
+  emergencyRepair: "/assets/services/emergency-repair-stuck-door.png",
 };
 
 export const blogPosts = [
+  {
+    slug: "emergency-garage-door-repair-ottawa",
+    title: "Emergency Garage Door Repair Ottawa: Same-Day Help Guide",
+    h1: "Emergency garage door repair in Ottawa: when to call and what to do first",
+    desc: "Need emergency garage door repair in Ottawa? What counts as urgent — stuck open, broken spring, off-track — safe first steps, and same-day help across Kanata, Barrhaven, Orleans & suburbs.",
+    keywords:
+      "emergency garage door repair Ottawa, same day garage door repair Ottawa, garage door stuck open, urgent garage door repair Kanata Barrhaven",
+    date: "2026-09-08",
+    category: "Emergency",
+    readMin: 7,
+    imageKey: "emergencyRepair",
+    imageAlt:
+      "Stuck residential garage door needing emergency repair — Ottawa same-day service",
+    relatedServices: ["emergency-repair", "spring-replacement", "opener-service"],
+    relatedSlugs: [
+      "broken-garage-door-spring-ottawa",
+      "garage-door-wont-close",
+      "garage-door-repair-cost-ottawa",
+    ],
+    body: `
+<p>When your <strong>garage door will not close</strong>, hangs crooked, or fails after a loud bang, it is not a weekend project — it is a security and safety problem. Ottawa Garage Tech handles <a href="/services/emergency-repair">emergency garage door repair</a> across the city and suburbs, with same-day visits when scheduling allows. This guide explains what counts as an emergency, what to do before a technician arrives, and how to get help fast in Kanata, Barrhaven, Orleans, Nepean, Stittsville, and nearby communities.</p>
+
+<h2>What counts as an emergency garage door problem</h2>
+<p>Call for urgent service if any of these apply:</p>
+<ul>
+<li><strong>Door stuck open</strong> — the house is exposed overnight; vehicles and belongings are visible from the street</li>
+<li><strong>Broken spring</strong> — a loud bang, then the door will not lift or feels extremely heavy (see our <a href="/blog/broken-garage-door-spring-ottawa">broken spring guide</a>)</li>
+<li><strong>Off-track or crooked door</strong> — panels binding in the rails; forcing the opener can bend the door or strip gears</li>
+<li><strong>Cable snapped or frayed</strong> — cables under tension can whip; stop using the opener</li>
+<li><strong>Door will not close and sensors look fine</strong> — leave it secured another way until inspected (<a href="/blog/garage-door-wont-close">won't-close troubleshooting</a>)</li>
+<li><strong>Opener runs but the door barely moves</strong> — often balance, spring, or carriage failure, not “just a remote”</li>
+</ul>
+<p>A squeaky door or a remote that needs new batteries is maintenance — not an emergency. A door that will not secure the garage is.</p>
+
+<h2>Safe first steps before the tech arrives</h2>
+<ol>
+<li><strong>Stop using the opener</strong> if the door is crooked, grinding, or much heavier than usual</li>
+<li><strong>Keep people and pets clear</strong> of the door path and the spring area near the ceiling</li>
+<li><strong>Do not adjust torsion springs or cables</strong> — high tension; DIY spring work is a common injury</li>
+<li><strong>If the door is stuck open</strong>, park a vehicle to block the opening only if it is safe to do so, and avoid standing under a partially open door</li>
+<li><strong>Note what happened</strong> — bang, grinding, reverse at the floor, storm, ice — short details help us bring the right parts</li>
+</ol>
+<p>If you must disconnect the opener for manual operation, follow the manufacturer’s emergency-release instructions. Do not yank the red cord repeatedly on a door that feels unbalanced.</p>
+
+<h2>Same-day garage door repair in Ottawa</h2>
+<p>We prioritize calls that leave a garage unsecured or a door unsafe to operate. Typical same-day work includes spring replacement, cable repair, getting an off-track door back into the rails, sensor and limit resets after a storm, and opener failures that leave the door stuck. Parts for common residential torsion systems are stocked on the truck whenever possible so many Ottawa homes are fixed in one visit.</p>
+<p>For how quotes work on urgent calls — clear scope before major work — see our <a href="/blog/garage-door-repair-cost-ottawa">Ottawa repair pricing guide</a> and <a href="/faq">FAQ</a>.</p>
+
+<h2>Why Ottawa doors fail suddenly</h2>
+<p>Cold snaps, freeze-thaw, and road salt speed up spring fatigue and cable wear. Busy family schedules in Barrhaven, Kanata Lakes, Orleans, and Nepean mean more open-close cycles per year. A door that “felt fine yesterday” can fail the morning after the first hard frost — that is normal for springs near end of life, not bad luck alone.</p>
+<p>If the door has been noisy, heavy, or uneven for weeks, book <a href="/services/maintenance">maintenance</a> before it becomes an after-hours emergency. Opener strain and worn rollers often show up first as sound — see <a href="/blog/noisy-garage-door-ottawa">noisy garage door fixes</a>.</p>
+
+<h2>What we bring on an emergency visit</h2>
+<ul>
+<li>Torsion and extension spring options sized on site</li>
+<li>Cables, rollers, hinges, and common hardware</li>
+<li>Track realignment and safety sensor checks</li>
+<li><a href="/services/opener-service">Opener diagnosis</a> — gears, logic board, remotes, and force settings</li>
+<li>A clear explanation of what failed and what we recommend next</li>
+</ul>
+
+<h2>How to book emergency service</h2>
+<p>Call or text <a href="tel:+16139006005">(613) 900-6005</a> — open daily 7 a.m.–9 p.m. Tell us your neighbourhood, whether the door is open or closed, and what you heard or saw. You can also <a href="/contact">send a message with photos</a> if the situation is urgent but you cannot talk right away.</p>
+<p>We serve Ottawa, Kanata, Barrhaven, Orleans, Nepean, Stittsville, Gloucester, Manotick, and surrounding communities — full list on our <a href="/areas">service areas</a> page.</p>
+`,
+  },
   {
     slug: "garage-door-vacation-security-ottawa",
     title: "Garage Door Security Before Vacation: An Ottawa Checklist",
